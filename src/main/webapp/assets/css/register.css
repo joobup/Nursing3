@@ -1,0 +1,39 @@
+.progress-bar li{
+    height: 50px;
+    width: 20%;
+    float: left;
+    border-bottom: 3px solid #a0a3a3;
+}
+.border-black{
+    border-bottom: 3px solid #000000!important;
+}
+.progress-bar{
+    height: 150px;
+}
+.progress-bar li .title-num{
+    width: 25px; height: 25px; border-radius: 50px; color: #ffffff; background-color: #000000; text-align: center; font-size: 18px; line-height: 25px; margin: 20px auto auto 60px; float: left;
+}
+.progress-bar li .title-font{
+    height:25px; margin: 20px auto auto 30px; float: left;font-size: 18px;
+}
+.progress-bar li .title-num-n{
+    width: 25px; height: 25px; border-radius: 50px; color: #ffffff; background-color: #a0a3a3; text-align: center; font-size: 18px; line-height: 25px; margin: 20px auto auto 60px; float: left;
+}
+.progress-bar li .title-font-n{
+    height:25px; margin: 20px auto auto 30px; float: left;font-size: 18px; color: #a0a3a3;
+}
+.register-mail table{
+    margin: 0px auto;
+
+}
+.register-mail table td{
+    width: 80px;
+    height: 65px;
+    font-size: 18px;
+}
+.register-mail table input[type="text"]{
+        width: 300px; height: 40px; padding-left: 15px; font-size: 18px;
+}
+.register-mail table input[type="button"]{
+    width: 120px; height: 40px; background-color: #000000; border-radius: 5px; color:#ffffff; border: 0px; cursor: pointer;
+}

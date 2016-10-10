@@ -1,0 +1,85 @@
+.login-head{
+    width: 100%;
+    height: 110px;
+}
+.login-main{
+    width: 100%;
+    height: 700px;
+    background-color: #88B4E5;
+    position: relative;
+}
+.login-main .login-div{
+    width: 380px;
+    height: 380px;
+    background-color: #ffffff;
+    right: 350px;
+    top: 100px;
+    position: absolute;
+}
+.login-div .back-gray{
+    background-color: #232323;
+    transition: .5s;
+}
+.login-div .back-gray:hover{
+    background-color: #000000;
+    color: #ffffff;
+}
+.login-div .personal-login,.seller-login{
+    color: #a0a3a3;
+    font-size: 16px;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    width: 50%;
+    height: 50px;
+    cursor: pointer;
+}
+.login-div .login-input-img{
+    border: 1px solid #a0a3a3;
+    border-right: 0px;
+    width: 42px;
+    height: 43px;
+    float: left;
+    margin-left: 25px;
+    margin-top: 35px;
+}
+.login-div .login-input{
+    width: 270px;
+    height: 45px;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-top: 35px;
+}
+@-moz-document url-prefix(){
+    .login-div .login-input{
+        width: 270px;
+        height: 46px;
+        font-size: 16px;
+        padding-left: 10px;
+        margin-top: 35px;
+    }
+}
+.login-div input[type="button"]{
+    width: 328px;
+    height: 41px;
+    background-color: #323232;
+    color: #ffffff;
+    border: 0px;
+    margin: 25px auto 25px 25px;
+    cursor: pointer;
+    transition: .5s;
+}
+.login-div input[type="button"]:hover{
+    background-color: #000000;
+}
+.login-div span a{
+     float: right;
+    margin-right: 25px;
+    color: #323232;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .5s;
+}
+.login-div span a:hover{
+    color: #000000;
+}

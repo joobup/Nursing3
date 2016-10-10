@@ -1,0 +1,44 @@
+/*个人中心选项*/
+#personal-three li div{ width: 33%; height:100%; float: left; color: #ffffff; font-size: 22px; text-align: center; line-height: 100px; position: relative; }
+#personal-three li div span:hover{ cursor:  pointer; color: #FE5552;transition: .5s;}
+.sanjiao{ width: 0px!important; height: 0px!important; opacity: 0;  position: absolute; top: 90px; left: 80px; border-width: 0px 10px 10px 10px; border-style: solid; border-color:#ffffff transparent;  }
+#personal-three li div span:hover + .sanjiao{ opacity: 1; transition: .5s;}
+/*个人中心导航列表*/
+#personal-nav-fl{ width: 135px; height: 100%; float: left;}
+#personal-nav-fl li{ text-align: left; line-height: 30px; cursor: pointer; font-size:14px;  }
+#personal-nav-fl li span{  cursor: default; color: #FF4401;font-size: 18px; }
+#personal-nav-fl li:hover{color: #FF4401;}
+/*个人中心内容*/
+#personal-main-fr{ width: 1095px;  float: right;}
+#personal-main-fr #personal-order-list li{width: 217.8px; height: 40px; float: left; text-align: center; line-height: 40px; cursor: pointer; font-size: 18px;
+    border-top: 1px solid #a0a3a3; border-right: 1px solid #a0a3a3; border-bottom: 1px solid #a0a3a3;
+}
+#personal-main-fr #personal-order-list li:hover{background-color: #DADADA; }
+#personal-main-fr #personal-order-list li span{color: red; font-size: 16px; margin-left: 10px;}
+#personal-main-fr #personal-parameter li{ background-color: #F5F5F5; margin-bottom: 30px; margin-top: 20px;float: left; height: 40px; line-height: 40px; text-align: center; border-bottom: 1px solid #a0a3a3; border-top:1px solid #a0a3a3;}
+.personal-ware{ width: 400px;}
+.personal-num , .personal-price{ width: 80px;}
+.personal-status { width: 120px;}
+.personal-ware-operate{ width: 132px;}
+.personal-operate{ width: 200px; }
+.personal-payment{ width: 80px;}
+
+#personal-main-fr .personal-order-details{width: 1095px; height: 200px; float: left; border: 1px solid #a0a3a3; font-size: 14px;}
+    .personal-order-details .order-details-top{height: 44px; border-bottom: 1px  solid #a0a3a3;  background-color: #F1F1F1;}
+        .order-details-top li{float: left; line-height: 44px;}
+        .order-details-top .order-date{ font-size: 20px;}
+        .order-details-top .order-date input[type="checkbox"]{ }
+        .order-details-top .order-id{ margin-left: 40px;}
+        .order-details-top .order-serve{ margin-left: 280px;  cursor: pointer;}
+        .order-details-top .order-serve:hover{ color: #FF4401}
+        .order-details-top .order-delete{ float: right; margin-right: 10px;}
+    .personal-order-details .order-details-bottom{height: 176px; }
+        .personal-order-details .order-details-bottom li{height: 176px; float: left; text-align: center;}
+        .personal-order-details .personal-ware-img {width:100px; margin-left: 20px; float: left;}
+        .personal-order-details .personal-ware-img img{ width: 100px; height: 100px;}
+        .personal-order-details .personal-ware-font li{ float: left; height: 20px; color: #a0a3a3; font-size: 12px; margin-bottom: 10px; }
+        .personal-order-details .personal-ware-font li span{ color: #000000; font-size: 14px;}
+        .personal-order-details .personal-ware-font li span:hover{ color: #FF4200; font-size: 14px;  cursor: pointer;}
+    .personal-order-details .personal-ware-operate span:hover{ color:#FF4200; cursor: pointer; }
+    .personal-order-details .personal-operate input[type="button"] { width: 80px; height: 30px; margin-bottom: 5px; cursor: pointer; background-color: #ffffff; border:1px solid #555555; border-radius:5px; color: #555555;  }
+    .personal-order-details .personal-operate input[type="button"]:hover{ background-color: #03B1E6; color: #ffffff;}
