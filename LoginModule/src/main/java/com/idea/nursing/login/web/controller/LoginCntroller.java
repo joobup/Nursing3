@@ -28,7 +28,7 @@ public class LoginCntroller {
      */
     @ResponseBody
     @RequestMapping(value="user_login",  method = RequestMethod.GET)
-    public ResultData userLogin(Login login,HttpSession session){
+    public ResultData userLogin(Login login, HttpSession session){
 
         if(loginService.userLogin(login)){
             session.setAttribute(SessionConstant.SESSION_USER_BEAN,login);

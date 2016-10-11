@@ -7,6 +7,10 @@ public class Login {
 
     private String loginName;
 
+    private String loginTel;
+
+    private String loginEmail;
+
     private String loginPassword;
 
     private Date loginDate;
@@ -25,6 +29,22 @@ public class Login {
 
     public void setLoginName(String loginName) {
         this.loginName = loginName == null ? null : loginName.trim();
+    }
+
+    public String getLoginTel() {
+        return loginTel;
+    }
+
+    public void setLoginTel(String loginTel) {
+        this.loginTel = loginTel == null ? null : loginTel.trim();
+    }
+
+    public String getLoginEmail() {
+        return loginEmail;
+    }
+
+    public void setLoginEmail(String loginEmail) {
+        this.loginEmail = loginEmail == null ? null : loginEmail.trim();
     }
 
     public String getLoginPassword() {

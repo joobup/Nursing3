@@ -1,11 +1,8 @@
 package com.idea.nursing.login.web.service.impl;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageHelper;
 import com.idea.nursing.core.util.MD5Util;
 import com.idea.nursing.login.web.dao.LoginMapper;
 import com.idea.nursing.login.web.dao.LoginRoleMapper;
-import com.idea.nursing.login.web.dao.RoleMapper;
 import com.idea.nursing.login.web.domain.pojo.Login;
 import com.idea.nursing.login.web.domain.pojo.LoginExample;
 import com.idea.nursing.login.web.domain.pojo.LoginRole;
@@ -14,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import javax.annotation.Resource;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 

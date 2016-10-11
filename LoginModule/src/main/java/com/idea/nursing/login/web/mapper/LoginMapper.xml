@@ -4,6 +4,8 @@
   <resultMap id="BaseResultMap" type="com.idea.nursing.login.web.domain.pojo.Login" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="login_name" property="loginName" jdbcType="VARCHAR" />
+    <result column="login_tel" property="loginTel" jdbcType="VARCHAR" />
+    <result column="login_email" property="loginEmail" jdbcType="VARCHAR" />
     <result column="login_password" property="loginPassword" jdbcType="VARCHAR" />
     <result column="login_date" property="loginDate" jdbcType="TIMESTAMP" />
   </resultMap>
@@ -66,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, login_name, login_password, login_date
+    id, login_name, login_tel, login_email, login_password, login_date
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.login.web.domain.pojo.LoginExample" >
     select
@@ -99,16 +101,22 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.idea.nursing.login.web.domain.pojo.Login" useGeneratedKeys="true" keyProperty="id" >
-    insert into u_login (login_name, login_password, login_date
-      )
-    values (#{loginName,jdbcType=VARCHAR}, #{loginPassword,jdbcType=VARCHAR}, #{loginDate,jdbcType=TIMESTAMP}
-      )
+    insert into u_login (login_name, login_tel, login_email, 
+      login_password, login_date)
+    values (#{loginName,jdbcType=VARCHAR}, #{loginTel,jdbcType=VARCHAR}, #{loginEmail,jdbcType=VARCHAR}, 
+      #{loginPassword,jdbcType=VARCHAR}, #{loginDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.idea.nursing.login.web.domain.pojo.Login" useGeneratedKeys="true" keyProperty="id" >
     insert into u_login
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="loginName != null" >
         login_name,
+      </if>
+      <if test="loginTel != null" >
+        login_tel,
+      </if>
+      <if test="loginEmail != null" >
+        login_email,
       </if>
       <if test="loginPassword != null" >
         login_password,
@@ -120,6 +128,12 @@
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="loginName != null" >
         #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="loginTel != null" >
+        #{loginTel,jdbcType=VARCHAR},
+      </if>
+      <if test="loginEmail != null" >
+        #{loginEmail,jdbcType=VARCHAR},
       </if>
       <if test="loginPassword != null" >
         #{loginPassword,jdbcType=VARCHAR},
@@ -144,6 +158,12 @@
       <if test="record.loginName != null" >
         login_name = #{record.loginName,jdbcType=VARCHAR},
       </if>
+      <if test="record.loginTel != null" >
+        login_tel = #{record.loginTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.loginEmail != null" >
+        login_email = #{record.loginEmail,jdbcType=VARCHAR},
+      </if>
       <if test="record.loginPassword != null" >
         login_password = #{record.loginPassword,jdbcType=VARCHAR},
       </if>
@@ -159,6 +179,8 @@
     update u_login
     set id = #{record.id,jdbcType=BIGINT},
       login_name = #{record.loginName,jdbcType=VARCHAR},
+      login_tel = #{record.loginTel,jdbcType=VARCHAR},
+      login_email = #{record.loginEmail,jdbcType=VARCHAR},
       login_password = #{record.loginPassword,jdbcType=VARCHAR},
       login_date = #{record.loginDate,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
@@ -170,6 +192,12 @@
     <set >
       <if test="loginName != null" >
         login_name = #{loginName,jdbcType=VARCHAR},
+      </if>
+      <if test="loginTel != null" >
+        login_tel = #{loginTel,jdbcType=VARCHAR},
+      </if>
+      <if test="loginEmail != null" >
+        login_email = #{loginEmail,jdbcType=VARCHAR},
       </if>
       <if test="loginPassword != null" >
         login_password = #{loginPassword,jdbcType=VARCHAR},
@@ -183,6 +211,8 @@
   <update id="updateByPrimaryKey" parameterType="com.idea.nursing.login.web.domain.pojo.Login" >
     update u_login
     set login_name = #{loginName,jdbcType=VARCHAR},
+      login_tel = #{loginTel,jdbcType=VARCHAR},
+      login_email = #{loginEmail,jdbcType=VARCHAR},
       login_password = #{loginPassword,jdbcType=VARCHAR},
       login_date = #{loginDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=BIGINT}
