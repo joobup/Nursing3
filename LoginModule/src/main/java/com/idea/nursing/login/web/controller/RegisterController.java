@@ -1,11 +1,14 @@
 package com.idea.nursing.login.web.controller;
 
 import com.idea.nursing.core.generic.ResultData;
+import com.idea.nursing.core.util.MD5Util;
 import com.idea.nursing.login.web.domain.pojo.Login;
 import com.idea.nursing.login.web.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.security.NoSuchAlgorithmException;
 
 /**
  * Created by 10238 on 2016/10/11.
@@ -22,7 +25,8 @@ public class RegisterController {
      * @return
      */
     @RequestMapping("/user_register")
-    public ResultData userRegister(Login login){
+    public ResultData userRegister(Login login) throws NoSuchAlgorithmException {
+        login.setLoginPassword(MD5Util.MD5(login.getLoginPassword()));
         if(loginService.userRegister(login)){
             return ResultData.build();
         }else{
@@ -37,7 +41,8 @@ public class RegisterController {
      * @return
      */
     @RequestMapping("/seller_register")
-    public ResultData sellerRegister(Login login){
+    public ResultData sellerRegister(Login login) throws NoSuchAlgorithmException {
+        login.setLoginPassword(MD5Util.MD5(login.getLoginPassword()));
         if(loginService.sellerRegister(login)){
             return ResultData.build();
         }else{
