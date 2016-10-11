@@ -7,6 +7,8 @@ import com.idea.nursing.login.web.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 
@@ -24,7 +26,8 @@ public class LoginCntroller {
      * @param login
      * @return
      */
-    @RequestMapping("/user_login")
+    @ResponseBody
+    @RequestMapping(value="user_login",  method = RequestMethod.GET)
     public ResultData userLogin(Login login,HttpSession session){
 
         if(loginService.userLogin(login)){
@@ -35,8 +38,8 @@ public class LoginCntroller {
         }
     }
 
-
-    @RequestMapping("/seller_login")
+    @ResponseBody
+    @RequestMapping(value = "seller_login", method = RequestMethod.GET)
     public ResultData sellerLogin(Login login,HttpSession session){
         if(loginService.sellerLogin(login)){
             session.setAttribute(SessionConstant.SESSION_USER_BEAN,login);

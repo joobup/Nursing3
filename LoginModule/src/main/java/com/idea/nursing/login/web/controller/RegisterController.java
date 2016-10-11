@@ -7,6 +7,8 @@ import com.idea.nursing.login.web.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -24,7 +26,8 @@ public class RegisterController {
      * @param login
      * @return
      */
-    @RequestMapping("/user_register")
+    @ResponseBody
+    @RequestMapping(value = "user_register" ,method = RequestMethod.POST)
     public ResultData userRegister(Login login) throws NoSuchAlgorithmException {
         login.setLoginPassword(MD5Util.MD5(login.getLoginPassword()));
         if(loginService.userRegister(login)){
@@ -40,7 +43,8 @@ public class RegisterController {
      * @param login
      * @return
      */
-    @RequestMapping("/seller_register")
+    @ResponseBody
+    @RequestMapping(value="seller_register",method = RequestMethod.POST)
     public ResultData sellerRegister(Login login) throws NoSuchAlgorithmException {
         login.setLoginPassword(MD5Util.MD5(login.getLoginPassword()));
         if(loginService.sellerRegister(login)){
