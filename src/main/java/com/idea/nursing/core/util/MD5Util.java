@@ -23,4 +23,9 @@ public class MD5Util {
 			}
 			return new String(str);
 	}
+	public static void main(String[] args) throws NoSuchAlgorithmException {
+
+		String s = MD5Util.MD5("1");
+		System.out.println(s);
+	}
 }
