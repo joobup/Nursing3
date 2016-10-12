@@ -30,7 +30,7 @@ public class ResultData extends HashMap<String, Object> {
 	
 	public enum Status {
 		SUCCESS(1, "OK"), ERROR(11111, "服务器忙"), FAILURE(0, "FAIL"), JSON_NEED_LOGIN(
-		        700, "数据接口需要登录后才能访问"), PERMISSION_DENIED(10001, "没有权限"),ISNULL(002,"您有必填字段未填");
+		        700, "数据接口需要登录后才能访问"), PERMISSION_DENIED(10001, "没有权限"),ISNULL(002,"您有必填字段未填"),LOGIN(003,"用户名密码错误");
 		public final Integer		             code;
 		public final String		                 msg;
 		private final static Map<String, Status>	data	= new HashMap<>();
@@ -63,6 +63,7 @@ public class ResultData extends HashMap<String, Object> {
 	 * @return: ResultData
 	 */
 	public ResultData error() {
+
 		this.setStatus(Status.ERROR);
 		return this;
 	}
@@ -75,6 +76,16 @@ public class ResultData extends HashMap<String, Object> {
 		this.setStatus(Status.ISNULL);
 		return this;
 	}
+
+	/**
+	 * 登录错误
+	 * @return
+	 */
+	public ResultData login(){
+		this.setStatus(Status.LOGIN);
+		return this;
+	}
+
 	/**
 	 * 
 	 * @Title: permissionDenied

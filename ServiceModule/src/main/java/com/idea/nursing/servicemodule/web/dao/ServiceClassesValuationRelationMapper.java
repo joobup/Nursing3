@@ -1,11 +1,12 @@
 package com.idea.nursing.servicemodule.web.dao;
 
+import com.idea.nursing.core.generic.GenericDao;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelation;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelationExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface ServiceClassesValuationRelationMapper {
+public interface ServiceClassesValuationRelationMapper extends GenericDao {
     int countByExample(ServiceClassesValuationRelationExample example);
 
     int deleteByExample(ServiceClassesValuationRelationExample example);

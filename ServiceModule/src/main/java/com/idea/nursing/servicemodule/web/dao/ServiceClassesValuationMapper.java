@@ -6,7 +6,7 @@ import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationExa
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface ServiceClassesValuationMapper {
+public interface ServiceClassesValuationMapper extends GenericDao {
     int countByExample(ServiceClassesValuationExample example);
 
     int deleteByExample(ServiceClassesValuationExample example);

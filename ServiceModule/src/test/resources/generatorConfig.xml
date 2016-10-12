@@ -37,12 +37,13 @@
         <!-- 生成的Dao接口 的包路径 -->
         <javaClientGenerator type="XMLMAPPER" targetPackage="${dao.package}" targetProject="${target.project}">
             <property name="enableSubPackages" value="ture"/>
+            <property name="rootInterface" value="com.idea.nursing.core.generic.GenericDao"/>
         </javaClientGenerator>
 
         <!--对应数据库表名 -->
         
 
-        <!--<table tableName="ff_services" domainObjectName="Services">
+        <table tableName="ff_services" domainObjectName="Services">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
         <table tableName="ff_services_picture" domainObjectName="ServicesPicture">
@@ -74,11 +75,8 @@
         </table>
         <table tableName="ff_nurseify" domainObjectName="Nurseify">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
-        </table>-->
-
-        <table tableName="ff_nurseify" domainObjectName="Nurseify">
-            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
+
 
     </context>
 </generatorConfiguration>

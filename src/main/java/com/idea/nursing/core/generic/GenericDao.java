@@ -1,5 +1,7 @@
 package com.idea.nursing.core.generic;
 
+import java.util.List;
+
 /**
  * 所有自定义Dao的顶级接口, 封装常用的增删查改操作,
  * 可以通过Mybatis Generator Maven 插件自动生成Dao,
@@ -11,7 +13,7 @@ package com.idea.nursing.core.generic;
  * @author StarZou
  * @since 2014年6月9日 下午6:14:06
  */
-public interface GenericDao<Model, PK> {
+public interface GenericDao<Model, PK,ModelExample> {
 
     /**
      * 插入对象
@@ -41,5 +43,12 @@ public interface GenericDao<Model, PK> {
      * @return
      */
     Model selectByPrimaryKey(PK id);
+
+    /**
+     * 通过条件查询集合
+     * @param example
+     * @return
+     */
+    List<Model> selectByExample(ModelExample example);
 
 }

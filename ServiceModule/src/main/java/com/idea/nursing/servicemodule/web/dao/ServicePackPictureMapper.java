@@ -1,11 +1,12 @@
 package com.idea.nursing.servicemodule.web.dao;
 
+import com.idea.nursing.core.generic.GenericDao;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServicePackPicture;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServicePackPictureExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface ServicePackPictureMapper {
+public interface ServicePackPictureMapper extends GenericDao {
     int countByExample(ServicePackPictureExample example);
 
     int deleteByExample(ServicePackPictureExample example);
