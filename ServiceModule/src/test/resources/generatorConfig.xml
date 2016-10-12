@@ -41,8 +41,42 @@
 
         <!--对应数据库表名 -->
         
-        
-        <table tableName="u_login" domainObjectName="Login">
+
+        <!--<table tableName="ff_services" domainObjectName="Services">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_services_picture" domainObjectName="ServicesPicture">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_service_classes" domainObjectName="ServiceClasses">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_service_classes_valuation_relation" domainObjectName="ServiceClassesValuationRelation">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_service_classes_valuation" domainObjectName="ServiceClassesValuation">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_service_staff" domainObjectName="ServiceStaff">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_post" domainObjectName="StaffPost">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_department" domainObjectName="StaffDepartment">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_service_pack" domainObjectName="ServicePack">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_service_pack_picture" domainObjectName="ServicePackPicture">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
+        <table tableName="ff_nurseify" domainObjectName="Nurseify">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>-->
+
+        <table tableName="ff_nurseify" domainObjectName="Nurseify">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
 

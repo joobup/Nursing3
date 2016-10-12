@@ -1,15 +1,18 @@
 package com.idea.nursing.login.web.controller;
 
-import com.idea.nursing.core.generic.ResultData;
+import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.util.MD5Util;
+import com.idea.nursing.core.util.ObjectIsNull;
 import com.idea.nursing.login.web.domain.pojo.Login;
 import com.idea.nursing.login.web.service.LoginService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.lang.reflect.InvocationTargetException;
 import java.security.NoSuchAlgorithmException;
 
 /**
@@ -28,13 +31,19 @@ public class RegisterController {
      */
     @ResponseBody
     @RequestMapping(value = "user_register" ,method = RequestMethod.POST)
-    public ResultData userRegister(Login login) throws NoSuchAlgorithmException {
-        login.setLoginPassword(MD5Util.MD5(login.getLoginPassword()));
-        if(loginService.userRegister(login)){
-            return ResultData.build();
+    public ResultData userRegister(Login login) throws NoSuchAlgorithmException, InvocationTargetException, IllegalAccessException {
+        String[] strings = new String[]{"LoginName","LoginPassword","LoginTel"};
+        if(!ObjectIsNull.isNUll(login,strings)){
+            return ResultData.build().isNull();
         }else{
-            return ResultData.build().error();
+            login.setLoginPassword(MD5Util.MD5(login.getLoginPassword()));
+            if(loginService.userRegister(login)){
+                return ResultData.build();
+            }else{
+                return ResultData.build().error();
+            }
         }
+
 
     }
 

@@ -1,7 +1,8 @@
 package com.idea.nursing.login.web.controller;
 
-import com.idea.nursing.core.generic.ResultData;
-import com.idea.nursing.login.web.common.SessionConstant;
+
+import com.idea.nursing.core.common.ResultData;
+import com.idea.nursing.core.common.SessionConstant;
 import com.idea.nursing.login.web.domain.pojo.Login;
 import com.idea.nursing.login.web.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;

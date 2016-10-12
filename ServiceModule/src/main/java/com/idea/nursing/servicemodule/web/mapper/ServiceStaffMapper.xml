@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.ServiceStaffMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaff" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="staff_name" property="staffName" jdbcType="VARCHAR" />
+    <result column="staff_sex" property="staffSex" jdbcType="TINYINT" />
+    <result column="staff_post" property="staffPost" jdbcType="BIGINT" />
+    <result column="staff_skill_level" property="staffSkillLevel" jdbcType="VARCHAR" />
+    <result column="staff_picture" property="staffPicture" jdbcType="BIGINT" />
+    <result column="staff_department" property="staffDepartment" jdbcType="BIGINT" />
+    <result column="staff_card_id" property="staffCardId" jdbcType="VARCHAR" />
+    <result column="staff_call1" property="staffCall1" jdbcType="VARCHAR" />
+    <result column="staff_call2" property="staffCall2" jdbcType="VARCHAR" />
+    <result column="staff_rank" property="staffRank" jdbcType="TINYINT" />
+    <result column="staff_status" property="staffStatus" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, staff_name, staff_sex, staff_post, staff_skill_level, staff_picture, staff_department, 
+    staff_card_id, staff_call1, staff_call2, staff_rank, staff_status
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaffExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ff_service_staff
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ff_service_staff
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from ff_service_staff
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaffExample" >
+    delete from ff_service_staff
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaff" useGeneratedKeys="true" keyProperty="id" >
+    insert into ff_service_staff (staff_name, staff_sex, staff_post, 
+      staff_skill_level, staff_picture, staff_department, 
+      staff_card_id, staff_call1, staff_call2, 
+      staff_rank, staff_status)
+    values (#{staffName,jdbcType=VARCHAR}, #{staffSex,jdbcType=TINYINT}, #{staffPost,jdbcType=BIGINT}, 
+      #{staffSkillLevel,jdbcType=VARCHAR}, #{staffPicture,jdbcType=BIGINT}, #{staffDepartment,jdbcType=BIGINT}, 
+      #{staffCardId,jdbcType=VARCHAR}, #{staffCall1,jdbcType=VARCHAR}, #{staffCall2,jdbcType=VARCHAR}, 
+      #{staffRank,jdbcType=TINYINT}, #{staffStatus,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaff" useGeneratedKeys="true" keyProperty="id" >
+    insert into ff_service_staff
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="staffName != null" >
+        staff_name,
+      </if>
+      <if test="staffSex != null" >
+        staff_sex,
+      </if>
+      <if test="staffPost != null" >
+        staff_post,
+      </if>
+      <if test="staffSkillLevel != null" >
+        staff_skill_level,
+      </if>
+      <if test="staffPicture != null" >
+        staff_picture,
+      </if>
+      <if test="staffDepartment != null" >
+        staff_department,
+      </if>
+      <if test="staffCardId != null" >
+        staff_card_id,
+      </if>
+      <if test="staffCall1 != null" >
+        staff_call1,
+      </if>
+      <if test="staffCall2 != null" >
+        staff_call2,
+      </if>
+      <if test="staffRank != null" >
+        staff_rank,
+      </if>
+      <if test="staffStatus != null" >
+        staff_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="staffName != null" >
+        #{staffName,jdbcType=VARCHAR},
+      </if>
+      <if test="staffSex != null" >
+        #{staffSex,jdbcType=TINYINT},
+      </if>
+      <if test="staffPost != null" >
+        #{staffPost,jdbcType=BIGINT},
+      </if>
+      <if test="staffSkillLevel != null" >
+        #{staffSkillLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="staffPicture != null" >
+        #{staffPicture,jdbcType=BIGINT},
+      </if>
+      <if test="staffDepartment != null" >
+        #{staffDepartment,jdbcType=BIGINT},
+      </if>
+      <if test="staffCardId != null" >
+        #{staffCardId,jdbcType=VARCHAR},
+      </if>
+      <if test="staffCall1 != null" >
+        #{staffCall1,jdbcType=VARCHAR},
+      </if>
+      <if test="staffCall2 != null" >
+        #{staffCall2,jdbcType=VARCHAR},
+      </if>
+      <if test="staffRank != null" >
+        #{staffRank,jdbcType=TINYINT},
+      </if>
+      <if test="staffStatus != null" >
+        #{staffStatus,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaffExample" resultType="java.lang.Integer" >
+    select count(*) from ff_service_staff
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ff_service_staff
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.staffName != null" >
+        staff_name = #{record.staffName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.staffSex != null" >
+        staff_sex = #{record.staffSex,jdbcType=TINYINT},
+      </if>
+      <if test="record.staffPost != null" >
+        staff_post = #{record.staffPost,jdbcType=BIGINT},
+      </if>
+      <if test="record.staffSkillLevel != null" >
+        staff_skill_level = #{record.staffSkillLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.staffPicture != null" >
+        staff_picture = #{record.staffPicture,jdbcType=BIGINT},
+      </if>
+      <if test="record.staffDepartment != null" >
+        staff_department = #{record.staffDepartment,jdbcType=BIGINT},
+      </if>
+      <if test="record.staffCardId != null" >
+        staff_card_id = #{record.staffCardId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.staffCall1 != null" >
+        staff_call1 = #{record.staffCall1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.staffCall2 != null" >
+        staff_call2 = #{record.staffCall2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.staffRank != null" >
+        staff_rank = #{record.staffRank,jdbcType=TINYINT},
+      </if>
+      <if test="record.staffStatus != null" >
+        staff_status = #{record.staffStatus,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ff_service_staff
+    set id = #{record.id,jdbcType=BIGINT},
+      staff_name = #{record.staffName,jdbcType=VARCHAR},
+      staff_sex = #{record.staffSex,jdbcType=TINYINT},
+      staff_post = #{record.staffPost,jdbcType=BIGINT},
+      staff_skill_level = #{record.staffSkillLevel,jdbcType=VARCHAR},
+      staff_picture = #{record.staffPicture,jdbcType=BIGINT},
+      staff_department = #{record.staffDepartment,jdbcType=BIGINT},
+      staff_card_id = #{record.staffCardId,jdbcType=VARCHAR},
+      staff_call1 = #{record.staffCall1,jdbcType=VARCHAR},
+      staff_call2 = #{record.staffCall2,jdbcType=VARCHAR},
+      staff_rank = #{record.staffRank,jdbcType=TINYINT},
+      staff_status = #{record.staffStatus,jdbcType=TINYINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaff" >
+    update ff_service_staff
+    <set >
+      <if test="staffName != null" >
+        staff_name = #{staffName,jdbcType=VARCHAR},
+      </if>
+      <if test="staffSex != null" >
+        staff_sex = #{staffSex,jdbcType=TINYINT},
+      </if>
+      <if test="staffPost != null" >
+        staff_post = #{staffPost,jdbcType=BIGINT},
+      </if>
+      <if test="staffSkillLevel != null" >
+        staff_skill_level = #{staffSkillLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="staffPicture != null" >
+        staff_picture = #{staffPicture,jdbcType=BIGINT},
+      </if>
+      <if test="staffDepartment != null" >
+        staff_department = #{staffDepartment,jdbcType=BIGINT},
+      </if>
+      <if test="staffCardId != null" >
+        staff_card_id = #{staffCardId,jdbcType=VARCHAR},
+      </if>
+      <if test="staffCall1 != null" >
+        staff_call1 = #{staffCall1,jdbcType=VARCHAR},
+      </if>
+      <if test="staffCall2 != null" >
+        staff_call2 = #{staffCall2,jdbcType=VARCHAR},
+      </if>
+      <if test="staffRank != null" >
+        staff_rank = #{staffRank,jdbcType=TINYINT},
+      </if>
+      <if test="staffStatus != null" >
+        staff_status = #{staffStatus,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaff" >
+    update ff_service_staff
+    set staff_name = #{staffName,jdbcType=VARCHAR},
+      staff_sex = #{staffSex,jdbcType=TINYINT},
+      staff_post = #{staffPost,jdbcType=BIGINT},
+      staff_skill_level = #{staffSkillLevel,jdbcType=VARCHAR},
+      staff_picture = #{staffPicture,jdbcType=BIGINT},
+      staff_department = #{staffDepartment,jdbcType=BIGINT},
+      staff_card_id = #{staffCardId,jdbcType=VARCHAR},
+      staff_call1 = #{staffCall1,jdbcType=VARCHAR},
+      staff_call2 = #{staffCall2,jdbcType=VARCHAR},
+      staff_rank = #{staffRank,jdbcType=TINYINT},
+      staff_status = #{staffStatus,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

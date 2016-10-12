@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.ServiceClassesValuationRelationMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelation" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="serve_id" property="serveId" jdbcType="BIGINT" />
+    <result column="valuation_id" property="valuationId" jdbcType="BIGINT" />
+    <result column="price" property="price" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, serve_id, valuation_id, price
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelationExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ff_service_classes_valuation_relation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ff_service_classes_valuation_relation
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from ff_service_classes_valuation_relation
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelationExample" >
+    delete from ff_service_classes_valuation_relation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelation" useGeneratedKeys="true" keyProperty="id" >
+    insert into ff_service_classes_valuation_relation (serve_id, valuation_id, price
+      )
+    values (#{serveId,jdbcType=BIGINT}, #{valuationId,jdbcType=BIGINT}, #{price,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelation" useGeneratedKeys="true" keyProperty="id" >
+    insert into ff_service_classes_valuation_relation
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="serveId != null" >
+        serve_id,
+      </if>
+      <if test="valuationId != null" >
+        valuation_id,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="serveId != null" >
+        #{serveId,jdbcType=BIGINT},
+      </if>
+      <if test="valuationId != null" >
+        #{valuationId,jdbcType=BIGINT},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelationExample" resultType="java.lang.Integer" >
+    select count(*) from ff_service_classes_valuation_relation
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ff_service_classes_valuation_relation
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.serveId != null" >
+        serve_id = #{record.serveId,jdbcType=BIGINT},
+      </if>
+      <if test="record.valuationId != null" >
+        valuation_id = #{record.valuationId,jdbcType=BIGINT},
+      </if>
+      <if test="record.price != null" >
+        price = #{record.price,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ff_service_classes_valuation_relation
+    set id = #{record.id,jdbcType=BIGINT},
+      serve_id = #{record.serveId,jdbcType=BIGINT},
+      valuation_id = #{record.valuationId,jdbcType=BIGINT},
+      price = #{record.price,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelation" >
+    update ff_service_classes_valuation_relation
+    <set >
+      <if test="serveId != null" >
+        serve_id = #{serveId,jdbcType=BIGINT},
+      </if>
+      <if test="valuationId != null" >
+        valuation_id = #{valuationId,jdbcType=BIGINT},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelation" >
+    update ff_service_classes_valuation_relation
+    set serve_id = #{serveId,jdbcType=BIGINT},
+      valuation_id = #{valuationId,jdbcType=BIGINT},
+      price = #{price,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

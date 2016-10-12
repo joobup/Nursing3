@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.ServicesMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.Services" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="serve_classify" property="serveClassify" jdbcType="BIGINT" />
+    <result column="serve_name" property="serveName" jdbcType="VARCHAR" />
+    <result column="serve_biref" property="serveBiref" jdbcType="VARCHAR" />
+    <result column="serve_limit" property="serveLimit" jdbcType="VARCHAR" />
+    <result column="serve_peoples" property="servePeoples" jdbcType="INTEGER" />
+    <result column="agency_id" property="agencyId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, serve_classify, serve_name, serve_biref, serve_limit, serve_peoples, agency_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicesExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ff_services
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ff_services
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from ff_services
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicesExample" >
+    delete from ff_services
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Services" useGeneratedKeys="true" keyProperty="id" >
+    insert into ff_services (serve_classify, serve_name, serve_biref, 
+      serve_limit, serve_peoples, agency_id
+      )
+    values (#{serveClassify,jdbcType=BIGINT}, #{serveName,jdbcType=VARCHAR}, #{serveBiref,jdbcType=VARCHAR}, 
+      #{serveLimit,jdbcType=VARCHAR}, #{servePeoples,jdbcType=INTEGER}, #{agencyId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Services" useGeneratedKeys="true" keyProperty="id" >
+    insert into ff_services
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="serveClassify != null" >
+        serve_classify,
+      </if>
+      <if test="serveName != null" >
+        serve_name,
+      </if>
+      <if test="serveBiref != null" >
+        serve_biref,
+      </if>
+      <if test="serveLimit != null" >
+        serve_limit,
+      </if>
+      <if test="servePeoples != null" >
+        serve_peoples,
+      </if>
+      <if test="agencyId != null" >
+        agency_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="serveClassify != null" >
+        #{serveClassify,jdbcType=BIGINT},
+      </if>
+      <if test="serveName != null" >
+        #{serveName,jdbcType=VARCHAR},
+      </if>
+      <if test="serveBiref != null" >
+        #{serveBiref,jdbcType=VARCHAR},
+      </if>
+      <if test="serveLimit != null" >
+        #{serveLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="servePeoples != null" >
+        #{servePeoples,jdbcType=INTEGER},
+      </if>
+      <if test="agencyId != null" >
+        #{agencyId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicesExample" resultType="java.lang.Integer" >
+    select count(*) from ff_services
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ff_services
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.serveClassify != null" >
+        serve_classify = #{record.serveClassify,jdbcType=BIGINT},
+      </if>
+      <if test="record.serveName != null" >
+        serve_name = #{record.serveName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serveBiref != null" >
+        serve_biref = #{record.serveBiref,jdbcType=VARCHAR},
+      </if>
+      <if test="record.serveLimit != null" >
+        serve_limit = #{record.serveLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.servePeoples != null" >
+        serve_peoples = #{record.servePeoples,jdbcType=INTEGER},
+      </if>
+      <if test="record.agencyId != null" >
+        agency_id = #{record.agencyId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ff_services
+    set id = #{record.id,jdbcType=BIGINT},
+      serve_classify = #{record.serveClassify,jdbcType=BIGINT},
+      serve_name = #{record.serveName,jdbcType=VARCHAR},
+      serve_biref = #{record.serveBiref,jdbcType=VARCHAR},
+      serve_limit = #{record.serveLimit,jdbcType=VARCHAR},
+      serve_peoples = #{record.servePeoples,jdbcType=INTEGER},
+      agency_id = #{record.agencyId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Services" >
+    update ff_services
+    <set >
+      <if test="serveClassify != null" >
+        serve_classify = #{serveClassify,jdbcType=BIGINT},
+      </if>
+      <if test="serveName != null" >
+        serve_name = #{serveName,jdbcType=VARCHAR},
+      </if>
+      <if test="serveBiref != null" >
+        serve_biref = #{serveBiref,jdbcType=VARCHAR},
+      </if>
+      <if test="serveLimit != null" >
+        serve_limit = #{serveLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="servePeoples != null" >
+        serve_peoples = #{servePeoples,jdbcType=INTEGER},
+      </if>
+      <if test="agencyId != null" >
+        agency_id = #{agencyId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Services" >
+    update ff_services
+    set serve_classify = #{serveClassify,jdbcType=BIGINT},
+      serve_name = #{serveName,jdbcType=VARCHAR},
+      serve_biref = #{serveBiref,jdbcType=VARCHAR},
+      serve_limit = #{serveLimit,jdbcType=VARCHAR},
+      serve_peoples = #{servePeoples,jdbcType=INTEGER},
+      agency_id = #{agencyId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

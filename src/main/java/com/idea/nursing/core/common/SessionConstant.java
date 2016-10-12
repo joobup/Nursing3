@@ -1,4 +1,4 @@
-package com.idea.nursing.login.web.common;
+package com.idea.nursing.core.common;
 
 public class SessionConstant {
 

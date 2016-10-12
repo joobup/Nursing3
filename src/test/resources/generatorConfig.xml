@@ -40,17 +40,10 @@
         </javaClientGenerator>
 
         <!--对应数据库表名 -->
-        
-        
-        <table tableName="picture_pool" domainObjectName="PicturePool"/>
-		<table tableName="picture" domainObjectName="Picture" />
-		<table tableName="register" domainObjectName="Register" />
-		<table tableName="forum_posts_pageview" domainObjectName="ForumPostsPageview" />
-		<table tableName="forum_posts" domainObjectName="ForumPosts" />
-		<table tableName="comment" domainObjectName="Comment" />
-		<table tableName="generalize_column" domainObjectName="GeneralizeColumn" />
-		<table tableName="sign_up" domainObjectName="SignUp" />
-		<table tableName="role" domainObjectName="Role" />
-		<table tableName="permission" domainObjectName="Permission" />
+
+
+        <table tableName="comment_picture" domainObjectName="CommentPicture">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
     </context>
 </generatorConfiguration>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.NurseifyMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="nursify_name" property="nursifyName" jdbcType="VARCHAR" />
+    <result column="nursify_leave" property="nursifyLeave" jdbcType="TINYINT" />
+    <result column="nursify_tid" property="nursifyTid" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, nursify_name, nursify_leave, nursify_tid
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.NurseifyExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ff_nurseify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from ff_nurseify
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from ff_nurseify
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.NurseifyExample" >
+    delete from ff_nurseify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" useGeneratedKeys="true" keyProperty="id" >
+    insert into ff_nurseify (nursify_name, nursify_leave, nursify_tid
+      )
+    values (#{nursifyName,jdbcType=VARCHAR}, #{nursifyLeave,jdbcType=TINYINT}, #{nursifyTid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" useGeneratedKeys="true" keyProperty="id" >
+    insert into ff_nurseify
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="nursifyName != null" >
+        nursify_name,
+      </if>
+      <if test="nursifyLeave != null" >
+        nursify_leave,
+      </if>
+      <if test="nursifyTid != null" >
+        nursify_tid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="nursifyName != null" >
+        #{nursifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="nursifyLeave != null" >
+        #{nursifyLeave,jdbcType=TINYINT},
+      </if>
+      <if test="nursifyTid != null" >
+        #{nursifyTid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.NurseifyExample" resultType="java.lang.Integer" >
+    select count(*) from ff_nurseify
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ff_nurseify
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.nursifyName != null" >
+        nursify_name = #{record.nursifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nursifyLeave != null" >
+        nursify_leave = #{record.nursifyLeave,jdbcType=TINYINT},
+      </if>
+      <if test="record.nursifyTid != null" >
+        nursify_tid = #{record.nursifyTid,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ff_nurseify
+    set id = #{record.id,jdbcType=BIGINT},
+      nursify_name = #{record.nursifyName,jdbcType=VARCHAR},
+      nursify_leave = #{record.nursifyLeave,jdbcType=TINYINT},
+      nursify_tid = #{record.nursifyTid,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" >
+    update ff_nurseify
+    <set >
+      <if test="nursifyName != null" >
+        nursify_name = #{nursifyName,jdbcType=VARCHAR},
+      </if>
+      <if test="nursifyLeave != null" >
+        nursify_leave = #{nursifyLeave,jdbcType=TINYINT},
+      </if>
+      <if test="nursifyTid != null" >
+        nursify_tid = #{nursifyTid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" >
+    update ff_nurseify
+    set nursify_name = #{nursifyName,jdbcType=VARCHAR},
+      nursify_leave = #{nursifyLeave,jdbcType=TINYINT},
+      nursify_tid = #{nursifyTid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

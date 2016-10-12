@@ -1,5 +1,6 @@
 package com.idea.nursing.login.web.service.impl;
 
+
 import com.idea.nursing.core.util.MD5Util;
 import com.idea.nursing.login.web.dao.LoginMapper;
 import com.idea.nursing.login.web.dao.LoginRoleMapper;
@@ -7,6 +8,7 @@ import com.idea.nursing.login.web.domain.pojo.Login;
 import com.idea.nursing.login.web.domain.pojo.LoginExample;
 import com.idea.nursing.login.web.domain.pojo.LoginRole;
 import com.idea.nursing.login.web.service.LoginService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +35,7 @@ public class LoginServiceImpl implements LoginService{
      */
     @Override
     public boolean userRegister(Login login) {
+
         int result =  loginDao.insertSelective(login);
         if(login.getId()==null){
             return false;
