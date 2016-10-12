@@ -30,34 +30,45 @@ function isJson(str) {
     }
 }
 //ajax异步
-function getAjax(url, fun) {
+function getAjax(url,isCache, fun) {
     $.ajax({
         type: "get",
         url: url,
         dataType: 'json',
+        cache:isCache,
         beforeSend: function () {
 
         },
         error: function (data) {
         },
         success: function (data) {
-
+            success(data, fun);
         }
     });
 }
-function postAjax(url, postData,fun) {
+function postAjax(url,isCache, postData,fun) {
     $.ajax({
         type: "post",
         url: url,
         data: postData,
         dataType: 'json',
+        cache:isCache,
         beforeSend: function () {
 
         },
         error: function (data) {
+
         },
         success: function (data) {
-
+            success(data,fun)
         }
     });
+}
+function success(data,fun) {
+    var msg = data.statusMsg;
+    if(msg =="OK"){
+        fun(data);
+    }else{
+        alert(msg);
+    }
 }

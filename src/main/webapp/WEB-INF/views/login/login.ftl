@@ -1,22 +1,16 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 10238
-  Date: 2016/10/10
-  Time: 8:50
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html>
 <head>
-    <link rel="stylesheet" href="../../../nursing/assets/css/login.css">
-    <link rel="stylesheet" href="../../../nursing/assets/css/publicStyle.css">
-    <script src="../../../nursing/assets/js/jQuery-1.4.2/jquery.min.js"></script>
-    <script src="../../../nursing/assets/js/common.js"></script>
-    <script type="text/javascript" src="../../../nursing/assets/js/login.js"></script>
+    <link rel="stylesheet" href="${domainUrl}/assets/css/login.css">
+    <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
+    <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
+    <script src="${domainUrl}/assets/js/common.js"></script>
+    <script type="text/javascript" src="${domainUrl}/assets/js/login.js"></script>
     <title>登录</title>
 </head>
 <body>
+<script>
+    var domainUrl = '${domainUrl}'+"/rest";
+</script>
 <!--头部-->
 <div class="login-head"></div>
 <!--页面-->
@@ -36,7 +30,7 @@
                 <input type="password" placeholder="密码"  id="userpass" class="login-input" style="margin-top: 25px; height: 45px;">
             </li>
             <li><input type="button" value="登录" onclick="login()"></li>
-            <li><span><a href="login.jsp">免费注册</a></span></li>
+            <li><span><a href="${domainUrl}/rest/login/register">免费注册</a></span></li>
         </ul>
     </div>
 </div>

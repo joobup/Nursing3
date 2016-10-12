@@ -17,10 +17,10 @@
     height:25px; margin: 20px auto auto 30px; float: left;font-size: 18px;
 }
 .progress-bar li .title-num-n{
-    width: 25px; height: 25px; border-radius: 50px; color: #ffffff; background-color: #a0a3a3; text-align: center; font-size: 18px; line-height: 25px; margin: 20px auto auto 60px; float: left;
+    background-color: #a0a3a3!important;
 }
 .progress-bar li .title-font-n{
-    height:25px; margin: 20px auto auto 30px; float: left;font-size: 18px; color: #a0a3a3;
+    color: #a0a3a3!important;
 }
 .register-mail table{
     margin: 0px auto;
@@ -31,9 +31,59 @@
     height: 65px;
     font-size: 18px;
 }
-.register-mail table input[type="text"]{
+.register-mail table input[type="text"],input[type="password"]{
         width: 300px; height: 40px; padding-left: 15px; font-size: 18px;
 }
 .register-mail table input[type="button"]{
-    width: 120px; height: 40px; background-color: #000000; border-radius: 5px; color:#ffffff; border: 0px; cursor: pointer;
+    width: 100px; height: 35px; background-color: #000000; border-radius: 5px; color:#ffffff; border: 0px; cursor: pointer; transition: .5s;
+}
+.register-mail #three{
+    display: none;margin: 0px auto;text-align: center;
+}
+.register-mail #three input[type="button"]{
+    width: 100px; height: 35px; background-color: #000000; border-radius: 5px; color:#ffffff; border: 0px; cursor: pointer; transition: .5s; margin-top: 20px;
+}
+.register-mail #three .register-okimg{
+    width: 350px; height: 200px; background-color: #E8E8E8;margin: 0px auto;  line-height: 50px;  border-radius: 5px; font-size: 40px;
+}
+/*验证*/
+#drag{
+    position: relative;
+    background-color: #e8e8e8;
+    width: 300px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+#drag .handler{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 40px;
+    height: 32px;
+    border: 1px solid #ccc;
+    cursor: move;
+}
+#drag .drag_bg{
+    background-color: #7ac23c;
+    height: 34px;
+    width: 0px;
+}
+#drag .drag_text{
+    position: absolute;
+    top: 0px;
+    width: 300px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -o-user-select:none;
+    -ms-user-select:none;
+}
+.yanzheng{
+    white-space: nowrap;
+    color: red;
+}
+#nameyan{
+    transition: .5s;
+    opacity: 0;
 }

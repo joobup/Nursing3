@@ -15,7 +15,7 @@ function login() {
     var username = $("#username").val();
     var userpass = $("#userpass").val();
     var url = "";
-    var postData = {username:username,userpass:userpass}
+    var postData = {loginName:username,loginPassword:userpass}
     postAjax(url,postData,function () {
         alert("登录成功!")
     })
