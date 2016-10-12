@@ -22,14 +22,14 @@
                 <div class="seller-login back-gray">机构登陆</div>
             </li>
             <li>
-                <div  class="login-input-img"><img src="../../../nursing/assets/images/login-user.jpg"></div>
-                <input type="text" placeholder="手机号"  id="username"  class="login-input">
+                <div  class="login-input-img"><img src="${domainUrl}/assets/images/login-user.jpg"></div>
+                <input type="text" placeholder="手机号"  id="loginName"  class="login-input">
             </li>
             <li>
-                <div class="login-input-img" style="margin-top: 25px;"><img src="../../../nursing/assets/images/login-pass.jpg"></div>
-                <input type="password" placeholder="密码"  id="userpass" class="login-input" style="margin-top: 25px; height: 45px;">
+                <div class="login-input-img" style="margin-top: 25px;"><img src="${domainUrl}/assets/images/login-pass.jpg"></div>
+                <input type="password" placeholder="密码"  id="loginPassword" class="login-input" style="margin-top: 25px; height: 45px;">
             </li>
-            <li><input type="button" value="登录" onclick="login()"></li>
+            <li><input type="button" value="登录" id="login-btn" onclick="login()"></li>
             <li><span><a href="${domainUrl}/rest/login/register">免费注册</a></span></li>
         </ul>
     </div>

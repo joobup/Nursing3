@@ -30,8 +30,8 @@
        <table id="one">
            <tr>
                <td>手机号</td>
-               <td><input type="text" placeholder="请输入手机号" id="loginTel" maxlength="11"minlength="11"></td>
-               <td></td>
+               <td><input type="text" placeholder="请输入手机号" id="loginTel" maxlength="11" onkeyup="this.value=this.value.replace(/\D/g,'')"  onafterpaste="this.value=this.value.replace(/\D/g,'')"></td>
+               <td><span id="telyan" class="font-yan"></span></td>
            </tr>
            <tr>
                <td>验证</td>
@@ -41,16 +41,16 @@
                        $('#drag').drag();
                    </script>
                </td>
-               <td><input type="button" value="发送验证码" style=" pointer-events: none; background-color: #a0a3a3" id="register-btn"></td>
+               <td><input type="button" value="发送验证码"  class="btn-none" id="register-btn"></td>
            </tr>
            <tr>
                <td>验证码</td>
-               <td><input type="text" placeholder="请输入短信验证码"  style=" pointer-events: none;" id="message-yanzheng"></td>
+               <td><input type="text" placeholder="请输入短信验证码" id="message-yanzheng"></td>
                <td></td>
            </tr>
            <tr>
                <td></td>
-               <td><input type="button" value="下一步" style=" pointer-events: auto; background-color:#000000;" id="one-btn"></td>
+               <td><input type="button" value="下一步" class="btn-none" id="one-btn"></td>
                <td></td>
            </tr>
        </table>
@@ -58,21 +58,21 @@
             <tr>
                 <td>昵称</td>
                 <td><input type="text" placeholder="请输入用户昵称" id="loginName"></td>
-                <td><span class="yanzheng" id="nameyan"></span></td>
+                <td><span id="nameyan" class="font-yan"></span></td>
             </tr>
             <tr>
                 <td>输入密码</td>
                 <td><input type="password" placeholder="请输入密码" id="loginPassword"></td>
-                <td></td>
+                <td><span id="passyan" class="font-yan"></span></td>
             </tr>
             <tr>
                 <td>确认密码</td>
-                <td><input type="password" placeholder="请再次输入密码"></td>
-                <td></td>
+                <td><input type="password" placeholder="请再次输入密码" id="loginPassword2"></td>
+                <td><span id="passyan2" class="font-yan"></span></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="button" value="注册" id="two-btn" onclick="register()"></td>
+                <td><input type="button" value="注册" class="btn-none" id="two-btn" onclick="register()"></td>
                 <td></td>
             </tr>
         </table>

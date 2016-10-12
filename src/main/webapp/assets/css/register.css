@@ -24,7 +24,6 @@
 }
 .register-mail table{
     margin: 0px auto;
-
 }
 .register-mail table td{
     width: 80px;
@@ -35,7 +34,7 @@
         width: 300px; height: 40px; padding-left: 15px; font-size: 18px;
 }
 .register-mail table input[type="button"]{
-    width: 100px; height: 35px; background-color: #000000; border-radius: 5px; color:#ffffff; border: 0px; cursor: pointer; transition: .5s;
+    width: 100px; height: 35px; border-radius: 5px; color:#ffffff; border: 0px; cursor: pointer; transition: .5s;
 }
 .register-mail #three{
     display: none;margin: 0px auto;text-align: center;
@@ -45,6 +44,15 @@
 }
 .register-mail #three .register-okimg{
     width: 350px; height: 200px; background-color: #E8E8E8;margin: 0px auto;  line-height: 50px;  border-radius: 5px; font-size: 40px;
+}
+.btn-none{
+    pointer-events: none; background-color:#a0a3a3;
+}
+.btn-auto{
+    pointer-events: auto; background-color:#000000;
+}
+.font-yan{
+    white-space: nowrap; position: absolute; margin-top: -12px; margin-left: 5px; transition: .5s;
 }
 /*验证*/
 #drag{
@@ -78,6 +86,7 @@
     user-select: none;
     -o-user-select:none;
     -ms-user-select:none;
+
 }
 .yanzheng{
     white-space: nowrap;
