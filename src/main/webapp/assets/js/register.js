@@ -2,8 +2,41 @@
  * Created by horo on 2016/10/10.
  */
 
+/*商户验证*/
+/*邮箱验证*/
+function emailyan() {
+    $("#loginEmail").blur(function () {
+        var loginEmail = $("#loginEmail").val();
+        if(!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(loginEmail)) && loginEmail != "") {
+            $("#emailyan").html("邮箱格式不正确").css("opacity","1").css("color","red")
+            $("#one-btn").addClass("btn-none").removeClass("btn-auto");
+        }else if(loginEmail == ""){
+            $("#emailyan").html("请输入邮箱").css("opacity","1").css("color","red")
+            $("#one-btn").addClass("btn-none").removeClass("btn-auto");
+        }else{
+            $("#emailyan").html("邮箱格式正确").css("opacity","1").css("color","green")
+            $("#one-btn").addClass("btn-auto").removeClass("btn-none");
+        }
+    })
+}
+$(function () {
+    $("#loginEmail").focus(function () {
+        emailyan();
+    })
+})
+/*商家注册*/
+function sellerRegister() {
+    var loginEmail = $("#loginEmail").val();
+    var loginTel = $("#loginTel").val();
+    var loginPassword = $("#loginPassword").val();
+    var loginName = $("#loginName").val();
+    var url = domainUrl+"/login/register/seller_register";
+    var postData = {loginTel:loginTel,loginPassword:loginPassword,loginName:loginName,loginEmail:loginEmail}
+    postAjax(url, false,postData,function (data) {
 
-/*验证*/
+    })
+}
+/*个人验证*/
 /*手机号验证*/
 function telyan() {
     $("#loginTel").blur(function () {
@@ -19,7 +52,6 @@ function telyan() {
             $("#one-btn").addClass("btn-auto").removeClass("btn-none");
         }
     })
-
 }
 var y1; var y2;
 /*名称验证*/
@@ -79,15 +111,6 @@ $(function () {
         passyan2();
     })
 })
-// $(function () {
-//     $("#newname").mouseleave(function () {
-//         var value = $("#newname").val();
-//         var valueyan =$("#nameyan").html();
-//         if(value == ""){
-//             $("#nameyan").html("请输入用户名").css("opacity","1")
-//         }
-//     })
-// })
 /*步骤变化*/
 $(function () {
     $("#one-btn").click(function () {
@@ -108,7 +131,7 @@ $(function () {
         $("#jindu333").removeClass("title-font-n")
     })
 })
-/*注册方法*/
+/*个人注册*/
 function register() {
     var loginTel = $("#loginTel").val();
     var loginPassword = $("#loginPassword").val();

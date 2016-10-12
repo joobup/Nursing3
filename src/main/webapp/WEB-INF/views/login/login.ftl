@@ -30,7 +30,7 @@
                 <input type="password" placeholder="密码"  id="loginPassword" class="login-input" style="margin-top: 25px; height: 45px;">
             </li>
             <li><input type="button" value="登录" id="login-btn" onclick="login()"></li>
-            <li><span><a href="${domainUrl}/rest/login/register">免费注册</a></span></li>
+            <li><span><a href="${domainUrl}/rest/login/sellerRegister">商家注册</a><a href="${domainUrl}/rest/login/register">个人注册</a></span></li>
         </ul>
     </div>
 </div>

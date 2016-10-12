@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="${domainUrl}/assets/css/index.css">
+    <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
+    <link rel="stylesheet" type="text/css" href="${domainUrl}/assets/css/插件css/轮播/orbit-1.2.3.css"/>
+    <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="${domainUrl}/assets/js/jQuery-1.4.2/Carousel.js"></script>
+    <script type="text/javascript" src="${domainUrl}/assets/js/publicJs.js"></script>
+    <title>智慧养老商城</title>
+</head>
+<script type="text/javascript">
+    $(function () {
+        var winW = document.documentElement.clientWidth;
+        $('#featured').find("img").width(winW);
+    })
+    $(window).load(function() {
+        $('#featured').orbit();
+    });
+    var domainUrl = '${domainUrl}'+"/rest";
+</script>
+
+<body>
+<!--导航菜单-->
+<div class="nav">
+    <div class="w">
+        <ul class="nav-fl">
+            <li>天津 [<a>切换城市</a>]&nbsp;&nbsp;&nbsp;</li>
+            <li>欢迎来到&nbsp;承嘉智能</li>
+            <li class="please-login">请<a href="#">登录</a>免费<a href="#">注册</a></li>
+        </ul>
+        <ul class="nav-fr">
+            <li class="ic-right">商城主页</li>
+            <li class="ic-right"><img src="${domainUrl}/assets/images/personal.png">个人中心</li>
+            <li class="ic-right"><img src="${domainUrl}/assets/images/collect.png">我的收藏&nbsp;&nbsp;<span>|</span>&nbsp;</li>
+            <li class="ic-right" id="web-nav"><img src="${domainUrl}/assets/images/xiangxia.png" style="top: 14px;">网站导航 <div></div></li>
+            <li class="ic-right"><img src="${domainUrl}/assets/images/propose.png" style="left: -13px;">反馈建议</li>
+        </ul>
+    </div>
+</div>
+<!--logo&搜索-->
+<div class="banner">
+    <div class="w">
+        <div id="logo-img">LOGO</div>
+        <div id="search">
+            <input type="text" placeholder="智能机器人"><button><img src="${domainUrl}/assets/images/search.png">搜索</button>
+        </div>
+        <div id="shopping-cart">
+            <button><img src="${domainUrl}/assets/images/shoppcart.png">进入购物车</button>
+        </div>
+    </div>
+</div>
+<!--分类栏-->
+<div class="classify">
+    <div class="w">
+        <ul>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+            <li><div>首页<br>home page</div></li>
+
+        </ul>
+    </div>
+</div>
+<!--主图轮播-->
+<div class="carousel">
+    <div class="container">
+        <!--设置data-car可以改变停留时间，设置data-move鼠标悬停是否滚动1滚动，0不滚动-->
+        <div id="featured" data-car="5000" data-move="0">
+            <img src="${domainUrl}/assets/images/lunbo.png" />
+            <img src="${domainUrl}/assets/images/lunbo.png" data-caption="#htmlCaption" />
+            <img src="${domainUrl}/assets/images/lunbo.png"  />
+        </div>
+        <span class="orbit-caption" id="htmlCaption"><strong>I'm A Badass Caption:</strong> I can haz <a href="#">links</a>, <em>style</em> or anything that is valid markup :)</span>
+    </div>
+</div>
+<div class="w" style="height: 70px;"></div>
+<!--商品推荐-->
+<div class="w">
+    <div id="ware-recommend">
+        <div class="recommend" id="recommend-left">
+            <ul>
+                <li>
+                    <br>
+                    <br>
+                    <h1>保健品</h1>
+                    <hr>
+                </li>
+                <li>
+                    <img src="${domainUrl}/assets/images/20161009100417.png" alt="">
+                </li>
+                <li>
+                    <img src="${domainUrl}/assets/images/20161009100355.png" alt="">
+                </li>
+                <li id="re-font">
+                    Lorem ipsum dolor sit amet,consetetur sadipscing elitr, seddiam nonumy eirmod tempor incidunt ut
+                    labore et dolore magna aliquyam erat,sed diam voluptua. At vero eos et accusam et justo duo dolores et ea  rebum.
+                </li>
+                <li id="re-btn">
+                    <div class="re-btn-s"><div class="re-btn-x">立即购买</div></div>
+                </li>
+            </ul>
+        </div>
+        <div class="recommend" id="recommend-right">
+            <div id="recommend-img-s">
+                <img src="${domainUrl}/assets/images/ware/5.jpg" height="315px" alt="">
+                <div id="img-s-zhezhao"></div>
+                <div id="re-message">
+                    <div id="re-message-f">
+                        耗牛壮骨粉
+                    </div>
+                    <div class="re-btn-s"><div class="re-btn-x">立即购买</div></div>
+                </div>
+            </div>
+            <div id="recommend-img-x">
+                <div class="recommend-img-xl">
+
+                </div>
+                <div class="recommend-img-xr">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--商品大图-->
+<div id="ware-big-img">
+
+</div>
+<!--底部导航-->
+<div id="foot">承嘉商城 @2016</div>
+</body>
+</html>
