@@ -7,12 +7,12 @@ $(function () {
         $("#shopping-cart").find("img").attr("src","")
     })
     $("#shopping-cart button").mouseout(function () {
-        $("#shopping-cart").find("img").attr("src","images/shoppcart.png")
+        $("#shopping-cart").find("img").attr("src",domainUrl+"/images/shoppcart.png")
     })
     $("#search button").mouseover(function () {
         $("#search").find("img").attr("src","")
     })
     $("#search button").mouseout(function () {
-        $("#search").find("img").attr("src","images/search.png")
+        $("#search").find("img").attr("src",domainUrl+"/images/search.png")
     })
 })

@@ -1,29 +1,6 @@
 /**
  * Created by horo on 2016/10/10.
  */
-
-/*商户验证*/
-/*邮箱验证*/
-function emailyan() {
-    $("#loginEmail").blur(function () {
-        var loginEmail = $("#loginEmail").val();
-        if(!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(loginEmail)) && loginEmail != "") {
-            $("#emailyan").html("邮箱格式不正确").css("opacity","1").css("color","red")
-            $("#one-btn").addClass("btn-none").removeClass("btn-auto");
-        }else if(loginEmail == ""){
-            $("#emailyan").html("请输入邮箱").css("opacity","1").css("color","red")
-            $("#one-btn").addClass("btn-none").removeClass("btn-auto");
-        }else{
-            $("#emailyan").html("邮箱格式正确").css("opacity","1").css("color","green")
-            $("#one-btn").addClass("btn-auto").removeClass("btn-none");
-        }
-    })
-}
-$(function () {
-    $("#loginEmail").focus(function () {
-        emailyan();
-    })
-})
 /*商家注册*/
 function sellerRegister() {
     var loginEmail = $("#loginEmail").val();
@@ -36,81 +13,6 @@ function sellerRegister() {
 
     })
 }
-/*个人验证*/
-/*手机号验证*/
-function telyan() {
-    $("#loginTel").blur(function () {
-        var loginTel = $("#loginTel").val();
-        if(!(/^1[34578]\d{9}$/.test(loginTel)) && loginTel != "") {
-            $("#telyan").html("手机号码格式不正确").css("opacity","1").css("color","red")
-            $("#one-btn").addClass("btn-none").removeClass("btn-auto");
-        }else if(loginTel == ""){
-            $("#telyan").html("请输入手机号码").css("opacity","1").css("color","red")
-            $("#one-btn").addClass("btn-none").removeClass("btn-auto");
-        }else{
-            $("#telyan").html("号码格式正确").css("opacity","1").css("color","green")
-            $("#one-btn").addClass("btn-auto").removeClass("btn-none");
-        }
-    })
-}
-var y1; var y2;
-/*名称验证*/
-function nameyan() {
-    $("#loginName").blur(function () {
-        var loginName = $("#loginName").val();
-        if(loginName == "") {
-            $("#nameyan").html("请填写用户名").css("opacity","1").css("color","red")
-        }else if(loginName.length < 6){
-            $("#nameyan").html("用户名长度不能小于6").css("opacity","1").css("color","red")
-        }else{
-            $("#nameyan").html("用户名可用").css("opacity","1").css("color","green")
-            y1 = 1;
-        }
-    })
-}
-/*密码验证*/
-function  passyan() {
-    $("#loginPassword").blur(function () {
-        var loginPassword = $("#loginPassword").val();
-        if(loginPassword == "") {
-            $("#passyan").html("请填写密码").css("opacity","1").css("color","red")
-        }else if(loginPassword.length < 6){
-            $("#passyan").html("密码长度不能小于6位").css("opacity","1").css("color","red")
-        }else{
-            $("#passyan").html("密码格式正确").css("opacity","1").css("color","green")
-            y2 = 2;
-        }
-    })
-}
-/*重复密码验证*/
-function  passyan2() {
-    $("#loginPassword2").blur(function () {
-        var loginPassword = $("#loginPassword").val();
-        var loginPassword2 = $("#loginPassword2").val();
-        if(loginPassword != loginPassword2) {
-            $("#passyan2").html("两次密码不一致").css("opacity","1").css("color","red")
-        }else{
-            $("#passyan2").html("密码正确").css("opacity","1").css("color","green")
-            if(y1 ==1 && y2==2){
-                $("#two-btn").addClass("btn-auto").removeClass("btn-none");
-            }
-        }
-    })
-}
-$(function () {
-    $("#loginTel").focus(function () {
-        telyan();
-    })
-    $("#loginName").focus(function () {
-        nameyan();
-    })
-    $("#loginPassword").focus(function () {
-        passyan();
-    })
-    $("#loginPassword2").focus(function () {
-        passyan2();
-    })
-})
 /*步骤变化*/
 $(function () {
     $("#one-btn").click(function () {
@@ -202,5 +104,21 @@ function register() {
         }
     };
 })(jQuery);
-
-
+/*验证*/
+$(function () {
+    $("#loginTel").focus(function () {
+        telyan();
+    })
+    $("#loginEmail").focus(function () {
+        emailyan();
+    })
+    $("#loginName").focus(function () {
+        nameyan();
+    })
+    $("#loginPassword").focus(function () {
+        passyan();
+    })
+    $("#loginPassword2").focus(function () {
+        passyan2();
+    })
+})
