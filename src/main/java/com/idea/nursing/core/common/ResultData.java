@@ -29,8 +29,15 @@ public class ResultData extends HashMap<String, Object> {
 	public static final int	    GROUPTHANMAX	 = 10098;
 	
 	public enum Status {
-		SUCCESS(1, "OK"), ERROR(11111, "服务器忙"), FAILURE(0, "FAIL"), JSON_NEED_LOGIN(
-		        700, "数据接口需要登录后才能访问"), PERMISSION_DENIED(10001, "没有权限"),ISNULL(002,"您有必填字段未填"),LOGIN(003,"用户名密码错误");
+		SUCCESS(1, "OK"),
+		ERROR(11111, "服务器忙"),
+		FAILURE(0, "FAIL"),
+		JSON_NEED_LOGIN(
+		        700, "数据接口需要登录后才能访问"),
+		PERMISSION_DENIED(10001, "没有权限"),
+		ISNULL(002,"您有必填字段未填"),
+		LOGIN(003,"用户名密码错误"),
+		TELUNIQUE(004,"该用户已经存在");
 		public final Integer		             code;
 		public final String		                 msg;
 		private final static Map<String, Status>	data	= new HashMap<>();
@@ -68,6 +75,14 @@ public class ResultData extends HashMap<String, Object> {
 		return this;
 	}
 
+	/**
+	 * 用户名已经存在
+	 * @return
+	 */
+	public ResultData telUnique(){
+		this.setStatus(Status.TELUNIQUE);
+		return this;
+	}
 	/**
 	 * 参数为空
 	 * @return

@@ -31,4 +31,11 @@ public interface LoginService {
      */
     public boolean sellerLogin(Login login);
 
+    /**
+     * 唯一验证
+     * @param tel 电话号码
+     * @return
+     */
+    public boolean uniqueVerify(String tel);
+
 }

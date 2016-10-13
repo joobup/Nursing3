@@ -103,4 +103,17 @@ public class LoginServiceImpl implements LoginService{
             return false;
         }
     }
+
+    /**
+     * 唯一验证
+     * @param tel 电话号码
+     * @return
+     */
+    @Override
+    public boolean uniqueVerify(String tel) {
+
+        LoginExample loginExample = new LoginExample();
+        loginExample.createCriteria().andLoginTelEqualTo(tel);
+        return loginDao.selectByExample(loginExample).size()>0;
+    }
 }

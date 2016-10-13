@@ -25,6 +25,22 @@ public class RegisterController {
     private LoginService loginService;
 
     /**
+     * 用户电话唯一验证
+     * @param loginTel
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="telUnique" , method = RequestMethod.GET)
+    public ResultData uniqueVerify(String loginTel){
+
+        if(loginService.uniqueVerify(loginTel)){
+            return ResultData.build();
+        }else {
+            return ResultData.build().telUnique();
+        }
+
+    }
+    /**
      * 用户注册
      * @param login
      * @return
