@@ -21,10 +21,11 @@ function isJson(str) {
     }
 }
 //ajax异步
-function getAjax(url,isCache, fun) {
+function getAjax(url,isCache,getData, fun) {
     $.ajax({
         type: "get",
         url: url,
+        data:getData,
         dataType: 'json',
         cache:isCache,
         beforeSend: function () {

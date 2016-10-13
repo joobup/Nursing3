@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * Created by 10238 on 2016/10/10.
  */
 @Controller
-@RequestMapping("/login/login")
+@RequestMapping("/login")
 public class LoginCntroller {
     @Autowired
     private LoginService loginService;
@@ -28,7 +28,7 @@ public class LoginCntroller {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value="user_login",  method = RequestMethod.GET)
+    @RequestMapping(value="user_login",  method = RequestMethod.POST)
     public ResultData userLogin(Login login, HttpSession session){
 
         if(loginService.userLogin(login)){

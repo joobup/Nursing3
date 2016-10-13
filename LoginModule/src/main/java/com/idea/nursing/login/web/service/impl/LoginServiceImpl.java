@@ -71,7 +71,10 @@ public class LoginServiceImpl implements LoginService{
     public boolean userLogin(Login login)  {
         LoginExample loginExample = new LoginExample();
         try {
-            loginExample.createCriteria().andLoginNameEqualTo(login.getLoginName()).andLoginPasswordEqualTo(MD5Util.MD5(login.getLoginPassword()));
+            System.out.println(login.getLoginTel());
+            System.out.println(login.getLoginPassword());
+            System.out.println(MD5Util.MD5(login.getLoginPassword()));
+            loginExample.createCriteria().andLoginTelEqualTo(login.getLoginTel()).andLoginPasswordEqualTo(MD5Util.MD5(login.getLoginPassword()));
             List<Login> loginList =loginDao.selectByExample(loginExample);
             if(loginList.size()==0){
                 return false;
@@ -114,6 +117,7 @@ public class LoginServiceImpl implements LoginService{
 
         LoginExample loginExample = new LoginExample();
         loginExample.createCriteria().andLoginTelEqualTo(tel);
-        return loginDao.selectByExample(loginExample).size()>0;
+
+        return loginDao.selectByExample(loginExample).size()==0;
     }
 }

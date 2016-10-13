@@ -21,10 +21,10 @@ public class ObjectIsNull {
                 Method[] methods = objectClass.getMethods();
                 for (Method m : methods
                         ) {
-                    System.out.println(m.getName());
+
                     if (m.getName().startsWith("get")) {
                         if (m.getName().toString().equals("get" + property)) {
-                            System.out.println(m.invoke(object));
+
                             if (m.invoke(object)==null|| m.invoke(object).equals("") || m.invoke(object)==(Integer)0 || m.invoke(object)==(Double)0.0 ) {
 
                                 return false;

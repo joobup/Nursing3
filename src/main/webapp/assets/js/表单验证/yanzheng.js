@@ -24,6 +24,11 @@ function telyan() {
     /*判断手机号是否存在*/
     $("#loginTel").blur(function () {
         var loginTel = $("#loginTel").val();
+        var url = domainUrl+"/login/register/telUnique";
+        var getData = {loginTel:loginTel};
+        getAjax(url,false,getData,function (data) {
+
+        })
         if(!(/^1[34578]\d{9}$/.test(loginTel)) && loginTel != "") {
             $("#telyan").html("手机号码格式不正确").css("opacity","1").css("color","red")
             $("#one-btn").addClass("btn-none").removeClass("btn-auto");
@@ -91,7 +96,6 @@ function  passyan2() {
 }
 /*按钮判断*/
 function panduanBtn() {
-    console.log(y1+y2+y3+y4+y5)
     if(y1+y2+y3+y4+y5 == 5 ){
         $("#two-btn").addClass("btn-auto").removeClass("btn-none");
     }else{
