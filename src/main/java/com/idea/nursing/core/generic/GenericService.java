@@ -11,7 +11,7 @@ import java.util.List;
  * @author StarZou
  * @since 2014年6月9日 下午6:14:06
  */
-public interface GenericService<Model, PK> {
+public interface GenericService<Model, PK,ModelExample> {
 
     /**
      * 插入对象
@@ -56,6 +56,6 @@ public interface GenericService<Model, PK> {
      *
      * @return 对象集合
      */
-    List<Model> selectList();
+    List<Model> selectList(ModelExample example);
 
 }

@@ -12,14 +12,51 @@ import java.util.List;
  * @author StarZou
  * @since 2014年6月9日 下午6:14:06
  */
-public abstract class GenericServiceImpl<Model, PK> implements GenericService<Model, PK> {
+public abstract class GenericServiceImpl<Model, PK,ModelExample> implements GenericService<Model, PK,ModelExample> {
+    public boolean compare(int a) {
+        if (a > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
+    public boolean notNullAndZero(Long l) {
+        if (l != null && l.intValue() != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean notNullAndZero(Long[] ids) {
+        if (ids != null && ids.length > 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public <E> E returnObject(List<E> list) {
+        if (list.isEmpty()) {
+            return null;
+        } else {
+            return list.get(0);
+        }
+    }
+
+    public boolean notNullObject(Object object) {
+        if (object != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     /**
      * 定义成抽象方法,由子类实现,完成dao的注入
      *
      * @return GenericDao实现类
      */
-    public abstract GenericDao<Model, PK> getDao();
+    public abstract GenericDao<Model, PK,ModelExample> getDao();
 
     /**
      * 插入对象
@@ -65,8 +102,8 @@ public abstract class GenericServiceImpl<Model, PK> implements GenericService<Mo
     }
 
     @Override
-    public List<Model> selectList() {
+    public List<Model> selectList(ModelExample example) {
 
-        return null;
+        return getDao().selectByExample(example);
     }
 }

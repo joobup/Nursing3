@@ -35,7 +35,7 @@ public class LoginCntroller {
             session.setAttribute(SessionConstant.SESSION_USER_BEAN,login);
             return ResultData.build();
         }else{
-            return ResultData.build().error();
+            return ResultData.build().login();
         }
     }
 
@@ -46,7 +46,7 @@ public class LoginCntroller {
             session.setAttribute(SessionConstant.SESSION_USER_BEAN,login);
             return ResultData.build();
         }else{
-            return ResultData.build().error();
+            return ResultData.build().login();
         }
     }
 

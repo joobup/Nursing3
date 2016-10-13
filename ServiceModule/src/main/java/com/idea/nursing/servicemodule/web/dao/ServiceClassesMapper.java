@@ -1,11 +1,12 @@
 package com.idea.nursing.servicemodule.web.dao;
 
+import com.idea.nursing.core.generic.GenericDao;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClasses;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface ServiceClassesMapper {
+public interface ServiceClassesMapper extends GenericDao {
     int countByExample(ServiceClassesExample example);
 
     int deleteByExample(ServiceClassesExample example);
