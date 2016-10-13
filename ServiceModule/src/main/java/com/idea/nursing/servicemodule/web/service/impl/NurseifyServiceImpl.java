@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class NurseifyServiceImpl extends GenericServiceImpl<Nurseify, Long,NurseifyExample> implements NurseifyService {
     @Autowired
-    private NurseifyMapper NurseifyDao;
+    private NurseifyMapper nurseifyDao;
     @Override
     public GenericDao<Nurseify, Long,NurseifyExample> getDao() {
-        return NurseifyDao;
+        return nurseifyDao;
     }
 
 }

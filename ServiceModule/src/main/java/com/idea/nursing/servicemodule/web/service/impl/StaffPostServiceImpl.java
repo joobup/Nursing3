@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class StaffPostServiceImpl extends GenericServiceImpl<StaffPost, Long,StaffPostExample> implements StaffPostService {
     @Autowired
-    private StaffPostMapper StaffPostDao;
+    private StaffPostMapper staffpostDao;
     @Override
     public GenericDao<StaffPost, Long,StaffPostExample> getDao() {
-        return StaffPostDao;
+        return staffpostDao;
     }
 
 }

@@ -49,17 +49,20 @@ public class GenerateService {
 
 
 			String[] fileNames = new String[]{
-					"Nurseify",
-					"Services",
-					"ServicesPicture",
-					"ServiceClasses",
-					"ServicePackPicture",
-					"ServicePack",
-					"StaffDepartment",
-					"StaffPost",
-					"ServiceStaff",
-					"ServiceClassesValuation",
-					"ServiceClassesValuationRelation",
+//					"Nurseify",
+//					"Services",
+//					"ServicesPicture",
+//					"ServiceClasses",
+//					"ServicePackPicture",
+//					"ServicePack",
+//					"StaffDepartment",
+//					"StaffPost",
+//					"ServiceStaff",
+//					"ServiceClassesValuation",
+//					"ServiceClassesValuationRelation",
+
+
+					"CommentPicture"
 
 			};
 			for (String fileName:fileNames
@@ -68,10 +71,15 @@ public class GenerateService {
 						"\\src\\test\\java\\ftl",
 						"service.ftl",
 						fileName,
-						"\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\service",
-						"com.idea.nursing.servicemodule.web.service",
-						"com.idea.nursing.servicemodule.web.dao",
-						"com.idea.nursing.servicemodule.web.domain.pojo");
+						//"\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\service",
+						"\\src\\main\\java\\com\\idea\\nursing\\common\\web\\service",
+//						"com.idea.nursing.servicemodule.web.service",
+//						"com.idea.nursing.servicemodule.web.dao",
+//						"com.idea.nursing.servicemodule.web.domain.pojo"
+						"com.idea.nursing.common.web.service",
+						"com.idea.nursing.common.web.dao",
+						"com.idea.nursing.common.web.domain.pojo"
+ 					);
 			}
 
 		}

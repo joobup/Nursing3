@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServicesPictureServiceImpl extends GenericServiceImpl<ServicesPicture, Long,ServicesPictureExample> implements ServicesPictureService {
     @Autowired
-    private ServicesPictureMapper ServicesPictureDao;
+    private ServicesPictureMapper servicespictureDao;
     @Override
     public GenericDao<ServicesPicture, Long,ServicesPictureExample> getDao() {
-        return ServicesPictureDao;
+        return servicespictureDao;
     }
 
 }

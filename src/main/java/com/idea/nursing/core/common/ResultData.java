@@ -37,7 +37,10 @@ public class ResultData extends HashMap<String, Object> {
 		PERMISSION_DENIED(10001, "没有权限"),
 		ISNULL(002,"您有必填字段未填"),
 		LOGIN(003,"用户名密码错误"),
-		TELUNIQUE(004,"该用户已经存在");
+		TELUNIQUE(004,"该用户已经存在"),
+		ADDERROR(005,"添加失败"),
+		UPDATEERROR(006,"修改失败"),
+		DELERROR(007,"删除失败");
 		public final Integer		             code;
 		public final String		                 msg;
 		private final static Map<String, Status>	data	= new HashMap<>();
@@ -75,6 +78,34 @@ public class ResultData extends HashMap<String, Object> {
 		return this;
 	}
 
+	/**
+	 * 添加失败
+	 * @return
+	 */
+	public ResultData addErroe(){
+
+		this.setStatus(Status.ADDERROR);
+		return this;
+	}
+
+	/**
+	 * 更改失败
+	 * @return
+	 */
+	public ResultData upDateError(){
+
+		this.setStatus(Status.UPDATEERROR);
+				return this;
+	}
+
+	/**
+	 * 删除失败
+	 * @return
+	 */
+	public ResultData delError(){
+		this.setStatus(Status.DELERROR);
+		return this;
+	}
 	/**
 	 * 用户名已经存在
 	 * @return

@@ -16,6 +16,7 @@
 
     <!-- 会自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean,是spring MVC为@Controllers分发请求所必须的 -->
     <import resource="classpath:/spring-mvc-login.xml"></import>
+    <import resource="classpath:/spring-mvc-service.xml"></import>
 
 
 

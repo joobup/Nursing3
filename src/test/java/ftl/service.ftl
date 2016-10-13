@@ -26,10 +26,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ${className}ServiceImpl extends GenericServiceImpl<${className}, Long,${className}Example> implements ${className}Service {
     @Autowired
-    private ${className}Mapper ${className}Dao;
+    private ${className}Mapper ${className?lower_case}Dao;
     @Override
     public GenericDao<${className}, Long,${className}Example> getDao() {
-        return ${className}Dao;
+        return ${className?lower_case}Dao;
     }
 
 }

@@ -1,5 +1,8 @@
 package com.idea.nursing.core.generic;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+
 import java.util.List;
 
 /**
@@ -105,5 +108,13 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
     public List<Model> selectList(ModelExample example) {
 
         return getDao().selectByExample(example);
+    }
+    @Override
+    public Page<Model> findAll(Integer currentPage,Integer limit){
+        ModelExample example = null;
+        PageHelper.startPage(currentPage, limit);
+        Page<Model> list = (Page<Model>) getDao()
+                .selectByExample(example);
+         return list;
     }
 }

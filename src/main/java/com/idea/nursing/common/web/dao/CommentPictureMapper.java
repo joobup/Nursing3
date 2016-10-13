@@ -3,9 +3,11 @@ package com.idea.nursing.common.web.dao;
 import com.idea.nursing.common.web.domain.pojo.CommentPicture;
 import com.idea.nursing.common.web.domain.pojo.CommentPictureExample;
 import java.util.List;
+
+import com.idea.nursing.core.generic.GenericDao;
 import org.apache.ibatis.annotations.Param;
 
-public interface CommentPictureMapper {
+public interface CommentPictureMapper extends GenericDao{
     int countByExample(CommentPictureExample example);
 
     int deleteByExample(CommentPictureExample example);

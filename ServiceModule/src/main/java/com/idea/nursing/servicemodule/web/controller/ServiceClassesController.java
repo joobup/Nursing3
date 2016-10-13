@@ -2,8 +2,8 @@ package com.idea.nursing.servicemodule.web.controller;
 
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
-import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuation;
-import com.idea.nursing.servicemodule.web.service.ServiceClassesValuationService;
+import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClasses;
+import com.idea.nursing.servicemodule.web.service.ServiceClassesService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,22 +15,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 * Created by 10238 on 2016/10/12.
 */
 @Controller
-@RequestMapping("serve/service_classes_valuation")
-public class ServiceClassesValuationController extends GenericController {
+@RequestMapping("serve/service_classes")
+public class ServiceClassesController extends GenericController {
     @Autowired
-    private ServiceClassesValuationService serviceclassesvaluationService;
+    private ServiceClassesService serviceclassesService;
 
     /**
-        * 添加计价类型
-        * @param serviceclassesvaluation
+        * 添加服务类别
+        * @param serviceclasses
         * @return
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(ServiceClassesValuation serviceclassesvaluation){
+    public ResultData add(ServiceClasses serviceclasses){
 
         try {
-                serviceclassesvaluationService.insert(serviceclassesvaluation);
+                serviceclassesService.insert(serviceclasses);
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -40,7 +40,7 @@ public class ServiceClassesValuationController extends GenericController {
     }
 
     /**
-    * 删除计价类型
+    * 删除服务类别
     * @param id
     * @return
     */
@@ -48,7 +48,7 @@ public class ServiceClassesValuationController extends GenericController {
     @RequestMapping(value="update" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                serviceclassesvaluationService.delete(id);
+                serviceclassesService.delete(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -57,15 +57,15 @@ public class ServiceClassesValuationController extends GenericController {
     }
 
     /**
-    * 修改计价类型
-    * @param serviceclassesvaluation
+    * 修改服务类别
+    * @param serviceclasses
     * @return
     */
     @ResponseBody
     @RequestMapping(value="update",method = RequestMethod.POST)
-    public ResultData update(ServiceClassesValuation serviceclassesvaluation){
+    public ResultData update(ServiceClasses serviceclasses){
         try {
-            serviceclassesvaluationService.update(serviceclassesvaluation);
+            serviceclassesService.update(serviceclasses);
 
         } catch (Exception e){
             return ResultData.build().upDateError();
@@ -74,7 +74,7 @@ public class ServiceClassesValuationController extends GenericController {
     }
 
     /**
-    * 分页查询所有计价类型
+    * 分页查询所有服务类别
     * @param currentPage
     * @param limit
     * @return
@@ -83,7 +83,7 @@ public class ServiceClassesValuationController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(serviceclassesvaluationService.findAll(currentPage,limit));
+        parsePageBean(serviceclassesService.findAll(currentPage,limit));
     }
 
 }

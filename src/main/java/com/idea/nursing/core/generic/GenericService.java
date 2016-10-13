@@ -1,5 +1,7 @@
 package com.idea.nursing.core.generic;
 
+import com.github.pagehelper.Page;
+
 import java.util.List;
 
 /**
@@ -57,5 +59,13 @@ public interface GenericService<Model, PK,ModelExample> {
      * @return 对象集合
      */
     List<Model> selectList(ModelExample example);
+
+    /**
+     * 分页查询所有
+     * @param currentPage
+     * @param limit
+     * @return
+     */
+    Page<Model> findAll(Integer currentPage, Integer limit);
 
 }
