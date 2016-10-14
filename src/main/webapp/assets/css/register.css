@@ -96,3 +96,15 @@
     transition: .5s;
     opacity: 0;
 }
+#qiehuanzhuce{
+    color: #555555;
+    transition: .5s;
+    font-size: 15px;
+    white-space: nowrap;
+    text-align: left;
+    width: 300px;
+    display: block;
+}
+#qiehuanzhuce:hover{
+    color: red;
+}

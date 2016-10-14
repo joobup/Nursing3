@@ -6,7 +6,7 @@
     <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/表单验证/yanzheng.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
-    <script type="text/javascript" src="${domainUrl}/assets/js/register.js"></script>
+    <script type="text/javascript" src="${domainUrl}/assets/js/login/register.js"></script>
     <title>商家注册</title>
 </head>
 <script>
@@ -45,6 +45,11 @@
             <tr>
                 <td></td>
                 <td><input type="button" value="下一步" class="btn-none" id="one-btn"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><a href="${domainUrl}/rest/login/register"id="qiehuanzhuce" >切换为个人注册</a></td>
                 <td></td>
             </tr>
         </table>

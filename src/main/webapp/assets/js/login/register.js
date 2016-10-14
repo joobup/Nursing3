@@ -44,7 +44,6 @@ function register() {
 
         })
 }
-
 /*
  * drag 1.0
  * create by tony@jentian.com

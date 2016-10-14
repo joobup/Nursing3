@@ -1,4 +1,4 @@
-var  y1,y2,y3,y4,y5 = 0;
+var  y2,y3,y4,y5; var y1 =1;
 /*邮箱验证*/
 function emailyan() {
     $("#loginEmail").blur(function () {
@@ -27,21 +27,25 @@ function telyan() {
         var url = domainUrl+"/login/register/telUnique";
         var getData = {loginTel:loginTel};
         getAjax(url,false,getData,function (data) {
-
+            if(data.status == 4){
+                $("#telyan").html("手机号码已存在").css("opacity","1").css("color","red")
+                $("#one-btn").addClass("btn-none").removeClass("btn-auto");
+                y2 = 0;
+            }else if(!(/^1[34578]\d{9}$/.test(loginTel)) && loginTel != "") {
+                $("#telyan").html("手机号码格式不正确").css("opacity","1").css("color","red")
+                $("#one-btn").addClass("btn-none").removeClass("btn-auto");
+                y2 = 0;
+            }else if(loginTel == ""){
+                $("#telyan").html("请输入手机号码").css("opacity","1").css("color","red")
+                $("#one-btn").addClass("btn-none").removeClass("btn-auto");
+                y2 = 0;
+            }else{
+                $("#telyan").html("号码正确").css("opacity","1").css("color","green")
+                $("#one-btn").addClass("btn-auto").removeClass("btn-none");
+                y2 = 1;
+            }
         })
-        if(!(/^1[34578]\d{9}$/.test(loginTel)) && loginTel != "") {
-            $("#telyan").html("手机号码格式不正确").css("opacity","1").css("color","red")
-            $("#one-btn").addClass("btn-none").removeClass("btn-auto");
-            y2 = 0;
-        }else if(loginTel == ""){
-            $("#telyan").html("请输入手机号码").css("opacity","1").css("color","red")
-            $("#one-btn").addClass("btn-none").removeClass("btn-auto");
-            y2 = 0;
-        }else{
-            $("#telyan").html("号码格式正确").css("opacity","1").css("color","green")
-            $("#one-btn").addClass("btn-auto").removeClass("btn-none");
-            y2 = 1;
-        }
+
         panduanBtn();
     })
 }

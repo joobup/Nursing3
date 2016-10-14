@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
     <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
-    <script type="text/javascript" src="${domainUrl}/assets/js/login.js"></script>
+    <script type="text/javascript" src="${domainUrl}/assets/js/login/login.js"></script>
     <title>登录</title>
 </head>
 <body>

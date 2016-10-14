@@ -1,0 +1,25 @@
+#main .left-nav{
+    width: 150px;
+    height: 500px;
+    background-color: #a1a1a1;
+    text-align: center;
+}
+#main .left-nav li{
+    margin-top: 10px;
+}
+#main .left-nav li a{
+    color: #000000;
+    transition: .3s;
+}
+#main .left-nav li a:hover{
+    color: #2798D0;
+}
+#main .left-nav img{
+    position: absolute;
+    margin-top: 4px;
+    margin-left: 3px;
+}
+#main .left-nav2{
+    font-size: 14px;
+    margin-left: 40px;
+}
