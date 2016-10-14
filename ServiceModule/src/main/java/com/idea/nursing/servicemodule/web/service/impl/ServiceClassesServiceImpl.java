@@ -21,4 +21,14 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
         return serviceclassesDao;
     }
 
+    //添加服务级别
+    @Override
+    public int insert(ServiceClasses serviceClasses) {
+        //获取父级类型
+        ServiceClasses serviceClassesSuper = selectById(serviceClasses.getTid());
+        serviceClasses.setServeClasslevel((byte)(serviceClassesSuper.getServeClasslevel()+1));
+
+
+        return super.insert(serviceClasses);
+    }
 }
