@@ -13,5 +13,9 @@
 </script>
 <body>
     <input type="text" id="className"><input type="text" id="classLevel"><input type="button" value="添加" onclick="serveClassifyAdd()">
+    <div id="find-main">
+
+    </div>
+
 </body>
 </html>

@@ -45,7 +45,7 @@ public class ServicesController extends GenericController {
     * @return
     */
     @ResponseBody
-    @RequestMapping(value="update" ,method = RequestMethod.POST)
+    @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
                 servicesService.delete(id);
