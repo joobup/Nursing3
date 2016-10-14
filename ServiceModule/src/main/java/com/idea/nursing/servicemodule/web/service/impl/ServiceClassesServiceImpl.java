@@ -24,9 +24,23 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
     //添加服务级别
     @Override
     public int insert(ServiceClasses serviceClasses) {
+        if(serviceClasses.getServeClasslevel()==null){
+            serviceClasses.setServeClasslevel((byte)0);
+        }
+
         //获取父级类型
         ServiceClasses serviceClassesSuper = selectById(serviceClasses.getTid());
-        serviceClasses.setServeClasslevel((byte)(serviceClassesSuper.getServeClasslevel()+1));
+        if(serviceClassesSuper==null){
+
+            serviceClasses.setServeClasslevel((byte)0);
+            serviceClasses.setTid(0l);
+        }else{
+            serviceClasses.setServeClasslevel((byte)(serviceClassesSuper.getServeClasslevel()+1));
+        }
+
+
+
+
 
 
         return super.insert(serviceClasses);

@@ -30,9 +30,11 @@ public class ServiceClassesController extends GenericController {
     public ResultData add(ServiceClasses serviceclasses){
 
         try {
+
                 serviceclassesService.insert(serviceclasses);
 
             }catch (Exception e){
+
                 return ResultData.build().addErroe();
             }
         return ResultData.build();
