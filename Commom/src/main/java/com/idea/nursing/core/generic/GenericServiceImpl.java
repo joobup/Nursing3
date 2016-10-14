@@ -111,6 +111,12 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
     }
     @Override
     public Page<Model> findAll(Integer currentPage,Integer limit){
+        if(currentPage==null){
+            currentPage=1;
+        }
+        if(limit==null){
+            limit=10;
+        }
         ModelExample example = null;
         PageHelper.startPage(currentPage, limit);
         Page<Model> list = (Page<Model>) getDao()

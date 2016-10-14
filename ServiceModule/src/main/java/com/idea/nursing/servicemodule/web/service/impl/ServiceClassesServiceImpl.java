@@ -24,25 +24,27 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
     //添加服务级别
     @Override
     public int insert(ServiceClasses serviceClasses) {
-        if(serviceClasses.getServeClasslevel()==null){
-            serviceClasses.setServeClasslevel((byte)0);
-        }
+
 
         //获取父级类型
         ServiceClasses serviceClassesSuper = selectById(serviceClasses.getTid());
-        if(serviceClassesSuper==null){
+        if(notNullObject(serviceClassesSuper)){
 
             serviceClasses.setServeClasslevel((byte)0);
             serviceClasses.setTid(0l);
         }else{
             serviceClasses.setServeClasslevel((byte)(serviceClassesSuper.getServeClasslevel()+1));
         }
+       return super.insert(serviceClasses);
+    }
 
+    @Override
+    public int delete(Long id) {
 
+        ServiceClassesExample serviceClassesExample = new ServiceClassesExample();
+        serviceClassesExample.createCriteria().andTidEqualTo(id);
+        serviceclassesDao.deleteByExample(serviceClassesExample);
 
-
-
-
-        return super.insert(serviceClasses);
+        return super.delete(id);
     }
 }
