@@ -20,12 +20,4 @@ public class ServiceClassesValuation {
     public void setClassesValuationName(String classesValuationName) {
         this.classesValuationName = classesValuationName == null ? null : classesValuationName.trim();
     }
-
-    @Override
-    public String toString() {
-        return "ServiceClassesValuation{" +
-                "id=" + id +
-                ", classesValuationName='" + classesValuationName + '\'' +
-                '}';
-    }
 }

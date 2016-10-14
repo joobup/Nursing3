@@ -43,7 +43,7 @@
         <!--对应数据库表名 -->
         
 
-        <table tableName="ff_services" domainObjectName="Services">
+      <!--  <table tableName="ff_services" domainObjectName="Services">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
         <table tableName="ff_services_picture" domainObjectName="ServicesPicture">
@@ -75,8 +75,10 @@
         </table>
         <table tableName="ff_nurseify" domainObjectName="Nurseify">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>-->
+        <table tableName="ff_service_classes_valuation" domainObjectName="ServiceClassesValuation">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
-
 
     </context>
 </generatorConfiguration>

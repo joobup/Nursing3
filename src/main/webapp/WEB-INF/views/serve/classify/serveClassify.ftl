@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
     <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
-    <script type="text/javascript" src="${domainUrl}/assets/js/serve/serveAdd.js"></script>
+    <script type="text/javascript" src="${domainUrl}/assets/js/serve/classify.js"></script>
     <meta charset="utf-8" />
     <title>添加类别</title>
 </head>

@@ -6,7 +6,6 @@ import com.idea.nursing.servicemodule.web.service.ServiceClassesValuationService
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
