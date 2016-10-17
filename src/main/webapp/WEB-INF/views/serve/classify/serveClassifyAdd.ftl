@@ -13,19 +13,8 @@
     var domainUrl = '${domainUrl}'+"/rest";
 </script>
 <body style="background-color: #F3F3F4;">
-<div class="add-main">
-    <div class="main-group">
-        <label for="">类别名称</label>
-        <input type="text" id="className"  class="form-control">
-    </div>
-    <div class="main-group">
-        <label for="">类别等级</label>
-        <input type="text" id="classLevel"  class="form-control">
-    </div>
-    <input type="button" onclick="add()" value="添加" >
-</div>
 <div id="find-main">
-    <label for="">类别列表</label>
+
 
 </div>
 </body>

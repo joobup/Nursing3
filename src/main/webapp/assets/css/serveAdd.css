@@ -1,25 +1,63 @@
-#main .left-nav{
-    width: 150px;
-    height: 500px;
-    background-color: #a1a1a1;
-    text-align: center;
+.add-main{
+    width: 445px;
+    margin: 0px auto;
+    padding: 15px 55px 30px 55px;
+    background-color: #fff;
+    border-radius: 2px;
+    text-align: right;
 }
-#main .left-nav li{
-    margin-top: 10px;
+.add-main .main-group{
+    margin-top: 15px;
+    text-align: left;
 }
-#main .left-nav li a{
-    color: #000000;
-    transition: .3s;
+.add-main textarea{
+    resize: none;
+    height: 170px!important;
 }
-#main .left-nav li a:hover{
-    color: #2798D0;
-}
-#main .left-nav img{
-    position: absolute;
-    margin-top: 4px;
-    margin-left: 3px;
-}
-#main .left-nav2{
+input[type="text"]{
+    padding: 6px 12px;
     font-size: 14px;
-    margin-left: 40px;
+    width:335px ;
+}
+input[type="button"]{
+    margin-top: 15px;
+    background-color: #1ab394;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 3px;
+    border: 0px;
+}
+input[type="button"]:hover{
+    background-color: #1d9d74;
+}
+.class-main{
+    margin: 0px auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #E5E6E7!important;
+    background-color: #fff;
+}
+.class-main .del{
+    margin: 0px auto;
+    padding: 0px 5px 0px 10px;
+    width: 600px;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #E5E6E7;
+    background-color: #fff;
+}
+.class-main .del a{
+    margin: 0px 0px 0px 10px;
+    transition: .3s;
+    float: right;
+    color: #1AB394;
+}
+.class-main .del a:hover{
+    color: red;
+}
+.title-div{
+     margin: 0px auto; height: 55px; border-top: 3px solid #E5E6E7;background-color: #fff;border-bottom: 1px solid #e5e6e7;line-height: 55px; font-size: 18px;text-align: left;
+}
+.class-main input[type="text"]{
+
 }

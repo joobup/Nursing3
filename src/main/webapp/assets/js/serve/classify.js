@@ -4,7 +4,7 @@
 $(function () {
     findAll();
 })
-function serveClassifyAdd() {
+function add() {
     var classname = $("#className").val();
     var classlevel = $("#classLevel").val();
     var url = domainUrl+"/serve/service_classes/add";

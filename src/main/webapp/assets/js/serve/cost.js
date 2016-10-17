@@ -18,8 +18,9 @@ function findAll() {
         var num = data.iTotalRecords;
         var html="";
         for(var i =0;  i < num ; i++){
-            html +='<p>'+data.aaData[i].classesValuationName+'</p><input type="button" value="删除" onclick="del('+data.aaData[i].id+')" />';
+            html +='<div class="del"><span>'+data.aaData[i].classesValuationName+'</span><a onclick="del('+data.aaData[i].id+')">删除</a></div>';
         }
+        html+="";
         $("#ce").html(html)
     })
 }
@@ -28,6 +29,7 @@ function del(id) {
     var postData = {id:id};
     postAjax(url,false,postData,function (data) {
         alert("删除成功")
+        findAll()
     })
 }
 $(function () {
