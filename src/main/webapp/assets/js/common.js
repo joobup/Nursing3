@@ -58,5 +58,9 @@ function postAjax(url,isCache, postData,fun) {
 }
 function success(data,fun) {
     var msg = data.statusMsg;
+    if(msg == "OK"){
         fun(data);
+    }else{
+        alert(msg);
+    }
 }

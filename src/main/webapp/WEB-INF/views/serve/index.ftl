@@ -7,7 +7,7 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <title></title>
-    <link href="${domainUrl}/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/插件css/animate/animate.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/style.min.css" rel="stylesheet">
 </head>

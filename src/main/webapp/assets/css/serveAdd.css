@@ -2,7 +2,6 @@
     width: 445px;
     margin: 0px auto;
     padding: 15px 55px 30px 55px;
-    background-color: #fff;
     border-radius: 2px;
     text-align: right;
 }
@@ -19,23 +18,33 @@ input[type="text"]{
     font-size: 14px;
     width:335px ;
 }
+.add-input{
+    width: 380px; height: 60px; position: relative; background-color: #2F4050; border-radius: 3px;color: #fff;line-height: 60px;font-size: 16px;margin-top: 15px;
+}
+.add-input input[type="text"]{
+    height: 40px; margin-top:10px;border: 0px; background-color: #2F4050;font-size: 19px;outline: none;line-height: 10px; color: #a0a3a3;padding-left: 60px;
+}
+.add-input b{
+    position: absolute; left:15px;
+}
 input[type="button"]{
     margin-top: 15px;
-    background-color: #1ab394;
+    background-color: #3498DB;
     color: #ffffff;
-    padding: 8px 20px;
+    width:380px;
+    height: 50px;
     border-radius: 3px;
     border: 0px;
+    transition: .5s;
 }
 input[type="button"]:hover{
-    background-color: #1d9d74;
+    background-color: #297DBA;
 }
 .class-main{
     margin: 0px auto;
     padding-top: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid #E5E6E7!important;
-    background-color: #fff;
 }
 .class-main .del{
     margin: 0px auto;
@@ -44,7 +53,6 @@ input[type="button"]:hover{
     height: 30px;
     line-height: 30px;
     border-bottom: 1px solid #E5E6E7;
-    background-color: #fff;
 }
 .class-main .del a{
     margin: 0px 0px 0px 10px;
@@ -56,7 +64,7 @@ input[type="button"]:hover{
     color: red;
 }
 .title-div{
-     margin: 0px auto; height: 55px; border-top: 3px solid #E5E6E7;background-color: #fff;border-bottom: 1px solid #e5e6e7;line-height: 55px; font-size: 18px;text-align: left;
+     margin: 0px auto; height: 55px; border-top: 3px solid #E5E6E7;border-bottom: 1px solid #e5e6e7;line-height: 55px; font-size: 18px;text-align: left;
 }
 .class-main input[type="text"]{
 

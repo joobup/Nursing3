@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="${domainUrl}/assets/css/serveAdd.css">
     <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
     <link href="${domainUrl}/assets/css/style.min.css" rel="stylesheet">
-    <link href="${domainUrl}/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script type="text/javascript" src="${domainUrl}/assets/js/serve/services.js"></script>
@@ -13,14 +13,14 @@
 <script>
     var domainUrl = '${domainUrl}'+"/rest";
 </script>
-<body style="background-color: #F3F3F4;">
+<body style="background-image: url(${domainUrl}/assets/images/xianback.jpg)">
 <div style="width: 445px; height: 70px; border-top: 3px solid #E7EAEC; border-bottom:1px solid #E7EAEC;margin: 0px auto;background-color: #fff; border-radius: 2px; text-align: center;font-size: 22px;line-height: 70px;">
         添加服务
 </div>
 <div class="add-main">
     <div class="main-group">
         <label for="">服务类别</label>
-        <select name="" id="leibie" class="form-control"></select>
+        <input type="text" id="leibie" class="form-control">
     </div>
     <div class="main-group">
         <label for="">服务标题</label>
@@ -36,7 +36,7 @@
     </div>
     <div class="main-group">
         <label for="">服务人数</label>
-        <select name="" id="renshu" class="form-control"></select>
+        <input type="text" id="renshu" class="form-control">
     </div>
     <input type="button" onclick="add()" value="添加" >
 </div>

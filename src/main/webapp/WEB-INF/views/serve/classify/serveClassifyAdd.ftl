@@ -2,7 +2,7 @@
 <head>
     <link rel="stylesheet" href="${domainUrl}/assets/css/serveAdd.css">
     <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
-    <link href="${domainUrl}/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script type="text/javascript" src="${domainUrl}/assets/js/serve/classify.js"></script>
@@ -12,7 +12,7 @@
 <script>
     var domainUrl = '${domainUrl}'+"/rest";
 </script>
-<body style="background-color: #F3F3F4;">
+<body style="background-image: url(${domainUrl}/assets/images/xianback.jpg)">
 <div id="find-main">
 
 

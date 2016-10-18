@@ -1,0 +1,37 @@
+.staff-main .staff-sess-div{
+    margin: 1% 2% 0% 2%;
+    width: 28%;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #D9DADC;
+    transition: .5s;
+    min-width: 300px;
+    float: left;
+    position: relative;
+}
+.staff-main .staff-sess-div i{
+    cursor: pointer;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+}
+.staff-main .staff-sess-div:hover{
+    border:1px solid #10CC75;
+    box-shadow: 0px 0px 10px 2px #10CC75;
+}
+.staff-sess-div .staff-head{
+    width: 33%; height: 100%; float: left; text-align: center; padding-top: 40px;
+}
+.staff-sess-div .staff-head img{
+    border-radius: 50px;
+}
+.staff-sess-div .staff-mess{
+    width: 66%; height: 100%;float: left;
+}
+.staff-sess-div label{
+    margin-top: 30px;
+}
+.staff-sess-div li{
+    margin-top: 5px;
+}
