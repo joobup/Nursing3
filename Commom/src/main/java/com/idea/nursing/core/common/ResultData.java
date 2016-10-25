@@ -215,6 +215,8 @@ public class ResultData extends HashMap<String, Object> {
 		super.put("iTotalRecords", page.getTotal());
 		super.put("iTotalDisplayRecords", page.getPageSize());
 		super.put("aaData", page == null ? new ArrayList() : page);
+
+
 		return this;
 	}
 	

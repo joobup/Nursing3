@@ -10,6 +10,10 @@ import com.idea.nursing.servicemodule.web.service.ServiceClassesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 @Service
@@ -46,5 +50,37 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
         serviceclassesDao.deleteByExample(serviceClassesExample);
 
         return super.delete(id);
+    }
+
+    @Override
+    public Map<String, List<ServiceClasses>> findTree() {
+
+        Map <String, List<ServiceClasses>> result = new HashMap<>();
+        ServiceClassesExample example = new ServiceClassesExample();
+        List<ServiceClasses> list = serviceclassesDao.selectByExample(example);
+        int maxLeave = 0;
+        /**
+         * 找到最小级别
+         */
+        for (ServiceClasses serviceClasses : list){
+            if (serviceClasses.getServeClasslevel()>maxLeave){
+                maxLeave=serviceClasses.getServeClasslevel();
+            }
+        }
+        /**
+         * 封装级别
+         */
+        for (int i=0;i<maxLeave;i++){
+            List<ServiceClasses> leaveList = new ArrayList<>();
+            for (ServiceClasses serviceClasses:list
+                 ) {
+                if(serviceClasses.getServeClasslevel()==i){
+                    leaveList.add(serviceClasses);
+                }
+            }
+            result.put(i+"",leaveList);
+        }
+
+        return result;
     }
 }
