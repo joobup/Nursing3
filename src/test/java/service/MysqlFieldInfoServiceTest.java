@@ -1,6 +1,5 @@
 package service;
 
-import com.idea.nursing.common.web.service.MysqlFieldInfoService;
 import com.idea.nursing.core.feature.test.TestSupport;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
