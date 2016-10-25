@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * GenericService的实现类, 其他的自定义 ServiceImpl, 继承自它,可以获得常用的增删查改操作,
@@ -122,5 +123,7 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
         Page<Model> list = (Page<Model>) getDao()
                 .selectByExample(example);
          return list;
+
     }
+
 }

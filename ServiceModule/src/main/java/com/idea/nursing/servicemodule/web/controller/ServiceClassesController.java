@@ -86,4 +86,13 @@ public class ServiceClassesController extends GenericController {
         parsePageBean(serviceclassesService.findAll(currentPage,limit));
     }
 
+    /**
+     * 按级别查询服务类别
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().parseBean(serviceclassesService.findTree());
+    }
 }

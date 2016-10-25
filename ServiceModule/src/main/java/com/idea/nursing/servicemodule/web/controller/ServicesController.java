@@ -1,5 +1,6 @@
 package com.idea.nursing.servicemodule.web.controller;
 
+import com.idea.nursing.common.web.service.CommentPictureService;
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
 import com.idea.nursing.servicemodule.web.domain.pojo.Services;
@@ -19,6 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ServicesController extends GenericController {
     @Autowired
     private ServicesService servicesService;
+    @Autowired
+    private CommentPictureService commentPictureService;
 
     /**
         * 添加服务
@@ -27,7 +30,7 @@ public class ServicesController extends GenericController {
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(Services services){
+    public ResultData add(Services services,String[] pictureAddress){
 
         try {
                 servicesService.insert(services);

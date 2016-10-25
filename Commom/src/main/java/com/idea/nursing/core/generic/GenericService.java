@@ -3,6 +3,7 @@ package com.idea.nursing.core.generic;
 import com.github.pagehelper.Page;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 所有自定义Service的顶级接口,封装常用的增删查改操作
@@ -67,5 +68,7 @@ public interface GenericService<Model, PK,ModelExample> {
      * @return
      */
     Page<Model> findAll(Integer currentPage, Integer limit);
+
+
 
 }
