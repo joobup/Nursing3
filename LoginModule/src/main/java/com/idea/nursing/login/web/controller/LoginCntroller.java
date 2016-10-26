@@ -4,6 +4,7 @@ package com.idea.nursing.login.web.controller;
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.common.SessionConstant;
 import com.idea.nursing.login.web.domain.pojo.Login;
+import com.idea.nursing.login.web.domain.pojo.Role;
 import com.idea.nursing.login.web.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,7 +34,8 @@ public class LoginCntroller {
 
         if(loginService.userLogin(login)){
             session.setAttribute(SessionConstant.SESSION_USER_BEAN,login);
-            return ResultData.build();
+            Role role = loginService.selectUserRole(login.getId());
+            return ResultData.build().put("role",role);
         }else{
             return ResultData.build().login();
         }

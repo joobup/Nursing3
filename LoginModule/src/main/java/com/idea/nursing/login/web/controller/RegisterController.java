@@ -55,8 +55,8 @@ public class RegisterController {
         }else{
             login.setLoginPassword(MD5Util.MD5(login.getLoginPassword()));
             if(loginService.userRegister(login)){
-                Role role = loginService.selectUserRole(login.getId());
-                return ResultData.build().put("role",role);
+
+                return ResultData.build();
             }else{
                 return ResultData.build().error();
             }
