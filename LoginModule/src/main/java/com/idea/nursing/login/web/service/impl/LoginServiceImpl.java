@@ -71,23 +71,21 @@ public class LoginServiceImpl implements LoginService{
     }
 
     @Override
-    public boolean userLogin(Login login)  {
+    public Login userLogin(Login login)  {
         LoginExample loginExample = new LoginExample();
         try {
-            System.out.println(login.getLoginTel());
-            System.out.println(login.getLoginPassword());
-            System.out.println(MD5Util.MD5(login.getLoginPassword()));
+
             loginExample.createCriteria().andLoginTelEqualTo(login.getLoginTel()).andLoginPasswordEqualTo(MD5Util.MD5(login.getLoginPassword()));
             List<Login> loginList =loginDao.selectByExample(loginExample);
             if(loginList.size()==0){
-                return false;
+                return new Login();
             }else{
                 //查询用户详细信息
-                return true;
+                return loginList.get(0);
             }
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
-            return false;
+            return new Login();
         }
 
     }

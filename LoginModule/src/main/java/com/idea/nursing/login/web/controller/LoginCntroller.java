@@ -31,8 +31,8 @@ public class LoginCntroller {
     @ResponseBody
     @RequestMapping(value="user_login",  method = RequestMethod.POST)
     public ResultData userLogin(Login login, HttpSession session){
-
-        if(loginService.userLogin(login)){
+        login = loginService.userLogin(login);
+        if(login.getId()!=null){
             session.setAttribute(SessionConstant.SESSION_USER_BEAN,login);
             Role role = loginService.selectUserRole(login.getId());
             return ResultData.build().put("role",role);

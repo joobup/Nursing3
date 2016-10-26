@@ -23,7 +23,7 @@ public interface LoginService {
     /**
      * 个人登录
      */
-    public boolean userLogin(Login login);
+    public Login userLogin(Login login);
 
     /**
      * 商家登录
