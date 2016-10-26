@@ -32,7 +32,7 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
 
         //获取父级类型
         ServiceClasses serviceClassesSuper = selectById(serviceClasses.getTid());
-        if(notNullObject(serviceClassesSuper)){
+        if(!notNullObject(serviceClassesSuper)){
 
             serviceClasses.setServeClasslevel((byte)0);
             serviceClasses.setTid(0l);
