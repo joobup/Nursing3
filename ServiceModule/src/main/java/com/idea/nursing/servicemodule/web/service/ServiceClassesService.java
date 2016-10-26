@@ -8,5 +8,5 @@ import java.util.List;
 import java.util.Map;
 
 public interface ServiceClassesService extends GenericService<ServiceClasses,Long,ServiceClassesExample>{
-        public Map<String,List<ServiceClasses>> findTree();
+        public List<List<ServiceClasses>> findTree();
 }

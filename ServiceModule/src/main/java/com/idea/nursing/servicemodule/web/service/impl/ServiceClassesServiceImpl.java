@@ -53,9 +53,9 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
     }
 
     @Override
-    public Map<String, List<ServiceClasses>> findTree() {
+    public List<List<ServiceClasses>> findTree() {
 
-        Map <String, List<ServiceClasses>> result = new HashMap<>();
+        List<List<ServiceClasses>> result = new ArrayList<>();
         ServiceClassesExample example = new ServiceClassesExample();
         List<ServiceClasses> list = serviceclassesDao.selectByExample(example);
         if(list.size()==0){
@@ -81,7 +81,7 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
                     leaveList.add(serviceClasses);
                 }
             }
-            result.put(i+"",leaveList);
+            result.add(leaveList);
         }
 
         return result;
