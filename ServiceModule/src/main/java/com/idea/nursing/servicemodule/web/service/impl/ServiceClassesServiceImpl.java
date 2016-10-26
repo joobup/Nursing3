@@ -58,6 +58,9 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
         Map <String, List<ServiceClasses>> result = new HashMap<>();
         ServiceClassesExample example = new ServiceClassesExample();
         List<ServiceClasses> list = serviceclassesDao.selectByExample(example);
+        if(list.size()==0){
+            return result;
+        }
         int maxLeave = 0;
         /**
          * 找到最小级别

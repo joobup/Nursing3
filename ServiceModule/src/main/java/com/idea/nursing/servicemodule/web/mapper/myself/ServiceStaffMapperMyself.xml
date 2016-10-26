@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.myself.ServiceStaffMapperMyself" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.vo.ServiceStaffVO" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="staff_name" property="staffName" jdbcType="VARCHAR" />
+    <result column="staff_sex" property="staffSex" jdbcType="TINYINT" />
+    <result column="staff_post" property="staffPost" jdbcType="BIGINT" />
+    <result column="staff_skill_level" property="staffSkillLevel" jdbcType="VARCHAR" />
+    <result column="staff_department" property="staffDepartment" jdbcType="BIGINT" />
+    <result column="staff_card_id" property="staffCardId" jdbcType="VARCHAR" />
+    <result column="staff_call1" property="staffCall1" jdbcType="VARCHAR" />
+    <result column="staff_call2" property="staffCall2" jdbcType="VARCHAR" />
+    <result column="staff_rank" property="staffRank" jdbcType="TINYINT" />
+    <result column="staff_status" property="staffStatus" jdbcType="TINYINT" />
+    <association property="staffPicture" javaType="com.idea.nursing.common.web.domain.pojo.CommentPicture">
+      <id column="id" property="id" jdbcType="BIGINT"/>
+      <result column="picture_address" property="pictureAddress" jdbcType="VARCHAR"/>
+      <result column="picture_type" property="pictureType" jdbcType="TINYINT"/>
+    </association>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    s.id, s.staff_name, s.staff_sex, s.staff_post, s.staff_skill_level, p.id, p.picture_address, p.picture_type, s.staff_department,
+    s.staff_card_id, s.staff_call1, s.staff_call2, s.staff_rank, s.staff_status
+  </sql>
+  <select id="selectAllVO" resultMap="BaseResultMap" >
+    select
+
+    <include refid="Base_Column_List" />
+    from ff_service_staff as s LEFT JOIN comment_picture as p on p.id = s.staff_picture
+
+  </select>
+
+</mapper>

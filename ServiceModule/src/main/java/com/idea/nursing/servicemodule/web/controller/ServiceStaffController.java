@@ -1,10 +1,15 @@
 package com.idea.nursing.servicemodule.web.controller;
 
+import com.idea.nursing.common.web.domain.pojo.CommentPicture;
+import com.idea.nursing.common.web.service.CommentPictureService;
 import com.idea.nursing.core.common.ResultData;
+import com.idea.nursing.core.common.SessionConstant;
 import com.idea.nursing.core.generic.GenericController;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServiceStaff;
 import com.idea.nursing.servicemodule.web.service.ServiceStaffService;
 
+import com.idea.nursing.servicemodule.web.service.ServiceStaffServiceMyself;
+import com.idea.nursing.servicemodule.web.service.ServicesPictureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +24,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ServiceStaffController extends GenericController {
     @Autowired
     private ServiceStaffService servicestaffService;
+    @Autowired
+    private ServiceStaffServiceMyself serviceStaffServiceMyself;
+
+    @Autowired
+    private CommentPictureService commentPictureService;
 
     /**
         * 添加服务人员
@@ -27,11 +37,12 @@ public class ServiceStaffController extends GenericController {
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(ServiceStaff servicestaff){
+    public ResultData add(ServiceStaff servicestaff,CommentPicture commentPicture){
 
         try {
                 servicestaffService.insert(servicestaff);
-
+                commentPicture.setPictureType(SessionConstant.PictureType.STAFFHEAD.key);
+                commentPictureService.insert(commentPicture);
             }catch (Exception e){
                 return ResultData.build().addErroe();
             }
@@ -83,7 +94,7 @@ public class ServiceStaffController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(servicestaffService.findAll(currentPage,limit));
+        parsePageBean(serviceStaffServiceMyself.findAllVO(currentPage,limit));
     }
 
 }

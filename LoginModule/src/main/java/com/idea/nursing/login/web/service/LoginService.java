@@ -1,6 +1,7 @@
 package com.idea.nursing.login.web.service;
 
 import com.idea.nursing.login.web.domain.pojo.Login;
+import com.idea.nursing.login.web.domain.pojo.Role;
 
 /**
  * Created by 10238 on 2016/10/10.
@@ -37,5 +38,12 @@ public interface LoginService {
      * @return
      */
     public boolean uniqueVerify(String tel);
+
+    /**
+     * 通过用户Id 查询角色
+     * @param usetId
+     * @return
+     */
+    public Role selectUserRole(Long usetId);
 
 }

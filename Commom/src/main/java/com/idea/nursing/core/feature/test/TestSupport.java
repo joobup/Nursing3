@@ -3,7 +3,7 @@ package com.idea.nursing.core.feature.test;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
 
-@ContextConfiguration(locations = {"classpath*:applicationContext.xml"})
+@ContextConfiguration(locations = {"classpath*:/applicationContext.xml"})
 public class TestSupport extends AbstractJUnit4SpringContextTests {
     protected long startTime;
     protected long endTime;

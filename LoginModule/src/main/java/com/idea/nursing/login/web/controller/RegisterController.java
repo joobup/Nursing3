@@ -4,6 +4,7 @@ import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.util.MD5Util;
 import com.idea.nursing.core.util.ObjectIsNull;
 import com.idea.nursing.login.web.domain.pojo.Login;
+import com.idea.nursing.login.web.domain.pojo.Role;
 import com.idea.nursing.login.web.service.LoginService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,8 @@ public class RegisterController {
         }else{
             login.setLoginPassword(MD5Util.MD5(login.getLoginPassword()));
             if(loginService.userRegister(login)){
-                return ResultData.build();
+                Role role = loginService.selectUserRole(login.getId());
+                return ResultData.build().put("role",role);
             }else{
                 return ResultData.build().error();
             }

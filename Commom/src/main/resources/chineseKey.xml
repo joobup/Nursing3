@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-        <chinese_keys>
-            <chinese_key chineseName="服务类别" keyName="serveClassify" tableName = "ff_services">
-
-            </chinese_key>
-
-        </chinese_keys>

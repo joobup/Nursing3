@@ -5,12 +5,14 @@ import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuation;
 import com.idea.nursing.servicemodule.web.service.ServiceClassesValuationService;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
 
 import java.util.List;
 
 /**
  * Created by horo on 2016/10/14.
  */
+@ContextConfiguration(locations = {"classpath*:/applicationContext-service.xml"})
 public class ServiceClassesValutionTest extends TestSupport{
     @Autowired
     private ServiceClassesValuationService serviceClassesValuationsService;

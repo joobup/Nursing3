@@ -4,9 +4,8 @@ package com.idea.nursing.login.web.service.impl;
 import com.idea.nursing.core.util.MD5Util;
 import com.idea.nursing.login.web.dao.LoginMapper;
 import com.idea.nursing.login.web.dao.LoginRoleMapper;
-import com.idea.nursing.login.web.domain.pojo.Login;
-import com.idea.nursing.login.web.domain.pojo.LoginExample;
-import com.idea.nursing.login.web.domain.pojo.LoginRole;
+import com.idea.nursing.login.web.dao.RoleMapper;
+import com.idea.nursing.login.web.domain.pojo.*;
 import com.idea.nursing.login.web.service.LoginService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +24,10 @@ public class LoginServiceImpl implements LoginService{
     private LoginMapper loginDao;
     @Autowired
     private LoginRoleMapper loginRoleMapper;
+
+    @Autowired
+    private RoleMapper roleMapper;
+
 
 
 
@@ -119,5 +122,30 @@ public class LoginServiceImpl implements LoginService{
         loginExample.createCriteria().andLoginTelEqualTo(tel);
 
         return loginDao.selectByExample(loginExample).size()==0;
+    }
+
+    /**
+     * 通过用户id 查询角色
+     * @param usetId
+     * @return
+     */
+    @Override
+    public Role selectUserRole(Long usetId) {
+        LoginRoleExample loginRoleExample =  new LoginRoleExample();
+        loginRoleExample.createCriteria().andLoginIdEqualTo(usetId);
+        List<LoginRole> roles = loginRoleMapper.selectByExample(loginRoleExample);
+        if(roles.size()==0){
+            return new Role();
+        }else{
+            Role role =  roleMapper.selectByPrimaryKey(roles.get(0).getId());
+            if(role==null){
+                return new Role();
+            }else {
+                return role;
+            }
+
+        }
+
+
     }
 }

@@ -42,7 +42,7 @@
         <!--对应数据库表名 -->
         
         
-        <table tableName="u_login" domainObjectName="Login">
+        <table tableName="u_role" domainObjectName="Role">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
 
