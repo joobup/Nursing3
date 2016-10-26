@@ -135,7 +135,7 @@ public class LoginServiceImpl implements LoginService{
         if(roles.size()==0){
             return new Role();
         }else{
-            Role role =  roleMapper.selectByPrimaryKey(roles.get(0).getId());
+            Role role =  roleMapper.selectByPrimaryKey(roles.get(0).getRoleId());
             if(role==null){
                 return new Role();
             }else {

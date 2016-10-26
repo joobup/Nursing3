@@ -19,6 +19,7 @@ function login() {
     var url = domainUrl+"/login/user_login";
     var postData = {loginTel:loginName,loginPassword:loginPassword}
     postAjax(url,false,postData,function (data) {
+       alert(JSON.stringify(data))
         if(data.status ==1){
             if(data.role.id == 2){
                 location.href=domainUrl+"/index/index"
