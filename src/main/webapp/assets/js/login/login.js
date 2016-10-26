@@ -20,7 +20,11 @@ function login() {
     var postData = {loginTel:loginName,loginPassword:loginPassword}
     postAjax(url,false,postData,function (data) {
         if(data.status ==1){
-            location.href=domainUrl+"/index/index"
+            if(data.role.id == 2){
+                location.href=domainUrl+"/index/index"
+            }else{
+                location.href=domainUrl+"/serve/services/servicesP"
+            }
         }else{
             alert("用户名或密码错误")
         }

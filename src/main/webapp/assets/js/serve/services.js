@@ -18,22 +18,22 @@ $(function () {
         $("#shanchu-yes").show();
         $("#shanchu-no").hide();
     })
-    // $("#leibie").bind("change",function(){
-    //     if($(this).val()==0){
-    //         return;
-    //     }
-    //     else{
-    //         var id = $(this).val();
-    //         leibieon(id);
-    //     }
-    // });
+    /*时间控件*/
+    $(function(){
+        $('.date_picker').date_input();
+    })
 })
-function findAllp() {
+var pageList;
+var pageNp =1;
+function findAllp(currentPage) {
     var url = domainUrl + "/serve/services/findAll";
-    var getData = {};
+    var limit = 3;
+    var getData = {currentPage: currentPage, limit: limit};
     var html = "";
     getAjax(url, false, getData, function (data) {
-        var num = data.iTotalRecords;
+        pageList = Math.ceil(data.iTotalRecords / limit);
+        console.log(pageList)
+        var num = data.aaData.length;
         console.log(JSON.stringify(data) + "..." + num);
         for (var i = 0; i < num; i++) {
             html += ' <div class="serve-module-s"><i class="glyphicon glyphicon-pencil bianji" onclick="make(' + data.aaData[i].id + ')"></i>  <i class=" glyphicon glyphicon-remove shanchu" onclick="del(' + data.aaData[i].id + ')"></i><ul id="zuo-font">';
@@ -41,64 +41,48 @@ function findAllp() {
             html += '<ul id="you-font1"><li>服务简介</li> </ul> <ul id="you-font2"> <li>' + data.aaData[i].serveBiref + '</li></ul></div>';
         }
         $(".serve-module").html(html)
-        })
-}
-function findAllb() {
-    var url = domainUrl + "/serve/services/findAll";
-    var getData = {};
-    var html = "";
-    getAjax(url, false, getData, function (data) {
-        var num = data.iTotalRecords;
-        console.log(JSON.stringify(data) + "..." + num);
-        for (var i = 0; i < num; i++) {
-            html+='<tr><td>' + data.aaData[i].serveName + '</td><td>' + data.aaData[i].serveClassify + '</td><td>' + data.aaData[i].serveLimit + '</td><td>' + data.aaData[i].servePeoples + '</td>';
-            html+='<td>' + data.aaData[i].serveBiref + '</td><td><i class="glyphicon glyphicon-pencil bianji" onclick="make(' + data.aaData[i].id + ')"></i><i' +
-                ' class="glyphicon glyphicon-remove shanchu" style="display: none" onclick="del(' + data.aaData[i].id + ')"></i></td></tr>';
+        if(pageNp == 1){
+            pageNp =2 ;
+            $(".tcdPageCode").createPage({
+                pageCount: pageList,
+                current: currentPage,
+                backFn: function (p) {
+                    findAllp(p)
+                }
+            });
         }
-         $("#aaa").append(html)
     })
 }
-// function classifyFindAll() {
-//     var url=domainUrl+"/serve/service_classes/findAll";
-//     var p = 1;
-//     var ps = 5;
-//     var getData = {currentPage:p,limit:ps};
-//     getAjax(url,false,getData,function (data) {
-//         console.log(JSON.stringify(data));
-//         console.log(data.aaData[1]);
-//         var num = data.iTotalRecords;
-//         var html="<option>选择服务类别</option>";
-//         for(var i = 0; i < num; i++){
-//             if(data.aaData[i].serveClasslevel == 0){
-//                 var id = data.aaData[i].id;
-//                 html += '<option value="'+id+'">'+data.aaData[i].serveClassname+'</option>'
-//             }
-//         }
-//         $("#leibie").html(html);
-//     })
-// }
-// function leibieon(id) {
-//     var url=domainUrl+"/serve/service_classes/findAll";
-//     var p = 1;
-//     var ps = 5;
-//     var getData = {currentPage:p,limit:ps};
-//     if(id != "选择服务类别"){
-//
-//         getAjax(url,false,getData,function (data) {
-//             var num = data.iTotalRecords;
-//             var html='<select name=""  class="form-control leibies">';
-//             for(var i = 0; i < num; i++){
-//                 if(data.aaData[i].tid == id){
-//                     html+='<option onclick="leibieon(id)">'+data.aaData[i].serveClassname+'</option>';
-//                 }
-//             }
-//             html+='</select>';
-//             $("#leibie").after(html);
-//         })
-//     }else{
-//         $(".leibies").remove();
-//     }
-// }
+var pageNb = 1;
+function findAllb(currentPage) {
+    var url = domainUrl + "/serve/services/findAll";
+    var limit = 3;
+    var getData = {currentPage: currentPage, limit: limit};
+    var html = "<tbody> <tr> <th>服务标题</th> <th>服务类别</th> <th>限制条件</th> <th>服务人数</th> <th>服务简介</th> <th>操作</th> </tr> </tbody>";
+    getAjax(url, false, getData, function (data) {
+        pageList = Math.ceil(data.iTotalRecords / limit);
+        console.log(pageList)
+        var num = data.aaData.length;
+        console.log(JSON.stringify(data) + "..." + num);
+        for (var i = 0; i < num; i++) {
+            html += '<tr><td>' + data.aaData[i].serveName + '</td><td>' + data.aaData[i].serveClassify + '</td><td>' + data.aaData[i].serveLimit + '</td><td>' + data.aaData[i].servePeoples + '</td>';
+            html += '<td>' + data.aaData[i].serveBiref + '</td><td><i class="glyphicon glyphicon-pencil bianji" onclick="make(' + data.aaData[i].id + ')"></i><i' +
+                ' class="glyphicon glyphicon-remove shanchu" style="display: none" onclick="del(' + data.aaData[i].id + ')"></i></td></tr>';
+        }
+        $("#aaa").html(html)
+        if(pageNb == 1){
+            pageNb =2;
+            $(".tcdPageCode").createPage({
+                pageCount: pageList,
+                current: currentPage,
+                backFn: function (p) {
+                    findAllb(p)
+                }
+            });
+        }
+
+    })
+}
 function add() {
     var serveClassify = $("#leibie").val();
     var serveName = $("#mingcheng").val();
@@ -136,7 +120,7 @@ function make(id) {
     var getData = {};
     var ify, name, biref, limit, peoples, xid;
     getAjax(url, false, getData, function (data) {
-        var num = data.iTotalRecords;
+        var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
             if (id == data.aaData[i].id) {
                 ify = data.aaData[i].serveClassify;
@@ -177,4 +161,7 @@ function update() {
         alert("修改成功")
         location.reload()
     })
+}
+window.onload = function () {
+
 }

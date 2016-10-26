@@ -13,7 +13,7 @@ function findAllServe() {
     var getData = {};
     var html = "";
     getAjax(url, false, getData, function (data) {
-        var num = data.iTotalRecords;
+        var num = data.aaData.length;
         console.log(JSON.stringify(data) + "..." + num);
         for (var i = 0; i < num; i++) {
 

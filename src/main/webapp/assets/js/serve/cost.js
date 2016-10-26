@@ -15,7 +15,7 @@ function findAll() {
     var getData = {currentPage:1,limit:100};
     getAjax(url,false,getData,function (data) {
         console.log(JSON.stringify(data))
-        var num = data.iTotalRecords;
+        var num = data.aaData.length;
         var html="";
         for(var i =0;  i < num ; i++){
             html +='<div class="del"><span>'+data.aaData[i].classesValuationName+'</span><a onclick="del('+data.aaData[i].id+')">删除</a></div>';

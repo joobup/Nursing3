@@ -39,7 +39,7 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
         }else{
             serviceClasses.setServeClasslevel((byte)(serviceClassesSuper.getServeClasslevel()+1));
         }
-       return super.insert(serviceClasses);
+        return super.insert(serviceClasses);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
         for (int i=0;i<maxLeave;i++){
             List<ServiceClasses> leaveList = new ArrayList<>();
             for (ServiceClasses serviceClasses:list
-                 ) {
+                    ) {
                 if(serviceClasses.getServeClasslevel()==i){
                     leaveList.add(serviceClasses);
                 }

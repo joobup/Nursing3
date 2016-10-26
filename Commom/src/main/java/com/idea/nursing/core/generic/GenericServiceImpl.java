@@ -122,7 +122,7 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
         PageHelper.startPage(currentPage, limit);
         Page<Model> list = (Page<Model>) getDao()
                 .selectByExample(example);
-         return list;
+        return list;
 
     }
 

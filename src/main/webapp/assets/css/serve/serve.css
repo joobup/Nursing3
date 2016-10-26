@@ -1,0 +1,35 @@
+/*服务模块*/
+
+/*平铺显示*/
+.serve-module .serve-module-s #zuo-font {
+    height: 100%;
+    width: 40%;
+    padding-top: 25px;
+    float: left;
+}
+
+.serve-module .serve-module-s #zuo-font li {
+    height: 22%;
+    align-items: center;
+    display: flex;
+    padding-left: 25px;
+}
+
+.serve-module .serve-module-s ul li span {
+    margin-left: 10px;
+}
+
+.serve-module .serve-module-s #you-font1 {
+    height: 100%;
+    float: left;
+    width: 15%;
+    padding-top: 35px;
+}
+
+.serve-module .serve-module-s #you-font2 {
+    height: 100%;
+    float: left;
+    width: 30%;
+    word-wrap: break-word;
+    padding-top: 35px;
+}

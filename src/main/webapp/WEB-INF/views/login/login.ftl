@@ -1,8 +1,8 @@
 <html>
 <head>
-    <link rel="stylesheet" href="${domainUrl}/assets/css/login.css">
+    <link rel="stylesheet" href="${domainUrl}/assets/css/login/login.css">
     <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
-    <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
+    <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script type="text/javascript" src="${domainUrl}/assets/js/login/login.js"></script>
     <title>登录</title>
@@ -22,11 +22,11 @@
                 <div class="seller-login back-gray">机构登陆</div>
             </li>
             <li>
-                <div  class="login-input-img"><img src="${domainUrl}/assets/images/login-user.jpg"></div>
+                <div  class="login-input-img"><img src="${domainUrl}/assets/images/login/login-user.jpg"></div>
                 <input type="text" placeholder="手机号"  id="loginName"  class="login-input">
             </li>
             <li>
-                <div class="login-input-img" style="margin-top: 25px;"><img src="${domainUrl}/assets/images/login-pass.jpg"></div>
+                <div class="login-input-img" style="margin-top: 25px;"><img src="${domainUrl}/assets/images/login/login-pass.jpg"></div>
                 <input type="password" placeholder="密码"  id="loginPassword" class="login-input" style="margin-top: 25px; height: 45px;">
             </li>
             <li><input type="button" value="登录" id="login-btn" onclick="login()"></li>

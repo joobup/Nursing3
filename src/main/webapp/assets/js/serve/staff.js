@@ -6,7 +6,6 @@ $(function () {
         $("#update-btn").hide();
         $("#add-btn").show();
     })
-    findAll();
     $("#shanchu-yes").click(function () {
         $(".bianji").hide();
         $(".shanchu").show();
@@ -62,25 +61,69 @@ function del(id) {
         location.reload();
     })
 }
-function findAll() {
+var pageNp = 1;
+var pageList;
+function findAllp(currentPage) {
     var url = domainUrl + "/serve/service_staff/findAll";
-    var getData = {};
+    var limit = 3;
+    var getData = {currentPage: currentPage, limit: limit};
     var html = "";
     getAjax(url, false, getData, function (data) {
-        var num = data.iTotalRecords;
+        pageList = Math.ceil(data.iTotalRecords / limit);
+        var num = data.aaData.length;
         console.log(JSON.stringify(data))
         for (var i = 0; i < num; i++) {
             html += '<div class="serve-module-s"> <i class="glyphicon glyphicon-pencil bianji" onclick="make(' + data.aaData[i].id + ')"></i> <i class="glyphicon glyphicon-remove shanchu" onclick="del(' + data.aaData[i].id + ')"></i> <ul>';
-            html += '<li id="staff-mess1"><img src="${domainUrl}/assets/images/shanchu.png" alt=""></li> <li id="staff-mess2"> <ul> <li>' + data.aaData[i].staffName + '</li>';
+            html += '<li id="staff-mess1"><img src="" alt=""></li> <li id="staff-mess2"> <ul> <li>' + data.aaData[i].staffName + '</li>';
             html += ' <li>职务</li> <li>部门</li> <li>联系方式</li> <li>身份证号</li> </ul> <ul> <li>' + data.aaData[i].staffSex + '</li> <li>' + data.aaData[i].staffPost + '</li> ';
             html += '<li>' + data.aaData[i].staffDepartment + '</li> <li>' + data.aaData[i].staffCall1 + '</li> <li>' + data.aaData[i].staffCardId + '</li> </ul> </li>';
             html += '<li id="staff-mess3"> <ul> <li>人员状态</li> <li>管理权限</li> <li>技能等级</li> </ul> <ul> <li>' + data.aaData[i].staffStatus + '</li> <li>' + data.aaData[i].staffRank + '</li>';
             html += ' <li>' + data.aaData[i].staffSkillLevel + '</li> </ul> </li> </ul> </div>';
         }
         $(".serve-module").html(html)
+        if(pageNp == 1){
+            pageNp =2;
+            $(".tcdPageCode").createPage({
+                pageCount: pageList,
+                current: currentPage,
+                backFn: function (p) {
+                    findAllp(p)
+                }
+            });
+        }
     })
 }
-
+var pageNb = 1;
+function findAllb(currentPage) {
+    var url = domainUrl + "/serve/service_staff/findAll";
+    var limit = 3;
+    var getData = {currentPage: currentPage, limit: limit};
+    var html = " <tbody> <tr> <th>姓名</th> <th>性别</th> <th>职务</th> <th>部门</th> <th>头像</th> <th>联系方式</th>" +
+        " <th>身份证号</th> <th>人员状态</th> <th>管理权限</th> <th>技能等级</th><th>操作</th> </tr></tbody>";
+    getAjax(url, false, getData, function (data) {
+        pageList = Math.ceil(data.iTotalRecords / limit);
+        var num = data.aaData.length;
+        console.log(JSON.stringify(data))
+        for (var i = 0; i < num; i++) {
+            html+='<tr><td>' + data.aaData[i].staffName + '</td><td>' + data.aaData[i].staffSex + '</td><td>' + data.aaData[i].staffPost + '</td>' +
+                '<td>' + data.aaData[i].staffDepartment + '</td><td>' + data.aaData[i].staffPicture + '</td><td>' + data.aaData[i].staffCall1 + '</td><td>' + data.aaData[i].staffCardId + '</td>' +
+                '<td>' + data.aaData[i].staffStatus + '</td><td>' + data.aaData[i].staffRank + '</td><td>' + data.aaData[i].staffSkillLevel + '</td>' +
+                '<td><i class="glyphicon glyphicon-pencil bianji" onclick="make(' + data.aaData[i].id + ')"></i>' +
+                ' <i class="glyphicon glyphicon-remove shanchu" onclick="del(' + data.aaData[i].id + ')" style="display:none;"></i></td></tr>';
+        }
+        $("#aaa").html(html)
+        if(pageNb == 1){
+            pageNb =2;
+            $(".tcdPageCode").createPage({
+                pageCount: pageList,
+                current: currentPage,
+                backFn: function (p) {
+                    findAllb(p)
+                }
+            });
+        }
+    })
+}
 function make(id) {
     $("#update-btn").show();
     $("#add-btn").hide();
@@ -88,7 +131,7 @@ function make(id) {
     var getData = {};
     var name, sex, post, level, pic, ment, card, call1, call2, rank, status, xid;
     getAjax(url, false, getData, function (data) {
-        var num = data.iTotalRecords;
+        var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
             if (id == data.aaData[i].id) {
                 name = data.aaData[i].staffName;

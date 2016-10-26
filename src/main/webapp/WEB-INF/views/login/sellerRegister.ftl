@@ -1,10 +1,10 @@
 <html>
 <head>
     <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
-    <link rel="stylesheet" href="${domainUrl}/assets/css/register.css">
-    <link rel="stylesheet" href="${domainUrl}/assets/css/插件css/animate/animate.css">
-    <script src="${domainUrl}/assets/js/jQuery-1.4.2/jquery.min.js"></script>
-    <script src="${domainUrl}/assets/js/表单验证/yanzheng.js"></script>
+    <link rel="stylesheet" href="${domainUrl}/assets/css/login/register.css">
+    <link rel="stylesheet" href="${domainUrl}/assets/css/OutCss/animate/animate.css">
+    <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
+    <script src="${domainUrl}/assets/js/OutJs/InputTest/yanzheng.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script type="text/javascript" src="${domainUrl}/assets/js/login/register.js"></script>
     <title>商家注册</title>
@@ -82,7 +82,7 @@
         </table>
         <div id="three">
             <div class="register-okimg">
-                <img src="${domainUrl}/assets/images/registerok.jpg" alt="" style="margin-top: 40px;">
+                <img src="${domainUrl}/assets/images/login/registerok.jpg" alt="" style="margin-top: 40px;">
                 <br>
                 审核中···
                 <br>

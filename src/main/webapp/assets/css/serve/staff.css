@@ -1,0 +1,59 @@
+/*员工模块*/
+/*平铺显示*/
+.modal-body #staff-pic {
+    width: 130px;
+    height: 130px;
+    border: 1px solid #DADADA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.serve-module-s #staff-mess1 {
+    width: 20%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.serve-module-s #staff-mess1 img {
+    border-radius: 50px;
+}
+
+.serve-module-s #staff-mess2 {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+#staff-mess2 ul {
+    float: left;
+    margin-left: 10px;
+    padding-top: 15px;
+}
+
+#staff-mess2 li {
+    margin-top: 12px;
+    width: 60px;
+    white-space: nowrap;
+}
+
+.serve-module-s #staff-mess3 {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+#staff-mess3 ul {
+    float: left;
+    margin-left: 10px;
+    padding-top: 48px;
+}
+
+#staff-mess3 li {
+    margin-top: 12px;
+    width: 60px;
+    white-space: nowrap;
+}

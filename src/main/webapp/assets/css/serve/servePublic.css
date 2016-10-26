@@ -1,0 +1,265 @@
+* {
+    font-family: "微软雅黑";
+}
+li, ol {
+    list-style: none;
+}
+div, ul {
+    padding: 0px;
+    margin: 0px;
+}
+.main {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/*banner*/
+.head-banner {
+    width: 100%;
+    height: 8%;
+    background-color: #fff;
+    border-bottom: 2px solid #DADADA;
+    min-height: 90px;
+}
+.head-banner #logo {
+    height: 100%;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    float: left;
+}
+.head-banner #user-status {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-right: 30px;
+}
+#user-status b {
+    transition: .3s;
+    color: #000;
+    cursor: pointer;
+}
+#user-status b:hover {
+    color: #FF4B01;
+}
+
+#user-status tui {
+    margin-right: 20px;
+    border: 0px;
+    transition: .5s;
+    cursor: pointer;
+    color: #a0a3a3;
+    transition: .5s;
+}
+
+#user-status tui:hover {
+    color: #FF4B01;
+}
+/*主题内容*/
+.main-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/*左侧边栏*/
+.main-body #main-side {
+    height: 100%;
+    width: 12%;
+    background-color: #2b3949;
+    float: left;
+    padding-left: 0px;
+    padding-top: 50px;
+    min-width: 170px;
+}
+
+.main-body #main-side a {
+    text-decoration: none;
+}
+
+#main-side ul .side-list {
+    height: 40px;
+    text-align: center;
+    background-color: #2b3949;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 5px;
+    line-height: 40px;
+    border-radius: 2px;
+    transition: .4s;
+}
+
+#main-side ul li:hover {
+    background-color: #FF4B01;
+    width: 101%;
+}
+
+#main-side ul .b {
+    width: 101%;
+    background-color: #FF4B01;
+}
+/*右侧内容*/
+.main-body #main-show {
+    height: 100%;
+    width: 88%;
+    background-color: #f1f1f1;
+    float: left;
+    overflow: auto;
+}
+
+#main-show .serve-banner {
+    width: 96%;
+    height: 55px;
+    border: 1px solid #E9E9E9;
+    margin: 20px 2%;
+    background-color: #fff;
+    min-width: 1228px;
+}
+#main-show #now-position{
+    width: 96%; margin: 35px 0px -20px 2%; border-bottom: 2px solid #2B3946; height: 30px; font-size: 15px;
+}
+#main-show #now-position span{
+    color: #a0a3a3;
+}
+#main-show .serve-banner an {
+    height: 55px;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+
+#main-show .serve-banner  input[type="button"] {
+    height: 30px;
+    width: 100px;
+    background-color: #2B3846;
+    border: 0px;
+    color: #fff;
+    border-radius: 2px;
+    margin-right: 15px;
+    transition: .5s;
+}
+
+#main-show .serve-banner  input[type="button"]:hover {
+    background-color: #FF4B01;
+}
+#main-show #date-input{
+    height: 55px; display: flex;align-items: center; float: left;
+}
+#main-show #date-input date{
+    color: #949494;
+    margin: 0px 13px;
+}
+
+#main-show .serve-module {
+    width: 98%;
+    height: auto;
+    overflow: hidden;
+    padding-left: 2%;
+    padding-top: 1%;
+    min-width: 1250px;
+}
+
+.serve-module .serve-module-s {
+    height: 200px;
+    width: 31%;
+    margin: 0px 1% 15px 1%;
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid #E9E9E9;
+    float: left;
+    position: relative;
+    min-width: 380px;
+    transition: .3s;
+}
+.serve-module-s:hover{
+    box-shadow: 0px 0px 5px 2px #FF4B01;
+}
+.serve-module-s i {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.serve-module-s .shanchu {
+    display: none;
+}
+
+/*表格显示*/
+.serve-module table{
+    width: 100%;
+    text-align: center;
+    border:1px  solid #E5E5E5;
+    background-color: #fff;
+}
+.serve-module table i{
+    padding: 0px 5px;
+    cursor: pointer;
+}
+.serve-module table th{
+    text-align: center;
+    border:1px  solid #E5E5E5;
+    font-size: 16px;
+    padding: 9px 0px 9px 0px;
+    background-color: #BFBFBF!important;
+    color: #000!important;
+}
+.serve-module table td{
+    border:1px solid #E5E5E5;
+    text-align: center;
+    white-space: nowrap;
+    padding: 9px 0px 9px 0px;
+}
+.serve-module table tr:hover{
+    background-color: #FF4B01;
+    color: #fff;
+}
+/*添加窗口*/
+#add {
+    margin: 20px auto;
+    font-size: 14px;
+}
+
+#add td {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
+
+#add input[type="text"] {
+    width: 200px;
+    height: 25px;
+    border: 1px solid #E7E7E7;
+}
+
+#add textarea {
+    width: 200px;
+    height: 80px;
+    resize: none;
+    margin-top: 7px;
+}
+
+#add select {
+    width: 200px;
+    height: 25px;
+    border: 1px solid #E7E7E7;
+}
+/*底部*/
+#foot {
+    background-color: #2b3949;
+    width: 100%;
+    height:35px;
+    text-align: center;
+    line-height: 35px;
+    bottom: 0px;
+    position: fixed;
+    color: #fff;
+}
+

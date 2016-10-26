@@ -3,27 +3,29 @@
     <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/serve/servePublic.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="${domainUrl}/assets/css/OutCss/animate/animate.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/OutCss/page/page.css" rel="stylesheet" >
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
+    <link href="${domainUrl}/assets/css/OutCss/date/jquery.data_input.pack.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/common.js"></script>
-    <script src="${domainUrl}/assets/js/serve/pack.js"></script>
+    <script src="${domainUrl}/assets/js/serve/services.js"></script>
     <meta charset="utf-8"/>
     <title></title>
 </head>
 <script>
     var domainUrl = '${domainUrl}' + "/rest";
 </script>
-<body>
+<body onload="findAllb()">
 <div class="main">
 <#include "/common/serveHead.ftl"/>
     <div class="main-body">
         <div id="main-side">
             <ul>
-                <a href="${domainUrl}">
-                    <li class="side-list" id="serve">服务模块</li>
+                <a href="${domainUrl}">\
+                    <li class="side-list b" id="serve">服务模块</li>
                 </a>
-                <a href="${domainUrl}/rest/serve/classify/classif">
+                <a href="${domainUrl}/rest/serve/classify/classify">
                     <li class="side-list" id="ify">类别模块</li>
                 </a>
                 <a href="${domainUrl}/rest/serve/cost/cost">
@@ -33,38 +35,41 @@
                     <li class="side-list" id="staff">员工模块</li>
                 </a>
                 <a href="${domainUrl}/rest/serve/pack/pack">
-                    <li class="side-list  b" id="pack">打包模块</li>
+                    <li class="side-list" id="pack">打包模块</li>
                 </a>
-
             </ul>
         </div>
         <div id="main-show">
             <div id="now-position">
-                您当前所在的位置：<span>打包模块</span>
+                您当前所在的位置：<span>服务模块</span>
             </div>
             <div class="serve-banner">
-                <an><input type="button" id="cao" value="打包服务" data-toggle="modal" data-target="#myModal"> <input
+                <#--时间控件-->
+                <script type="text/javascript">
+                    $(function(){
+                        $('.date_picker').date_input();
+                    })
+                </script>
+                    <div id="date-input">
+                        <date>时间范围</date>
+                        <input type="text"  class="date_picker" value="2015-01-01" style="text-align: center">
+                        <date>—</date>
+                        <input type="text"  class="date_picker" value="2016-01-01" style="text-align: center">
+                        <date><input type="button" id="cao" value="搜索" ></date>
+                    </div>
+                <an><input type="button" id="cao" value="添加服务" data-toggle="modal" data-target="#myModal"> <input
                         type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input
-                        type="button" value="删除服务包" " id="shanchu-yes">
+                        type="button" value="删除服务" " id="shanchu-yes"><a href="${domainUrl}"><input type="button" value="平铺显示"></a>
                 </an>
             </div>
             <div class="serve-module">
-            <div class="serve-module-s">
-                    <i class="glyphicon glyphicon-pencil bianji"></i>
-                    <i class=" shanchu"><img src="${domainUrl}/assets/images/serve/shanchu.png" xalt=""></i>
-                    <ul id="zuo-font">
-                        <li>服务标题<span>XXXXX</span></li>
-                        <li>服务类别<span>XXXXX</span></li>
-                        <li>限制条件<span>XXXXX</span></li>
-                        <li>服务人数<span>XXXXX</span></li>
-                    </ul>
-                   <ul id="you-font1">
-                       <li>服务简介</li>
-                   </ul>
-                    <ul id="you-font2">
-                        <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                    </ul>
-                </div>
+                <table  id="aaa">
+
+                </table>
+            </div>
+         <#--分页-->
+            <script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
+            <div class="tcdPageCode">
             </div>
         </div>
     </div>
@@ -81,32 +86,24 @@
                 <div class="modal-body">
                     <table id="add">
                         <tr>
-                            <td>服务名称</td>
-                            <td><input type="text" id="name"></td>
+                            <td>服务类别</td>
+                            <td><input type="text" id="leibie" class="null"></td>
                         </tr>
                         <tr>
-                            <td>注意事项</td>
-                            <td><input type="text" id="care"></td>
+                            <td>服务标题</td>
+                            <td><input type="text" id="mingcheng"class="null"></td>
                         </tr>
                         <tr>
-                            <td>费用折扣</td>
-                            <td><input type="text" id="rebate"></td>
+                            <td>限制条件</td>
+                            <td><input type="text" id="tiaojian"class="null"></td>
                         </tr>
                         <tr>
-                            <td>有效时间</td>
-                            <td><input type="text" id="enddate"></td>
-                        </tr>
-                        <tr>
-                            <td>护理级别</td>
-                            <td><input type="text" id="nurseify"></td>
-                        </tr>
-                        <tr>
-                            <td>服务项</td>
-                            <td><input type="text" id="serves"></td>
+                            <td>服务人数</td>
+                            <td><input type="text" id="renshu"class="null"></td>
                         </tr>
                         <tr>
                             <td style="position: absolute; margin-top: 5px;">服务简介</td>
-                            <td><textarea id="brief"></textarea><input type="text" id="xid" style="display: none;">
+                            <td><textarea id="jianjie"class="null"></textarea><input type="text" id="xid" style="display: none;">
                             </td>
                         </tr>
                     </table>
