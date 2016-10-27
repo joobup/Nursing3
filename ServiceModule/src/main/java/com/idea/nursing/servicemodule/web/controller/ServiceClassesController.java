@@ -93,6 +93,6 @@ public class ServiceClassesController extends GenericController {
     @ResponseBody
     @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
     public ResultData findTreeAll(){
-        return ResultData.build().parseBean(serviceclassesService.findTree());
+        return ResultData.build().put("aaData",serviceclassesService.findTree());
     }
 }

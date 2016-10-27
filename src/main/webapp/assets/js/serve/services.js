@@ -83,8 +83,9 @@ function findAllb(currentPage) {
 
     })
 }
+var serveClassify ;
 function add() {
-    var serveClassify = $("#leibie").val();
+    alert(serveClassify)
     var serveName = $("#mingcheng").val();
     var serveBiref = $("#jianjie").val();
     var serveLimit = $("#tiaojian").val();
