@@ -27,7 +27,7 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
 
     //添加服务级别
     @Override
-    public int insert(ServiceClasses serviceClasses) {
+    public ServiceClasses insert(ServiceClasses serviceClasses) {
 
 
         //获取父级类型

@@ -21,7 +21,7 @@ public interface GenericService<Model, PK,ModelExample> {
      *
      * @param model 对象
      */
-    int insert(Model model);
+    Model insert(Model model);
 
     /**
      * 更新对象

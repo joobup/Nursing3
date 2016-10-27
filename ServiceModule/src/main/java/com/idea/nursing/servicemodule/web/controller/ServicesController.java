@@ -2,8 +2,10 @@ package com.idea.nursing.servicemodule.web.controller;
 
 import com.idea.nursing.common.web.service.CommentPictureService;
 import com.idea.nursing.core.common.ResultData;
+import com.idea.nursing.core.common.SessionConstant;
 import com.idea.nursing.core.generic.GenericController;
 import com.idea.nursing.servicemodule.web.domain.pojo.Services;
+import com.idea.nursing.servicemodule.web.service.ServicesPictureService;
 import com.idea.nursing.servicemodule.web.service.ServicesService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +22,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ServicesController extends GenericController {
     @Autowired
     private ServicesService servicesService;
+
     @Autowired
     private CommentPictureService commentPictureService;
+    @Autowired
+    private ServicesPictureService servicesPictureService;
+
 
     /**
         * 添加服务
@@ -33,7 +39,11 @@ public class ServicesController extends GenericController {
     public ResultData add(Services services,String[] pictureAddress){
 
         try {
-                servicesService.insert(services);
+            services = servicesService.insert(services);
+            //添加图片
+            Long[] pictureIds =  commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPICTURE.key);
+            //添加服务图片一对多
+            servicesPictureService.inserts(services.getId(),pictureIds);
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -86,7 +96,14 @@ public class ServicesController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(servicesService.findAll(currentPage,limit));
+        parsePageBean(servicesService.findAllVO(currentPage,limit));
+    }
+    @ResponseBody
+    @RequestMapping(value = "showAllPicture",method = RequestMethod.GET)
+    public ResultData showAllPicture(Long serverId){
+
+
+        return ResultData.build().parseList(servicesService.showAllPicture(serverId));
     }
 
 }

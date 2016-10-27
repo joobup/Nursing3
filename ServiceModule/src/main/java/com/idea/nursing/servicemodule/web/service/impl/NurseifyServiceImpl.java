@@ -23,7 +23,7 @@ public class NurseifyServiceImpl extends GenericServiceImpl<Nurseify, Long, Nurs
 
 
     @Override
-    public int insert(Nurseify nurseify) {
+    public Nurseify insert(Nurseify nurseify) {
         //获取父级
         Nurseify nurseifySupper = selectById(nurseify.getNursifyTid());
         if (notNullObject(nurseifySupper)) {

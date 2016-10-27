@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.myself.ServiceMapperMyself" >
+    <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.vo.ServiceVO" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+
+        <result column="serve_name" property="serveName" jdbcType="VARCHAR" />
+        <result column="serve_biref" property="serveBiref" jdbcType="VARCHAR" />
+        <result column="serve_limit" property="serveLimit" jdbcType="VARCHAR" />
+        <result column="serve_peoples" property="servePeoples" jdbcType="INTEGER" />
+        <result column="agency_id" property="agencyId" jdbcType="BIGINT" />
+        <association property="serveClassify" javaType="com.idea.nursing.servicemodule.web.domain.pojo.ServiceClasses">
+            <id column="id" property="id" jdbcType="BIGINT" />
+            <result column="serve_classname" property="serveClassname" jdbcType="VARCHAR" />
+            <result column="serve_classlevel" property="serveClasslevel" jdbcType="TINYINT" />
+            <result column="tid" property="tid" jdbcType="BIGINT" />
+        </association>
+
+        <association property="mainPicture" javaType="com.idea.nursing.common.web.domain.pojo.CommentPicture">
+            <id column="id" property="id" jdbcType="BIGINT"/>
+            <result column="picture_address" property="pictureAddress" jdbcType="VARCHAR"/>
+            <result column="picture_type" property="pictureType" jdbcType="TINYINT"/>
+        </association>
+    </resultMap>
+
+
+
+    <sql id="Base_Column_List" >
+        s.id, fs.id,fs.serve_classname, fs.serve_classlevel, fs.tid, s.serve_name, s.serve_biref, s.serve_limit, s.serve_peoples, s.agency_id,
+        p.id, p.picture_address, p.picture_type
+    </sql>
+    <select id="findAllVO" resultMap="BaseResultMap" >
+        select
+
+        <include refid="Base_Column_List" />
+        from ff_services as s ,
+        comment_picture p ,ff_service_classes fs where p.id =
+        (SELECT fps.picture_id from ff_services_picture fps where s.id = fps.serve_id LIMIT 1)
+        and fs.id = s.serve_classify
+
+    </select>
+
+</mapper>

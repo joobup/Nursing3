@@ -67,8 +67,9 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
      *
      * @param model 对象
      */
-    public int insert(Model model) {
-        return getDao().insertSelective(model);
+    public Model insert(Model model) {
+        getDao().insertSelective(model);
+        return model;
     }
 
     /**

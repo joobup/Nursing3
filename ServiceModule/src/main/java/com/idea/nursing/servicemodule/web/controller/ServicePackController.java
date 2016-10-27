@@ -21,6 +21,9 @@ public class ServicePackController extends GenericController {
     private ServicePackService servicepackService;
 
     /**
+     * 获取服务项 见服务项
+     */
+    /**
         * 添加服务打包
         * @param servicepack
         * @return

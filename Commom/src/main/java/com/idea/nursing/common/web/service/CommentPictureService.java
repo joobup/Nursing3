@@ -6,6 +6,6 @@ import com.idea.nursing.common.web.domain.pojo.CommentPictureExample;
 
 public interface CommentPictureService extends GenericService<CommentPicture,Long,CommentPictureExample>{
 
-
+    public Long[] insertPictures(String[] pictures,byte pictureType);
 
 }

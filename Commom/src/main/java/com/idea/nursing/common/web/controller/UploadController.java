@@ -3,6 +3,7 @@ package com.idea.nursing.common.web.controller;
 import com.idea.nursing.core.common.ResultData;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -55,7 +56,7 @@ public class UploadController {
 	
 
 	@ResponseBody
-	@RequestMapping(value = "upload")
+	@RequestMapping(value = "upload", method = RequestMethod.POST)
 	public ResultData upload(MultipartHttpServletRequest request) {
 		String path = request.getServletContext().getRealPath("/")
 		        + "/assets/uploadimg/";

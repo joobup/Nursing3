@@ -21,4 +21,17 @@ public class ServicesPictureServiceImpl extends GenericServiceImpl<ServicesPictu
         return servicespictureDao;
     }
 
+    @Override
+    public boolean inserts(Long serviceId, Long[] pictureIds) {
+        for (long pictureId:pictureIds
+             ) {
+            ServicesPicture servicesPicture = new ServicesPicture();
+            servicesPicture.setPictureId(pictureId);
+            servicesPicture.setServeId(serviceId);
+            if(servicespictureDao.insert(servicesPicture)==0){
+                return false;
+            }
+        }
+        return true;
+    }
 }
