@@ -86,12 +86,15 @@ function findAllb(currentPage) {
 var serveClassify ;
 function add() {
     alert(serveClassify)
+    console.log(pathList);
+    var pictureAddress = pathList;
     var serveName = $("#mingcheng").val();
     var serveBiref = $("#jianjie").val();
     var serveLimit = $("#tiaojian").val();
     var servePeoples = $("#renshu").val();
     var url = domainUrl + "/serve/services/add";
     var postData = {
+        pictureAddress:pictureAddress,
         serveName: serveName,
         serveLimit: serveLimit,
         servePeoples: servePeoples,

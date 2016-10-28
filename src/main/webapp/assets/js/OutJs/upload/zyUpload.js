@@ -46,7 +46,7 @@
 			 * 返回: 无
 			 */
 			this.createHtml = function(){
-				var multiple = "";  // 设置多选的参数
+				var multiple = 5;  // 设置多选的参数
 				para.multiple ? multiple = "multiple" : multiple = "";
 				var html= '';
 
@@ -105,13 +105,13 @@
 					html += '		<div class="upload_submit">';
 					html += '			<button type="button" id="fileSubmit" class="upload_submit_btn">确认上传文件</button>';
 					html += '		</div>';
-					html += '		<div id="uploadInf" class="upload_inf"></div>';
+					// html += '		<div id="uploadInf" class="upload_inf"></div>';
 					html += '	</div>';
 					html += '</form>';
 				}
-				
+
 	            $(self).append(html).css({"width":para.width,"height":para.height});
-	            
+
 	            // 初始化html之后绑定按钮的点击事件
 	            this.addEvent();
 			};
@@ -332,6 +332,9 @@
 						$("#uploadProgress_" + file.index).hide();
 						$("#uploadSuccess_" + file.index).show();
 						$("#uploadInf").append("<p>上传成功，文件地址是：" + response + "</p>");
+						var data = $.parseJSON(response);
+						var path = JSON.stringify(data.aaData[0].path);
+						console.log(data)
 						// 根据配置参数确定隐不隐藏上传成功的文件
 						if(para.finishDel){
 							// 移除效果

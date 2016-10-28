@@ -48,6 +48,7 @@ function findAll2() {
         var sel=document.getElementById('sel2');
         sel.onchange = function () {
             var id = this.value;
+            console.log(JSON.stringify(data))
             for(var i = 0; i < data.aaData[2].length; i++){
                 if(id == data.aaData[2][i].tid ){
                     $("#tr3").show();

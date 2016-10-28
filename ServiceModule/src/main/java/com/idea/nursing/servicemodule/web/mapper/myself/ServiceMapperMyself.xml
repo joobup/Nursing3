@@ -33,10 +33,11 @@
         select
 
         <include refid="Base_Column_List" />
-        from ff_services as s ,
-        comment_picture p ,ff_service_classes fs where p.id =
+        from ff_services as s LEFT JOIN ff_service_classes fs ON fs.id = s.serve_classify
+        LEFT JOIN  comment_picture p
+        on p.id =
         (SELECT fps.picture_id from ff_services_picture fps where s.id = fps.serve_id LIMIT 1)
-        and fs.id = s.serve_classify
+
 
     </select>
 

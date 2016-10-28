@@ -2,6 +2,8 @@
  * zyFile.js 基于HTML5 文件上传的核心脚本 http://www.czlqibu.com
  * by zhangyan 2014-06-21   QQ : 623585268
 */
+var num=0;
+var pathList = new Array();
 var ZYFILE = {
 		fileInput : null,             // 选择文件按钮dom对象
 		uploadInput : null,           // 上传文件按钮dom对象
@@ -31,7 +33,7 @@ var ZYFILE = {
 		
 		},
 		onComplete : function(responseInfo){         // 提供给外部获取全部文件上传完成，供外部实现完成效果
-			
+
 		},
 		
 		/* 内部实现功能方法 */
@@ -139,13 +141,14 @@ var ZYFILE = {
 			$.each(this.uploadFile, function(k, v){
 				self.funUploadFile(v);
 			});
+			$("#demo").hide(200);
+			alert("上传成功");
 		},
 		// 上传单个个文件
 		funUploadFile : function(file){
 			var self = this;  // 在each中this指向没个v  所以先将this保留
-			
 			var formdata = new FormData();
-			formdata.append("fileList", file);	         		
+			formdata.append("file", file);
 			var xhr = new XMLHttpRequest();
 			// 绑定上传事件
 			// 进度
@@ -159,6 +162,11 @@ var ZYFILE = {
 		    	self.funDeleteFile(file.index, false);
 		    	// 回调到外部
 		    	self.onSuccess(file, xhr.responseText);
+				//每次上传一个图片放进数组
+				num+=1;
+				var data = $.parseJSON(xhr.responseText)
+				pathList[num-1] = data.aaData[0].path;
+				// console.log(pathList)
 		    	if(self.uploadFile.length==0){
 		    		// 回调全部完成方法
 		    		self.onComplete("全部完成");
@@ -171,8 +179,9 @@ var ZYFILE = {
 		    }, false);  
 			
 			xhr.open("POST",self.url, true);
-			xhr.setRequestHeader("X_FILENAME", file.name);
+			// xhr.setRequestHeader("X_FILENAME", file.name);
 			xhr.send(formdata);
+
 		},
 		// 返回需要上传的文件
 		funReturnNeedFiles : function(){

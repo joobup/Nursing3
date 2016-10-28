@@ -73,7 +73,7 @@ public class ServiceClassesServiceImpl extends GenericServiceImpl<ServiceClasses
         /**
          * 封装级别
          */
-        for (int i=0;i<maxLeave;i++){
+        for (int i=0;i<=maxLeave;i++){
             List<ServiceClasses> leaveList = new ArrayList<>();
             for (ServiceClasses serviceClasses:list
                     ) {
