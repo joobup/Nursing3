@@ -2,8 +2,7 @@
  * zyFile.js 基于HTML5 文件上传的核心脚本 http://www.czlqibu.com
  * by zhangyan 2014-06-21   QQ : 623585268
 */
-var num=0;
-var pathList = new Array();
+var pathList = "";
 var ZYFILE = {
 		fileInput : null,             // 选择文件按钮dom对象
 		uploadInput : null,           // 上传文件按钮dom对象
@@ -163,9 +162,8 @@ var ZYFILE = {
 		    	// 回调到外部
 		    	self.onSuccess(file, xhr.responseText);
 				//每次上传一个图片放进数组
-				num+=1;
 				var data = $.parseJSON(xhr.responseText)
-				pathList[num-1] = data.aaData[0].path;
+				pathList +=""+data.aaData[0].path+","
 				// console.log(pathList)
 		    	if(self.uploadFile.length==0){
 		    		// 回调全部完成方法

@@ -24,7 +24,7 @@ function findAll() {
                     serveClassify = null;
                 }else{
                     var selectIndex = document.getElementById("sel1").selectedIndex;//获得是第几个被选中了
-                    var selectText = document.getElementById("sel1").options[selectIndex].text //获得被选中的项目
+                    var selectText = document.getElementById("sel1").options[selectIndex].value //获得被选中的项目
                     serveClassify = selectText;
                     $("#tr2").hide();
                     $("#tr3").hide()
@@ -55,8 +55,8 @@ function findAll2() {
                     findAll3();
                 }else{
                     var selectIndex = document.getElementById("sel2").selectedIndex;//获得是第几个被选中了
-                    var selectText = document.getElementById("sel2").options[selectIndex].text //获得被选中的项目
-                    serveClassify = selectText;
+                    var selectValue = document.getElementById("sel2").options[selectIndex].value //获得被选中的项目
+                    serveClassify = selectValue;
                     $("#tr3").hide()
                 }
             }
@@ -78,8 +78,8 @@ function  findAll3() {
         var sel=document.getElementById('sel3');
         sel.onchange = function () {
             var selectIndex = document.getElementById("sel3").selectedIndex;//获得是第几个被选中了
-            var selectText = document.getElementById("sel3").options[selectIndex].text //获得被选中的项目
-            serveClassify = selectText;
+            var selectValue = document.getElementById("sel3").options[selectIndex].value //获得被选中的项目
+            serveClassify = selectValue;
         }
     })
 }

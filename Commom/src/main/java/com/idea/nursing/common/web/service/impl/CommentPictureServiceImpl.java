@@ -25,15 +25,15 @@ public class CommentPictureServiceImpl extends GenericServiceImpl<CommentPicture
     }
 
     @Override
-    public Long[] insertPictures(String[] pictures,byte pictureType) {
-        Long[] pictureIds = new Long[pictures.length];
-       if(pictures.length>0){
+    public Long[] insertPictures(String pictures,byte pictureType) {
+        Long[] pictureIds = new Long[pictures.split(",").length];
+       if(pictures.split(",").length>0){
            int i=0;
-           for (String pictureName:pictures
+           for (String pictureName:pictures.split(",")
                 ) {
                CommentPicture commentPicture = new CommentPicture();
                commentPicture.setPictureType(pictureType);
-               commentPicture.getPictureAddress(pictureName);
+               commentPicture.setPictureAddress(pictureName);
                if(commentpictureMapper.insert(commentPicture)!=0){
                    pictureIds[i]=commentPicture.getId();
                    i++;

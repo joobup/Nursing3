@@ -36,8 +36,8 @@ public class ServicesController extends GenericController {
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(Services services,String[] pictureAddress){
-
+    public ResultData add(Services services,String pictureAddress){
+        System.out.println(pictureAddress);
         try {
             services = servicesService.insert(services);
             //添加图片
@@ -46,6 +46,7 @@ public class ServicesController extends GenericController {
             servicesPictureService.inserts(services.getId(),pictureIds);
 
             }catch (Exception e){
+            System.out.println(e);
                 return ResultData.build().addErroe();
             }
         return ResultData.build();
