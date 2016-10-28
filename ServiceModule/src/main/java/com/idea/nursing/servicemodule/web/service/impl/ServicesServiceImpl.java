@@ -8,14 +8,12 @@ import com.idea.nursing.common.web.domain.pojo.CommentPicture;
 import com.idea.nursing.common.web.domain.pojo.CommentPictureExample;
 import com.idea.nursing.core.generic.GenericDao;
 import com.idea.nursing.core.generic.GenericServiceImpl;
+import com.idea.nursing.servicemodule.web.dao.ServiceClassesValuationRelationMapper;
 import com.idea.nursing.servicemodule.web.dao.ServicesMapper;
 import com.idea.nursing.servicemodule.web.dao.ServicesPictureMapper;
 import com.idea.nursing.servicemodule.web.dao.myself.ServiceMapperMyself;
 import com.idea.nursing.servicemodule.web.dao.myself.ServiceStaffMapperMyself;
-import com.idea.nursing.servicemodule.web.domain.pojo.Services;
-import com.idea.nursing.servicemodule.web.domain.pojo.ServicesExample;
-import com.idea.nursing.servicemodule.web.domain.pojo.ServicesPicture;
-import com.idea.nursing.servicemodule.web.domain.pojo.ServicesPictureExample;
+import com.idea.nursing.servicemodule.web.domain.pojo.*;
 import com.idea.nursing.servicemodule.web.domain.vo.ServiceVO;
 import com.idea.nursing.servicemodule.web.service.ServicesPictureService;
 import com.idea.nursing.servicemodule.web.service.ServicesService;
@@ -36,6 +34,8 @@ public class ServicesServiceImpl extends GenericServiceImpl<Services, Long,Servi
     private ServicesPictureMapper servicesPictureMapper;
     @Autowired
     private CommentPictureMapper commentPictureMapper;
+    @Autowired
+    private ServiceClassesValuationRelationMapper serviceClassesValuationRelationMapper;
 
 
     @Override
@@ -54,7 +54,12 @@ public class ServicesServiceImpl extends GenericServiceImpl<Services, Long,Servi
         }
         PageHelper.startPage(currentPage,limit);
         Page<ServiceVO> serviceVOs = (Page<ServiceVO>) serviceMapperMyself.findAllVO();
-
+        for (ServiceVO serviceVO: serviceVOs
+             ) {
+            ServiceClassesValuationRelationExample example = new ServiceClassesValuationRelationExample();
+            example.createCriteria().andServeIdEqualTo(serviceVO.getId());
+            serviceVO.setServiceClassesValuationRelationList(serviceClassesValuationRelationMapper.selectByExample(example));
+        }
         return serviceVOs;
     }
 

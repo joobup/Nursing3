@@ -4,7 +4,9 @@ import com.idea.nursing.common.web.service.CommentPictureService;
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.common.SessionConstant;
 import com.idea.nursing.core.generic.GenericController;
+import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelation;
 import com.idea.nursing.servicemodule.web.domain.pojo.Services;
+import com.idea.nursing.servicemodule.web.service.ServiceClassesValuationRelationService;
 import com.idea.nursing.servicemodule.web.service.ServicesPictureService;
 import com.idea.nursing.servicemodule.web.service.ServicesService;
 
@@ -28,6 +30,9 @@ public class ServicesController extends GenericController {
     @Autowired
     private ServicesPictureService servicesPictureService;
 
+    @Autowired
+    private ServiceClassesValuationRelationService serviceClassesValuationRelationService;
+
 
     /**
         * 添加服务
@@ -36,7 +41,7 @@ public class ServicesController extends GenericController {
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(Services services,String pictureAddress){
+    public ResultData add(Services services, String pictureAddress, ServiceClassesValuationRelation serviceClassesValuationRelation){
         System.out.println(pictureAddress);
         try {
             services = servicesService.insert(services);
@@ -44,9 +49,11 @@ public class ServicesController extends GenericController {
             Long[] pictureIds =  commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPICTURE.key);
             //添加服务图片一对多
             servicesPictureService.inserts(services.getId(),pictureIds);
-
+            //添加计费方式
+            serviceClassesValuationRelation.setServeId(services.getId());
+            serviceClassesValuationRelationService.insert(serviceClassesValuationRelation);
             }catch (Exception e){
-            System.out.println(e);
+
                 return ResultData.build().addErroe();
             }
         return ResultData.build();

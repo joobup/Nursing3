@@ -2,6 +2,9 @@ package com.idea.nursing.servicemodule.web.domain.vo;
 
 import com.idea.nursing.common.web.domain.pojo.CommentPicture;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClasses;
+import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesValuationRelation;
+
+import java.util.List;
 
 /**
  * Created by 10238 on 2016/10/26.
@@ -24,6 +27,8 @@ public class ServiceVO {
 
     private CommentPicture mainPicture;
 
+    private List<ServiceClassesValuationRelation> serviceClassesValuationRelationList;
+
     @Override
     public String toString() {
         return "ServiceVO{" +
@@ -35,7 +40,16 @@ public class ServiceVO {
                 ", servePeoples=" + servePeoples +
                 ", agencyId=" + agencyId +
                 ", mainPicture=" + mainPicture +
+                ", serviceClassesValuationRelationList=" + serviceClassesValuationRelationList +
                 '}';
+    }
+
+    public List<ServiceClassesValuationRelation> getServiceClassesValuationRelationList() {
+        return serviceClassesValuationRelationList;
+    }
+
+    public void setServiceClassesValuationRelationList(List<ServiceClassesValuationRelation> serviceClassesValuationRelationList) {
+        this.serviceClassesValuationRelationList = serviceClassesValuationRelationList;
     }
 
     public Long getId() {
