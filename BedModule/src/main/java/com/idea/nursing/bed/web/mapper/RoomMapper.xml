@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.bed.web.dao.RoomMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.bed.web.domain.pojo.Room" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="entrance_id" property="entranceId" jdbcType="BIGINT" />
+    <result column="floor_num" property="floorNum" jdbcType="TINYINT" />
+    <result column="room_num" property="roomNum" jdbcType="INTEGER" />
+    <result column="bed_toal_num" property="bedToalNum" jdbcType="TINYINT" />
+    <result column="room_type_id" property="roomTypeId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, entrance_id, floor_num, room_num, bed_toal_num, room_type_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.bed.web.domain.pojo.RoomExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jg_cw_room
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from jg_cw_room
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from jg_cw_room
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.bed.web.domain.pojo.RoomExample" >
+    delete from jg_cw_room
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.bed.web.domain.pojo.Room" useGeneratedKeys="true" keyProperty="id" >
+    insert into jg_cw_room (entrance_id, floor_num, room_num, 
+      bed_toal_num, room_type_id)
+    values (#{entranceId,jdbcType=BIGINT}, #{floorNum,jdbcType=TINYINT}, #{roomNum,jdbcType=INTEGER}, 
+      #{bedToalNum,jdbcType=TINYINT}, #{roomTypeId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.bed.web.domain.pojo.Room" useGeneratedKeys="true" keyProperty="id" >
+    insert into jg_cw_room
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="entranceId != null" >
+        entrance_id,
+      </if>
+      <if test="floorNum != null" >
+        floor_num,
+      </if>
+      <if test="roomNum != null" >
+        room_num,
+      </if>
+      <if test="bedToalNum != null" >
+        bed_toal_num,
+      </if>
+      <if test="roomTypeId != null" >
+        room_type_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="entranceId != null" >
+        #{entranceId,jdbcType=BIGINT},
+      </if>
+      <if test="floorNum != null" >
+        #{floorNum,jdbcType=TINYINT},
+      </if>
+      <if test="roomNum != null" >
+        #{roomNum,jdbcType=INTEGER},
+      </if>
+      <if test="bedToalNum != null" >
+        #{bedToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="roomTypeId != null" >
+        #{roomTypeId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.bed.web.domain.pojo.RoomExample" resultType="java.lang.Integer" >
+    select count(*) from jg_cw_room
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jg_cw_room
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.entranceId != null" >
+        entrance_id = #{record.entranceId,jdbcType=BIGINT},
+      </if>
+      <if test="record.floorNum != null" >
+        floor_num = #{record.floorNum,jdbcType=TINYINT},
+      </if>
+      <if test="record.roomNum != null" >
+        room_num = #{record.roomNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.bedToalNum != null" >
+        bed_toal_num = #{record.bedToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="record.roomTypeId != null" >
+        room_type_id = #{record.roomTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jg_cw_room
+    set id = #{record.id,jdbcType=BIGINT},
+      entrance_id = #{record.entranceId,jdbcType=BIGINT},
+      floor_num = #{record.floorNum,jdbcType=TINYINT},
+      room_num = #{record.roomNum,jdbcType=INTEGER},
+      bed_toal_num = #{record.bedToalNum,jdbcType=TINYINT},
+      room_type_id = #{record.roomTypeId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.bed.web.domain.pojo.Room" >
+    update jg_cw_room
+    <set >
+      <if test="entranceId != null" >
+        entrance_id = #{entranceId,jdbcType=BIGINT},
+      </if>
+      <if test="floorNum != null" >
+        floor_num = #{floorNum,jdbcType=TINYINT},
+      </if>
+      <if test="roomNum != null" >
+        room_num = #{roomNum,jdbcType=INTEGER},
+      </if>
+      <if test="bedToalNum != null" >
+        bed_toal_num = #{bedToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="roomTypeId != null" >
+        room_type_id = #{roomTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.bed.web.domain.pojo.Room" >
+    update jg_cw_room
+    set entrance_id = #{entranceId,jdbcType=BIGINT},
+      floor_num = #{floorNum,jdbcType=TINYINT},
+      room_num = #{roomNum,jdbcType=INTEGER},
+      bed_toal_num = #{bedToalNum,jdbcType=TINYINT},
+      room_type_id = #{roomTypeId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -9,6 +9,8 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 
+import static com.sun.xml.internal.fastinfoset.alphabet.BuiltInRestrictedAlphabets.table;
+
 public class GenerateService {
 
 	 public static void Generate(String ftlPath, String ftlName,
@@ -62,7 +64,32 @@ public class GenerateService {
 //					"ServiceClassesValuationRelation",
 
 
-					"CommentPicture"
+					//"CommentPicture"
+					//"CommentRichText"
+					//"ServicePackItem"
+					//"StaffServiceItem"
+//                    "Entrance",
+//                    "Room",
+//                    "RoomType",
+//                    "BedType",
+//                    "BedTypePrice"
+
+
+
+
+					"Dishes",
+					"DishesPicture",
+					"DishesTypeDishes",
+					"DishesType",
+					"DishesMeterial",
+					"FoodMaterial",
+					"Nutriment",
+					"FoodMaterialNutriment",
+					"WeekFood",
+					"WeekFoodDishes"
+
+
+
 
 			};
 			for (String fileName:fileNames
@@ -71,14 +98,23 @@ public class GenerateService {
 						"\\src\\test\\java\\ftl",
 						"service.ftl",
 						fileName,
+						"\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\service",
+                        //"\\BedModule\\src\\main\\java\\com\\idea\\nursing\\bed\\web\\service",
 						//"\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\service",
-						"\\src\\main\\java\\com\\idea\\nursing\\common\\web\\service",
+						//"\\src\\main\\java\\com\\idea\\nursing\\common\\web\\service",
+						//"\\Commom\\src\\main\\java\\com\\idea\\nursing\\common\\web\\service",
 //						"com.idea.nursing.servicemodule.web.service",
 //						"com.idea.nursing.servicemodule.web.dao",
 //						"com.idea.nursing.servicemodule.web.domain.pojo"
-						"com.idea.nursing.common.web.service",
-						"com.idea.nursing.common.web.dao",
-						"com.idea.nursing.common.web.domain.pojo"
+//						"com.idea.nursing.common.web.service",
+//						"com.idea.nursing.common.web.dao",
+//						"com.idea.nursing.common.web.domain.pojo"
+//                        "com.idea.nursing.bed.web.service",
+//                        "com.idea.nursing.bed.web.dao",
+//                        "com.idea.nursing.bed.web.domain.pojo"
+						"com.idea.nursing.food.service",
+						"com.idea.nursing.food.web.dao",
+						"com.idea.nursing.food.web.domain.pojo"
  					);
 			}
 

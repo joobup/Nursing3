@@ -95,4 +95,5 @@ public class ServiceClassesController extends GenericController {
     public ResultData findTreeAll(){
         return ResultData.build().put("aaData",serviceclassesService.findTree());
     }
+
 }

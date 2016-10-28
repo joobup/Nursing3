@@ -33,6 +33,14 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
         }
     }
 
+    public boolean notNullAndZero(Integer l) {
+        if (l != null && l.intValue() != 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean notNullAndZero(Long[] ids) {
         if (ids != null && ids.length > 0) {
             return true;

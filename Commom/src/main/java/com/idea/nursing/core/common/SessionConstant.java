@@ -6,7 +6,8 @@ public class SessionConstant {
 
     public enum PictureType{
         STAFFHEAD((byte)1),
-        SERVICEPICTURE((byte)2);
+        SERVICEPICTURE((byte)2),
+        SERVICEPAGEPCITURE((byte)3);
         public final byte key;
         PictureType(byte key){
             this.key = key;

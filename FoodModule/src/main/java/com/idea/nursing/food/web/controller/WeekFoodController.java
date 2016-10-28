@@ -1,0 +1,89 @@
+package com.idea.nursing.food.web.controller;
+
+import com.idea.nursing.core.common.ResultData;
+import com.idea.nursing.core.generic.GenericController;
+import com.idea.nursing.food.web.domain.pojo.WeekFood;
+import com.idea.nursing.food.web.service.WeekFoodService;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+* Created by 10238 on 2016/10/12.
+*/
+@Controller
+@RequestMapping("serve/week_food")
+public class WeekFoodController extends GenericController {
+    @Autowired
+    private WeekFoodService weekfoodService;
+
+    /**
+        * 添加本周食谱
+        * @param weekfood
+        * @return
+    */
+    @ResponseBody
+    @RequestMapping(value="add" ,method = RequestMethod.POST)
+    public ResultData add(WeekFood weekfood){
+
+        try {
+                weekfoodService.insert(weekfood);
+
+            }catch (Exception e){
+                return ResultData.build().addErroe();
+            }
+        return ResultData.build();
+
+    }
+
+    /**
+    * 删除本周食谱
+    * @param id
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value="del" ,method = RequestMethod.POST)
+    public ResultData del(Long id) {
+        try {
+                weekfoodService.delete(id);
+            } catch (Exception e) {
+                return ResultData.build().delError();
+            }
+        return ResultData.build();
+
+    }
+
+    /**
+    * 修改本周食谱
+    * @param weekfood
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value="update",method = RequestMethod.POST)
+    public ResultData update(WeekFood weekfood){
+        try {
+            weekfoodService.update(weekfood);
+
+        } catch (Exception e){
+            return ResultData.build().upDateError();
+        }
+        return ResultData.build();
+    }
+
+    /**
+    * 分页查询所有本周食谱
+    * @param currentPage
+    * @param limit
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value="findAll",method = RequestMethod.GET)
+    public ResultData findAll(Integer currentPage,Integer limit){
+        return ResultData.build().
+        parsePageBean(weekfoodService.findAll(currentPage,limit));
+    }
+
+}

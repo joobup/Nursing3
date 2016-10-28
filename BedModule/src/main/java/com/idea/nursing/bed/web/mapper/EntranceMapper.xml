@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.bed.web.dao.EntranceMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.bed.web.domain.pojo.Entrance" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="entrance_name" property="entranceName" jdbcType="VARCHAR" />
+    <result column="entrance_toal_num" property="entranceToalNum" jdbcType="TINYINT" />
+    <result column="floor_toal_num" property="floorToalNum" jdbcType="TINYINT" />
+    <result column="entrance_num" property="entranceNum" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, entrance_name, entrance_toal_num, floor_toal_num, entrance_num
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.bed.web.domain.pojo.EntranceExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jg_cw_entrance
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from jg_cw_entrance
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from jg_cw_entrance
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.bed.web.domain.pojo.EntranceExample" >
+    delete from jg_cw_entrance
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.bed.web.domain.pojo.Entrance" useGeneratedKeys="true" keyProperty="id" >
+    insert into jg_cw_entrance (entrance_name, entrance_toal_num, floor_toal_num, 
+      entrance_num)
+    values (#{entranceName,jdbcType=VARCHAR}, #{entranceToalNum,jdbcType=TINYINT}, #{floorToalNum,jdbcType=TINYINT}, 
+      #{entranceNum,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.bed.web.domain.pojo.Entrance" useGeneratedKeys="true" keyProperty="id" >
+    insert into jg_cw_entrance
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="entranceName != null" >
+        entrance_name,
+      </if>
+      <if test="entranceToalNum != null" >
+        entrance_toal_num,
+      </if>
+      <if test="floorToalNum != null" >
+        floor_toal_num,
+      </if>
+      <if test="entranceNum != null" >
+        entrance_num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="entranceName != null" >
+        #{entranceName,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceToalNum != null" >
+        #{entranceToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="floorToalNum != null" >
+        #{floorToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="entranceNum != null" >
+        #{entranceNum,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.bed.web.domain.pojo.EntranceExample" resultType="java.lang.Integer" >
+    select count(*) from jg_cw_entrance
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jg_cw_entrance
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.entranceName != null" >
+        entrance_name = #{record.entranceName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.entranceToalNum != null" >
+        entrance_toal_num = #{record.entranceToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="record.floorToalNum != null" >
+        floor_toal_num = #{record.floorToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="record.entranceNum != null" >
+        entrance_num = #{record.entranceNum,jdbcType=TINYINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jg_cw_entrance
+    set id = #{record.id,jdbcType=BIGINT},
+      entrance_name = #{record.entranceName,jdbcType=VARCHAR},
+      entrance_toal_num = #{record.entranceToalNum,jdbcType=TINYINT},
+      floor_toal_num = #{record.floorToalNum,jdbcType=TINYINT},
+      entrance_num = #{record.entranceNum,jdbcType=TINYINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.bed.web.domain.pojo.Entrance" >
+    update jg_cw_entrance
+    <set >
+      <if test="entranceName != null" >
+        entrance_name = #{entranceName,jdbcType=VARCHAR},
+      </if>
+      <if test="entranceToalNum != null" >
+        entrance_toal_num = #{entranceToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="floorToalNum != null" >
+        floor_toal_num = #{floorToalNum,jdbcType=TINYINT},
+      </if>
+      <if test="entranceNum != null" >
+        entrance_num = #{entranceNum,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.bed.web.domain.pojo.Entrance" >
+    update jg_cw_entrance
+    set entrance_name = #{entranceName,jdbcType=VARCHAR},
+      entrance_toal_num = #{entranceToalNum,jdbcType=TINYINT},
+      floor_toal_num = #{floorToalNum,jdbcType=TINYINT},
+      entrance_num = #{entranceNum,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
