@@ -91,7 +91,7 @@ public class GenerateController {
 //                "ServiceStaff,服务人员",
 //                "ServiceClassesValuation,计价类型",
                 //"CommentPicture,图片"
-
+                "ServiceClassesValuationRelation,服务计价类型"
                 //"CommentRichText,富文本"
                // "ServicePackItem,服务打包服务项"
                // "StaffServiceItem,服务人员服务项目关系"
@@ -101,16 +101,20 @@ public class GenerateController {
 //                "RoomType,房间类型",
 //                "BedType,床类别",
 //                "BedTypePrice,价格类别表"
-                "Dishes,菜品",
-                "DishesPicture,菜品图片关系",
-                "DishesTypeDishes,菜品类别关系",
-                "DishesType,菜品类别",
-                "DishesMeterial,菜品配料关系",
-                "FoodMaterial,食材配料",
-                "Nutriment,营养物质",
-                "FoodMaterialNutriment,食材配料和营养物质关系",
-                "WeekFood,本周食谱",
-                "WeekFoodDishes,本周食谱菜品关系"
+//                "Dishes,菜品",
+//                "DishesPicture,菜品图片关系",
+//                "DishesTypeDishes,菜品类别关系",
+//                "DishesType,菜品类别",
+//                "DishesMeterial,菜品配料关系",
+//                "FoodMaterial,食材配料",
+//                "Nutriment,营养物质",
+//                "FoodMaterialNutriment,食材配料和营养物质关系",
+//                "WeekFood,本周食谱",
+//                "WeekFoodDishes,本周食谱菜品关系"
+//                "InspectionItem,自定义检查项目表",
+//                "InspectionItemSelectValue,检查项目选项值表",
+//                "Inspection,检查表",
+//                "InspectionItemInspection,检查健康状况项目关系表",
         };
         for (String fileName:fileNames) {
 
@@ -120,16 +124,17 @@ public class GenerateController {
                         "\\src\\test\\java\\ftl",
                         "controller.ftl",
                         fileName,
-                        "\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\controller",
+                        //"\\Inspection\\src\\main\\java\\com\\idea\\nursing\\inspection\\web\\controller",
+                        //"\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\controller",
                         //"\\BedModule\\src\\main\\java\\com\\idea\\nursing\\bed\\web\\controller",
-                        //"\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\controller",
+                        "\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\controller",
                         //"\\src\\main\\java\\com\\idea\\nursing\\common\\web\\controller",
 //                        "com.idea.nursing.common.web.controller",
 //                        "com.idea.nursing.common.web.domain.pojo",
 //                        "com.idea.nursing.common.web.service"
-//                        "com.idea.nursing.servicemodule.web.controller",
-//                        "com.idea.nursing.servicemodule.web.domain.pojo",
-//                        "com.idea.nursing.servicemodule.web.service"
+                        "com.idea.nursing.servicemodule.web.controller",
+                        "com.idea.nursing.servicemodule.web.domain.pojo",
+                        "com.idea.nursing.servicemodule.web.service"
 //                        "com.idea.nursing.common.web.controller",
 //                        "com.idea.nursing.common.web.domain.pojo",
 //                        "com.idea.nursing.common.web.service"
@@ -137,9 +142,12 @@ public class GenerateController {
 //                        "com.idea.nursing.bed.web.controller",
 //                        "com.idea.nursing.bed.web.domain.pojo",
 //                        "com.idea.nursing.bed.web.service"
-                        "com.idea.nursing.food.web.controller",
-                        "com.idea.nursing.food.web.domain.pojo",
-                        "com.idea.nursing.food.web.service"
+//                        "com.idea.nursing.food.web.controller",
+//                        "com.idea.nursing.food.web.domain.pojo",
+//                        "com.idea.nursing.food.web.service"
+//                        "com.idea.nursing.inspection.web.controller",
+//                        "com.idea.nursing.inspection.web.domain.pojo",
+//                        "com.idea.nursing.inspection.web.service"
                         );
             } catch (IOException e) {
                 e.printStackTrace();
