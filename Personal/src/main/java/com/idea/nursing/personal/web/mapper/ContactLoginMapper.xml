@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.personal.web.dao.ContactLoginMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.personal.web.domain.pojo.ContactLogin" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="login_id" property="loginId" jdbcType="BIGINT" />
+    <result column="contact_id" property="contactId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, login_id, contact_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.personal.web.domain.pojo.ContactLoginExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from grzl_contact_login
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from grzl_contact_login
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from grzl_contact_login
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.personal.web.domain.pojo.ContactLoginExample" >
+    delete from grzl_contact_login
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.personal.web.domain.pojo.ContactLogin" useGeneratedKeys="true" keyProperty="id" >
+    insert into grzl_contact_login (login_id, contact_id)
+    values (#{loginId,jdbcType=BIGINT}, #{contactId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.personal.web.domain.pojo.ContactLogin" useGeneratedKeys="true" keyProperty="id" >
+    insert into grzl_contact_login
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="loginId != null" >
+        login_id,
+      </if>
+      <if test="contactId != null" >
+        contact_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="loginId != null" >
+        #{loginId,jdbcType=BIGINT},
+      </if>
+      <if test="contactId != null" >
+        #{contactId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.personal.web.domain.pojo.ContactLoginExample" resultType="java.lang.Integer" >
+    select count(*) from grzl_contact_login
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update grzl_contact_login
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.loginId != null" >
+        login_id = #{record.loginId,jdbcType=BIGINT},
+      </if>
+      <if test="record.contactId != null" >
+        contact_id = #{record.contactId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update grzl_contact_login
+    set id = #{record.id,jdbcType=BIGINT},
+      login_id = #{record.loginId,jdbcType=BIGINT},
+      contact_id = #{record.contactId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.personal.web.domain.pojo.ContactLogin" >
+    update grzl_contact_login
+    <set >
+      <if test="loginId != null" >
+        login_id = #{loginId,jdbcType=BIGINT},
+      </if>
+      <if test="contactId != null" >
+        contact_id = #{contactId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.personal.web.domain.pojo.ContactLogin" >
+    update grzl_contact_login
+    set login_id = #{loginId,jdbcType=BIGINT},
+      contact_id = #{contactId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

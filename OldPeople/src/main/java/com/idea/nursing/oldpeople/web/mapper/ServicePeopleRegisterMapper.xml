@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.oldpeople.web.dao.ServicePeopleRegisterMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleRegister" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="service_people_id" property="servicePeopleId" jdbcType="BIGINT" />
+    <result column="birthday" property="birthday" jdbcType="TIMESTAMP" />
+    <result column="nation" property="nation" jdbcType="VARCHAR" />
+    <result column="identity_card" property="identityCard" jdbcType="VARCHAR" />
+    <result column="home_address" property="homeAddress" jdbcType="VARCHAR" />
+    <result column="live_condition" property="liveCondition" jdbcType="VARCHAR" />
+    <result column="self_care_ability" property="selfCareAbility" jdbcType="VARCHAR" />
+    <result column="personal_classify" property="personalClassify" jdbcType="VARCHAR" />
+    <result column="politics_status" property="politicsStatus" jdbcType="VARCHAR" />
+    <result column="culture_level" property="cultureLevel" jdbcType="VARCHAR" />
+    <result column="medical_way" property="medicalWay" jdbcType="VARCHAR" />
+    <result column="month_income" property="monthIncome" jdbcType="VARCHAR" />
+    <result column="marriage_status" property="marriageStatus" jdbcType="VARCHAR" />
+    <result column="faith" property="faith" jdbcType="VARCHAR" />
+    <result column="call1_name" property="call1Name" jdbcType="VARCHAR" />
+    <result column="call1_old" property="call1Old" jdbcType="VARCHAR" />
+    <result column="call1" property="call1" jdbcType="VARCHAR" />
+    <result column="call2_name" property="call2Name" jdbcType="VARCHAR" />
+    <result column="call2_old" property="call2Old" jdbcType="VARCHAR" />
+    <result column="call2" property="call2" jdbcType="VARCHAR" />
+    <result column="child_all" property="childAll" jdbcType="VARCHAR" />
+    <result column="child_boy" property="childBoy" jdbcType="VARCHAR" />
+    <result column="child_girl" property="childGirl" jdbcType="VARCHAR" />
+    <result column="home_old_card" property="homeOldCard" jdbcType="VARCHAR" />
+    <result column="work_name" property="workName" jdbcType="VARCHAR" />
+    <result column="check_people" property="checkPeople" jdbcType="VARCHAR" />
+    <result column="check_date" property="checkDate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, service_people_id, birthday, nation, identity_card, home_address, live_condition, 
+    self_care_ability, personal_classify, politics_status, culture_level, medical_way, 
+    month_income, marriage_status, faith, call1_name, call1_old, call1, call2_name, call2_old, 
+    call2, child_all, child_boy, child_girl, home_old_card, work_name, check_people, 
+    check_date
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleRegisterExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from lr_service_people_register
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from lr_service_people_register
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from lr_service_people_register
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleRegisterExample" >
+    delete from lr_service_people_register
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleRegister" useGeneratedKeys="true" keyProperty="id" >
+    insert into lr_service_people_register (service_people_id, birthday, nation, 
+      identity_card, home_address, live_condition, 
+      self_care_ability, personal_classify, politics_status, 
+      culture_level, medical_way, month_income, 
+      marriage_status, faith, call1_name, 
+      call1_old, call1, call2_name, 
+      call2_old, call2, child_all, 
+      child_boy, child_girl, home_old_card, 
+      work_name, check_people, check_date
+      )
+    values (#{servicePeopleId,jdbcType=BIGINT}, #{birthday,jdbcType=TIMESTAMP}, #{nation,jdbcType=VARCHAR}, 
+      #{identityCard,jdbcType=VARCHAR}, #{homeAddress,jdbcType=VARCHAR}, #{liveCondition,jdbcType=VARCHAR}, 
+      #{selfCareAbility,jdbcType=VARCHAR}, #{personalClassify,jdbcType=VARCHAR}, #{politicsStatus,jdbcType=VARCHAR}, 
+      #{cultureLevel,jdbcType=VARCHAR}, #{medicalWay,jdbcType=VARCHAR}, #{monthIncome,jdbcType=VARCHAR}, 
+      #{marriageStatus,jdbcType=VARCHAR}, #{faith,jdbcType=VARCHAR}, #{call1Name,jdbcType=VARCHAR}, 
+      #{call1Old,jdbcType=VARCHAR}, #{call1,jdbcType=VARCHAR}, #{call2Name,jdbcType=VARCHAR}, 
+      #{call2Old,jdbcType=VARCHAR}, #{call2,jdbcType=VARCHAR}, #{childAll,jdbcType=VARCHAR}, 
+      #{childBoy,jdbcType=VARCHAR}, #{childGirl,jdbcType=VARCHAR}, #{homeOldCard,jdbcType=VARCHAR}, 
+      #{workName,jdbcType=VARCHAR}, #{checkPeople,jdbcType=VARCHAR}, #{checkDate,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleRegister" useGeneratedKeys="true" keyProperty="id" >
+    insert into lr_service_people_register
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="servicePeopleId != null" >
+        service_people_id,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="nation != null" >
+        nation,
+      </if>
+      <if test="identityCard != null" >
+        identity_card,
+      </if>
+      <if test="homeAddress != null" >
+        home_address,
+      </if>
+      <if test="liveCondition != null" >
+        live_condition,
+      </if>
+      <if test="selfCareAbility != null" >
+        self_care_ability,
+      </if>
+      <if test="personalClassify != null" >
+        personal_classify,
+      </if>
+      <if test="politicsStatus != null" >
+        politics_status,
+      </if>
+      <if test="cultureLevel != null" >
+        culture_level,
+      </if>
+      <if test="medicalWay != null" >
+        medical_way,
+      </if>
+      <if test="monthIncome != null" >
+        month_income,
+      </if>
+      <if test="marriageStatus != null" >
+        marriage_status,
+      </if>
+      <if test="faith != null" >
+        faith,
+      </if>
+      <if test="call1Name != null" >
+        call1_name,
+      </if>
+      <if test="call1Old != null" >
+        call1_old,
+      </if>
+      <if test="call1 != null" >
+        call1,
+      </if>
+      <if test="call2Name != null" >
+        call2_name,
+      </if>
+      <if test="call2Old != null" >
+        call2_old,
+      </if>
+      <if test="call2 != null" >
+        call2,
+      </if>
+      <if test="childAll != null" >
+        child_all,
+      </if>
+      <if test="childBoy != null" >
+        child_boy,
+      </if>
+      <if test="childGirl != null" >
+        child_girl,
+      </if>
+      <if test="homeOldCard != null" >
+        home_old_card,
+      </if>
+      <if test="workName != null" >
+        work_name,
+      </if>
+      <if test="checkPeople != null" >
+        check_people,
+      </if>
+      <if test="checkDate != null" >
+        check_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="servicePeopleId != null" >
+        #{servicePeopleId,jdbcType=BIGINT},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nation != null" >
+        #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCard != null" >
+        #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="homeAddress != null" >
+        #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="liveCondition != null" >
+        #{liveCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="selfCareAbility != null" >
+        #{selfCareAbility,jdbcType=VARCHAR},
+      </if>
+      <if test="personalClassify != null" >
+        #{personalClassify,jdbcType=VARCHAR},
+      </if>
+      <if test="politicsStatus != null" >
+        #{politicsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cultureLevel != null" >
+        #{cultureLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalWay != null" >
+        #{medicalWay,jdbcType=VARCHAR},
+      </if>
+      <if test="monthIncome != null" >
+        #{monthIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="marriageStatus != null" >
+        #{marriageStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="faith != null" >
+        #{faith,jdbcType=VARCHAR},
+      </if>
+      <if test="call1Name != null" >
+        #{call1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="call1Old != null" >
+        #{call1Old,jdbcType=VARCHAR},
+      </if>
+      <if test="call1 != null" >
+        #{call1,jdbcType=VARCHAR},
+      </if>
+      <if test="call2Name != null" >
+        #{call2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="call2Old != null" >
+        #{call2Old,jdbcType=VARCHAR},
+      </if>
+      <if test="call2 != null" >
+        #{call2,jdbcType=VARCHAR},
+      </if>
+      <if test="childAll != null" >
+        #{childAll,jdbcType=VARCHAR},
+      </if>
+      <if test="childBoy != null" >
+        #{childBoy,jdbcType=VARCHAR},
+      </if>
+      <if test="childGirl != null" >
+        #{childGirl,jdbcType=VARCHAR},
+      </if>
+      <if test="homeOldCard != null" >
+        #{homeOldCard,jdbcType=VARCHAR},
+      </if>
+      <if test="workName != null" >
+        #{workName,jdbcType=VARCHAR},
+      </if>
+      <if test="checkPeople != null" >
+        #{checkPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="checkDate != null" >
+        #{checkDate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleRegisterExample" resultType="java.lang.Integer" >
+    select count(*) from lr_service_people_register
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update lr_service_people_register
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.servicePeopleId != null" >
+        service_people_id = #{record.servicePeopleId,jdbcType=BIGINT},
+      </if>
+      <if test="record.birthday != null" >
+        birthday = #{record.birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.nation != null" >
+        nation = #{record.nation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.identityCard != null" >
+        identity_card = #{record.identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.homeAddress != null" >
+        home_address = #{record.homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.liveCondition != null" >
+        live_condition = #{record.liveCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="record.selfCareAbility != null" >
+        self_care_ability = #{record.selfCareAbility,jdbcType=VARCHAR},
+      </if>
+      <if test="record.personalClassify != null" >
+        personal_classify = #{record.personalClassify,jdbcType=VARCHAR},
+      </if>
+      <if test="record.politicsStatus != null" >
+        politics_status = #{record.politicsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.cultureLevel != null" >
+        culture_level = #{record.cultureLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.medicalWay != null" >
+        medical_way = #{record.medicalWay,jdbcType=VARCHAR},
+      </if>
+      <if test="record.monthIncome != null" >
+        month_income = #{record.monthIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="record.marriageStatus != null" >
+        marriage_status = #{record.marriageStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.faith != null" >
+        faith = #{record.faith,jdbcType=VARCHAR},
+      </if>
+      <if test="record.call1Name != null" >
+        call1_name = #{record.call1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.call1Old != null" >
+        call1_old = #{record.call1Old,jdbcType=VARCHAR},
+      </if>
+      <if test="record.call1 != null" >
+        call1 = #{record.call1,jdbcType=VARCHAR},
+      </if>
+      <if test="record.call2Name != null" >
+        call2_name = #{record.call2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.call2Old != null" >
+        call2_old = #{record.call2Old,jdbcType=VARCHAR},
+      </if>
+      <if test="record.call2 != null" >
+        call2 = #{record.call2,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childAll != null" >
+        child_all = #{record.childAll,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childBoy != null" >
+        child_boy = #{record.childBoy,jdbcType=VARCHAR},
+      </if>
+      <if test="record.childGirl != null" >
+        child_girl = #{record.childGirl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.homeOldCard != null" >
+        home_old_card = #{record.homeOldCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workName != null" >
+        work_name = #{record.workName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkPeople != null" >
+        check_people = #{record.checkPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="record.checkDate != null" >
+        check_date = #{record.checkDate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update lr_service_people_register
+    set id = #{record.id,jdbcType=BIGINT},
+      service_people_id = #{record.servicePeopleId,jdbcType=BIGINT},
+      birthday = #{record.birthday,jdbcType=TIMESTAMP},
+      nation = #{record.nation,jdbcType=VARCHAR},
+      identity_card = #{record.identityCard,jdbcType=VARCHAR},
+      home_address = #{record.homeAddress,jdbcType=VARCHAR},
+      live_condition = #{record.liveCondition,jdbcType=VARCHAR},
+      self_care_ability = #{record.selfCareAbility,jdbcType=VARCHAR},
+      personal_classify = #{record.personalClassify,jdbcType=VARCHAR},
+      politics_status = #{record.politicsStatus,jdbcType=VARCHAR},
+      culture_level = #{record.cultureLevel,jdbcType=VARCHAR},
+      medical_way = #{record.medicalWay,jdbcType=VARCHAR},
+      month_income = #{record.monthIncome,jdbcType=VARCHAR},
+      marriage_status = #{record.marriageStatus,jdbcType=VARCHAR},
+      faith = #{record.faith,jdbcType=VARCHAR},
+      call1_name = #{record.call1Name,jdbcType=VARCHAR},
+      call1_old = #{record.call1Old,jdbcType=VARCHAR},
+      call1 = #{record.call1,jdbcType=VARCHAR},
+      call2_name = #{record.call2Name,jdbcType=VARCHAR},
+      call2_old = #{record.call2Old,jdbcType=VARCHAR},
+      call2 = #{record.call2,jdbcType=VARCHAR},
+      child_all = #{record.childAll,jdbcType=VARCHAR},
+      child_boy = #{record.childBoy,jdbcType=VARCHAR},
+      child_girl = #{record.childGirl,jdbcType=VARCHAR},
+      home_old_card = #{record.homeOldCard,jdbcType=VARCHAR},
+      work_name = #{record.workName,jdbcType=VARCHAR},
+      check_people = #{record.checkPeople,jdbcType=VARCHAR},
+      check_date = #{record.checkDate,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleRegister" >
+    update lr_service_people_register
+    <set >
+      <if test="servicePeopleId != null" >
+        service_people_id = #{servicePeopleId,jdbcType=BIGINT},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=TIMESTAMP},
+      </if>
+      <if test="nation != null" >
+        nation = #{nation,jdbcType=VARCHAR},
+      </if>
+      <if test="identityCard != null" >
+        identity_card = #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="homeAddress != null" >
+        home_address = #{homeAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="liveCondition != null" >
+        live_condition = #{liveCondition,jdbcType=VARCHAR},
+      </if>
+      <if test="selfCareAbility != null" >
+        self_care_ability = #{selfCareAbility,jdbcType=VARCHAR},
+      </if>
+      <if test="personalClassify != null" >
+        personal_classify = #{personalClassify,jdbcType=VARCHAR},
+      </if>
+      <if test="politicsStatus != null" >
+        politics_status = #{politicsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="cultureLevel != null" >
+        culture_level = #{cultureLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalWay != null" >
+        medical_way = #{medicalWay,jdbcType=VARCHAR},
+      </if>
+      <if test="monthIncome != null" >
+        month_income = #{monthIncome,jdbcType=VARCHAR},
+      </if>
+      <if test="marriageStatus != null" >
+        marriage_status = #{marriageStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="faith != null" >
+        faith = #{faith,jdbcType=VARCHAR},
+      </if>
+      <if test="call1Name != null" >
+        call1_name = #{call1Name,jdbcType=VARCHAR},
+      </if>
+      <if test="call1Old != null" >
+        call1_old = #{call1Old,jdbcType=VARCHAR},
+      </if>
+      <if test="call1 != null" >
+        call1 = #{call1,jdbcType=VARCHAR},
+      </if>
+      <if test="call2Name != null" >
+        call2_name = #{call2Name,jdbcType=VARCHAR},
+      </if>
+      <if test="call2Old != null" >
+        call2_old = #{call2Old,jdbcType=VARCHAR},
+      </if>
+      <if test="call2 != null" >
+        call2 = #{call2,jdbcType=VARCHAR},
+      </if>
+      <if test="childAll != null" >
+        child_all = #{childAll,jdbcType=VARCHAR},
+      </if>
+      <if test="childBoy != null" >
+        child_boy = #{childBoy,jdbcType=VARCHAR},
+      </if>
+      <if test="childGirl != null" >
+        child_girl = #{childGirl,jdbcType=VARCHAR},
+      </if>
+      <if test="homeOldCard != null" >
+        home_old_card = #{homeOldCard,jdbcType=VARCHAR},
+      </if>
+      <if test="workName != null" >
+        work_name = #{workName,jdbcType=VARCHAR},
+      </if>
+      <if test="checkPeople != null" >
+        check_people = #{checkPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="checkDate != null" >
+        check_date = #{checkDate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleRegister" >
+    update lr_service_people_register
+    set service_people_id = #{servicePeopleId,jdbcType=BIGINT},
+      birthday = #{birthday,jdbcType=TIMESTAMP},
+      nation = #{nation,jdbcType=VARCHAR},
+      identity_card = #{identityCard,jdbcType=VARCHAR},
+      home_address = #{homeAddress,jdbcType=VARCHAR},
+      live_condition = #{liveCondition,jdbcType=VARCHAR},
+      self_care_ability = #{selfCareAbility,jdbcType=VARCHAR},
+      personal_classify = #{personalClassify,jdbcType=VARCHAR},
+      politics_status = #{politicsStatus,jdbcType=VARCHAR},
+      culture_level = #{cultureLevel,jdbcType=VARCHAR},
+      medical_way = #{medicalWay,jdbcType=VARCHAR},
+      month_income = #{monthIncome,jdbcType=VARCHAR},
+      marriage_status = #{marriageStatus,jdbcType=VARCHAR},
+      faith = #{faith,jdbcType=VARCHAR},
+      call1_name = #{call1Name,jdbcType=VARCHAR},
+      call1_old = #{call1Old,jdbcType=VARCHAR},
+      call1 = #{call1,jdbcType=VARCHAR},
+      call2_name = #{call2Name,jdbcType=VARCHAR},
+      call2_old = #{call2Old,jdbcType=VARCHAR},
+      call2 = #{call2,jdbcType=VARCHAR},
+      child_all = #{childAll,jdbcType=VARCHAR},
+      child_boy = #{childBoy,jdbcType=VARCHAR},
+      child_girl = #{childGirl,jdbcType=VARCHAR},
+      home_old_card = #{homeOldCard,jdbcType=VARCHAR},
+      work_name = #{workName,jdbcType=VARCHAR},
+      check_people = #{checkPeople,jdbcType=VARCHAR},
+      check_date = #{checkDate,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

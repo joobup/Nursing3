@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.oldpeople.web.dao.ServicePeopleMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeople" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="service_people_name" property="servicePeopleName" jdbcType="VARCHAR" />
+    <result column="service_people_age" property="servicePeopleAge" jdbcType="TINYINT" />
+    <result column="service_people_sex" property="servicePeopleSex" jdbcType="TINYINT" />
+    <result column="service_people_relation" property="servicePeopleRelation" jdbcType="TINYINT" />
+    <result column="service_people_picture" property="servicePeoplePicture" jdbcType="BIGINT" />
+    <result column="service_people_attention" property="servicePeopleAttention" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="service_people_tel" property="servicePeopleTel" jdbcType="VARCHAR" />
+    <result column="service_people_state_id" property="servicePeopleStateId" jdbcType="BIGINT" />
+    <result column="service_people_type_id" property="servicePeopleTypeId" jdbcType="BIGINT" />
+    <result column="nursing_leave" property="nursingLeave" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, service_people_name, service_people_age, service_people_sex, service_people_relation, 
+    service_people_picture, service_people_attention, user_id, service_people_tel, service_people_state_id, 
+    service_people_type_id, nursing_leave
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from lr_service_people
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from lr_service_people
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from lr_service_people
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleExample" >
+    delete from lr_service_people
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeople" useGeneratedKeys="true" keyProperty="id" >
+    insert into lr_service_people (service_people_name, service_people_age, 
+      service_people_sex, service_people_relation, 
+      service_people_picture, service_people_attention, 
+      user_id, service_people_tel, service_people_state_id, 
+      service_people_type_id, nursing_leave)
+    values (#{servicePeopleName,jdbcType=VARCHAR}, #{servicePeopleAge,jdbcType=TINYINT}, 
+      #{servicePeopleSex,jdbcType=TINYINT}, #{servicePeopleRelation,jdbcType=TINYINT}, 
+      #{servicePeoplePicture,jdbcType=BIGINT}, #{servicePeopleAttention,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=BIGINT}, #{servicePeopleTel,jdbcType=VARCHAR}, #{servicePeopleStateId,jdbcType=BIGINT}, 
+      #{servicePeopleTypeId,jdbcType=BIGINT}, #{nursingLeave,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeople" useGeneratedKeys="true" keyProperty="id" >
+    insert into lr_service_people
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="servicePeopleName != null" >
+        service_people_name,
+      </if>
+      <if test="servicePeopleAge != null" >
+        service_people_age,
+      </if>
+      <if test="servicePeopleSex != null" >
+        service_people_sex,
+      </if>
+      <if test="servicePeopleRelation != null" >
+        service_people_relation,
+      </if>
+      <if test="servicePeoplePicture != null" >
+        service_people_picture,
+      </if>
+      <if test="servicePeopleAttention != null" >
+        service_people_attention,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="servicePeopleTel != null" >
+        service_people_tel,
+      </if>
+      <if test="servicePeopleStateId != null" >
+        service_people_state_id,
+      </if>
+      <if test="servicePeopleTypeId != null" >
+        service_people_type_id,
+      </if>
+      <if test="nursingLeave != null" >
+        nursing_leave,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="servicePeopleName != null" >
+        #{servicePeopleName,jdbcType=VARCHAR},
+      </if>
+      <if test="servicePeopleAge != null" >
+        #{servicePeopleAge,jdbcType=TINYINT},
+      </if>
+      <if test="servicePeopleSex != null" >
+        #{servicePeopleSex,jdbcType=TINYINT},
+      </if>
+      <if test="servicePeopleRelation != null" >
+        #{servicePeopleRelation,jdbcType=TINYINT},
+      </if>
+      <if test="servicePeoplePicture != null" >
+        #{servicePeoplePicture,jdbcType=BIGINT},
+      </if>
+      <if test="servicePeopleAttention != null" >
+        #{servicePeopleAttention,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="servicePeopleTel != null" >
+        #{servicePeopleTel,jdbcType=VARCHAR},
+      </if>
+      <if test="servicePeopleStateId != null" >
+        #{servicePeopleStateId,jdbcType=BIGINT},
+      </if>
+      <if test="servicePeopleTypeId != null" >
+        #{servicePeopleTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="nursingLeave != null" >
+        #{nursingLeave,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleExample" resultType="java.lang.Integer" >
+    select count(*) from lr_service_people
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update lr_service_people
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.servicePeopleName != null" >
+        service_people_name = #{record.servicePeopleName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.servicePeopleAge != null" >
+        service_people_age = #{record.servicePeopleAge,jdbcType=TINYINT},
+      </if>
+      <if test="record.servicePeopleSex != null" >
+        service_people_sex = #{record.servicePeopleSex,jdbcType=TINYINT},
+      </if>
+      <if test="record.servicePeopleRelation != null" >
+        service_people_relation = #{record.servicePeopleRelation,jdbcType=TINYINT},
+      </if>
+      <if test="record.servicePeoplePicture != null" >
+        service_people_picture = #{record.servicePeoplePicture,jdbcType=BIGINT},
+      </if>
+      <if test="record.servicePeopleAttention != null" >
+        service_people_attention = #{record.servicePeopleAttention,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+      <if test="record.servicePeopleTel != null" >
+        service_people_tel = #{record.servicePeopleTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.servicePeopleStateId != null" >
+        service_people_state_id = #{record.servicePeopleStateId,jdbcType=BIGINT},
+      </if>
+      <if test="record.servicePeopleTypeId != null" >
+        service_people_type_id = #{record.servicePeopleTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="record.nursingLeave != null" >
+        nursing_leave = #{record.nursingLeave,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update lr_service_people
+    set id = #{record.id,jdbcType=BIGINT},
+      service_people_name = #{record.servicePeopleName,jdbcType=VARCHAR},
+      service_people_age = #{record.servicePeopleAge,jdbcType=TINYINT},
+      service_people_sex = #{record.servicePeopleSex,jdbcType=TINYINT},
+      service_people_relation = #{record.servicePeopleRelation,jdbcType=TINYINT},
+      service_people_picture = #{record.servicePeoplePicture,jdbcType=BIGINT},
+      service_people_attention = #{record.servicePeopleAttention,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=BIGINT},
+      service_people_tel = #{record.servicePeopleTel,jdbcType=VARCHAR},
+      service_people_state_id = #{record.servicePeopleStateId,jdbcType=BIGINT},
+      service_people_type_id = #{record.servicePeopleTypeId,jdbcType=BIGINT},
+      nursing_leave = #{record.nursingLeave,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeople" >
+    update lr_service_people
+    <set >
+      <if test="servicePeopleName != null" >
+        service_people_name = #{servicePeopleName,jdbcType=VARCHAR},
+      </if>
+      <if test="servicePeopleAge != null" >
+        service_people_age = #{servicePeopleAge,jdbcType=TINYINT},
+      </if>
+      <if test="servicePeopleSex != null" >
+        service_people_sex = #{servicePeopleSex,jdbcType=TINYINT},
+      </if>
+      <if test="servicePeopleRelation != null" >
+        service_people_relation = #{servicePeopleRelation,jdbcType=TINYINT},
+      </if>
+      <if test="servicePeoplePicture != null" >
+        service_people_picture = #{servicePeoplePicture,jdbcType=BIGINT},
+      </if>
+      <if test="servicePeopleAttention != null" >
+        service_people_attention = #{servicePeopleAttention,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="servicePeopleTel != null" >
+        service_people_tel = #{servicePeopleTel,jdbcType=VARCHAR},
+      </if>
+      <if test="servicePeopleStateId != null" >
+        service_people_state_id = #{servicePeopleStateId,jdbcType=BIGINT},
+      </if>
+      <if test="servicePeopleTypeId != null" >
+        service_people_type_id = #{servicePeopleTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="nursingLeave != null" >
+        nursing_leave = #{nursingLeave,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.oldpeople.web.domain.pojo.ServicePeople" >
+    update lr_service_people
+    set service_people_name = #{servicePeopleName,jdbcType=VARCHAR},
+      service_people_age = #{servicePeopleAge,jdbcType=TINYINT},
+      service_people_sex = #{servicePeopleSex,jdbcType=TINYINT},
+      service_people_relation = #{servicePeopleRelation,jdbcType=TINYINT},
+      service_people_picture = #{servicePeoplePicture,jdbcType=BIGINT},
+      service_people_attention = #{servicePeopleAttention,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      service_people_tel = #{servicePeopleTel,jdbcType=VARCHAR},
+      service_people_state_id = #{servicePeopleStateId,jdbcType=BIGINT},
+      service_people_type_id = #{servicePeopleTypeId,jdbcType=BIGINT},
+      nursing_leave = #{nursingLeave,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -16,6 +16,9 @@
         <module>BedModule</module>
         <module>FoodModule</module>
         <module>Inspection</module>
+        <module>OldPeople</module>
+        <module>Personal</module>
+        <module>Order</module>
     </modules>
     <!-- 下面三个是配置 Maven 从私服上下载构件 -->
     <repositories>
