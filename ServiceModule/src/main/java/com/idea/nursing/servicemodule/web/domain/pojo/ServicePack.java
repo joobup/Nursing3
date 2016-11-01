@@ -5,21 +5,24 @@ import java.util.Date;
 public class ServicePack {
     private Long id;
 
-    private String serveBrief; //服务简介
+    private String serveBrief;
 
-    private String serveName; //服务名称
+    private String serveName;
 
-    private String serveCare;//注意事项
+    private String serveCare;
 
-    private Long serveDetailed;//详情
+    private Long serveDetailed;
 
-    private Byte servrRebate;//折扣
+    private Byte servrRebate;
 
-    private Date serveEnddate;//有效时间
+    private Date serveEnddate;
 
-    private String serveServes;//服务项
+    private Date serveStartdate;
 
-    private Long serveNurseify;//护理级别
+
+    private String serveServes;
+
+    private Long serveNurseify;
 
     public Long getId() {
         return id;
@@ -75,6 +78,14 @@ public class ServicePack {
 
     public void setServeEnddate(Date serveEnddate) {
         this.serveEnddate = serveEnddate;
+    }
+
+    public Date getServeStartdate() {
+        return serveStartdate;
+    }
+
+    public void setServeStartdate(Date serveStartdate) {
+        this.serveStartdate = serveStartdate;
     }
 
     public String getServeServes() {

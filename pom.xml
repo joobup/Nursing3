@@ -20,6 +20,7 @@
         <module>Personal</module>
         <module>Order</module>
     </modules>
+
     <!-- 下面三个是配置 Maven 从私服上下载构件 -->
     <repositories>
         <repository>
@@ -444,12 +445,12 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>com.idea.nursing</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.idea.nursing</groupId>-->
+            <!--<artifactId>common</artifactId>-->
+            <!--<version>1.0-SNAPSHOT</version>-->
+            <!--<scope>compile</scope>-->
+        <!--</dependency>-->
 
 
     </dependencies>
