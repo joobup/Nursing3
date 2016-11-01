@@ -17,6 +17,8 @@ public class ServicePack {
 
     private Date serveEnddate;
 
+    private Date serveStartdate;
+
     private String serveServes;
 
     private Long serveNurseify;
@@ -75,6 +77,14 @@ public class ServicePack {
 
     public void setServeEnddate(Date serveEnddate) {
         this.serveEnddate = serveEnddate;
+    }
+
+    public Date getServeStartdate() {
+        return serveStartdate;
+    }
+
+    public void setServeStartdate(Date serveStartdate) {
+        this.serveStartdate = serveStartdate;
     }
 
     public String getServeServes() {

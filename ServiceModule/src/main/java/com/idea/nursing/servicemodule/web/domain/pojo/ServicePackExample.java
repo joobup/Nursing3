@@ -555,6 +555,66 @@ public class ServicePackExample {
             return (Criteria) this;
         }
 
+        public Criteria andServeStartdateIsNull() {
+            addCriterion("serve_startdate is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateIsNotNull() {
+            addCriterion("serve_startdate is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateEqualTo(Date value) {
+            addCriterion("serve_startdate =", value, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateNotEqualTo(Date value) {
+            addCriterion("serve_startdate <>", value, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateGreaterThan(Date value) {
+            addCriterion("serve_startdate >", value, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateGreaterThanOrEqualTo(Date value) {
+            addCriterion("serve_startdate >=", value, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateLessThan(Date value) {
+            addCriterion("serve_startdate <", value, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateLessThanOrEqualTo(Date value) {
+            addCriterion("serve_startdate <=", value, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateIn(List<Date> values) {
+            addCriterion("serve_startdate in", values, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateNotIn(List<Date> values) {
+            addCriterion("serve_startdate not in", values, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateBetween(Date value1, Date value2) {
+            addCriterion("serve_startdate between", value1, value2, "serveStartdate");
+            return (Criteria) this;
+        }
+
+        public Criteria andServeStartdateNotBetween(Date value1, Date value2) {
+            addCriterion("serve_startdate not between", value1, value2, "serveStartdate");
+            return (Criteria) this;
+        }
+
         public Criteria andServeServesIsNull() {
             addCriterion("serve_serves is null");
             return (Criteria) this;

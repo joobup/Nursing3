@@ -15,4 +15,6 @@ public interface ServicePackService extends GenericService<ServicePack,Long,Serv
      */
     public Page<ServicePackVO> findAllVO(Integer currentPage, Integer limit);
 
+    public ServicePack insert(ServicePack servicePack,String serviceIds);
+
 }

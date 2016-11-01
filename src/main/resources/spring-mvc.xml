@@ -17,6 +17,9 @@
 
     <context:component-scan base-package="com.idea.nursing.*.web.controller"/>
 
+    <mvc:annotation-driven conversion-service="conversionService" />
+
+
 
     <!-- 支持返回json(避免IE在ajax请求时，返回json出现下载 ) -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">

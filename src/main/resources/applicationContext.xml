@@ -27,8 +27,14 @@
     </bean>
 
 
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
 
-
+            <set>
+                <bean class="com.idea.nursing.core.util.DateConverter" />
+            </set>
+        </property>
+    </bean>
 
 
     <!-- dataSource 配置 -->
