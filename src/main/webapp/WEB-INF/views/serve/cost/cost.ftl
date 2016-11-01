@@ -64,7 +64,7 @@
                     </h3>
                 </div>
                 <div class="modal-body">
-                    <table id="add">
+                    <table class="add">
                         <tr>
                             <td>计费方式</td>
                             <td><input type="text" id="jijia"></td>

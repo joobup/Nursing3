@@ -20,6 +20,8 @@
 
 .serve-module-s #staff-mess1 img {
     border-radius: 50px;
+    width: 80px;
+    height: 80px;
 }
 
 .serve-module-s #staff-mess2 {

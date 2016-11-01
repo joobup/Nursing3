@@ -157,10 +157,9 @@ div, ul {
 }
 
 #main-show .serve-module {
-    width: 98%;
     height: auto;
     overflow: hidden;
-    padding-left: 2%;
+    padding-left: 1%;
     padding-top: 1%;
     min-width: 1250px;
 }
@@ -174,7 +173,7 @@ div, ul {
     border: 1px solid #E9E9E9;
     float: left;
     position: relative;
-    min-width: 380px;
+    min-width: 430px;
     transition: .3s;
 }
 .serve-module-s:hover{
@@ -194,7 +193,8 @@ div, ul {
 
 /*表格显示*/
 .serve-module table{
-    width: 100%;
+    width: 97%;
+    margin-left: 1%;
     text-align: center;
     border:1px  solid #E5E5E5;
     background-color: #fff;
@@ -222,31 +222,31 @@ div, ul {
     color: #fff;
 }
 /*添加窗口*/
-#add {
+.add {
     margin: 20px auto;
     font-size: 14px;
 }
 
-#add td {
+.add td {
     width: 120px;
     height: 40px;
     text-align: center;
 }
 
-#add input[type="text"] {
+.add input[type="text"] {
     width: 200px;
     height: 25px;
     border: 1px solid #E7E7E7;
 }
 
-#add textarea {
+.add textarea {
     width: 200px;
     height: 80px;
     resize: none;
     margin-top: 7px;
 }
 
-#add select {
+.add select {
     width: 200px;
     height: 25px;
     border: 1px solid #E7E7E7;

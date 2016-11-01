@@ -3,7 +3,7 @@
 /*平铺显示*/
 .serve-module .serve-module-s #zuo-font {
     height: 100%;
-    width: 40%;
+    width: 35%;
     padding-top: 25px;
     float: left;
 }
@@ -12,7 +12,7 @@
     height: 22%;
     align-items: center;
     display: flex;
-    padding-left: 25px;
+    padding-left: 15px;
 }
 
 .serve-module .serve-module-s ul li span {
@@ -29,7 +29,10 @@
 .serve-module .serve-module-s #you-font2 {
     height: 100%;
     float: left;
-    width: 30%;
+    width: 18%;
     word-wrap: break-word;
     padding-top: 35px;
+}
+.servePicture{
+    float: left; width: 100px; text-align: center;padding-top: 45px; margin-left: 20px;
 }

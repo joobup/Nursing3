@@ -77,7 +77,7 @@
         </div>
     </div>
 <#include "/common/foot.ftl"/>
-<#--模态框-->
+<#--添加服务模态框-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -87,7 +87,7 @@
                     </h3>
                 </div>
                 <div class="modal-body">
-                    <table id="add">
+                    <table class="add">
                         <tr>
                             <td>服务类别</td>
                             <td><select id="sel1"></select></td>
@@ -115,6 +115,14 @@
                             <div id="demo" class="demo" style="display: none;position: absolute;z-index: 9999;"></div>
                         </tr>
                         <tr>
+                            <td>计费方式</td>
+                            <td><select class="serveCost"></select></td>
+                        </tr>
+                        <tr>
+                            <td>价格</td>
+                            <td><input type="text" id="costPirce"></td>
+                        </tr>
+                        <tr>
                             <td>限制条件</td>
                             <td><input type="text" id="tiaojian"class="null"></td>
                         </tr>
@@ -135,6 +143,34 @@
                     <button type="button" class="btn btn-primary" id="update-btn" onclick="update()"
                             style="display: none;">修改
                     </button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+<#--添加计费模态框-->
+    <div class="modal fade" id="myModalCost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title  text-center" id="myModalLabel" >
+                        添加计费模板
+                    </h3>
+                </div>
+                <div class="modal-body">
+                    <table class="add">
+                        <tr>
+                            <td>计费方式</td>
+                            <td><select class="serveCost" id="serveCost2"></select></td>
+                        </tr>
+                        <tr>
+                            <td>价格</td>
+                            <td><input type="text" id="costPirce2"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="add-cost"">添加</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->

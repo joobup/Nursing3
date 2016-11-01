@@ -1,12 +1,13 @@
 <html>
 <head>
-    <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/serve/pack.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/serve/servePublic.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="${domainUrl}/assets/css/OutCss/animate/animate.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/OutCss/date/jquery.data_input.pack.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
+    <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
     <script src="${domainUrl}/assets/js/serve/pack.js"></script>
     <meta charset="utf-8"/>
     <title></title>
@@ -49,22 +50,6 @@
                 </an>
             </div>
             <div class="serve-module">
-            <div class="serve-module-s">
-                    <i class="glyphicon glyphicon-pencil bianji"></i>
-                    <i class=" shanchu"><img src="${domainUrl}/assets/images/serve/shanchu.png" xalt=""></i>
-                    <ul id="zuo-font">
-                        <li>服务标题<span>XXXXX</span></li>
-                        <li>服务类别<span>XXXXX</span></li>
-                        <li>限制条件<span>XXXXX</span></li>
-                        <li>服务人数<span>XXXXX</span></li>
-                    </ul>
-                   <ul id="you-font1">
-                       <li>服务简介</li>
-                   </ul>
-                    <ul id="you-font2">
-                        <li>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</li>
-                    </ul>
-                </div>
             </div>
         </div>
     </div>
@@ -79,10 +64,15 @@
                     </h3>
                 </div>
                 <div class="modal-body">
-                    <table id="add">
+                    <table class="add">
                         <tr>
                             <td>服务名称</td>
                             <td><input type="text" id="name"></td>
+                        </tr>
+                        <tr>
+                            <td>服务项</td>
+                            <td style="text-align: left;"><input type="button" value="选择服务项" class="btn btn-info" id="serveAdd"></td>
+                            <div id="servePro"></div>
                         </tr>
                         <tr>
                             <td>注意事项</td>
@@ -92,18 +82,25 @@
                             <td>费用折扣</td>
                             <td><input type="text" id="rebate"></td>
                         </tr>
+                         <#--时间控件-->
+                        <script type="text/javascript">
+                            $(function(){
+                                $('.date_picker').date_input();
+                            })
+                        </script>
                         <tr>
                             <td>有效时间</td>
-                            <td><input type="text" id="enddate"></td>
+                            <td><input type="text" id="sdate"  class="date_picker" placeholder="开始时间" style="text-align: center"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><input type="text"  id="edate" class="date_picker" placeholder="结束时间" style="text-align: center"></td>
                         </tr>
                         <tr>
                             <td>护理级别</td>
                             <td><input type="text" id="nurseify"></td>
                         </tr>
-                        <tr>
-                            <td>服务项</td>
-                            <td><input type="text" id="serves"></td>
-                        </tr>
+
                         <tr>
                             <td style="position: absolute; margin-top: 5px;">服务简介</td>
                             <td><textarea id="brief"></textarea><input type="text" id="xid" style="display: none;">

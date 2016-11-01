@@ -1,0 +1,45 @@
+a{
+    text-decoration: none;
+}
+.classify-body .ify-title{
+    width: 97%; margin-left: 1%; background-color: #E1E1E1;border-top:2px solid #D0D0D0; height: 35px;
+}
+.classify-body .ify-title span{
+    display: block; padding-left: 10%; float: left; line-height: 35px;
+}
+.classify-body .ify-title span:nth-child(1){
+    width: 70%;
+}
+.classify-body .ify-title span:nth-child(2){
+    width: 30%;
+}
+.classify-body .ify-body{
+    width: 97%; margin-left: 1%; background-color: #fff; line-height: 35px;
+}
+.classify-body .ify-body li div{
+    float: left;
+    background-color: #fff;
+}
+.classify-body .ify-body li #ify-left{
+    padding-left: 10%;
+    width: 70%;
+}
+.classify-body .ify-body li #ify-right{
+    padding-left: 10%;
+    width: 30%;
+}
+.classify-body .ify-body a{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.classify-body .ify-body a:hover{
+    color: #FF4B01;
+}
+.classify-body .ify-body .ifyAdd{
+    color: #000000;
+    margin-right: 10px;
+}
+.classify-body .ify-body .font-text{
+    width: 150px; text-align: center;float: left;
+}

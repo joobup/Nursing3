@@ -15,7 +15,7 @@ public class CommentPicture {
         this.id = id;
     }
 
-    public String getPictureAddress(String pictureName) {
+    public String getPictureAddress() {
         return pictureAddress;
     }
 

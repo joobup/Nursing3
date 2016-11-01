@@ -4,11 +4,24 @@
     <link href="${domainUrl}/assets/css/serve/servePublic.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/OutCss/page/page.css" rel="stylesheet" >
-    <meta charset="utf-8" />
+    <!-- 引用控制层插件样式 -->
+    <link rel="stylesheet" href="${domainUrl}/assets/css/OutCss/upload/zyUpload.css" type="text/css">
+    <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
+    <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="${domainUrl}/assets/js/common.js"></script>
+    <script src="${domainUrl}/assets/js/serve/staff.js"></script>
+    <script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
+    <!-- 引用初始化JS -->
+    <script src="${domainUrl}/assets/js/OutJs/upload/initial.js"></script>
+    <!-- 引用核心层插件 -->
+    <script src="${domainUrl}/assets/js/OutJs/upload/zyFile.js"></script>
+    <!-- 引用控制层插件 -->
+    <script src="${domainUrl}/assets/js/OutJs/upload/zyUpload.js"></script>
     <title></title>
 </head>
 <script>
     var domainUrl = '${domainUrl}'+"/rest";
+    var domainFile = '${domainUrl}';
 </script>
 <body onload="findAllp(1)">
 <div class="main">
@@ -96,7 +109,7 @@
                     </h3>
                 </div>
                 <div class="modal-body">
-                    <table id="add">
+                    <table class="add">
                         <tr>
                             <td>员工姓名</td>
                             <td><input type="text" id="staffname"></td>
@@ -114,11 +127,14 @@
                             <td><input type="text" id="staffskilllevel"></td>
                         </tr>
                         <tr>
-                            <td style="position: absolute; margin-top: 5px;">员工照片</td>
-                            <td><input type="text" id="staffpicture"></td>
-                            <#--<td><div id="staff-pic">-->
-                                <#--<img src="${domainUrl}/assets/images/tjsc.png" alt="">-->
-                            <#--</div></td>-->
+                            <td>员工照片</td>
+                            <td style="text-align: left;"><input type="button" value="添加员工主图" id="xxxx" class="btn btn-info"> </td>
+                            <script>
+                                $("#xxxx").click(function () {
+                                    $("#demo").show(500);
+                                })
+                            </script>
+                            <div id="demo" class="demo" style="display: none;position: absolute;z-index: 9999;"></div>
                         </tr>
                         <tr>
                             <td>员工部门</td>
@@ -155,11 +171,6 @@
         </div><!-- /.modal -->
     </div>
 </div>
-<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
-<script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
-<script src="${domainUrl}/assets/js/common.js"></script>
-<script src="${domainUrl}/assets/js/serve/staff.js"></script>
-<script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
 
 </body>
 </html>

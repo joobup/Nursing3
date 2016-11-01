@@ -12,7 +12,7 @@ function add() {
 }
 function findAll() {
     var url = domainUrl + "/serve/service_classes_valuation/findAll"
-    var getData = {currentPage:1,limit:100};
+    var getData = {currentPage:1,limit:10};
     getAjax(url,false,getData,function (data) {
         console.log(JSON.stringify(data))
         var num = data.aaData.length;
@@ -21,7 +21,7 @@ function findAll() {
             html +='<div class="del"><span>'+data.aaData[i].classesValuationName+'</span><a onclick="del('+data.aaData[i].id+')">删除</a></div>';
         }
         html+="";
-        $("#ce").html(html)
+        $(".serve-module").html(html)
     })
 }
 function del(id) {
