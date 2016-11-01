@@ -7,7 +7,7 @@
     <result column="serve_name" property="serveName" jdbcType="VARCHAR" />
     <result column="serve_care" property="serveCare" jdbcType="VARCHAR" />
     <result column="serve_detailed" property="serveDetailed" jdbcType="BIGINT" />
-    <result column="servr_rebate" property="servrRebate" jdbcType="TINYINT" />
+    <result column="serve_rebate" property="serveRebate" jdbcType="TINYINT" />
     <result column="serve_enddate" property="serveEnddate" jdbcType="TIMESTAMP" />
     <result column="serve_startdate" property="serveStartdate" jdbcType="TIMESTAMP" />
     <result column="serve_serves" property="serveServes" jdbcType="VARCHAR" />
@@ -72,7 +72,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, serve_brief, serve_name, serve_care, serve_detailed, servr_rebate, serve_enddate, 
+    id, serve_brief, serve_name, serve_care, serve_detailed, serve_rebate, serve_enddate, 
     serve_startdate, serve_serves, serve_nurseify
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample" >
@@ -107,11 +107,11 @@
   </delete>
   <insert id="insert" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" useGeneratedKeys="true" keyProperty="id" >
     insert into ff_service_pack (serve_brief, serve_name, serve_care, 
-      serve_detailed, servr_rebate, serve_enddate, 
+      serve_detailed, serve_rebate, serve_enddate, 
       serve_startdate, serve_serves, serve_nurseify
       )
     values (#{serveBrief,jdbcType=VARCHAR}, #{serveName,jdbcType=VARCHAR}, #{serveCare,jdbcType=VARCHAR}, 
-      #{serveDetailed,jdbcType=BIGINT}, #{servrRebate,jdbcType=TINYINT}, #{serveEnddate,jdbcType=TIMESTAMP}, 
+      #{serveDetailed,jdbcType=BIGINT}, #{serveRebate,jdbcType=TINYINT}, #{serveEnddate,jdbcType=TIMESTAMP}, 
       #{serveStartdate,jdbcType=TIMESTAMP}, #{serveServes,jdbcType=VARCHAR}, #{serveNurseify,jdbcType=BIGINT}
       )
   </insert>
@@ -130,8 +130,8 @@
       <if test="serveDetailed != null" >
         serve_detailed,
       </if>
-      <if test="servrRebate != null" >
-        servr_rebate,
+      <if test="serveRebate != null" >
+        serve_rebate,
       </if>
       <if test="serveEnddate != null" >
         serve_enddate,
@@ -159,8 +159,8 @@
       <if test="serveDetailed != null" >
         #{serveDetailed,jdbcType=BIGINT},
       </if>
-      <if test="servrRebate != null" >
-        #{servrRebate,jdbcType=TINYINT},
+      <if test="serveRebate != null" >
+        #{serveRebate,jdbcType=TINYINT},
       </if>
       <if test="serveEnddate != null" >
         #{serveEnddate,jdbcType=TIMESTAMP},
@@ -200,8 +200,8 @@
       <if test="record.serveDetailed != null" >
         serve_detailed = #{record.serveDetailed,jdbcType=BIGINT},
       </if>
-      <if test="record.servrRebate != null" >
-        servr_rebate = #{record.servrRebate,jdbcType=TINYINT},
+      <if test="record.serveRebate != null" >
+        serve_rebate = #{record.serveRebate,jdbcType=TINYINT},
       </if>
       <if test="record.serveEnddate != null" >
         serve_enddate = #{record.serveEnddate,jdbcType=TIMESTAMP},
@@ -227,7 +227,7 @@
       serve_name = #{record.serveName,jdbcType=VARCHAR},
       serve_care = #{record.serveCare,jdbcType=VARCHAR},
       serve_detailed = #{record.serveDetailed,jdbcType=BIGINT},
-      servr_rebate = #{record.servrRebate,jdbcType=TINYINT},
+      serve_rebate = #{record.serveRebate,jdbcType=TINYINT},
       serve_enddate = #{record.serveEnddate,jdbcType=TIMESTAMP},
       serve_startdate = #{record.serveStartdate,jdbcType=TIMESTAMP},
       serve_serves = #{record.serveServes,jdbcType=VARCHAR},
@@ -251,8 +251,8 @@
       <if test="serveDetailed != null" >
         serve_detailed = #{serveDetailed,jdbcType=BIGINT},
       </if>
-      <if test="servrRebate != null" >
-        servr_rebate = #{servrRebate,jdbcType=TINYINT},
+      <if test="serveRebate != null" >
+        serve_rebate = #{serveRebate,jdbcType=TINYINT},
       </if>
       <if test="serveEnddate != null" >
         serve_enddate = #{serveEnddate,jdbcType=TIMESTAMP},
@@ -275,7 +275,7 @@
       serve_name = #{serveName,jdbcType=VARCHAR},
       serve_care = #{serveCare,jdbcType=VARCHAR},
       serve_detailed = #{serveDetailed,jdbcType=BIGINT},
-      servr_rebate = #{servrRebate,jdbcType=TINYINT},
+      serve_rebate = #{serveRebate,jdbcType=TINYINT},
       serve_enddate = #{serveEnddate,jdbcType=TIMESTAMP},
       serve_startdate = #{serveStartdate,jdbcType=TIMESTAMP},
       serve_serves = #{serveServes,jdbcType=VARCHAR},

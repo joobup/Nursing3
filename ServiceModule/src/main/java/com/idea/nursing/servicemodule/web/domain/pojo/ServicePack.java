@@ -13,12 +13,11 @@ public class ServicePack {
 
     private Long serveDetailed;
 
-    private Byte servrRebate;
+    private Byte serveRebate;
 
     private Date serveEnddate;
 
     private Date serveStartdate;
-
 
     private String serveServes;
 
@@ -64,12 +63,12 @@ public class ServicePack {
         this.serveDetailed = serveDetailed;
     }
 
-    public Byte getServrRebate() {
-        return servrRebate;
+    public Byte getServeRebate() {
+        return serveRebate;
     }
 
-    public void setServrRebate(Byte servrRebate) {
-        this.servrRebate = servrRebate;
+    public void setServeRebate(Byte serveRebate) {
+        this.serveRebate = serveRebate;
     }
 
     public Date getServeEnddate() {
