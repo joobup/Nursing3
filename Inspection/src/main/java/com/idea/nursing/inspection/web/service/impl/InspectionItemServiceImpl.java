@@ -1,4 +1,4 @@
-package com.idea.nursing.inspection.service.impl;
+package com.idea.nursing.inspection.web.service.impl;
 
 
 import com.idea.nursing.core.generic.GenericDao;
@@ -6,7 +6,7 @@ import com.idea.nursing.core.generic.GenericServiceImpl;
 import com.idea.nursing.inspection.web.dao.InspectionItemMapper;
 import com.idea.nursing.inspection.web.domain.pojo.InspectionItem;
 import com.idea.nursing.inspection.web.domain.pojo.InspectionItemExample;
-import com.idea.nursing.inspection.service.InspectionItemService;
+import com.idea.nursing.inspection.web.service.InspectionItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

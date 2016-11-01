@@ -1,9 +1,9 @@
-package com.idea.nursing.personal.service;
+package com.idea.nursing.personal.web.controller;
 
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
-import com.idea.nursing.personal.web.dao.Contact;
-import com.idea.nursing.personal.web.domain.pojo.ContactService;
+import com.idea.nursing.personal.web.domain.pojo.Contact;
+import com.idea.nursing.personal.web.service.ContactService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

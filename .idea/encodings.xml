@@ -2,10 +2,15 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/BedModule" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Commom" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FoodModule" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Inspection" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/LoginModule" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/OldPeople" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Order" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Personal" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ServiceModule" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Web" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/zw" charset="UTF-8" />
   </component>
 </project>

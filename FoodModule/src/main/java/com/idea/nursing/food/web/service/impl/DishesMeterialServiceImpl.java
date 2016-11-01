@@ -1,4 +1,4 @@
-package com.idea.nursing.food.service.impl;
+package com.idea.nursing.food.web.service.impl;
 
 
 import com.idea.nursing.core.generic.GenericDao;
@@ -6,7 +6,7 @@ import com.idea.nursing.core.generic.GenericServiceImpl;
 import com.idea.nursing.food.web.dao.DishesMeterialMapper;
 import com.idea.nursing.food.web.domain.pojo.DishesMeterial;
 import com.idea.nursing.food.web.domain.pojo.DishesMeterialExample;
-import com.idea.nursing.food.service.DishesMeterialService;
+import com.idea.nursing.food.web.service.DishesMeterialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

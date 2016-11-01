@@ -1,4 +1,4 @@
-package com.idea.nursing.food.service.impl;
+package com.idea.nursing.food.web.service.impl;
 
 
 import com.idea.nursing.core.generic.GenericDao;
@@ -6,7 +6,7 @@ import com.idea.nursing.core.generic.GenericServiceImpl;
 import com.idea.nursing.food.web.dao.WeekFoodDishesMapper;
 import com.idea.nursing.food.web.domain.pojo.WeekFoodDishes;
 import com.idea.nursing.food.web.domain.pojo.WeekFoodDishesExample;
-import com.idea.nursing.food.service.WeekFoodDishesService;
+import com.idea.nursing.food.web.service.WeekFoodDishesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

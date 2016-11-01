@@ -115,24 +115,27 @@ public class GenerateController {
 //                "InspectionItemSelectValue,检查项目选项值表",
 //                "Inspection,检查表",
 //                "InspectionItemInspection,检查健康状况项目关系表",
+
+
 //                "ServicePeople,服务对象信息",
 //
 //                "ServicePeopleType,服务对象类型",
 //                "ServicePeopleState,服务对象状态",
 //                "ServicePeopleRegister,服务对象信息登记"
+
 //                "Contact,联系方式",
 //                "ContactLogin,联系方式登录关系"
 
 
-                "ServiceOrder,服务订单",
-                "ServiceCommonOrder,服务工单",
-                "ServiceOrderUser,订单服务对象关系",
-                "Evaluate,评价",
-                "PackageServiceEvaluate,打包服务评价关系",
-                "OrderEvaluate,订单评价关系",
-                "ExceptionType,异常类型表",
-                "Complaint,投诉",
-                "ComplaintEvent,投诉事件"
+//                "ServiceOrder,服务订单",
+//                "ServiceCommonOrder,服务工单",
+//                "ServiceOrderUser,订单服务对象关系",
+//                "Evaluate,评价",
+//                "PackageServiceEvaluate,打包服务评价关系",
+//                "OrderEvaluate,订单评价关系",
+//                "ExceptionType,异常类型表",
+//                "Complaint,投诉",
+//                "ComplaintEvent,投诉事件"
 
 
         };
@@ -144,10 +147,10 @@ public class GenerateController {
                         "\\src\\test\\java\\ftl",
                         "controller.ftl",
                         fileName,
-                        "\\Order\\src\\main\\java\\com\\idea\\nursing\\order\\web\\controller",
+                        //"\\Order\\src\\main\\java\\com\\idea\\nursing\\order\\web\\controller",
 
-//                        "\\Personal\\src\\main\\java\\com\\idea\\nursing\\personal\\web\\controller",
-//                        "\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\controller",
+                        "\\Personal\\src\\main\\java\\com\\idea\\nursing\\personal\\web\\controller",
+                        //"\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\controller",
                         //"\\Inspection\\src\\main\\java\\com\\idea\\nursing\\inspection\\web\\controller",
                         //"\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\controller",
                         //"\\BedModule\\src\\main\\java\\com\\idea\\nursing\\bed\\web\\controller",
@@ -173,15 +176,15 @@ public class GenerateController {
 //                        "com.idea.nursing.inspection.web.domain.pojo",
 //                        "com.idea.nursing.inspection.web.service"
 
-//                        "com.idea.nursing.oldpeople.service",
-//                        "com.idea.nursing.oldpeople.web.dao",
-//                        "com.idea.nursing.oldpeople.web.domain.pojo"
-//                        "com.idea.nursing.personal.service",
-//                        "com.idea.nursing.personal.web.dao",
-//                        "com.idea.nursing.personal.web.domain.pojo"
-                        "com.idea.nursing.order.service",
-                        "com.idea.nursing.order.web.dao",
-                        "com.idea.nursing.order.web.domain.pojo"
+//                        "com.idea.nursing.oldpeople.web.controller",
+//                        "com.idea.nursing.oldpeople.web.domain.pojo",
+//                        "com.idea.nursing.oldpeople.web.service"
+                        "com.idea.nursing.personal.web.controller",
+                        "com.idea.nursing.personal.web.domain.pojo",
+                        "com.idea.nursing.personal.web.service"
+//                        "com.idea.nursing.order.web.controller",
+//                        "com.idea.nursing.order.web.domain.pojo",
+//                        "com.idea.nursing.order.web.service"
                 );
             } catch (IOException e) {
                 e.printStackTrace();

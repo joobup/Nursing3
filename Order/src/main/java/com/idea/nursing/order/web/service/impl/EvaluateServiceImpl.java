@@ -1,4 +1,4 @@
-package com.idea.nursing.order.service.impl;
+package com.idea.nursing.order.web.service.impl;
 
 
 import com.idea.nursing.core.generic.GenericDao;
@@ -6,7 +6,7 @@ import com.idea.nursing.core.generic.GenericServiceImpl;
 import com.idea.nursing.order.web.dao.EvaluateMapper;
 import com.idea.nursing.order.web.domain.pojo.Evaluate;
 import com.idea.nursing.order.web.domain.pojo.EvaluateExample;
-import com.idea.nursing.order.service.EvaluateService;
+import com.idea.nursing.order.web.service.EvaluateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,9 +1,9 @@
-package com.idea.nursing.oldpeople.service;
+package com.idea.nursing.oldpeople.web.controller;
 
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
-import com.idea.nursing.oldpeople.web.dao.ServicePeopleType;
-import com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleTypeService;
+import com.idea.nursing.oldpeople.web.domain.pojo.ServicePeopleType;
+import com.idea.nursing.oldpeople.web.service.ServicePeopleTypeService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

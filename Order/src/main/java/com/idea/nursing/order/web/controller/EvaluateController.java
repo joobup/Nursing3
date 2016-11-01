@@ -1,9 +1,9 @@
-package com.idea.nursing.order.service;
+package com.idea.nursing.order.web.controller;
 
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
-import com.idea.nursing.order.web.dao.Evaluate;
-import com.idea.nursing.order.web.domain.pojo.EvaluateService;
+import com.idea.nursing.order.web.domain.pojo.Evaluate;
+import com.idea.nursing.order.web.service.EvaluateService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

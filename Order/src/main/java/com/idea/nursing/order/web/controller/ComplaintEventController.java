@@ -1,9 +1,9 @@
-package com.idea.nursing.order.service;
+package com.idea.nursing.order.web.controller;
 
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
-import com.idea.nursing.order.web.dao.ComplaintEvent;
-import com.idea.nursing.order.web.domain.pojo.ComplaintEventService;
+import com.idea.nursing.order.web.domain.pojo.ComplaintEvent;
+import com.idea.nursing.order.web.service.ComplaintEventService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

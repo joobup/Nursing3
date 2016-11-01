@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/BedModule/BedModule.iml" filepath="$PROJECT_DIR$/BedModule/BedModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FoodModule/FoodModule.iml" filepath="$PROJECT_DIR$/FoodModule/FoodModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Inspection/Inspection.iml" filepath="$PROJECT_DIR$/Inspection/Inspection.iml" />
       <module fileurl="file://$PROJECT_DIR$/LoginModule/LoginModule.iml" filepath="$PROJECT_DIR$/LoginModule/LoginModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/Nursing.iml" filepath="$PROJECT_DIR$/Nursing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OldPeople/OldPeople.iml" filepath="$PROJECT_DIR$/OldPeople/OldPeople.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Order/Order.iml" filepath="$PROJECT_DIR$/Order/Order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Personal/Personal.iml" filepath="$PROJECT_DIR$/Personal/Personal.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServiceModule/ServiceModule.iml" filepath="$PROJECT_DIR$/ServiceModule/ServiceModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/Commom/common.iml" filepath="$PROJECT_DIR$/Commom/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/zw/zw.iml" filepath="$PROJECT_DIR$/zw/zw.iml" />

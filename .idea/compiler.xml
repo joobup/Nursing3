@@ -22,18 +22,30 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="BedModule" />
         <module name="common" />
+        <module name="FoodModule" />
+        <module name="Inspection" />
         <module name="LoginModule" />
+        <module name="OldPeople" />
+        <module name="Order" />
+        <module name="Personal" />
         <module name="ServiceModule" />
         <module name="zw" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BedModule" target="1.7" />
       <module name="Commom" target="1.7" />
       <module name="common" target="1.7" />
+      <module name="FoodModule" target="1.7" />
+      <module name="Inspection" target="1.7" />
       <module name="Login" target="1.7" />
       <module name="LoginModule" target="1.7" />
       <module name="Nursing" target="1.7" />
+      <module name="OldPeople" target="1.7" />
+      <module name="Order" target="1.7" />
+      <module name="Personal" target="1.7" />
       <module name="ServiceModule" target="1.7" />
       <module name="Test" target="1.7" />
       <module name="Web" target="1.7" />
