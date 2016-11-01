@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>nursing</artifactId>
+        <groupId>com.idea.nursing</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>web_module</artifactId>
+    <packaging>war</packaging>
+    <properties>
+        <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <skipTests>true</skipTests>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.idea.nursing</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+
+       <dependency>
+            <groupId>com.idea.nursing</groupId>
+            <artifactId>food_module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.idea.nursing</groupId>
+            <artifactId>inspection</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.idea.nursing</groupId>
+            <artifactId>login-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.idea.nursing</groupId>
+            <artifactId>old_people</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.idea.nursing</groupId>
+            <artifactId>order</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.idea.nursing</groupId>
+            <artifactId>personal</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.idea.nursing</groupId>
+            <artifactId>service-module</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+    <build>
+
+        <finalName>nursing</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.1.1</version>
+                <configuration>
+                    <webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+                    <webappDirectory>${basedir}/src/main/webapp</webappDirectory>
+                    <warSourceDirectory>${basedir}/src/main/webapp</warSourceDirectory>
+
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+
+
+        </plugins>
+    </build>
+
+</project>
