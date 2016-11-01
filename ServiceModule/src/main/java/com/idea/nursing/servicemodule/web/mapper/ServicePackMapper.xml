@@ -1,37 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.idea.nursing.servicemodule.web.dao.ServicePackMapper">
-  <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="serve_brief" jdbcType="VARCHAR" property="serveBrief" />
-    <result column="serve_name" jdbcType="VARCHAR" property="serveName" />
-    <result column="serve_care" jdbcType="VARCHAR" property="serveCare" />
-    <result column="serve_detailed" jdbcType="BIGINT" property="serveDetailed" />
-    <result column="servr_rebate" jdbcType="TINYINT" property="servrRebate" />
-    <result column="serve_enddate" jdbcType="TIMESTAMP" property="serveEnddate" />
-    <result column="serve_startdate" jdbcType="TIMESTAMP" property="serveStartdate" />
-    <result column="serve_serves" jdbcType="VARCHAR" property="serveServes" />
-    <result column="serve_nurseify" jdbcType="BIGINT" property="serveNurseify" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.ServicePackMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="serve_brief" property="serveBrief" jdbcType="VARCHAR" />
+    <result column="serve_name" property="serveName" jdbcType="VARCHAR" />
+    <result column="serve_care" property="serveCare" jdbcType="VARCHAR" />
+    <result column="serve_detailed" property="serveDetailed" jdbcType="BIGINT" />
+    <result column="servr_rebate" property="servrRebate" jdbcType="TINYINT" />
+    <result column="serve_enddate" property="serveEnddate" jdbcType="TIMESTAMP" />
+    <result column="serve_startdate" property="serveStartdate" jdbcType="TIMESTAMP" />
+    <result column="serve_serves" property="serveServes" jdbcType="VARCHAR" />
+    <result column="serve_nurseify" property="serveNurseify" jdbcType="BIGINT" />
   </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -42,25 +42,25 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -71,41 +71,41 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     id, serve_brief, serve_name, serve_care, serve_detailed, servr_rebate, serve_enddate, 
     serve_startdate, serve_serves, serve_nurseify
   </sql>
-  <select id="selectByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample" resultMap="BaseResultMap">
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample" >
     select
-    <if test="distinct">
+    <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
     from ff_service_pack
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null">
+    <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from ff_service_pack
     where id = #{id,jdbcType=BIGINT}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from ff_service_pack
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample">
+  <delete id="deleteByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample" >
     delete from ff_service_pack
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" keyProperty="id" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" useGeneratedKeys="true">
+  <insert id="insert" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" useGeneratedKeys="true" keyProperty="id" >
     insert into ff_service_pack (serve_brief, serve_name, serve_care, 
       serve_detailed, servr_rebate, serve_enddate, 
       serve_startdate, serve_serves, serve_nurseify
@@ -115,112 +115,112 @@
       #{serveStartdate,jdbcType=TIMESTAMP}, #{serveServes,jdbcType=VARCHAR}, #{serveNurseify,jdbcType=BIGINT}
       )
   </insert>
-  <insert id="insertSelective" keyProperty="id" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" useGeneratedKeys="true">
+  <insert id="insertSelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" useGeneratedKeys="true" keyProperty="id" >
     insert into ff_service_pack
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="serveBrief != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="serveBrief != null" >
         serve_brief,
       </if>
-      <if test="serveName != null">
+      <if test="serveName != null" >
         serve_name,
       </if>
-      <if test="serveCare != null">
+      <if test="serveCare != null" >
         serve_care,
       </if>
-      <if test="serveDetailed != null">
+      <if test="serveDetailed != null" >
         serve_detailed,
       </if>
-      <if test="servrRebate != null">
+      <if test="servrRebate != null" >
         servr_rebate,
       </if>
-      <if test="serveEnddate != null">
+      <if test="serveEnddate != null" >
         serve_enddate,
       </if>
-      <if test="serveStartdate != null">
+      <if test="serveStartdate != null" >
         serve_startdate,
       </if>
-      <if test="serveServes != null">
+      <if test="serveServes != null" >
         serve_serves,
       </if>
-      <if test="serveNurseify != null">
+      <if test="serveNurseify != null" >
         serve_nurseify,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="serveBrief != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="serveBrief != null" >
         #{serveBrief,jdbcType=VARCHAR},
       </if>
-      <if test="serveName != null">
+      <if test="serveName != null" >
         #{serveName,jdbcType=VARCHAR},
       </if>
-      <if test="serveCare != null">
+      <if test="serveCare != null" >
         #{serveCare,jdbcType=VARCHAR},
       </if>
-      <if test="serveDetailed != null">
+      <if test="serveDetailed != null" >
         #{serveDetailed,jdbcType=BIGINT},
       </if>
-      <if test="servrRebate != null">
+      <if test="servrRebate != null" >
         #{servrRebate,jdbcType=TINYINT},
       </if>
-      <if test="serveEnddate != null">
+      <if test="serveEnddate != null" >
         #{serveEnddate,jdbcType=TIMESTAMP},
       </if>
-      <if test="serveStartdate != null">
+      <if test="serveStartdate != null" >
         #{serveStartdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="serveServes != null">
+      <if test="serveServes != null" >
         #{serveServes,jdbcType=VARCHAR},
       </if>
-      <if test="serveNurseify != null">
+      <if test="serveNurseify != null" >
         #{serveNurseify,jdbcType=BIGINT},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample" resultType="java.lang.Integer">
+  <select id="countByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample" resultType="java.lang.Integer" >
     select count(*) from ff_service_pack
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map">
+  <update id="updateByExampleSelective" parameterType="map" >
     update ff_service_pack
-    <set>
-      <if test="record.id != null">
+    <set >
+      <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.serveBrief != null">
+      <if test="record.serveBrief != null" >
         serve_brief = #{record.serveBrief,jdbcType=VARCHAR},
       </if>
-      <if test="record.serveName != null">
+      <if test="record.serveName != null" >
         serve_name = #{record.serveName,jdbcType=VARCHAR},
       </if>
-      <if test="record.serveCare != null">
+      <if test="record.serveCare != null" >
         serve_care = #{record.serveCare,jdbcType=VARCHAR},
       </if>
-      <if test="record.serveDetailed != null">
+      <if test="record.serveDetailed != null" >
         serve_detailed = #{record.serveDetailed,jdbcType=BIGINT},
       </if>
-      <if test="record.servrRebate != null">
+      <if test="record.servrRebate != null" >
         servr_rebate = #{record.servrRebate,jdbcType=TINYINT},
       </if>
-      <if test="record.serveEnddate != null">
+      <if test="record.serveEnddate != null" >
         serve_enddate = #{record.serveEnddate,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.serveStartdate != null">
+      <if test="record.serveStartdate != null" >
         serve_startdate = #{record.serveStartdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.serveServes != null">
+      <if test="record.serveServes != null" >
         serve_serves = #{record.serveServes,jdbcType=VARCHAR},
       </if>
-      <if test="record.serveNurseify != null">
+      <if test="record.serveNurseify != null" >
         serve_nurseify = #{record.serveNurseify,jdbcType=BIGINT},
       </if>
     </set>
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByExample" parameterType="map">
+  <update id="updateByExample" parameterType="map" >
     update ff_service_pack
     set id = #{record.id,jdbcType=BIGINT},
       serve_brief = #{record.serveBrief,jdbcType=VARCHAR},
@@ -232,44 +232,44 @@
       serve_startdate = #{record.serveStartdate,jdbcType=TIMESTAMP},
       serve_serves = #{record.serveServes,jdbcType=VARCHAR},
       serve_nurseify = #{record.serveNurseify,jdbcType=BIGINT}
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack">
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" >
     update ff_service_pack
-    <set>
-      <if test="serveBrief != null">
+    <set >
+      <if test="serveBrief != null" >
         serve_brief = #{serveBrief,jdbcType=VARCHAR},
       </if>
-      <if test="serveName != null">
+      <if test="serveName != null" >
         serve_name = #{serveName,jdbcType=VARCHAR},
       </if>
-      <if test="serveCare != null">
+      <if test="serveCare != null" >
         serve_care = #{serveCare,jdbcType=VARCHAR},
       </if>
-      <if test="serveDetailed != null">
+      <if test="serveDetailed != null" >
         serve_detailed = #{serveDetailed,jdbcType=BIGINT},
       </if>
-      <if test="servrRebate != null">
+      <if test="servrRebate != null" >
         servr_rebate = #{servrRebate,jdbcType=TINYINT},
       </if>
-      <if test="serveEnddate != null">
+      <if test="serveEnddate != null" >
         serve_enddate = #{serveEnddate,jdbcType=TIMESTAMP},
       </if>
-      <if test="serveStartdate != null">
+      <if test="serveStartdate != null" >
         serve_startdate = #{serveStartdate,jdbcType=TIMESTAMP},
       </if>
-      <if test="serveServes != null">
+      <if test="serveServes != null" >
         serve_serves = #{serveServes,jdbcType=VARCHAR},
       </if>
-      <if test="serveNurseify != null">
+      <if test="serveNurseify != null" >
         serve_nurseify = #{serveNurseify,jdbcType=BIGINT},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack">
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" >
     update ff_service_pack
     set serve_brief = #{serveBrief,jdbcType=VARCHAR},
       serve_name = #{serveName,jdbcType=VARCHAR},
@@ -278,270 +278,6 @@
       servr_rebate = #{servrRebate,jdbcType=TINYINT},
       serve_enddate = #{serveEnddate,jdbcType=TIMESTAMP},
       serve_startdate = #{serveStartdate,jdbcType=TIMESTAMP},
-      serve_serves = #{serveServes,jdbcType=VARCHAR},
-      serve_nurseify = #{serveNurseify,jdbcType=BIGINT}
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack">
-    <id column="id" jdbcType="BIGINT" property="id" />
-    <result column="serve_brief" jdbcType="VARCHAR" property="serveBrief" />
-    <result column="serve_name" jdbcType="VARCHAR" property="serveName" />
-    <result column="serve_care" jdbcType="VARCHAR" property="serveCare" />
-    <result column="serve_detailed" jdbcType="BIGINT" property="serveDetailed" />
-    <result column="servr_rebate" jdbcType="TINYINT" property="servrRebate" />
-    <result column="serve_enddate" jdbcType="TIMESTAMP" property="serveEnddate" />
-    <result column="serve_serves" jdbcType="VARCHAR" property="serveServes" />
-    <result column="serve_nurseify" jdbcType="BIGINT" property="serveNurseify" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, serve_brief, serve_name, serve_care, serve_detailed, servr_rebate, serve_enddate, 
-    serve_serves, serve_nurseify
-  </sql>
-  <select id="selectByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from ff_service_pack
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from ff_service_pack
-    where id = #{id,jdbcType=BIGINT}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
-    delete from ff_service_pack
-    where id = #{id,jdbcType=BIGINT}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample">
-    delete from ff_service_pack
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" keyProperty="id" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" useGeneratedKeys="true">
-    insert into ff_service_pack (serve_brief, serve_name, serve_care, 
-      serve_detailed, servr_rebate, serve_enddate, 
-      serve_serves, serve_nurseify)
-    values (#{serveBrief,jdbcType=VARCHAR}, #{serveName,jdbcType=VARCHAR}, #{serveCare,jdbcType=VARCHAR}, 
-      #{serveDetailed,jdbcType=BIGINT}, #{servrRebate,jdbcType=TINYINT}, #{serveEnddate,jdbcType=TIMESTAMP}, 
-      #{serveServes,jdbcType=VARCHAR}, #{serveNurseify,jdbcType=BIGINT})
-  </insert>
-  <insert id="insertSelective" keyProperty="id" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack" useGeneratedKeys="true">
-    insert into ff_service_pack
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="serveBrief != null">
-        serve_brief,
-      </if>
-      <if test="serveName != null">
-        serve_name,
-      </if>
-      <if test="serveCare != null">
-        serve_care,
-      </if>
-      <if test="serveDetailed != null">
-        serve_detailed,
-      </if>
-      <if test="servrRebate != null">
-        servr_rebate,
-      </if>
-      <if test="serveEnddate != null">
-        serve_enddate,
-      </if>
-      <if test="serveServes != null">
-        serve_serves,
-      </if>
-      <if test="serveNurseify != null">
-        serve_nurseify,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="serveBrief != null">
-        #{serveBrief,jdbcType=VARCHAR},
-      </if>
-      <if test="serveName != null">
-        #{serveName,jdbcType=VARCHAR},
-      </if>
-      <if test="serveCare != null">
-        #{serveCare,jdbcType=VARCHAR},
-      </if>
-      <if test="serveDetailed != null">
-        #{serveDetailed,jdbcType=BIGINT},
-      </if>
-      <if test="servrRebate != null">
-        #{servrRebate,jdbcType=TINYINT},
-      </if>
-      <if test="serveEnddate != null">
-        #{serveEnddate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="serveServes != null">
-        #{serveServes,jdbcType=VARCHAR},
-      </if>
-      <if test="serveNurseify != null">
-        #{serveNurseify,jdbcType=BIGINT},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackExample" resultType="java.lang.Integer">
-    select count(*) from ff_service_pack
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update ff_service_pack
-    <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=BIGINT},
-      </if>
-      <if test="record.serveBrief != null">
-        serve_brief = #{record.serveBrief,jdbcType=VARCHAR},
-      </if>
-      <if test="record.serveName != null">
-        serve_name = #{record.serveName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.serveCare != null">
-        serve_care = #{record.serveCare,jdbcType=VARCHAR},
-      </if>
-      <if test="record.serveDetailed != null">
-        serve_detailed = #{record.serveDetailed,jdbcType=BIGINT},
-      </if>
-      <if test="record.servrRebate != null">
-        servr_rebate = #{record.servrRebate,jdbcType=TINYINT},
-      </if>
-      <if test="record.serveEnddate != null">
-        serve_enddate = #{record.serveEnddate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="record.serveServes != null">
-        serve_serves = #{record.serveServes,jdbcType=VARCHAR},
-      </if>
-      <if test="record.serveNurseify != null">
-        serve_nurseify = #{record.serveNurseify,jdbcType=BIGINT},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update ff_service_pack
-    set id = #{record.id,jdbcType=BIGINT},
-      serve_brief = #{record.serveBrief,jdbcType=VARCHAR},
-      serve_name = #{record.serveName,jdbcType=VARCHAR},
-      serve_care = #{record.serveCare,jdbcType=VARCHAR},
-      serve_detailed = #{record.serveDetailed,jdbcType=BIGINT},
-      servr_rebate = #{record.servrRebate,jdbcType=TINYINT},
-      serve_enddate = #{record.serveEnddate,jdbcType=TIMESTAMP},
-      serve_serves = #{record.serveServes,jdbcType=VARCHAR},
-      serve_nurseify = #{record.serveNurseify,jdbcType=BIGINT}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack">
-    update ff_service_pack
-    <set>
-      <if test="serveBrief != null">
-        serve_brief = #{serveBrief,jdbcType=VARCHAR},
-      </if>
-      <if test="serveName != null">
-        serve_name = #{serveName,jdbcType=VARCHAR},
-      </if>
-      <if test="serveCare != null">
-        serve_care = #{serveCare,jdbcType=VARCHAR},
-      </if>
-      <if test="serveDetailed != null">
-        serve_detailed = #{serveDetailed,jdbcType=BIGINT},
-      </if>
-      <if test="servrRebate != null">
-        servr_rebate = #{servrRebate,jdbcType=TINYINT},
-      </if>
-      <if test="serveEnddate != null">
-        serve_enddate = #{serveEnddate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="serveServes != null">
-        serve_serves = #{serveServes,jdbcType=VARCHAR},
-      </if>
-      <if test="serveNurseify != null">
-        serve_nurseify = #{serveNurseify,jdbcType=BIGINT},
-      </if>
-    </set>
-    where id = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePack">
-    update ff_service_pack
-    set serve_brief = #{serveBrief,jdbcType=VARCHAR},
-      serve_name = #{serveName,jdbcType=VARCHAR},
-      serve_care = #{serveCare,jdbcType=VARCHAR},
-      serve_detailed = #{serveDetailed,jdbcType=BIGINT},
-      servr_rebate = #{servrRebate,jdbcType=TINYINT},
-      serve_enddate = #{serveEnddate,jdbcType=TIMESTAMP},
       serve_serves = #{serveServes,jdbcType=VARCHAR},
       serve_nurseify = #{serveNurseify,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
