@@ -19,6 +19,7 @@ public class ServicePack {
 
     private Date serveStartdate;
 
+
     private String serveServes;
 
     private Long serveNurseify;
