@@ -1,0 +1,76 @@
+#servePro{
+    background-color: #fff; position: absolute;z-index: 9999;left: 0px;top: 0px;right: 0px; bottom: 0px;
+    padding: 20px 0px 20px 25px ;overflow: auto;display: none;
+}
+#servePro a{
+    display: block;width: 110px; background-color: #CCCCCC; border-radius: 20px; color: #000;  height: 35px;text-align: center;line-height:
+        35px;text-decoration: none;cursor: pointer;transition: .5s;float: left; margin: 10px 0px 0px 20px;
+}
+.colorA{
+    background-color:#FF4B01 !important; color: #fff!important;
+}
+#servePro a:hover{
+    background-color:#FF4B01 ; color: #fff;
+}
+#servePro #serversAdd{
+    position: absolute; right: 20px; bottom: 10px;color: #fff; pointer-events: none;
+}
+/*平铺显示*/
+.modal-body #staff-pic {
+    width: 130px;
+    height: 130px;
+    border: 1px solid #DADADA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.serve-module-s #staff-mess1 {
+    width: 20%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.serve-module-s #staff-mess1 img {
+    border-radius: 50px;
+    width: 80px;
+    height: 80px;
+}
+
+.serve-module-s #staff-mess2 {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+#staff-mess2 ul {
+    float: left;
+    margin-left: 10px;
+    padding-top: 15px;
+}
+#staff-mess2 li{
+    white-space: nowrap;
+}
+#staff-mess2 li,#staff-mess3 li {
+    margin-top: 12px;
+    width: 60px;
+}
+#staff-mess2 .staff-mess-right li,#staff-mess3 .staff-mess-right li{
+    width: 90px;
+    color: #a0a3a3;
+}
+.serve-module-s #staff-mess3 {
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+#staff-mess3 ul {
+    float: left;
+    margin-left: 10px;
+    padding-top: 48px;
+}
+

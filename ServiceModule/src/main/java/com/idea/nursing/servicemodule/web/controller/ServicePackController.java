@@ -45,11 +45,16 @@ public class ServicePackController extends GenericController {
 
         try {
             servicepack =servicepackService.insert(servicepack);
-            Long[] pictureIds = commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPAGEPCITURE.key);
-            servicePackPictureService.inserts(servicepack.getId(),pictureIds);
+            if(pictureAddress!=null){
+                Long[] pictureIds = commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPAGEPCITURE.key);
+                servicePackPictureService.inserts(servicepack.getId(),pictureIds);
+            }
+
+
             //添加服务项关系
             servicePackItemService.inserts(servicepack);
         } catch (Exception e) {
+
             return ResultData.build().addErroe();
         }
         return ResultData.build();
@@ -68,6 +73,7 @@ public class ServicePackController extends GenericController {
         try {
             servicepackService.delete(id);
         } catch (Exception e) {
+            System.out.println(e);
             return ResultData.build().delError();
         }
         return ResultData.build();
@@ -76,7 +82,7 @@ public class ServicePackController extends GenericController {
 
     /**
      * 修改服务打包
-     *
+     *z
      * @param servicepack
      * @return
      */
@@ -102,6 +108,7 @@ public class ServicePackController extends GenericController {
     @ResponseBody
     @RequestMapping(value = "findAll", method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage, Integer limit) {
+
         return ResultData.build().
                 parsePageBean(servicepackService.findAllVO(currentPage, limit));
     }

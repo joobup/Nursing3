@@ -36,7 +36,6 @@
                 <a href="${domainUrl}/rest/serve/pack/pack">
                     <li class="side-list  b" id="pack">打包模块</li>
                 </a>
-
             </ul>
         </div>
         <div id="main-show">
@@ -50,6 +49,38 @@
                 </an>
             </div>
             <div class="serve-module">
+            <#--<div class="serve-module-s">-->
+                    <#--<i class="glyphicon glyphicon-pencil bianji"></i>-->
+                <#--<ul>-->
+                    <#--<li id="staff-mess1"><img src="${domainUrl}/assets/images/shanchu.png" alt=""></li>-->
+                    <#--<li id="staff-mess2">-->
+                        <#--<ul>-->
+                            <#--<li>名称</li>-->
+                            <#--<li>折扣</li>-->
+                            <#--<li>开始时间</li>-->
+                            <#--<li>结束时间</li>-->
+                            <#--<li>服务项</li>-->
+                        <#--</ul>-->
+                        <#--<ul class="staff-mess-right">-->
+                            <#--<li>XXX</li>-->
+                            <#--<li>XXX</li>-->
+                            <#--<li>XXX</li>-->
+                            <#--<li>XXX</li>-->
+                            <#--<li>XXXXXXXXXXX</li>-->
+                        <#--</ul>-->
+                    <#--</li>-->
+                    <#--<li id="staff-mess3">-->
+                        <#--<ul>-->
+                            <#--<li>注意事项</li>-->
+                            <#--<li>服务简介</li>-->
+                        <#--</ul>-->
+                        <#--<ul class="staff-mess-right">-->
+                            <#--<li>XXX</li>-->
+                            <#--<li>是是是是是是是是是是是是是是是是是是是是是是是</li>-->
+                        <#--</ul>-->
+                    <#--</li>-->
+                <#--</ul>-->
+                <#--</div>-->
             </div>
         </div>
     </div>
@@ -68,6 +99,7 @@
                         <tr>
                             <td>服务名称</td>
                             <td><input type="text" id="name"></td>
+                            <td id="xid" style="display: none;"></td>
                         </tr>
                         <tr>
                             <td>服务项</td>

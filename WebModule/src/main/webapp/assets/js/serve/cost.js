@@ -8,6 +8,8 @@ function add() {
     var postData = {classesValuationName:cost};
     postAjax(url,false,postData,function (data) {
         alert("添加成功")
+        location.reload();
+
     })
 }
 function findAll() {
