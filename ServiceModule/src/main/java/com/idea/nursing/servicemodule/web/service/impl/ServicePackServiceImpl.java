@@ -18,50 +18,53 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
 @Service
-public class ServicePackServiceImpl extends GenericServiceImpl<ServicePack, Long,ServicePackExample> implements ServicePackService {
+public class ServicePackServiceImpl extends GenericServiceImpl<ServicePack, Long, ServicePackExample> implements ServicePackService {
     @Autowired
     private ServicePackMapper servicepackDao;
     @Autowired
     private ServicePackMapperMyself servicePackMapperMyself;
     @Autowired
     private ServicesMapper servicesMapper;
+
     @Override
-    public GenericDao<ServicePack, Long,ServicePackExample> getDao() {
+    public GenericDao<ServicePack, Long, ServicePackExample> getDao() {
         return servicepackDao;
     }
 
     /**
      * 查询打包服务
+     *
      * @param currentPage
      * @param limit
      * @return
      */
     @Override
     public Page<ServicePackVO> findAllVO(Integer currentPage, Integer limit) {
-        if(!notNullAndZero(currentPage)){
-            currentPage=1;
+        if (!notNullAndZero(currentPage)) {
+            currentPage = 1;
         }
-        if(!notNullAndZero(limit)){
-            limit=10;
+        if (!notNullAndZero(limit)) {
+            limit = 10;
         }
-        PageHelper.startPage(currentPage,limit);
+        PageHelper.startPage(currentPage, limit);
         Page<ServicePackVO> servicePackVOs = (Page<ServicePackVO>) servicePackMapperMyself.selectAllVO();
         /**
          * 遍历VO 封装服务项
          */
-        for (ServicePackVO servicePackVO: servicePackVOs
-             ) {
+        for (ServicePackVO servicePackVO : servicePackVOs
+                ) {
             //分解服务项
             String[] serviceIds = servicePackVO.getServeServes().split(",");
             ServicesExample serviceExaple = new ServicesExample();
             //转换成Long类型
             List<Long> servicesLong = new ArrayList<>();
-            for (String serviceIdString: serviceIds
-                 ) {
+            for (String serviceIdString : serviceIds
+                    ) {
                 servicesLong.add(Long.parseLong(serviceIdString));
             }
 
@@ -73,5 +76,6 @@ public class ServicePackServiceImpl extends GenericServiceImpl<ServicePack, Long
 
         return servicePackVOs;
     }
+
 
 }

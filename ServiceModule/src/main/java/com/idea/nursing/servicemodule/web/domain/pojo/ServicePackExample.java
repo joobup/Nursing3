@@ -435,63 +435,63 @@ public class ServicePackExample {
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateIsNull() {
-            addCriterion("servr_rebate is null");
+        public Criteria andServeRebateIsNull() {
+            addCriterion("serve_rebate is null");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateIsNotNull() {
-            addCriterion("servr_rebate is not null");
+        public Criteria andServeRebateIsNotNull() {
+            addCriterion("serve_rebate is not null");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateEqualTo(Byte value) {
-            addCriterion("servr_rebate =", value, "servrRebate");
+        public Criteria andServeRebateEqualTo(Byte value) {
+            addCriterion("serve_rebate =", value, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateNotEqualTo(Byte value) {
-            addCriterion("servr_rebate <>", value, "servrRebate");
+        public Criteria andServeRebateNotEqualTo(Byte value) {
+            addCriterion("serve_rebate <>", value, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateGreaterThan(Byte value) {
-            addCriterion("servr_rebate >", value, "servrRebate");
+        public Criteria andServeRebateGreaterThan(Byte value) {
+            addCriterion("serve_rebate >", value, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateGreaterThanOrEqualTo(Byte value) {
-            addCriterion("servr_rebate >=", value, "servrRebate");
+        public Criteria andServeRebateGreaterThanOrEqualTo(Byte value) {
+            addCriterion("serve_rebate >=", value, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateLessThan(Byte value) {
-            addCriterion("servr_rebate <", value, "servrRebate");
+        public Criteria andServeRebateLessThan(Byte value) {
+            addCriterion("serve_rebate <", value, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateLessThanOrEqualTo(Byte value) {
-            addCriterion("servr_rebate <=", value, "servrRebate");
+        public Criteria andServeRebateLessThanOrEqualTo(Byte value) {
+            addCriterion("serve_rebate <=", value, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateIn(List<Byte> values) {
-            addCriterion("servr_rebate in", values, "servrRebate");
+        public Criteria andServeRebateIn(List<Byte> values) {
+            addCriterion("serve_rebate in", values, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateNotIn(List<Byte> values) {
-            addCriterion("servr_rebate not in", values, "servrRebate");
+        public Criteria andServeRebateNotIn(List<Byte> values) {
+            addCriterion("serve_rebate not in", values, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateBetween(Byte value1, Byte value2) {
-            addCriterion("servr_rebate between", value1, value2, "servrRebate");
+        public Criteria andServeRebateBetween(Byte value1, Byte value2) {
+            addCriterion("serve_rebate between", value1, value2, "serveRebate");
             return (Criteria) this;
         }
 
-        public Criteria andServrRebateNotBetween(Byte value1, Byte value2) {
-            addCriterion("servr_rebate not between", value1, value2, "servrRebate");
+        public Criteria andServeRebateNotBetween(Byte value1, Byte value2) {
+            addCriterion("serve_rebate not between", value1, value2, "serveRebate");
             return (Criteria) this;
         }
 

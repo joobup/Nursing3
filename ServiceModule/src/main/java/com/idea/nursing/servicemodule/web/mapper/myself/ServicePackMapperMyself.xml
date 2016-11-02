@@ -6,7 +6,7 @@
         <result column="serve_brief" property="serveBrief" jdbcType="VARCHAR" />
         <result column="serve_name" property="serveName" jdbcType="VARCHAR" />
         <result column="serve_care" property="serveCare" jdbcType="VARCHAR" />
-
+        <result column="serve_startdate" property="serveStartdate" jdbcType="TIMESTAMP" />
         <result column="servr_rebate" property="servrRebate" jdbcType="TINYINT" />
         <result column="serve_enddate" property="serveEnddate" jdbcType="TIMESTAMP" />
         <result column="serve_serves" property="serveServes" jdbcType="VARCHAR" />
@@ -29,7 +29,7 @@
 
     <sql id="Base_Column_List" >
        fsp.id,  fsp.serve_brief,  fsp.serve_name,  fsp.serve_care,   fsp.servr_rebate,  fsp.serve_enddate,
-         fsp.serve_serves,
+         fsp.serve_serves, fps.serve_startdate,
 
          fn.id, fn.nursify_name, fn.nursify_leave, fn.nursify_tid,
 
