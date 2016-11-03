@@ -2,9 +2,9 @@
     width: 97%; height: 65%;background-color: #fff;margin-left: 1%; padding: 20px 1%; overflow: auto;
 }
 .cost-box{
-    width: 100px;
+    width: 120px;
     height: 40px;
-    background-color: #DDD;
+    background-color: #FF743D;
     border-radius: 5px;
     line-height: 40px;
     text-align: center;
@@ -12,9 +12,15 @@
     transition: .3s;
     margin: 10px 1%;
     float: left;
+    color:#fff;
+    cursor: pointer;
 }
+
+
+
+
 .cost-box:hover{
-    box-shadow:0px 0px 5px  #FF4B01;
+    box-shadow:0px 0px 2px  #FF4B01;
 }
 .cost-box:hover  #cost-del{
     opacity: 1;
@@ -22,3 +28,4 @@
 .cost-box #cost-del {
     position: absolute; right: 0px; top: 0px; color: red;cursor: pointer; opacity: 0; transition: .5s;
 }
+

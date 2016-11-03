@@ -1,42 +1,10 @@
-<html>
-<head>
+
     <link href="${domainUrl}/assets/css/serve/classify.css" rel="stylesheet">
-    <link href="${domainUrl}/assets/css/serve/servePublic.css" rel="stylesheet">
-    <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
-    <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
-    <script src="${domainUrl}/assets/js/common.js"></script>
     <script src="${domainUrl}/assets/js/serve/classify.js"></script>
-    <meta charset="utf-8"/>
-    <title></title>
-</head>
-<script>
-    var domainUrl = '${domainUrl}' + "/rest";
-</script>
-<body>
-<div class="main">
-<#include "/common/serveHead.ftl"/>
-    <div class="main-body">
-        <div id="main-side">
-            <ul>
-                <a href="${domainUrl}">
-                    <li class="side-list" id="serve">服务模块</li>
-                </a>
-                <a href="${domainUrl}/rest/serve/classify/classify">
-                    <li class="side-list b" id="ify">类别模块</li>
-                </a>
-                <a href="${domainUrl}/rest/serve/cost/cost">
-                    <li class="side-list" id="cost">计费模块</li>
-                </a>
-                <a href="${domainUrl}/rest/serve/staff/staff">
-                    <li class="side-list" id="staff">员工模块</li>
-                </a>
-                <a href="${domainUrl}/rest/serve/pack/pack">
-                    <li class="side-list" id="pack">打包模块</li>
-                </a>
-            </ul>
-        </div>
-        <div id="main-show">
+    <script>
+        findAll1();
+    </script>
             <div id="now-position">
                 您当前所在的位置：<span>类别模块</span>
             </div>
@@ -55,15 +23,8 @@
                     <div id="ify-show">
                         <#--存在bug三级列表不会收回-->
                     </div>
-
-
-                <#--<select name="" id="sel1"></select>-->
-                <#--<select name="" id="sel2" style="display: none;"></select>-->
-                <#--<select name="" id="sel3" style="display: none;"></select>-->
             </div>
         </div>
-    </div>
-<#include "/common/foot.ftl"/>
 <#--模态框-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -91,6 +52,3 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->
     </div>
-</div>
-</body>
-</html>
