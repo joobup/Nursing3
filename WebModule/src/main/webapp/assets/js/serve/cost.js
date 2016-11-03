@@ -20,10 +20,10 @@ function findAll() {
         var num = data.aaData.length;
         var html="";
         for(var i =0;  i < num ; i++){
-            html +='<div class="del"><span>'+data.aaData[i].classesValuationName+'</span><a onclick="del('+data.aaData[i].id+')">删除</a></div>';
+            html +='<div class="cost-box">'+data.aaData[i].classesValuationName+'' +
+                '<i class="glyphicon glyphicon-remove" id="cost-del" onclick="del('+data.aaData[i].id+')"></i> </div>';
         }
-        html+="";
-        $(".serve-module").html(html)
+        $("#cost-pack").html(html)
     })
 }
 function del(id) {

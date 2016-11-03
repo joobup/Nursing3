@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/serve/cost.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/serve/servePublic.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/OutCss/animate/animate.css" rel="stylesheet">
@@ -49,7 +49,8 @@
                 </an>
             </div>
             <div class="serve-module">
-
+                <div id="cost-pack">
+                </div>
             </div>
         </div>
     </div>

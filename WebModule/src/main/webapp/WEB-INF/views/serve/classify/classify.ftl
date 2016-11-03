@@ -49,86 +49,14 @@
             <div class="serve-module">
                 <div class="classify-body">
                    <div class="ify-title">
-                       <span>
-                           <div style="width: 150px; text-align: center;">分类名称</div>
-                       </span>
-                       <span>
-                           <div style="width: 150px; text-align: center;">操作</div>
-                       </span>
+                           <div class="ify-left">分类名称</div>
+                           <div class="ify-right">操作</div>
                    </div>
-                    <ul class="ify-body">
-                        <li style=" border-top:1px solid #D0D0D0;">
-                            <a class="inactive">
-                                <div id="ify-left">
-                                    <div class="font-text">家政</div>
-                                </div>
-                            </a>
-                            <div id="ify-right">
-                                <div class="font-text">
-                                    <a class="ifyAdd">添加子类</a>
-                                    <a class="ifyDel">删除本类</a>
-                                </div>
-                            </div>
-                            <ul style="display: none;">
-                                <li>
-                                    <a class="inactive">
-                                        <div id="ify-left">
-                                            <div class="font-text" style="width: 170px;">|—擦鞋</div>
-                                        </div>
-                                    </a>
-                                    <div id="ify-right">
-                                        <div class="font-text">
-                                            <a class="ifyAdd">添加子类</a><a class="ifyDel">删除本类</a>
-                                        </div>
-                                    </div>
-                                    <ul style="display: none;">
-                                        <li>
-                                            <a class="inactive">
-                                                <div id="ify-left">
-                                                    <div  class="font-text"  style="width: 185px;">|——皮鞋</div>
-                                                </div>
-                                            </a>
-                                            <div id="ify-right">
-                                                <a class="ifyDel">
-                                                    <div class="font-text">删除本类</div>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="inactive">
-                                        <div id="ify-left">
-                                            <div class="font-text" style="width: 170px;">|—做饭</div>
-                                        </div>
-                                    </a>
-                                    <div id="ify-right">
-                                        <div class="font-text">
-                                            <a class="ifyAdd">添加子类</a><a class="ifyDel">删除本类</a>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-                <script>
-                    $(document).ready(function() {
-                        $('.inactive').click(function(){
-                            if($(this).siblings('ul').css('display')=='none'){
-                                $(this).siblings('ul').slideDown(100).children('li');
-                                if($(this).parents('li').siblings('li').children('ul').css('display')=='block'){
-                                    $(this).parents('li').siblings('li').children('ul').slideUp(100);
-                                }
-                            }else{
-                                //控制自身菜单下子菜单隐藏
-                                $(this).siblings('ul').slideUp(100);
-                                //控制自身菜单下子菜单隐藏
-                                $(this).siblings('ul').children('li').children('ul').slideUp(100);
-                            }
-                        })
-                    });
-                </script>
+                    <div id="ify-show">
+                        <#--存在bug三级列表不会收回-->
+                    </div>
+
+
                 <#--<select name="" id="sel1"></select>-->
                 <#--<select name="" id="sel2" style="display: none;"></select>-->
                 <#--<select name="" id="sel3" style="display: none;"></select>-->
@@ -149,7 +77,7 @@
                     <table class="add">
                         <tr>
                             <td>类别名称</td>
-                            <td><input type="text" id="className"></td>
+                            <td><input type="text" id="className"><input type="text" id="classTid" style="display: none;"></td>
                         </tr>
                     </table>
                 </div>

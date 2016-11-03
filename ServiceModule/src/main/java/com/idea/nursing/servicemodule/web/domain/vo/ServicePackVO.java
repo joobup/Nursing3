@@ -24,6 +24,8 @@ public class ServicePackVO {
 
     private Byte servrRebate;
 
+    private Date serveStartDate;
+
     private Date serveEnddate;
 
     private String serveServes;
@@ -41,11 +43,20 @@ public class ServicePackVO {
                 ", serveCare='" + serveCare + '\'' +
                 ", serveDetailed=" + serveDetailed +
                 ", servrRebate=" + servrRebate +
+                ", serveStartDate=" + serveStartDate +
                 ", serveEnddate=" + serveEnddate +
                 ", serveServes='" + serveServes + '\'' +
                 ", serveNurseify=" + serveNurseify +
                 ", servicesList=" + servicesList +
                 '}';
+    }
+
+    public Date getServeStartDate() {
+        return serveStartDate;
+    }
+
+    public void setServeStartDate(Date serveStartDate) {
+        this.serveStartDate = serveStartDate;
     }
 
     public Long getId() {
