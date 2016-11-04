@@ -22,6 +22,7 @@ public class CommentPictureController extends GenericController {
 
     /**
         * 添加图片
+        *
         * @param commentpicture
         * @return
     */
