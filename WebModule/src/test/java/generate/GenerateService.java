@@ -103,8 +103,8 @@ public class GenerateService {
 //
 //                "ServicePeople",
 //
-                "ServicePeopleType,ServiceTypePeopleLevel,Tid",
-                "ServicePeopleState,ServicePeopleStateLevel,Tid",
+//                "ServicePeopleType,ServiceTypePeopleLevel,Tid",
+//                "ServicePeopleState,ServicePeopleStateLevel,Tid",
 //                "ServicePeopleRegister"
 //
 //                "Contact",

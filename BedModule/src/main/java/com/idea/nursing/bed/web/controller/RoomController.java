@@ -30,7 +30,7 @@ public class RoomController extends GenericController {
     public ResultData add(Room room){
 
         try {
-                    roomService.insertLevel(room);
+                    roomService.insert(room);
 
 
             }catch (Exception e){
@@ -49,7 +49,7 @@ public class RoomController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                    roomService.deleteLevel(id);
+                    roomService.delete(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -87,15 +87,5 @@ public class RoomController extends GenericController {
         parsePageBean(roomService.findAll(currentPage,limit));
     }
 
-
-    /**
-    * 按级别查询服务类别
-    * @return
-    */
-    @ResponseBody
-    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
-    public ResultData findTreeAll(){
-        return ResultData.build().put("aaData",roomService.findTree());
-    }
 
 }
