@@ -1,6 +1,5 @@
 
     <link href="${domainUrl}/assets/css/serve/cost.css" rel="stylesheet">
-    <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/serve/cost.js"></script>
     <script>
         findAll();

@@ -1,4 +1,3 @@
-<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/initial.js"></script>

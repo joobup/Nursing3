@@ -1,6 +1,9 @@
 /**
  * Created by horo on 2016/10/14.
  */
+$(function () {
+    findAll();
+})
 function add() {
     var cost = $("#jijia").val();
     console.log(cost)
@@ -8,8 +11,8 @@ function add() {
     var postData = {classesValuationName:cost};
     postAjax(url,false,postData,function (data) {
         alert("添加成功")
-        location.reload();
-
+        $('#myModal').modal("hide");
+        findAll();
     })
 }
 function findAll() {
@@ -30,10 +33,8 @@ function del(id) {
     var url = domainUrl + "/serve/service_classes_valuation/del";
     var postData = {id:id};
     postAjax(url,false,postData,function (data) {
-        alert("删除成功")
-        findAll()
+        alert("删除成功");
+        $('#myModal').modal("hide");
+        findAll();
     })
 }
-$(function () {
-    findAll();
-})
