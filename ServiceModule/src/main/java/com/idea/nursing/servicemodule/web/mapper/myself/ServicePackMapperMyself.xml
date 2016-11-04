@@ -22,7 +22,7 @@
 
             <id column="id" property="id" jdbcType="BIGINT" />
             <result column="nursify_name" property="nursifyName" jdbcType="VARCHAR" />
-            <result column="nursify_leave" property="nursifyLeave" jdbcType="TINYINT" />
+            <result column="nursify_level" property="nursifyLevel" jdbcType="TINYINT" />
             <result column="nursify_tid" property="nursifyTid" jdbcType="BIGINT" />
         </association>
     </resultMap>
@@ -31,7 +31,7 @@
        fsp.id,  fsp.serve_brief,  fsp.serve_name,  fsp.serve_care,   fsp.serve_rebate,  fsp.serve_enddate,
          fsp.serve_serves, fsp.serve_startdate,
 
-         fn.id, fn.nursify_name, fn.nursify_leave, fn.nursify_tid,
+         fn.id, fn.nursify_name, fn.nursify_level, fn.nursify_tid,
 
          crt.id, crt.rich_text_title, crt.rich_text_head_picture
     </sql>

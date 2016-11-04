@@ -30,7 +30,8 @@ public class ExceptionTypeController extends GenericController {
     public ResultData add(ExceptionType exceptiontype){
 
         try {
-                exceptiontypeService.insert(exceptiontype);
+                    exceptiontypeService.insertLevel(exceptiontype);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class ExceptionTypeController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                exceptiontypeService.delete(id);
+                    exceptiontypeService.deleteLevel(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -84,6 +85,17 @@ public class ExceptionTypeController extends GenericController {
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
         parsePageBean(exceptiontypeService.findAll(currentPage,limit));
+    }
+
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",exceptiontypeService.findTree());
     }
 
 }

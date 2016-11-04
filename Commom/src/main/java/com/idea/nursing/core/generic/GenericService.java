@@ -23,6 +23,7 @@ public interface GenericService<Model, PK,ModelExample> {
      */
     Model insert(Model model);
 
+
     /**
      * 更新对象
      *
@@ -36,6 +37,7 @@ public interface GenericService<Model, PK,ModelExample> {
      * @param id 主键
      */
     int delete(PK id);
+
 
     /**
      * 通过主键, 查询对象

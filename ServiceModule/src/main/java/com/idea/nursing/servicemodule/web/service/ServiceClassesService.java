@@ -1,12 +1,10 @@
 package com.idea.nursing.servicemodule.web.service;
 
-import com.idea.nursing.core.generic.GenericService;
+import com.idea.nursing.core.generic.GenericServiceLevel;
+
 import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClasses;
 import com.idea.nursing.servicemodule.web.domain.pojo.ServiceClassesExample;
+public interface ServiceClassesService extends GenericServiceLevel<ServiceClasses,Long,ServiceClassesExample>{
 
-import java.util.List;
-import java.util.Map;
 
-public interface ServiceClassesService extends GenericService<ServiceClasses,Long,ServiceClassesExample>{
-        public List<List<ServiceClasses>> findTree();
 }

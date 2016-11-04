@@ -43,6 +43,13 @@ public class GenerateController {
         root.put("ImplpackageName", servicepackageName + "." + fileName + "Service");
         root.put("packageName", packageName);
         root.put("className", fileName);
+        if(fileName2.split(",").length>2){
+            root.put("level",true);
+        }else{
+            root.put("level",false);
+        }
+
+
 
         root.put("urlName", camelToUnderline(fileName));
         root.put("chinaName", fileName2.split(",")[1]);
@@ -80,16 +87,17 @@ public class GenerateController {
     }
     public static void main(String[] args) {
         String[] fileNames = new String[]{
-//                "Nurseify,护理级别",
+//                "Nurseify,护理级别,1",
 //                "Services,服务",
 //
-//                "ServiceClasses,服务类别",
+//                "ServiceClasses,服务类别,1",
 //
 //                "ServicePack,服务打包",
 //                "StaffDepartment,服务人员职务",
 //                "StaffPost,服务人员部门",
 //                "ServiceStaff,服务人员",
 //                "ServiceClassesValuation,计价类型",
+
                 //"CommentPicture,图片"
                 //"ServiceClassesValuationRelation,服务计价类型"
                 //"CommentRichText,富文本"
@@ -97,10 +105,12 @@ public class GenerateController {
                // "StaffServiceItem,服务人员服务项目关系"
 
 //                "Entrance,楼门",
-//                "Room,房间",
+//                "Room,房间,1",
 //                "RoomType,房间类型",
-//                "BedType,床类别",
+//                "BedType,床类别,1",
 //                "BedTypePrice,价格类别表"
+
+
 //                "Dishes,菜品",
 //                "DishesPicture,菜品图片关系",
 //                "DishesTypeDishes,菜品类别关系",
@@ -119,8 +129,8 @@ public class GenerateController {
 
 //                "ServicePeople,服务对象信息",
 //
-//                "ServicePeopleType,服务对象类型",
-//                "ServicePeopleState,服务对象状态",
+                "ServicePeopleType,服务对象类型,1",
+                "ServicePeopleState,服务对象状态,1",
 //                "ServicePeopleRegister,服务对象信息登记"
 
 //                "Contact,联系方式",
@@ -133,9 +143,9 @@ public class GenerateController {
 //                "Evaluate,评价",
 //                "PackageServiceEvaluate,打包服务评价关系",
 //                "OrderEvaluate,订单评价关系",
-//                "ExceptionType,异常类型表",
+//                "ExceptionType,异常类型表,1",
 //                "Complaint,投诉",
-//                "ComplaintEvent,投诉事件"
+//                "ComplaintEvent,投诉事件,1"
 
 
         };
@@ -144,13 +154,13 @@ public class GenerateController {
 
             try {
                 GenerateController.Generate(
-                        "\\src\\test\\java\\ftl",
+                        "\\WebModule\\src\\test\\java\\ftl",
                         "controller.ftl",
                         fileName,
                         //"\\Order\\src\\main\\java\\com\\idea\\nursing\\order\\web\\controller",
 
-                        "\\Personal\\src\\main\\java\\com\\idea\\nursing\\personal\\web\\controller",
-                        //"\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\controller",
+                        //"\\Personal\\src\\main\\java\\com\\idea\\nursing\\personal\\web\\controller",
+                        "\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\controller",
                         //"\\Inspection\\src\\main\\java\\com\\idea\\nursing\\inspection\\web\\controller",
                         //"\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\controller",
                         //"\\BedModule\\src\\main\\java\\com\\idea\\nursing\\bed\\web\\controller",
@@ -176,12 +186,12 @@ public class GenerateController {
 //                        "com.idea.nursing.inspection.web.domain.pojo",
 //                        "com.idea.nursing.inspection.web.service"
 
-//                        "com.idea.nursing.oldpeople.web.controller",
-//                        "com.idea.nursing.oldpeople.web.domain.pojo",
-//                        "com.idea.nursing.oldpeople.web.service"
-                        "com.idea.nursing.personal.web.controller",
-                        "com.idea.nursing.personal.web.domain.pojo",
-                        "com.idea.nursing.personal.web.service"
+                        "com.idea.nursing.oldpeople.web.controller",
+                        "com.idea.nursing.oldpeople.web.domain.pojo",
+                        "com.idea.nursing.oldpeople.web.service"
+//                        "com.idea.nursing.personal.web.controller",
+//                        "com.idea.nursing.personal.web.domain.pojo",
+//                        "com.idea.nursing.personal.web.service"
 //                        "com.idea.nursing.order.web.controller",
 //                        "com.idea.nursing.order.web.domain.pojo",
 //                        "com.idea.nursing.order.web.service"

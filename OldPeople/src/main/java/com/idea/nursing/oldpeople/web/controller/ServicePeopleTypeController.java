@@ -30,7 +30,8 @@ public class ServicePeopleTypeController extends GenericController {
     public ResultData add(ServicePeopleType servicepeopletype){
 
         try {
-                servicepeopletypeService.insert(servicepeopletype);
+                    servicepeopletypeService.insertLevel(servicepeopletype);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class ServicePeopleTypeController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                servicepeopletypeService.delete(id);
+                    servicepeopletypeService.deleteLevel(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -84,6 +85,17 @@ public class ServicePeopleTypeController extends GenericController {
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
         parsePageBean(servicepeopletypeService.findAll(currentPage,limit));
+    }
+
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",servicepeopletypeService.findTree());
     }
 
 }

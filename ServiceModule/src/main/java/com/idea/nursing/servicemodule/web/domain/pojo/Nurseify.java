@@ -5,7 +5,7 @@ public class Nurseify {
 
     private String nursifyName;
 
-    private Byte nursifyLeave;
+    private Byte nursifyLevel;
 
     private Long nursifyTid;
 
@@ -25,12 +25,12 @@ public class Nurseify {
         this.nursifyName = nursifyName == null ? null : nursifyName.trim();
     }
 
-    public Byte getNursifyLeave() {
-        return nursifyLeave;
+    public Byte getNursifyLevel() {
+        return nursifyLevel;
     }
 
-    public void setNursifyLeave(Byte nursifyLeave) {
-        this.nursifyLeave = nursifyLeave;
+    public void setNursifyLevel(Byte nursifyLevel) {
+        this.nursifyLevel = nursifyLevel;
     }
 
     public Long getNursifyTid() {

@@ -2,7 +2,8 @@ package com.idea.nursing.servicemodule.web.service.impl;
 
 
 import com.idea.nursing.core.generic.GenericDao;
-import com.idea.nursing.core.generic.GenericServiceImpl;
+import com.idea.nursing.core.generic.GenericServiceLevelImpl;
+
 import com.idea.nursing.servicemodule.web.dao.NurseifyMapper;
 import com.idea.nursing.servicemodule.web.domain.pojo.Nurseify;
 import com.idea.nursing.servicemodule.web.domain.pojo.NurseifyExample;
@@ -11,37 +12,45 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+
 @Service
-public class NurseifyServiceImpl extends GenericServiceImpl<Nurseify, Long, NurseifyExample> implements NurseifyService {
-    @Autowired
-    private NurseifyMapper nurseifyDao;
-
-    @Override
-    public GenericDao<Nurseify, Long, NurseifyExample> getDao() {
-        return nurseifyDao;
-    }
+    public class NurseifyServiceImpl extends GenericServiceLevelImpl<Nurseify, Long,NurseifyExample> implements NurseifyService {
 
 
-    @Override
-    public Nurseify insert(Nurseify nurseify) {
-        //获取父级
-        Nurseify nurseifySupper = selectById(nurseify.getNursifyTid());
-        if (notNullObject(nurseifySupper)) {
-            nurseify.setNursifyLeave((byte) 0);
-            nurseify.setNursifyTid(0l);
-        } else {
-            nurseify.setNursifyLeave((byte) (nurseifySupper.getNursifyLeave() + 1));
+        @Autowired
+        private NurseifyMapper nurseifyDao;
+        @Override
+        public GenericDao<Nurseify, Long,NurseifyExample> getDao() {
+            return nurseifyDao;
         }
-        return super.insert(nurseify);
-    }
+
+        @Override
+        public NurseifyExample getModelExamplTidEqualTo(Long tid) {
+            NurseifyExample nurseifyExample = new NurseifyExample();
+            nurseifyExample.createCriteria().andNursifyTidEqualTo(tid);
+            return nurseifyExample;
+        }
+
+        @Override
+        public byte getLevel(Nurseify nurseify) {
+
+            return nurseify.getNursifyLevel();
+        }
+
+        @Override
+        public Long getTid(Nurseify nurseify) {
+            return nurseify.getNursifyTid();
+        }
+
+        @Override
+        public void setLevel(Nurseify nurseify, Byte level) {
+            nurseify.setNursifyLevel(level);
+        }
+
+        @Override
+        public void setTid(Nurseify nurseify) {
+            nurseify.setNursifyTid(0L);
+        }
 
 
-    @Override
-    public int delete(Long id) {
-        NurseifyExample nurseifyExample = new NurseifyExample();
-        nurseifyExample.createCriteria().andNursifyTidEqualTo(id);
-        nurseifyDao.deleteByExample(nurseifyExample);
-
-        return super.delete(id);
-    }
 }

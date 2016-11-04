@@ -214,6 +214,9 @@ public class ResultData extends HashMap<String, Object> {
 		super.put("sEcho", "");
 		super.put("iTotalRecords", page.getTotal());
 		super.put("iTotalDisplayRecords", page.getPageSize());
+
+
+		//parseBean(page.getResult());
 		super.put("aaData", page == null ? new ArrayList() : page);
 
 
@@ -325,6 +328,8 @@ public class ResultData extends HashMap<String, Object> {
 					if (STATUS_CODE.equals(name)) {
 						name = "state";
 					}
+
+
 					super.put(name, method.invoke(object));
 				} catch (IllegalAccessException | IllegalArgumentException
 				        | InvocationTargetException e) {

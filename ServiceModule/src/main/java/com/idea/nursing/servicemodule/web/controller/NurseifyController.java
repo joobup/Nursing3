@@ -30,7 +30,8 @@ public class NurseifyController extends GenericController {
     public ResultData add(Nurseify nurseify){
 
         try {
-                nurseifyService.insert(nurseify);
+                    nurseifyService.insertLevel(nurseify);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class NurseifyController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                nurseifyService.delete(id);
+                    nurseifyService.deleteLevel(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -84,6 +85,17 @@ public class NurseifyController extends GenericController {
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
         parsePageBean(nurseifyService.findAll(currentPage,limit));
+    }
+
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",nurseifyService.findTree());
     }
 
 }

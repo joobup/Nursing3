@@ -30,7 +30,12 @@ public class ${className}Controller extends GenericController {
     public ResultData add(${className} ${className?lower_case}){
 
         try {
-                ${className?lower_case}Service.insert(${className?lower_case});
+                <#if level>
+                    ${className?lower_case}Service.insertLevel(${className?lower_case});
+                    <#else >
+                    ${className?lower_case}Service.insert(${className?lower_case});
+                </#if>
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +53,11 @@ public class ${className}Controller extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                ${className?lower_case}Service.delete(id);
+                <#if level>
+                    ${className?lower_case}Service.deleteLevel(id);
+                    <#else>
+                    ${className?lower_case}Service.delete(id);
+                </#if>
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -85,5 +94,18 @@ public class ${className}Controller extends GenericController {
         return ResultData.build().
         parsePageBean(${className?lower_case}Service.findAll(currentPage,limit));
     }
+
+    <#if level>
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",${className?lower_case}Service.findTree());
+    }
+    </#if>
 
 }
