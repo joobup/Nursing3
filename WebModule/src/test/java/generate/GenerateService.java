@@ -27,21 +27,32 @@ public class GenerateService {
         root.put("modelpackageName", modelpackageName);
         root.put("daopackageName", daopackageName);
         root.put("packageName", packageName);
-        root.put("className", fileName);
+
+        if(fileName.split(",").length==1){
+            root.put("className", fileName);
+            root.put("level",false);
+        }else{
+            root.put("className", fileName.split(",")[0]);
+            root.put("level",true);
+            root.put("classLevelName",fileName.split(",")[1]);
+            root.put("classTidName",fileName.split(",")[2]);
+        }
+
         root.put("implflag", false);
+
         Configuration cfg = new Configuration();
         String path = System.getProperty("user.dir") + ftlPath;
 
         cfg.setDirectoryForTemplateLoading(new File(path));
         Template template = cfg.getTemplate(ftlName);
 
-        PathUtil.printFile(root, template, filePath, fileName + "Service");
+        PathUtil.printFile(root, template, filePath, fileName.split(",")[0] + "Service");
 
         //生成Impl文件
-        root.put("ImplpackageName", packageName + "." + fileName + "Service");
+        root.put("ImplpackageName", packageName + "." + fileName.split(",")[0] + "Service");
         root.put("packageName", packageName + ".impl");
         root.put("implflag", true);
-        PathUtil.printFile(root, template, ImplFilePath, fileName + "ServiceImpl");
+        PathUtil.printFile(root, template, ImplFilePath, fileName.split(",")[0] + "ServiceImpl");
 
     }
 
@@ -49,10 +60,10 @@ public class GenerateService {
 
 
         String[] fileNames = new String[]{
-//					"Nurseify",
+//					"Nurseify,NursifyLevel,NursifyTid",
 //					"Services",
 //					"ServicesPicture",
-//					"ServiceClasses",
+//					"ServiceClasses,ServeClasslevel,Tid",
 //					"ServicePackPicture",
 //					"ServicePack",
 //					"StaffDepartment",
@@ -64,25 +75,26 @@ public class GenerateService {
 
                 //"CommentPicture"
                 //"CommentRichText"
+
                 //"ServicePackItem"
                 //"StaffServiceItem"
 //                    "Entrance",
 //                    "Room",
-//                    "RoomType",
-//                    "BedType",
+//                    "RoomType,RoomTypeLeave,Tid",
+//                    "BedType,BedTypeLeave,Tid",
 //                    "BedTypePrice"
 
 
-					"Dishes",
-					"DishesPicture",
-					"DishesTypeDishes",
-					"DishesType",
-					"DishesMeterial",
-					"FoodMaterial",
-					"Nutriment",
-					"FoodMaterialNutriment",
-					"WeekFood",
-					"WeekFoodDishes"
+//					"Dishes",
+//					"DishesPicture",
+//					"DishesTypeDishes",
+//					"DishesType",
+//					"DishesMeterial",
+//					"FoodMaterial",
+//					"Nutriment",
+//					"FoodMaterialNutriment",
+//					"WeekFood",
+//					"WeekFoodDishes"
 
 //					"InspectionItem",
 //					"InspectionItemSelectValue",
@@ -91,8 +103,8 @@ public class GenerateService {
 //
 //                "ServicePeople",
 //
-//                "ServicePeopleType",
-//                "ServicePeopleState",
+                "ServicePeopleType,ServiceTypePeopleLevel,Tid",
+                "ServicePeopleState,ServicePeopleStateLevel,Tid",
 //                "ServicePeopleRegister"
 //
 //                "Contact",
@@ -112,9 +124,9 @@ public class GenerateService {
 //                "Evaluate",
 //                "PackageServiceEvaluate",
 //                "OrderEvaluate",
-//                "ExceptionType",
+//                "ExceptionType,ExceptionTypeLevel,Tid",
 //                "Complaint",
-//                "ComplaintEvent"
+//                "ComplaintEvent,ComplaintEventLevel,Tid"
 
 
 
@@ -122,14 +134,14 @@ public class GenerateService {
         for (String fileName : fileNames
                 ) {
             GenerateService.Generate(
-                    "\\src\\test\\java\\ftl",
+                    "\\WebModule\\src\\test\\java\\ftl",
                     "service.ftl",
                     fileName,
                     //"\\Order\\src\\main\\java\\com\\idea\\nursing\\order\\web\\service",
                     //"\\Personal\\src\\main\\java\\com\\idea\\nursing\\personal\\web\\service",
-                    //"\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\service",
+                    "\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\service",
                     //"\\Inspection\\src\\main\\java\\com\\idea\\nursing\\inspection\\web\\service",
-                    "\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\service",
+                    //"\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\service",
                     //"\\BedModule\\src\\main\\java\\com\\idea\\nursing\\bed\\web\\service",
                     //"\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\service",
                     //"\\src\\main\\java\\com\\idea\\nursing\\common\\web\\service",
@@ -143,15 +155,15 @@ public class GenerateService {
 //                        "com.idea.nursing.bed.web.service",
 //                        "com.idea.nursing.bed.web.dao",
 //                        "com.idea.nursing.bed.web.domain.pojo"
-						"com.idea.nursing.food.web.service",
-						"com.idea.nursing.food.web.dao",
-						"com.idea.nursing.food.web.domain.pojo"
+//						"com.idea.nursing.food.web.service",
+//						"com.idea.nursing.food.web.dao",
+//						"com.idea.nursing.food.web.domain.pojo"
 //						"com.idea.nursing.inspection.web.service",
 //						"com.idea.nursing.inspection.web.dao",
 //						"com.idea.nursing.inspection.web.domain.pojo"
-//                    "com.idea.nursing.oldpeople.web.service",
-//                    "com.idea.nursing.oldpeople.web.dao",
-//                    "com.idea.nursing.oldpeople.web.domain.pojo"
+                    "com.idea.nursing.oldpeople.web.service",
+                    "com.idea.nursing.oldpeople.web.dao",
+                    "com.idea.nursing.oldpeople.web.domain.pojo"
 //                    "com.idea.nursing.personal.web.service",
 //                    "com.idea.nursing.personal.web.dao",
 //                    "com.idea.nursing.personal.web.domain.pojo"

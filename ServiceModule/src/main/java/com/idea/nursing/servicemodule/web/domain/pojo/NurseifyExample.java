@@ -234,63 +234,63 @@ public class NurseifyExample {
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveIsNull() {
-            addCriterion("nursify_leave is null");
+        public Criteria andNursifyLevelIsNull() {
+            addCriterion("nursify_level is null");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveIsNotNull() {
-            addCriterion("nursify_leave is not null");
+        public Criteria andNursifyLevelIsNotNull() {
+            addCriterion("nursify_level is not null");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveEqualTo(Byte value) {
-            addCriterion("nursify_leave =", value, "nursifyLeave");
+        public Criteria andNursifyLevelEqualTo(Byte value) {
+            addCriterion("nursify_level =", value, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveNotEqualTo(Byte value) {
-            addCriterion("nursify_leave <>", value, "nursifyLeave");
+        public Criteria andNursifyLevelNotEqualTo(Byte value) {
+            addCriterion("nursify_level <>", value, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveGreaterThan(Byte value) {
-            addCriterion("nursify_leave >", value, "nursifyLeave");
+        public Criteria andNursifyLevelGreaterThan(Byte value) {
+            addCriterion("nursify_level >", value, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveGreaterThanOrEqualTo(Byte value) {
-            addCriterion("nursify_leave >=", value, "nursifyLeave");
+        public Criteria andNursifyLevelGreaterThanOrEqualTo(Byte value) {
+            addCriterion("nursify_level >=", value, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveLessThan(Byte value) {
-            addCriterion("nursify_leave <", value, "nursifyLeave");
+        public Criteria andNursifyLevelLessThan(Byte value) {
+            addCriterion("nursify_level <", value, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveLessThanOrEqualTo(Byte value) {
-            addCriterion("nursify_leave <=", value, "nursifyLeave");
+        public Criteria andNursifyLevelLessThanOrEqualTo(Byte value) {
+            addCriterion("nursify_level <=", value, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveIn(List<Byte> values) {
-            addCriterion("nursify_leave in", values, "nursifyLeave");
+        public Criteria andNursifyLevelIn(List<Byte> values) {
+            addCriterion("nursify_level in", values, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveNotIn(List<Byte> values) {
-            addCriterion("nursify_leave not in", values, "nursifyLeave");
+        public Criteria andNursifyLevelNotIn(List<Byte> values) {
+            addCriterion("nursify_level not in", values, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveBetween(Byte value1, Byte value2) {
-            addCriterion("nursify_leave between", value1, value2, "nursifyLeave");
+        public Criteria andNursifyLevelBetween(Byte value1, Byte value2) {
+            addCriterion("nursify_level between", value1, value2, "nursifyLevel");
             return (Criteria) this;
         }
 
-        public Criteria andNursifyLeaveNotBetween(Byte value1, Byte value2) {
-            addCriterion("nursify_leave not between", value1, value2, "nursifyLeave");
+        public Criteria andNursifyLevelNotBetween(Byte value1, Byte value2) {
+            addCriterion("nursify_level not between", value1, value2, "nursifyLevel");
             return (Criteria) this;
         }
 

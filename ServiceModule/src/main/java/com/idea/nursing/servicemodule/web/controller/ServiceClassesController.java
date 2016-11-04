@@ -30,7 +30,8 @@ public class ServiceClassesController extends GenericController {
     public ResultData add(ServiceClasses serviceclasses){
 
         try {
-                serviceclassesService.insert(serviceclasses);
+                    serviceclassesService.insertLevel(serviceclasses);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class ServiceClassesController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                serviceclassesService.delete(id);
+                    serviceclassesService.deleteLevel(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -86,10 +87,11 @@ public class ServiceClassesController extends GenericController {
         parsePageBean(serviceclassesService.findAll(currentPage,limit));
     }
 
+
     /**
-     * 按级别查询服务类别
-     * @return
-     */
+    * 按级别查询服务类别
+    * @return
+    */
     @ResponseBody
     @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
     public ResultData findTreeAll(){

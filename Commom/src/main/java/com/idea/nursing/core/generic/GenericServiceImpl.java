@@ -3,6 +3,7 @@ package com.idea.nursing.core.generic;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -70,6 +71,7 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
      */
     public abstract GenericDao<Model, PK,ModelExample> getDao();
 
+
     /**
      * 插入对象
      *
@@ -79,6 +81,8 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
         getDao().insertSelective(model);
         return model;
     }
+
+
 
     /**
      * 更新对象
@@ -97,6 +101,7 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
     public int delete(PK id) {
         return getDao().deleteByPrimaryKey(id);
     }
+
 
     /**
      * 通过主键, 查询对象
@@ -119,6 +124,14 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
 
         return getDao().selectByExample(example);
     }
+
+
+    /**
+     * 查询所有
+     * @param currentPage
+     * @param limit
+     * @return
+     */
     @Override
     public Page<Model> findAll(Integer currentPage,Integer limit){
         if(currentPage==null){
@@ -134,5 +147,7 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
         return list;
 
     }
+
+
 
 }

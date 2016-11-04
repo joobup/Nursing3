@@ -30,7 +30,8 @@ public class BedTypeController extends GenericController {
     public ResultData add(BedType bedtype){
 
         try {
-                bedtypeService.insert(bedtype);
+                    bedtypeService.insertLevel(bedtype);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class BedTypeController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                bedtypeService.delete(id);
+                    bedtypeService.deleteLevel(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -84,6 +85,17 @@ public class BedTypeController extends GenericController {
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
         parsePageBean(bedtypeService.findAll(currentPage,limit));
+    }
+
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",bedtypeService.findTree());
     }
 
 }

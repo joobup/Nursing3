@@ -30,7 +30,8 @@ public class ComplaintEventController extends GenericController {
     public ResultData add(ComplaintEvent complaintevent){
 
         try {
-                complainteventService.insert(complaintevent);
+                    complainteventService.insertLevel(complaintevent);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class ComplaintEventController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                complainteventService.delete(id);
+                    complainteventService.deleteLevel(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -84,6 +85,17 @@ public class ComplaintEventController extends GenericController {
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
         parsePageBean(complainteventService.findAll(currentPage,limit));
+    }
+
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",complainteventService.findTree());
     }
 
 }

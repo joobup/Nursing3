@@ -51,4 +51,11 @@ public interface GenericDao<Model, PK,ModelExample> {
      */
     List<Model> selectByExample(ModelExample example);
 
+    /**
+     * 通过条件删除
+     * @param example
+     * @return
+     */
+    int deleteByExample(ModelExample example);
+
 }

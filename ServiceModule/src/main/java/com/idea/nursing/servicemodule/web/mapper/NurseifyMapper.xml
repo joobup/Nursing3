@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="nursify_name" property="nursifyName" jdbcType="VARCHAR" />
-    <result column="nursify_leave" property="nursifyLeave" jdbcType="TINYINT" />
+    <result column="nursify_level" property="nursifyLevel" jdbcType="TINYINT" />
     <result column="nursify_tid" property="nursifyTid" jdbcType="BIGINT" />
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -66,7 +66,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, nursify_name, nursify_leave, nursify_tid
+    id, nursify_name, nursify_level, nursify_tid
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.NurseifyExample" >
     select
@@ -99,9 +99,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" useGeneratedKeys="true" keyProperty="id" >
-    insert into ff_nurseify (nursify_name, nursify_leave, nursify_tid
+    insert into ff_nurseify (nursify_name, nursify_level, nursify_tid
       )
-    values (#{nursifyName,jdbcType=VARCHAR}, #{nursifyLeave,jdbcType=TINYINT}, #{nursifyTid,jdbcType=BIGINT}
+    values (#{nursifyName,jdbcType=VARCHAR}, #{nursifyLevel,jdbcType=TINYINT}, #{nursifyTid,jdbcType=BIGINT}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" useGeneratedKeys="true" keyProperty="id" >
@@ -110,8 +110,8 @@
       <if test="nursifyName != null" >
         nursify_name,
       </if>
-      <if test="nursifyLeave != null" >
-        nursify_leave,
+      <if test="nursifyLevel != null" >
+        nursify_level,
       </if>
       <if test="nursifyTid != null" >
         nursify_tid,
@@ -121,8 +121,8 @@
       <if test="nursifyName != null" >
         #{nursifyName,jdbcType=VARCHAR},
       </if>
-      <if test="nursifyLeave != null" >
-        #{nursifyLeave,jdbcType=TINYINT},
+      <if test="nursifyLevel != null" >
+        #{nursifyLevel,jdbcType=TINYINT},
       </if>
       <if test="nursifyTid != null" >
         #{nursifyTid,jdbcType=BIGINT},
@@ -144,8 +144,8 @@
       <if test="record.nursifyName != null" >
         nursify_name = #{record.nursifyName,jdbcType=VARCHAR},
       </if>
-      <if test="record.nursifyLeave != null" >
-        nursify_leave = #{record.nursifyLeave,jdbcType=TINYINT},
+      <if test="record.nursifyLevel != null" >
+        nursify_level = #{record.nursifyLevel,jdbcType=TINYINT},
       </if>
       <if test="record.nursifyTid != null" >
         nursify_tid = #{record.nursifyTid,jdbcType=BIGINT},
@@ -159,7 +159,7 @@
     update ff_nurseify
     set id = #{record.id,jdbcType=BIGINT},
       nursify_name = #{record.nursifyName,jdbcType=VARCHAR},
-      nursify_leave = #{record.nursifyLeave,jdbcType=TINYINT},
+      nursify_level = #{record.nursifyLevel,jdbcType=TINYINT},
       nursify_tid = #{record.nursifyTid,jdbcType=BIGINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -171,8 +171,8 @@
       <if test="nursifyName != null" >
         nursify_name = #{nursifyName,jdbcType=VARCHAR},
       </if>
-      <if test="nursifyLeave != null" >
-        nursify_leave = #{nursifyLeave,jdbcType=TINYINT},
+      <if test="nursifyLevel != null" >
+        nursify_level = #{nursifyLevel,jdbcType=TINYINT},
       </if>
       <if test="nursifyTid != null" >
         nursify_tid = #{nursifyTid,jdbcType=BIGINT},
@@ -183,7 +183,7 @@
   <update id="updateByPrimaryKey" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify" >
     update ff_nurseify
     set nursify_name = #{nursifyName,jdbcType=VARCHAR},
-      nursify_leave = #{nursifyLeave,jdbcType=TINYINT},
+      nursify_level = #{nursifyLevel,jdbcType=TINYINT},
       nursify_tid = #{nursifyTid,jdbcType=BIGINT}
     where id = #{id,jdbcType=BIGINT}
   </update>
