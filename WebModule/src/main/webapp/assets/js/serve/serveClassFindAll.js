@@ -2,6 +2,8 @@
  * Created by horo on 2016/10/27.
  */
 function findAll() {
+    cost();
+
     var url=domainUrl+"/serve/service_classes/findTreeAll";
     var currentPage = 1;
     var limit = 5;
