@@ -74,7 +74,7 @@ function findAll(currentPage) {
         var num = data.aaData.length;
         console.log(JSON.stringify(data))
         for (var i = 0; i < num; i++) {
-            html += '<div class="serve-module-s"> <i class="glyphicon glyphicon-pencil bianji" title="编辑" onclick="make(' + data.aaData[i].id + ','+currentPage+')"></i> <i' +
+            html += '<div class="serve-module-s"> <i class="glyphicon glyphicon-pencil bianji" title="编辑"  data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ','+currentPage+')"></i> <i' +
             ' class="glyphicon' +
             ' glyphicon-remove shanchu" onclick="del(' + data.aaData[i].id + ')"></i> <ul>';
             html += '<li id="staff-mess1"><img src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].staffPicture.pictureAddress+'" alt=""></li> <li' +
@@ -113,7 +113,7 @@ function findAllb(currentPage) {
             html+='<tr><td>' + data.aaData[i].staffName + '</td><td>' + data.aaData[i].staffSex + '</td><td>' + data.aaData[i].staffPost + '</td>' +
                 '<td>' + data.aaData[i].staffDepartment + '</td><td>' + data.aaData[i].staffCall1 + '</td><td>' + data.aaData[i].staffCardId + '</td>' +
                 '<td>' + data.aaData[i].staffStatus + '</td><td>' + data.aaData[i].staffRank + '</td><td>' + data.aaData[i].staffSkillLevel + '</td>' +
-                '<td><i class="glyphicon glyphicon-pencil bianji" title="编辑" onclick="make(' + data.aaData[i].id + ','+currentPage+')"></i>' +
+                '<td><i class="glyphicon glyphicon-pencil bianji" title="编辑"  data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ','+currentPage+')"></i>' +
                 ' <i class="glyphicon glyphicon-remove shanchu" title="删除" onclick="del(' + data.aaData[i].id + ')" style="display:none;"></i></td></tr>';
         }
         $("#aaa").html(html)
@@ -164,20 +164,9 @@ function make(id,currentPage) {
                 $("#staffrank").val(rank);
                 $("#staffstatus").val(status);
                 $("#xid").val(xid);
-                // html+=' <tr> <td>员工姓名</td> <td><input type="text" id="staffname" value="'+data.aaData[i].staffName+'"></td> </tr> <tr> <td>员工性别</td> <td> ';
-                // html+='<input type="text" id="staffsex" value="'+data.aaData[i].staffSex+'"></td> </tr> <tr> <td>员工职务</td> <td>';
-                // html+='<input type="text" id="staffpost" value="'+data.aaData[i].staffPost+'"></td> </tr> <tr> <td>技能等级</td>';
-                // html+='<td><input type="text" id="staffskilllevel" value="'+data.aaData[i].staffSkillLevel+'"></td> </tr> <tr> <td style="position: absolute; margin-top: 5px;">员工照片</td> ';
-                // html+='<td><input type="text" id="staffpicture" value="'+data.aaData[i].staffPicture+'"></td> </tr>';
-                // html+=' <tr> <td>员工部门</td> <td><input type="text" id="staffdepartment" value="'+data.aaData[i].staffDepartment+'"></td> </tr> <tr> <td>身份证号</td>';
-                // html+='  <td><input type="text" id="staffcard" value="'+data.aaData[i].staffCardId+'"></td> </tr> <tr> <td>联系方式1</td> <td><input type="text" id="staffcall1" value="'+data.aaData[i].staffCall1+'"></td> </tr>';
-                // html+='<tr> <td>联系方式2</td> <td><input type="text" id="staffcall2" value="'+data.aaData[i].staffCall2+'"></td> </tr> <tr> <td>员工权限</td> ';
-                // html+='<td><input type="text" id="staffrank" value="'+data.aaData[i].staffRank+'"></td> </tr> <tr> <td>工作状态</td> <td>';
-                // html+='<input type="text" id="staffstatus" value="'+data.aaData[i].staffStatus+'"></td> </tr>';
-
             }
         }
-        $('#myModal').modal("show");
+
     })
 }
 function update() {

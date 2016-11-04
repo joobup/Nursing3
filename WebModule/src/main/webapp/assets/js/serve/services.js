@@ -39,7 +39,7 @@ function findAllp(currentPage) {
             html += ' <div class="serve-module-s"><i title="添加计费类别" data-toggle="modal"  data-target="#myModalCost" onclick="costAdd(' + data.aaData[i].id + ')" class="glyphicon' +
                 ' glyphicon-plus"' +
                 '     style="margin-right:30px;"></i>' +
-                '<i   class="glyphicon glyphicon-pencil bianji" title="编辑"       onclick="make(' + data.aaData[i].id + ')"></i> ' +
+                '<i   class="glyphicon glyphicon-pencil bianji" title="编辑" data-toggle="modal"  data-target="#myModal"   onclick="make(' + data.aaData[i].id + ')"></i> ' +
                 ' <i     class="' + ' glyphicon' + ' glyphicon-remove shanchu"    onclick="del(' + data.aaData[i].id + ')" title="删除"></i>';
             html +='<ul><li class="servePicture"><img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].mainPicture.pictureAddress+'"' +
                 ' />' +
@@ -75,7 +75,7 @@ function findAllb(currentPage) {
             html += '<tr><td>' + data.aaData[i].serveName + '</td><td>' + data.aaData[i].serveClassify.serveClassname + '</td><td>' + data.aaData[i].serveLimit + '</td><td>' + data.aaData[i].servePeoples + '</td>';
             html += '<td>' + data.aaData[i].serveBiref + '</td><td><i title="添加计费类别" data-toggle="modal"  data-target="#myModalCost" onclick="costAdd(' + data.aaData[i].id + ')" class="glyphicon' +
                 ' glyphicon-plus"' +
-                '   ></i><i class="glyphicon glyphicon-pencil bianji" title="编辑" onclick="make(' + data.aaData[i].id + ')"></i><i' +
+                '   ></i><i class="glyphicon glyphicon-pencil bianji" title="编辑" data-toggle="modal"  data-target="#myModal" onclick="make(' + data.aaData[i].id + ')"></i><i' +
                 ' class="glyphicon glyphicon-remove shanchu" title="删除" style="display: none" onclick="del(' + data.aaData[i].id + ')"></i></td></tr>';
         }
         $("#aaa").html(html)
@@ -101,12 +101,7 @@ function cost() {
             html +='<option value="'+data.aaData[i].id+'">'+data.aaData[i].classesValuationName+'</option>';
         }
         $(".serveCost").html(html)
-        // var cost=document.getElementById('serveCost');
-        // cost.onchange = function () {
-        //     var selectIndex = document.getElementById("serveCost").selectedIndex;//获得是第几个被选中了
-        //     var selectValue = document.getElementById("serveCost").options[selectIndex].value //获得被选中的项目
-        //     serveCost = selectValue;
-        // }
+
     })
 }
 function costAdd(id) {
@@ -188,7 +183,6 @@ function make(id) {
                 $("#xid").val(xid)
             }
         }
-        $('#myModal').modal("show");
     })
 }
 function update() {

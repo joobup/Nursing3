@@ -3,6 +3,7 @@
  */
 function sideUrl(url) {
     var url = domainUrl+url;
+    console.log(url)
     $.ajax({
         type: "get",
         url: url,
