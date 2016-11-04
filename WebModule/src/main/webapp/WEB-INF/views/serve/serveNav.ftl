@@ -57,6 +57,7 @@
                     -webkit-transition: all 0.4s ease;
                     -o-transition: all 0.4s ease;
                     transition: all 0.4s ease;
+                    background:#FF743D;
                 }
 
                 .accordion li:last-child .link {
@@ -108,15 +109,17 @@
                     text-decoration: none;
                     color: #d9d9d9;
                     padding: 12px;
-                    padding-left: 42px;
+                    text-align:center;
                     -webkit-transition: all 0.25s ease;
                     -o-transition: all 0.25s ease;
                     transition: all 0.25s ease;
+
                 }
 
                 .submenu a:hover {
-                    background: #b63b4d;
+                    background: #FF743D;
                     color: #FFF;
+                    cursor:pointer;
                 }
             </style>
         <#--主要内容显示-->
