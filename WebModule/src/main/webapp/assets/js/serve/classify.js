@@ -31,19 +31,19 @@ function findAll1() {
         var num2 = data.aaData[1].length;
         var num3 = data.aaData[2].length;
         for(var i = 0; i< num1; i++){
-                html+='<li><a href="#" class="one">'+data.aaData[0][i].serveClassname+'</a><cc><a onclick="openModal('+data.aaData[0][i].id+')">添加子类</a>' +
+                html+='<li style="border-top:1px solid #dddddd"><a href="#" class="one">'+data.aaData[0][i].serveClassname+'</a><cc><a onclick="openModal('+data.aaData[0][i].id+')">添加子类</a>' +
                     '<a onclick="make('+data.aaData[0][i].id+')">修改本类</a><a onclick="del('+data.aaData[0][i].id+')">删除本类</a></cc>';
             if(num2>=1){
                 html+='<ul style="display: none;">';
                 for(var j=0; j<num2;j++){
                     if(data.aaData[0][i].id ==data.aaData[1][j].tid ){
-                        html+='<li><a href="#" class="one">'+data.aaData[1][j].serveClassname+'</a><cc><aonclick="openModal('+data.aaData[1][j].id+')">添加子类</a>' +
+                        html+='<li><a href="#" class="one">'+data.aaData[1][j].serveClassname+'</a><cc><a onclick="openModal('+data.aaData[1][j].id+')">添加子类</a>' +
                             '<a onclick="make('+data.aaData[1][j].id+')">修改本类</a><a onclick="del('+data.aaData[1][j].id+')">删除本类</a></cc>';
                         if(num3>=1){
                             html+='<ul style="display:none;">';
                             for(var c = 0; c<num3; c++){
                                 if(data.aaData[1][j].id ==data.aaData[2][c].tid){
-                                    html+='<li>'+data.aaData[2][c].serveClassname+'<cc><a onclick="make('+data.aaData[2][c].id+')">修改本类</a><a onclick="del('+data.aaData[2][c].id+')">删除本类</a></cc></li>';
+                                    html+='<li><a>'+data.aaData[2][c].serveClassname+'</a><cc><a onclick="make('+data.aaData[2][c].id+')">修改本类</a><a onclick="del('+data.aaData[2][c].id+')">删除本类</a></cc></li>';
                                 }
                             }
                             html+='</ul>'

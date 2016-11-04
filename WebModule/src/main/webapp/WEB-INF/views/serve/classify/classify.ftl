@@ -27,9 +27,17 @@
                 margin-left: 1%;
                 width: 97%;
             }
-
             #ify-show li cc {
-                float: right;
+                position: absolute;
+                right: 0;
+                margin-right: 2%;
+            }
+            #ify-show li cc a{
+                margin: 0 10px 0 0;
+            }
+            #ify-show li a{
+
+                margin-left: 10%;
             }
         </style>
     </div>

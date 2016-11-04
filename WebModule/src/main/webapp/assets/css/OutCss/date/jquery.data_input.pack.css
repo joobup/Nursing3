@@ -2,7 +2,7 @@
 .date_selector{background:#fbfbfb;border: 1px solid #ccc;padding: 10px;margin:0;margin-top:-1px;position: absolute;z-index:100000;display:none;border-radius: 3px;box-shadow: 0 0 5px #aaa;box-shadow:0 2px 2px #ccc; width:240px;}
 .date_selector_ieframe{position: absolute;z-index: 99999;display: none;}
 .date_selector .nav{width: 17.5em;}
-.date_selector .nav p{clear: none; }
+.dat td.selectable_day.hover{background:#5985c7;color: #fff;}e_selector .nav p{clear: none; }
 .date_selector .nav p span{ color: #000 !important; }
 .date_selector .month_nav, .date_selector .year_nav{margin: 0 0 3px 0;padding: 0;display: block;position: relative;text-align: center;}
 .date_selector .month_nav{float: left;width: 40%;}
@@ -20,4 +20,4 @@
 .date_selector td.unselected_month{color: #ccc;}
 .date_selector td.selectable_day{cursor: pointer;}
 .date_selector td.selected{background:#2b579a;color: #fff;font-weight: bold;}
-.date_selector td.selectable_day:hover, .date_selector td.selectable_day.hover{background:#5985c7;color: #fff;}
+.date_selector td.selectable_day:hover, .date_selector
