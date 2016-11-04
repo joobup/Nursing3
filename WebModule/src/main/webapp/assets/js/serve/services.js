@@ -122,7 +122,8 @@ function costAdd(id) {
         };
         postAjax(url,false,postData,function (data) {
             alert("添加成功");
-            location.reload();
+            $('#myModal').modal("hide");
+            findAllp(1);
         })
     })
 }
@@ -148,8 +149,9 @@ function add() {
         agencyId: 1
     };
     postAjax(url, false, postData, function (data) {
-        alert("添加成功")
-        location.reload()
+        alert("添加成功");
+        $('#myModal').modal("hide");
+        findAllp(1);
     })
 }
 function del(id) {
@@ -158,7 +160,7 @@ function del(id) {
     postAjax(url, false, postData, function (data) {
         console.log(JSON.stringify(data))
         alert("删除成功!")
-        location.reload();
+        findAllp(1);
     })
 }
 function make(id) {
@@ -209,6 +211,7 @@ function update() {
     };
     postAjax(url, false, postData, function (data) {
         alert("修改成功")
-        location.reload()
+        $('#myModal').modal("hide");
+        findAllp(1);
     })
 }

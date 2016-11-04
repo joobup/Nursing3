@@ -64,7 +64,7 @@ function del(id) {
 }
 var pageNp = 1;
 var pageList;
-function findAllp(currentPage) {
+function findAll(currentPage) {
     var url = domainUrl + "/serve/service_staff/findAll";
     var limit = 3;
     var getData = {currentPage: currentPage, limit: limit};
@@ -92,7 +92,7 @@ function findAllp(currentPage) {
                 pageCount: pageList,
                 current: currentPage,
                 backFn: function (p) {
-                    findAllp(p)
+                    findAll(p)
                 }
             });
         }

@@ -21,17 +21,22 @@ div, ul {
     width: 100%;
     height: 8%;
     background-color: #fff;
-    border-bottom: 2px solid #DADADA;
+    border-bottom: 1px solid #FF743D;
     min-height: 90px;
 }
 .head-banner #logo {
-    height: 100%;
+    height: 70%;
     font-size: 50px;
     display: flex;
+    margin-left:40px;
     align-items: center;
-    padding-left: 50px;
     float: left;
 }
+.head-banner #logo img {
+    margin-top:29px;
+    height:90px;
+}
+
 .head-banner #user-status {
     height: 100%;
     display: flex;
@@ -78,37 +83,11 @@ div, ul {
     min-width: 170px;
 }
 
-.main-body #main-side a {
-    text-decoration: none;
-}
-
-#main-side ul .side-list {
-    height: 40px;
-    text-align: center;
-    background-color: #2b3949;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 5px;
-    line-height: 40px;
-    border-radius: 2px;
-    transition: .4s;
-}
-
-#main-side ul li:hover {
-    background-color: #FF4B01;
-    width: 101%;
-}
-
-#main-side ul .b {
-    width: 101%;
-    background-color: #FF4B01;
-}
 /*右侧内容*/
 .main-body #main-show {
     height: 100%;
     width: 88%;
-    background-color: #f1f1f1;
+    background-color: #F9F9F9;
     float: left;
     overflow: auto;
 }
@@ -116,16 +95,15 @@ div, ul {
 #main-show .serve-banner {
     width: 96%;
     height: 55px;
-    border: 1px solid #E9E9E9;
     margin: 20px 2%;
     background-color: #fff;
     min-width: 1228px;
 }
 #main-show #now-position{
-    width: 96%; margin: 35px 0px -20px 2%; border-bottom: 2px solid #2B3946; height: 30px; font-size: 15px;
+    width: 96%; margin: 35px 0px -20px 2%; height: 30px; font-size: 15px;
 }
 #main-show #now-position span{
-    color: #a0a3a3;
+    color: #616161;
 }
 #main-show .serve-banner an {
     height: 55px;
@@ -137,10 +115,10 @@ div, ul {
 #main-show .serve-banner  input[type="button"] {
     height: 30px;
     width: 100px;
-    background-color: #2B3846;
+    background-color: #2B3949;
     border: 0px;
     color: #fff;
-    border-radius: 2px;
+    border-radius: 5px;
     margin-right: 15px;
     transition: .5s;
 }
@@ -170,7 +148,6 @@ div, ul {
     margin: 0px 1% 15px 1%;
     background-color: #fff;
     border-radius: 2px;
-    border: 1px solid #E9E9E9;
     float: left;
     position: relative;
     min-width: 430px;
@@ -185,6 +162,7 @@ div, ul {
     top: 15px;
     cursor: pointer;
     font-size: 18px;
+    color:#FF4B01;
 }
 
 .serve-module-s .shanchu {

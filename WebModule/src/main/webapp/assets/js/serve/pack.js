@@ -116,7 +116,8 @@ function add() {
     console.log(JSON.stringify(postData))
     postAjax(url,false,postData,function (data) {
         alert("打包成功");
-        location.reload();
+        $('#myModal').modal("hide");
+        findAll();
     })
 }
 function update() {
@@ -133,7 +134,8 @@ function update() {
     console.log(JSON.stringify(postData))
     postAjax(url,false,postData,function (data) {
         alert("修改成功");
-        location.reload();
+        $('#myModal').modal("hide");
+        findAll();
     })
 }
 function del(id) {
@@ -141,7 +143,7 @@ function del(id) {
     var postData={id:id};
     postAjax(url,false,postData,function (data) {
         alert("刪除成功");
-        location.reload();
+        findAll();
     })
 }
 function make(id) {
