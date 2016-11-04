@@ -1,6 +1,5 @@
 package com.idea.nursing.servicemodule.web.domain.pojo;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 
@@ -16,9 +15,7 @@ public class ServicePack {
     private Long serveDetailed;
 
     private Byte serveRebate;
-    @JsonFormat(pattern = "yyyy年MM月dd日")
     private Date serveEnddate;
-    @JsonFormat(pattern = "yyyy年MM月dd日")
     private Date serveStartdate;
 
     private String serveServes;
