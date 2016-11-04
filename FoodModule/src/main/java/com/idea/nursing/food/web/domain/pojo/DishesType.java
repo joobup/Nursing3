@@ -5,7 +5,7 @@ public class DishesType {
 
     private String dishesTypeName;
 
-    private Byte dishesTypeLeave;
+    private Byte dishesTypeLevel;
 
     private Long tid;
 
@@ -25,12 +25,12 @@ public class DishesType {
         this.dishesTypeName = dishesTypeName == null ? null : dishesTypeName.trim();
     }
 
-    public Byte getDishesTypeLeave() {
-        return dishesTypeLeave;
+    public Byte getDishesTypeLevel() {
+        return dishesTypeLevel;
     }
 
-    public void setDishesTypeLeave(Byte dishesTypeLeave) {
-        this.dishesTypeLeave = dishesTypeLeave;
+    public void setDishesTypeLevel(Byte dishesTypeLevel) {
+        this.dishesTypeLevel = dishesTypeLevel;
     }
 
     public Long getTid() {

@@ -1,9 +1,9 @@
 package com.idea.nursing.food.web.domain.pojo;
 
-public class FoodMaterialNutriment {
+public class FoodMeterialNutriment {
     private Long id;
 
-    private Long materialId;
+    private Long meterialId;
 
     private Long nutrimentId;
 
@@ -17,12 +17,12 @@ public class FoodMaterialNutriment {
         this.id = id;
     }
 
-    public Long getMaterialId() {
-        return materialId;
+    public Long getMeterialId() {
+        return meterialId;
     }
 
-    public void setMaterialId(Long materialId) {
-        this.materialId = materialId;
+    public void setMeterialId(Long meterialId) {
+        this.meterialId = meterialId;
     }
 
     public Long getNutrimentId() {

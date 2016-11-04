@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 返回JSON 数据时 时间类型格式化
+ */
 public class CustomObjectMapper extends ObjectMapper {
   
     public CustomObjectMapper(){  

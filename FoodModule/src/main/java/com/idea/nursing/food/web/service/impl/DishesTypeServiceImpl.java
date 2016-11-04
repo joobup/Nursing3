@@ -2,7 +2,8 @@ package com.idea.nursing.food.web.service.impl;
 
 
 import com.idea.nursing.core.generic.GenericDao;
-import com.idea.nursing.core.generic.GenericServiceImpl;
+import com.idea.nursing.core.generic.GenericServiceLevelImpl;
+
 import com.idea.nursing.food.web.dao.DishesTypeMapper;
 import com.idea.nursing.food.web.domain.pojo.DishesType;
 import com.idea.nursing.food.web.domain.pojo.DishesTypeExample;
@@ -13,12 +14,43 @@ import org.springframework.stereotype.Service;
 
 
 @Service
-public class DishesTypeServiceImpl extends GenericServiceImpl<DishesType, Long,DishesTypeExample> implements DishesTypeService {
-    @Autowired
-    private DishesTypeMapper dishestypeDao;
-    @Override
-    public GenericDao<DishesType, Long,DishesTypeExample> getDao() {
-        return dishestypeDao;
-    }
+    public class DishesTypeServiceImpl extends GenericServiceLevelImpl<DishesType, Long,DishesTypeExample> implements DishesTypeService {
+
+
+        @Autowired
+        private DishesTypeMapper dishestypeDao;
+        @Override
+        public GenericDao<DishesType, Long,DishesTypeExample> getDao() {
+            return dishestypeDao;
+        }
+
+        @Override
+        public DishesTypeExample getModelExamplTidEqualTo(Long tid) {
+            DishesTypeExample dishestypeExample = new DishesTypeExample();
+            dishestypeExample.createCriteria().andTidEqualTo(tid);
+            return dishestypeExample;
+        }
+
+        @Override
+        public byte getLevel(DishesType dishestype) {
+
+            return dishestype.getDishesTypeLevel();
+        }
+
+        @Override
+        public Long getTid(DishesType dishestype) {
+            return dishestype.getTid();
+        }
+
+        @Override
+        public void setLevel(DishesType dishestype, Byte level) {
+            dishestype.setDishesTypeLevel(level);
+        }
+
+        @Override
+        public void setTid(DishesType dishestype) {
+            dishestype.setTid(0L);
+        }
+
 
 }

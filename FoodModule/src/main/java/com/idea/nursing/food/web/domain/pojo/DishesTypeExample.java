@@ -234,63 +234,63 @@ public class DishesTypeExample {
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveIsNull() {
-            addCriterion("dishes_type_leave is null");
+        public Criteria andDishesTypeLevelIsNull() {
+            addCriterion("dishes_type_level is null");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveIsNotNull() {
-            addCriterion("dishes_type_leave is not null");
+        public Criteria andDishesTypeLevelIsNotNull() {
+            addCriterion("dishes_type_level is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveEqualTo(Byte value) {
-            addCriterion("dishes_type_leave =", value, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelEqualTo(Byte value) {
+            addCriterion("dishes_type_level =", value, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveNotEqualTo(Byte value) {
-            addCriterion("dishes_type_leave <>", value, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelNotEqualTo(Byte value) {
+            addCriterion("dishes_type_level <>", value, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveGreaterThan(Byte value) {
-            addCriterion("dishes_type_leave >", value, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelGreaterThan(Byte value) {
+            addCriterion("dishes_type_level >", value, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveGreaterThanOrEqualTo(Byte value) {
-            addCriterion("dishes_type_leave >=", value, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelGreaterThanOrEqualTo(Byte value) {
+            addCriterion("dishes_type_level >=", value, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveLessThan(Byte value) {
-            addCriterion("dishes_type_leave <", value, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelLessThan(Byte value) {
+            addCriterion("dishes_type_level <", value, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveLessThanOrEqualTo(Byte value) {
-            addCriterion("dishes_type_leave <=", value, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelLessThanOrEqualTo(Byte value) {
+            addCriterion("dishes_type_level <=", value, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveIn(List<Byte> values) {
-            addCriterion("dishes_type_leave in", values, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelIn(List<Byte> values) {
+            addCriterion("dishes_type_level in", values, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveNotIn(List<Byte> values) {
-            addCriterion("dishes_type_leave not in", values, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelNotIn(List<Byte> values) {
+            addCriterion("dishes_type_level not in", values, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveBetween(Byte value1, Byte value2) {
-            addCriterion("dishes_type_leave between", value1, value2, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelBetween(Byte value1, Byte value2) {
+            addCriterion("dishes_type_level between", value1, value2, "dishesTypeLevel");
             return (Criteria) this;
         }
 
-        public Criteria andDishesTypeLeaveNotBetween(Byte value1, Byte value2) {
-            addCriterion("dishes_type_leave not between", value1, value2, "dishesTypeLeave");
+        public Criteria andDishesTypeLevelNotBetween(Byte value1, Byte value2) {
+            addCriterion("dishes_type_level not between", value1, value2, "dishesTypeLevel");
             return (Criteria) this;
         }
 

@@ -30,7 +30,8 @@ public class DishesMeterialController extends GenericController {
     public ResultData add(DishesMeterial dishesmeterial){
 
         try {
-                dishesmeterialService.insert(dishesmeterial);
+                    dishesmeterialService.insert(dishesmeterial);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class DishesMeterialController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                dishesmeterialService.delete(id);
+                    dishesmeterialService.delete(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -85,5 +86,6 @@ public class DishesMeterialController extends GenericController {
         return ResultData.build().
         parsePageBean(dishesmeterialService.findAll(currentPage,limit));
     }
+
 
 }

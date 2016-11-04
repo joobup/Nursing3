@@ -3,14 +3,14 @@ package com.idea.nursing.food.web.domain.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoodMaterialNutrimentExample {
+public class FoodMeterialNutrimentExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public FoodMaterialNutrimentExample() {
+    public FoodMeterialNutrimentExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
@@ -164,63 +164,63 @@ public class FoodMaterialNutrimentExample {
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdIsNull() {
-            addCriterion("material_id is null");
+        public Criteria andMeterialIdIsNull() {
+            addCriterion("meterial_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdIsNotNull() {
-            addCriterion("material_id is not null");
+        public Criteria andMeterialIdIsNotNull() {
+            addCriterion("meterial_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdEqualTo(Long value) {
-            addCriterion("material_id =", value, "materialId");
+        public Criteria andMeterialIdEqualTo(Long value) {
+            addCriterion("meterial_id =", value, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotEqualTo(Long value) {
-            addCriterion("material_id <>", value, "materialId");
+        public Criteria andMeterialIdNotEqualTo(Long value) {
+            addCriterion("meterial_id <>", value, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdGreaterThan(Long value) {
-            addCriterion("material_id >", value, "materialId");
+        public Criteria andMeterialIdGreaterThan(Long value) {
+            addCriterion("meterial_id >", value, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("material_id >=", value, "materialId");
+        public Criteria andMeterialIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("meterial_id >=", value, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdLessThan(Long value) {
-            addCriterion("material_id <", value, "materialId");
+        public Criteria andMeterialIdLessThan(Long value) {
+            addCriterion("meterial_id <", value, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdLessThanOrEqualTo(Long value) {
-            addCriterion("material_id <=", value, "materialId");
+        public Criteria andMeterialIdLessThanOrEqualTo(Long value) {
+            addCriterion("meterial_id <=", value, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdIn(List<Long> values) {
-            addCriterion("material_id in", values, "materialId");
+        public Criteria andMeterialIdIn(List<Long> values) {
+            addCriterion("meterial_id in", values, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotIn(List<Long> values) {
-            addCriterion("material_id not in", values, "materialId");
+        public Criteria andMeterialIdNotIn(List<Long> values) {
+            addCriterion("meterial_id not in", values, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdBetween(Long value1, Long value2) {
-            addCriterion("material_id between", value1, value2, "materialId");
+        public Criteria andMeterialIdBetween(Long value1, Long value2) {
+            addCriterion("meterial_id between", value1, value2, "meterialId");
             return (Criteria) this;
         }
 
-        public Criteria andMaterialIdNotBetween(Long value1, Long value2) {
-            addCriterion("material_id not between", value1, value2, "materialId");
+        public Criteria andMeterialIdNotBetween(Long value1, Long value2) {
+            addCriterion("meterial_id not between", value1, value2, "meterialId");
             return (Criteria) this;
         }
 

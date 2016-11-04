@@ -3,14 +3,14 @@ package com.idea.nursing.food.web.domain.pojo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FoodMaterialExample {
+public class FoodMeterialExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public FoodMaterialExample() {
+    public FoodMeterialExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 

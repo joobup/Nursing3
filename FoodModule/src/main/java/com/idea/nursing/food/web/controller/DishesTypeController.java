@@ -30,7 +30,8 @@ public class DishesTypeController extends GenericController {
     public ResultData add(DishesType dishestype){
 
         try {
-                dishestypeService.insert(dishestype);
+                    dishestypeService.insertLevel(dishestype);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class DishesTypeController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                dishestypeService.delete(id);
+                    dishestypeService.deleteLevel(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -84,6 +85,17 @@ public class DishesTypeController extends GenericController {
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
         parsePageBean(dishestypeService.findAll(currentPage,limit));
+    }
+
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",dishestypeService.findTree());
     }
 
 }

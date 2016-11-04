@@ -1,6 +1,6 @@
 package com.idea.nursing.food.web.domain.pojo;
 
-public class FoodMaterial {
+public class FoodMeterial {
     private Long id;
 
     private String meterialTypeName;

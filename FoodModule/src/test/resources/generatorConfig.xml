@@ -44,7 +44,7 @@
         
 
 
-        <table tableName="ys_dishes" domainObjectName="Dishes">
+      <!--  <table tableName="ys_dishes" domainObjectName="Dishes">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
 
@@ -89,6 +89,9 @@
         <table tableName="ys_week_food_dishes" domainObjectName="WeekFoodDishes">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
-
+-->
+        <table tableName="ys_dishes_type" domainObjectName="DishesType">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true" />
+        </table>
     </context>
 </generatorConfiguration>

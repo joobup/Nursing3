@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.idea.nursing.food.web.dao.FoodMaterialNutrimentMapper" >
-  <resultMap id="BaseResultMap" type="com.idea.nursing.food.web.domain.pojo.FoodMaterialNutriment" >
+<mapper namespace="com.idea.nursing.food.web.dao.FoodMeterialNutrimentMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.food.web.domain.pojo.FoodMeterialNutriment" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="material_id" property="materialId" jdbcType="BIGINT" />
+    <result column="meterial_id" property="meterialId" jdbcType="BIGINT" />
     <result column="nutriment_id" property="nutrimentId" jdbcType="BIGINT" />
     <result column="nutriment_value" property="nutrimentValue" jdbcType="TINYINT" />
   </resultMap>
@@ -66,15 +66,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, material_id, nutriment_id, nutriment_value
+    id, meterial_id, nutriment_id, nutriment_value
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMaterialNutrimentExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMeterialNutrimentExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from ys_food_material_nutriment
+    from ys_food_meterial_nutriment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -85,30 +85,30 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from ys_food_material_nutriment
+    from ys_food_meterial_nutriment
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from ys_food_material_nutriment
+    delete from ys_food_meterial_nutriment
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMaterialNutrimentExample" >
-    delete from ys_food_material_nutriment
+  <delete id="deleteByExample" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMeterialNutrimentExample" >
+    delete from ys_food_meterial_nutriment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMaterialNutriment" useGeneratedKeys="true" keyProperty="id" >
-    insert into ys_food_material_nutriment (material_id, nutriment_id, nutriment_value
+  <insert id="insert" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMeterialNutriment" useGeneratedKeys="true" keyProperty="id" >
+    insert into ys_food_meterial_nutriment (meterial_id, nutriment_id, nutriment_value
       )
-    values (#{materialId,jdbcType=BIGINT}, #{nutrimentId,jdbcType=BIGINT}, #{nutrimentValue,jdbcType=TINYINT}
+    values (#{meterialId,jdbcType=BIGINT}, #{nutrimentId,jdbcType=BIGINT}, #{nutrimentValue,jdbcType=TINYINT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMaterialNutriment" useGeneratedKeys="true" keyProperty="id" >
-    insert into ys_food_material_nutriment
+  <insert id="insertSelective" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMeterialNutriment" useGeneratedKeys="true" keyProperty="id" >
+    insert into ys_food_meterial_nutriment
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="materialId != null" >
-        material_id,
+      <if test="meterialId != null" >
+        meterial_id,
       </if>
       <if test="nutrimentId != null" >
         nutriment_id,
@@ -118,8 +118,8 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="materialId != null" >
-        #{materialId,jdbcType=BIGINT},
+      <if test="meterialId != null" >
+        #{meterialId,jdbcType=BIGINT},
       </if>
       <if test="nutrimentId != null" >
         #{nutrimentId,jdbcType=BIGINT},
@@ -129,20 +129,20 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMaterialNutrimentExample" resultType="java.lang.Integer" >
-    select count(*) from ys_food_material_nutriment
+  <select id="countByExample" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMeterialNutrimentExample" resultType="java.lang.Integer" >
+    select count(*) from ys_food_meterial_nutriment
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update ys_food_material_nutriment
+    update ys_food_meterial_nutriment
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.materialId != null" >
-        material_id = #{record.materialId,jdbcType=BIGINT},
+      <if test="record.meterialId != null" >
+        meterial_id = #{record.meterialId,jdbcType=BIGINT},
       </if>
       <if test="record.nutrimentId != null" >
         nutriment_id = #{record.nutrimentId,jdbcType=BIGINT},
@@ -156,20 +156,20 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update ys_food_material_nutriment
+    update ys_food_meterial_nutriment
     set id = #{record.id,jdbcType=BIGINT},
-      material_id = #{record.materialId,jdbcType=BIGINT},
+      meterial_id = #{record.meterialId,jdbcType=BIGINT},
       nutriment_id = #{record.nutrimentId,jdbcType=BIGINT},
       nutriment_value = #{record.nutrimentValue,jdbcType=TINYINT}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMaterialNutriment" >
-    update ys_food_material_nutriment
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMeterialNutriment" >
+    update ys_food_meterial_nutriment
     <set >
-      <if test="materialId != null" >
-        material_id = #{materialId,jdbcType=BIGINT},
+      <if test="meterialId != null" >
+        meterial_id = #{meterialId,jdbcType=BIGINT},
       </if>
       <if test="nutrimentId != null" >
         nutriment_id = #{nutrimentId,jdbcType=BIGINT},
@@ -180,9 +180,9 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMaterialNutriment" >
-    update ys_food_material_nutriment
-    set material_id = #{materialId,jdbcType=BIGINT},
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.food.web.domain.pojo.FoodMeterialNutriment" >
+    update ys_food_meterial_nutriment
+    set meterial_id = #{meterialId,jdbcType=BIGINT},
       nutriment_id = #{nutrimentId,jdbcType=BIGINT},
       nutriment_value = #{nutrimentValue,jdbcType=TINYINT}
     where id = #{id,jdbcType=BIGINT}

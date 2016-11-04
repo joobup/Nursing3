@@ -88,11 +88,11 @@ public class GenerateService {
 //					"Dishes",
 //					"DishesPicture",
 //					"DishesTypeDishes",
-//					"DishesType",
-//					"DishesMeterial",
-//					"FoodMaterial",
-//					"Nutriment",
-//					"FoodMaterialNutriment",
+					"DishesType,DishesTypeLevel,Tid",
+					"DishesMeterial",
+					"FoodMeterial,MeterialTypeLevel,Tid",
+					"Nutriment,NutrimentLevel,Tid",
+					"FoodMeterialNutriment",
 //					"WeekFood",
 //					"WeekFoodDishes"
 
@@ -139,9 +139,9 @@ public class GenerateService {
                     fileName,
                     //"\\Order\\src\\main\\java\\com\\idea\\nursing\\order\\web\\service",
                     //"\\Personal\\src\\main\\java\\com\\idea\\nursing\\personal\\web\\service",
-                    "\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\service",
+                    //"\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\service",
                     //"\\Inspection\\src\\main\\java\\com\\idea\\nursing\\inspection\\web\\service",
-                    //"\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\service",
+                    "\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\service",
                     //"\\BedModule\\src\\main\\java\\com\\idea\\nursing\\bed\\web\\service",
                     //"\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\service",
                     //"\\src\\main\\java\\com\\idea\\nursing\\common\\web\\service",
@@ -155,15 +155,15 @@ public class GenerateService {
 //                        "com.idea.nursing.bed.web.service",
 //                        "com.idea.nursing.bed.web.dao",
 //                        "com.idea.nursing.bed.web.domain.pojo"
-//						"com.idea.nursing.food.web.service",
-//						"com.idea.nursing.food.web.dao",
-//						"com.idea.nursing.food.web.domain.pojo"
+						"com.idea.nursing.food.web.service",
+						"com.idea.nursing.food.web.dao",
+						"com.idea.nursing.food.web.domain.pojo"
 //						"com.idea.nursing.inspection.web.service",
 //						"com.idea.nursing.inspection.web.dao",
 //						"com.idea.nursing.inspection.web.domain.pojo"
-                    "com.idea.nursing.oldpeople.web.service",
-                    "com.idea.nursing.oldpeople.web.dao",
-                    "com.idea.nursing.oldpeople.web.domain.pojo"
+//                    "com.idea.nursing.oldpeople.web.service",
+//                    "com.idea.nursing.oldpeople.web.dao",
+//                    "com.idea.nursing.oldpeople.web.domain.pojo"
 //                    "com.idea.nursing.personal.web.service",
 //                    "com.idea.nursing.personal.web.dao",
 //                    "com.idea.nursing.personal.web.domain.pojo"

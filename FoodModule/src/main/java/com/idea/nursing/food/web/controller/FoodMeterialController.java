@@ -2,8 +2,8 @@ package com.idea.nursing.food.web.controller;
 
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
-import com.idea.nursing.food.web.domain.pojo.FoodMaterial;
-import com.idea.nursing.food.web.service.FoodMaterialService;
+import com.idea.nursing.food.web.domain.pojo.FoodMeterial;
+import com.idea.nursing.food.web.service.FoodMeterialService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,22 +15,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 * Created by 10238 on 2016/10/12.
 */
 @Controller
-@RequestMapping("serve/food_material")
-public class FoodMaterialController extends GenericController {
+@RequestMapping("serve/food_meterial")
+public class FoodMeterialController extends GenericController {
     @Autowired
-    private FoodMaterialService foodmaterialService;
+    private FoodMeterialService foodmeterialService;
 
     /**
         * 添加食材配料
-        * @param foodmaterial
+        * @param foodmeterial
         * @return
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(FoodMaterial foodmaterial){
+    public ResultData add(FoodMeterial foodmeterial){
 
         try {
-                foodmaterialService.insert(foodmaterial);
+                    foodmeterialService.insertLevel(foodmeterial);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class FoodMaterialController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                foodmaterialService.delete(id);
+                    foodmeterialService.deleteLevel(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -58,14 +59,14 @@ public class FoodMaterialController extends GenericController {
 
     /**
     * 修改食材配料
-    * @param foodmaterial
+    * @param foodmeterial
     * @return
     */
     @ResponseBody
     @RequestMapping(value="update",method = RequestMethod.POST)
-    public ResultData update(FoodMaterial foodmaterial){
+    public ResultData update(FoodMeterial foodmeterial){
         try {
-            foodmaterialService.update(foodmaterial);
+            foodmeterialService.update(foodmeterial);
 
         } catch (Exception e){
             return ResultData.build().upDateError();
@@ -83,7 +84,18 @@ public class FoodMaterialController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(foodmaterialService.findAll(currentPage,limit));
+        parsePageBean(foodmeterialService.findAll(currentPage,limit));
+    }
+
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",foodmeterialService.findTree());
     }
 
 }

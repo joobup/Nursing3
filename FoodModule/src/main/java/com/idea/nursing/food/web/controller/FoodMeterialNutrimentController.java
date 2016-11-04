@@ -2,8 +2,8 @@ package com.idea.nursing.food.web.controller;
 
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
-import com.idea.nursing.food.web.domain.pojo.FoodMaterialNutriment;
-import com.idea.nursing.food.web.service.FoodMaterialNutrimentService;
+import com.idea.nursing.food.web.domain.pojo.FoodMeterialNutriment;
+import com.idea.nursing.food.web.service.FoodMeterialNutrimentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,22 +15,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 * Created by 10238 on 2016/10/12.
 */
 @Controller
-@RequestMapping("serve/food_material_nutriment")
-public class FoodMaterialNutrimentController extends GenericController {
+@RequestMapping("serve/food_meterial_nutriment")
+public class FoodMeterialNutrimentController extends GenericController {
     @Autowired
-    private FoodMaterialNutrimentService foodmaterialnutrimentService;
+    private FoodMeterialNutrimentService foodmeterialnutrimentService;
 
     /**
         * 添加食材配料和营养物质关系
-        * @param foodmaterialnutriment
+        * @param foodmeterialnutriment
         * @return
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(FoodMaterialNutriment foodmaterialnutriment){
+    public ResultData add(FoodMeterialNutriment foodmeterialnutriment){
 
         try {
-                foodmaterialnutrimentService.insert(foodmaterialnutriment);
+                    foodmeterialnutrimentService.insert(foodmeterialnutriment);
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -48,7 +49,7 @@ public class FoodMaterialNutrimentController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                foodmaterialnutrimentService.delete(id);
+                    foodmeterialnutrimentService.delete(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -58,14 +59,14 @@ public class FoodMaterialNutrimentController extends GenericController {
 
     /**
     * 修改食材配料和营养物质关系
-    * @param foodmaterialnutriment
+    * @param foodmeterialnutriment
     * @return
     */
     @ResponseBody
     @RequestMapping(value="update",method = RequestMethod.POST)
-    public ResultData update(FoodMaterialNutriment foodmaterialnutriment){
+    public ResultData update(FoodMeterialNutriment foodmeterialnutriment){
         try {
-            foodmaterialnutrimentService.update(foodmaterialnutriment);
+            foodmeterialnutrimentService.update(foodmeterialnutriment);
 
         } catch (Exception e){
             return ResultData.build().upDateError();
@@ -83,7 +84,8 @@ public class FoodMaterialNutrimentController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(foodmaterialnutrimentService.findAll(currentPage,limit));
+        parsePageBean(foodmeterialnutrimentService.findAll(currentPage,limit));
     }
+
 
 }
