@@ -21,17 +21,6 @@
 
             </ul>
         </div>
-        <style>
-            #ify-show li {
-                background-color: #fff;
-                margin-left: 1%;
-                width: 97%;
-            }
-
-            #ify-show li cc {
-                float: right;
-            }
-        </style>
     </div>
 </div>
 <#--模态框-->

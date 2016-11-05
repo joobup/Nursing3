@@ -1,10 +1,8 @@
 /**
  * Created by horo on 2016/10/21.
  */
-var currentPage = 1;
-var limit  = 10;
+
 $(function () {
-    findAll();
     $("#cao").click(function () {
         $("#update-btn").hide();
         $("#add-btn").show();
@@ -59,16 +57,19 @@ function findAllServe() {
         })
     })
 }
-function findAll() {
+var pageList;
+var pageNp =1;
+var currentPage = 1;
+var limit  = 10;
+function findAll(currentPage) {
     var url = domainUrl+'/serve/service_pack/findAll';
     var getData={currentPage:currentPage,limit:limit};
     var html='';
     var num ='';
     var serveNum = '';
-    var startTime = '';
-    var endTime = '';
     getAjax(url,false,getData,function (data) {
         num = data.aaData.length;
+        pageList = Math.ceil(data.iTotalRecords / limit);
         console.log(JSON.stringify(data))
         for(var i =0;i<num;i++){
             var serveList ='';
@@ -76,31 +77,62 @@ function findAll() {
             for(var j =0; j< serveNum ; j++){
                 serveList+=''+data.aaData[i].servicesList[j].serveName+'、';
             }
-            endTime =new Date( data.aaData[i].serveEnddate);
-            /*转换日期格式*/
-            var y = endTime.getFullYear();
-            var m = endTime.getMonth() + 1;
-            m = m < 10 ? '0' + m : m;
-            var d = endTime.getDate();
-            d = d < 10 ? ('0' + d) : d;
-            endTime = y + '-' + m + '-' + d;
-            startTime =new Date( data.aaData[i].serveStartdate);
-            var y1 = startTime.getFullYear();
-            var m1 = startTime.getMonth() + 1;
-            m1 = m1 < 10 ? '0' + m1 : m1;
-            var d1 = startTime.getDate();
-            d1 = d1 < 10 ? ('0' + d1) : d1;
-            startTime = y1 + '-' + m1 + '-' + d1;
             html+=' <div class="serve-module-s"><i class="glyphicon glyphicon-pencil bianji" title="编辑" onclick="make(' + data.aaData[i].id + ')"></i><i' +
                 ' class="glyphicon glyphicon-remove shanchu" title="删除"         style="display: none" onclick="del(' + data.aaData[i].id + ')"></i><ul> <li id="staff-mess1"><img src="" alt=""></li>' +
                 ' <li id="staff-mess2"> <ul> <li>名称</li> <li>折扣</li> <li>开始时间</li> <li>结束时间</li> <li>服务项</li> </ul>' +
-                ' <ul class="staff-mess-right"> <li>'+data.aaData[i].serveName+'</li> <li>'+data.aaData[i].serveRebate+'</li> <li id="sdate-text" >'+startTime+'</li> ' +
-                '<li  id="edate-text" >'+endTime+'</li> <li>'+serveList+'</li> </ul> </li> <li id="staff-mess3"> <ul> <li>注意事项</li> <li>护理级别</li><li>服务简介</li> </ul> ' +
+                ' <ul class="staff-mess-right"> <li>'+data.aaData[i].serveName+'</li> <li>'+data.aaData[i].serveRebate+'</li> <li id="sdate-text" >'+data.aaData[i].serveStartdate+'</li> ' +
+                '<li  id="edate-text" >'+data.aaData[i].serveEnddate.substring(0,11)+'</li> <li>'+serveList+'</li> </ul> </li> <li id="staff-mess3"> <ul> <li>注意事项</li>' +
+                ' <li>护理级别</li><li>服务简介</li> </ul> ' +
                 '<ul class="staff-mess-right"> <li>'+data.aaData[i].serveCare+'</li><li>'+data.aaData[i].serveNurseify.nursifyLeave+'</li> <li>'+data.aaData[i].serveBrief+'</li>' +
                 ' </ul> </li>' +
                 ' </ul> </div>';
         }
-        $(".serve-module").html(html)
+        $(".serve-module").html(html);
+        if(pageNp == 1){
+            pageNp =2 ;
+            $(".tcdPageCode").createPage({
+                pageCount: pageList,
+                current: currentPage,
+                backFn: function (p) {
+                    findAllb(p)
+                }
+            });
+        }
+    })
+}
+function findAllb(currentPage) {
+    var url = domainUrl+'/serve/service_pack/findAll';
+    var getData={currentPage:currentPage,limit:limit};
+    var html='<tbody> <tr> <th>名称</th> <th>折扣</th> <th>开始时间</th> <th>结束时间</th> <th>服务项</th> <th>注意事项</th><th>护理级别</th><th>服务简介</th> <th>操作</th></tr> </tbody>';
+    var num ='';
+    var serveNum = '';
+    getAjax(url,false,getData,function (data) {
+        num = data.aaData.length;
+        pageList = Math.ceil(data.iTotalRecords / limit);
+        console.log(JSON.stringify(data))
+        for(var i =0;i<num;i++){
+            var serveList ='';
+            serveNum = data.aaData[i].servicesList.length
+            for(var j =0; j< serveNum ; j++){
+                serveList+=''+data.aaData[i].servicesList[j].serveName+'、';
+            }
+            html+='<tr><td>'+data.aaData[i].serveName+'</td><td>'+data.aaData[i].serveRebate+'</td><td>'+data.aaData[i].serveStartdate+'</td>' +
+                '<td>'+data.aaData[i].serveEnddate.substring(0,11)+'</td><td>'+serveList+'</td><td>'+data.aaData[i].serveCare+'</td>' +
+                '<td>'+data.aaData[i].serveNurseify.nursifyLeave+'</td><td>'+data.aaData[i].serveBrief+'</td>' +
+                '<td><i class="glyphicon glyphicon-pencil bianji" title="编辑" onclick="make(' + data.aaData[i].id + ')"></i>' +
+                '<i class="glyphicon glyphicon-remove shanchu" title="删除" onclick="del(' + data.aaData[i].id + ')"></i></td></tr>';
+        }
+        $("#aaa").html(html);
+        if(pageNp == 1){
+            pageNp =2 ;
+            $(".tcdPageCode").createPage({
+                pageCount: pageList,
+                current: currentPage,
+                backFn: function (p) {
+                    findAllb(p)
+                }
+            });
+        }
     })
 }
 function add() {

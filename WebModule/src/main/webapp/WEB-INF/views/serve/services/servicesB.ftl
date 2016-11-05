@@ -1,6 +1,5 @@
 <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
-
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/initial.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/zyFile.js"></script>
@@ -27,9 +26,8 @@
         <input type="text" class="date_picker" value="2016-01-01" style="text-align: center">
         <date><input type="button" id="cao" value="搜索"></date>
     </div>
-    <an><input type="button" id="cao" value="添加服务" data-toggle="modal" data-target="#myModal" onclick="findAll()"> <input
-            type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input
-            type="button" value="删除服务" " id="shanchu-yes"><input type="button" value="平铺显示" onclick="sideUrl('/serve/services/servicesP')">
+    <an><input type="button" id="cao" value="添加服务" data-toggle="modal" data-target="#myModal" onclick="findAll()">
+        <input type="button" value="平铺显示" onclick="sideUrl('/serve/services/servicesP')">
     </an>
 </div>
 <div class="serve-module">

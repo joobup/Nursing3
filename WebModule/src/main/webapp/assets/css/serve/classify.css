@@ -1,9 +1,11 @@
 .classify-body .ify-title{
-    width: 97%; margin-left: 1%; background-color: #E1E1E1;border-top:2px solid #D0D0D0; height: 35px;
+    width: 97%; margin-left: 1%; background-color: #ff743d;border-top:2px solid #D0D0D0; height: 35px;color:#fff;
 }
+
 .classify-body  div{
     line-height: 32px;
 }
+
 .classify-body  .ify-left{
     width: 20%; float: left; text-align: left;margin-left: 10%;
 }
@@ -18,10 +20,31 @@
 }
 .classify-body a{
     color: #000;text-decoration: none!important; cursor: pointer; margin-left: 10px;
+
 }
-.ify-show{
-    width: 97%; margin-left: 1%; background-color: #fff;border-top:1px solid #D0D0D0; height: 35px;
+.classify-body a:hover{
+    color:#ff743d;
+
 }
-.ify-show2{
-    width: 97%; margin-left: 1%; background-color: #fff; height: 35px; display: none;
+.classify-body .one{
+    color:#000;
+}
+
+/*树样式*/
+#ify-show li {
+    background-color: #fff;
+    margin-left: 1%;
+    width: 97%;
+}
+#ify-show li cc {
+    position: absolute;
+    right: 0;
+    margin-right: 2%;
+}
+#ify-show li cc a{
+    margin: 0 10px 0 0;
+}
+#ify-show li a{
+
+    margin-left: 10%;
 }

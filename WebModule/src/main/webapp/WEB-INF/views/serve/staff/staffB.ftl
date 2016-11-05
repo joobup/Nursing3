@@ -14,7 +14,6 @@
             </div>
             <div class="serve-banner">
                 <an><input type="button" value="添加员工" id="cao" data-toggle="modal" data-target="#myModal">
-                    <input type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input type="button" value="删除员工" " id="shanchu-yes">
                     <input type="button" value="平铺显示" onclick="sideUrl('/serve/staff/staff')">
                 </an>
             </div>

@@ -87,7 +87,7 @@ div, ul {
 .main-body #main-show {
     height: 100%;
     width: 88%;
-    background-color: #F9F9F9;
+    background-color: #EFF3F4;
     float: left;
     overflow: auto;
 }
@@ -240,4 +240,91 @@ div, ul {
     position: fixed;
     color: #fff;
 }
+/*side*/
+.accordion {
+    width: 100%;
+    max-width: 360px;
+    margin: 30px auto 20px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 42px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    background:#FF743D;
+}
 
+.accordion li:last-child .link {
+    border-bottom: 0;
+}
+
+.accordion li i {
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.accordion li i.glyphicon-chevron-up {
+    right: 12px;
+    left: auto;
+    font-size: 16px;
+}
+
+.accordion li.open .link {
+    color: #fff;
+}
+
+.accordion li.open i {
+    color: #fff;
+}
+.accordion li.open i.glyphicon-chevron-up {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.submenu {
+    display: none;
+    background: #444359;
+    font-size: 14px;
+}
+
+.submenu li {
+    border-bottom: 1px solid #4b4a5e;
+}
+
+.submenu a {
+    display: block;
+    text-decoration: none!important;
+    color: #d9d9d9;
+    padding: 12px;
+    text-align:center;
+    -webkit-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+
+}
+
+.submenu a:hover {
+    background: #FF743D;
+    color: #FFF;
+    cursor:pointer;
+}
+.back-color{
+    background-color: #FF743D;
+}

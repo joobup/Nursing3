@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="${domainUrl}/assets/css/index/index.css">
-    <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
-    <link rel="stylesheet" type="text/css" href="${domainUrl}/assets/css/OutCss/Carousel/orbit-1.2.3.css"/>
-    <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="${domainUrl}/assets/js/OutJs/Carousel/Carousel.js"></script>
-    <script type="text/javascript" src="${domainUrl}/assets/js/index/index.js"></script>
-    <title>智慧养老商城</title>
+    <html lang="en">
+            <head>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" href="${domainUrl}/assets/css/index/index.css">
+            <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
+            <link rel="stylesheet" type="text/css" href="${domainUrl}/assets/css/OutCss/Carousel/orbit-1.2.3.css"/>
+            <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="${domainUrl}/assets/js/OutJs/Carousel/Carousel.js"></script>
+<script type="text/javascript" src="${domainUrl}/assets/js/index/index.js"></script>
+<title>智慧养老商城</title>
 </head>
 <script type="text/javascript">
     $(function () {
@@ -19,6 +19,7 @@
         $('#featured').orbit();
     });
     var domainUrl = '${domainUrl}'+"/assets";
+
 </script>
 
 <body>

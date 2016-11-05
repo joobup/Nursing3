@@ -28,7 +28,7 @@ var pageList;
 var pageNp =1;
 function findAllp(currentPage) {
     var url = domainUrl + "/serve/services/findAll";
-    var limit = 3;
+    var limit = 10;
     var getData = {currentPage: currentPage, limit: limit};
     var html = "";
     getAjax(url, false, getData, function (data) {
@@ -60,10 +60,10 @@ function findAllp(currentPage) {
         }
     })
 }
-var pageNb = 1;
+var pageNb2 = 1;
 function findAllb(currentPage) {
     var url = domainUrl + "/serve/services/findAll";
-    var limit = 3;
+    var limit = 10;
     var getData = {currentPage: currentPage, limit: limit};
     var html = "<tbody> <tr> <th>服务标题</th> <th>服务类别</th> <th>限制条件</th> <th>服务人数</th> <th>服务简介</th> <th>操作</th> </tr> </tbody>";
     getAjax(url, false, getData, function (data) {
@@ -79,8 +79,8 @@ function findAllb(currentPage) {
                 ' class="glyphicon glyphicon-remove shanchu" title="删除" style="display: none" onclick="del(' + data.aaData[i].id + ')"></i></td></tr>';
         }
         $("#aaa").html(html)
-        if(pageNb == 1){
-            pageNb =2;
+        if(pageNb2 == 1){
+            pageNb2 =2;
             $(".tcdPageCode").createPage({
                 pageCount: pageList,
                 current: currentPage,

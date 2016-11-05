@@ -1,23 +1,23 @@
+
 <link href="${domainUrl}/assets/css/serve/pack.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/serve/pack.js"></script>
-
 <script>
-    findAll(1);
+    findAllb(1);
 </script>
 <div id="now-position">
     您当前所在的位置：<span>打包模块</span>
 </div>
 <div class="serve-banner">
     <an><input type="button" id="cao" value="打包服务" data-toggle="modal" data-target="#myModal">
-        <input type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no">
-        <input type="button" value="删除服务包" " id="shanchu-yes">
-        <input type="button" value="平铺显示" onclick="sideUrl('/serve/pack/packB')">
+        <input type="button" value="平铺显示" onclick="sideUrl('/serve/pack/pack')">
     </an>
 </div>
 <div class="serve-module">
+    <table id="aaa">
 
+    </table>
 </div>
 <#--分页-->
 <script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
