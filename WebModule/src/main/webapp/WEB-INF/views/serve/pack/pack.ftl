@@ -2,7 +2,8 @@
 <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/serve/pack.js"></script>
-
+<script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
+<script src="${domainUrl}/assets/js/OutJs/upload/webuploader.html5only.min.js"></script>
 <script>
     findAll(1);
 </script>
@@ -15,6 +16,9 @@
         <input type="button" value="删除服务包" " id="shanchu-yes">
         <input type="button" value="平铺显示" onclick="sideUrl('/serve/pack/packB')">
     </an>
+</div>
+<div id="box">
+    <div id="test" ></div>
 </div>
 <div class="serve-module">
 

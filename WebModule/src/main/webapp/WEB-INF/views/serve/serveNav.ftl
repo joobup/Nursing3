@@ -4,7 +4,8 @@
     <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/OutCss/page/page.css" rel="stylesheet" >
     <link href="${domainUrl}/assets/css/OutCss/date/jquery.data_input.pack.css" rel="stylesheet">
-    <link  href="${domainUrl}/assets/css/OutCss/upload/zyUpload.css" rel="stylesheet" type="text/css">
+    <link href="${domainUrl}/assets/css/OutCss/upload/diyUpload.css" rel="stylesheet" >
+    <link href="${domainUrl}/assets/css/OutCss/upload/webuploader.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
@@ -14,6 +15,7 @@
 </head>
 <script>
     var domainUrl = '${domainUrl}' + "/rest";
+    var domainImg = '${domainUrl}';
     var domainFile = '${domainUrl}';
 </script>
 <body>

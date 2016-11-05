@@ -1,9 +1,6 @@
 <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
-<script src="${domainUrl}/assets/js/OutJs/upload/initial.js"></script>
-<script src="${domainUrl}/assets/js/OutJs/upload/zyFile.js"></script>
-<script src="${domainUrl}/assets/js/OutJs/upload/zyUpload.js"></script>
 <script src="${domainUrl}/assets/js/serve/services.js"></script>
 <script src="${domainUrl}/assets/js/serve/serveClassFindAll.js"></script>
 <script>
@@ -66,16 +63,10 @@
                         <td>服务标题</td>
                         <td><input type="text" id="mingcheng" class="null"></td>
                     </tr>
-                    <tr>
-                        <td>服务图片</td>
-                        <td style="text-align: left;"><input type="button" value="添加服务主图" id="xxxx" class="btn btn-info"></td>
-                        <script>
-                            $("#xxxx").click(function () {
-                                $("#demo").show(500);
-                            })
-                        </script>
-                        <div id="demo" class="demo" style="display: none;position: absolute;z-index: 9999;"></div>
-                    </tr>
+                    <#--<tr>-->
+                        <#--<td>服务图片</td>-->
+                        <#--<td style="text-align: left;"><input type="button" value="添加服务主图" id="xxxx" class="btn btn-info"></td>-->
+                    <#--</tr>-->
                     <tr>
                         <td>计费方式</td>
                         <td><select id="serveCost"></select></td>

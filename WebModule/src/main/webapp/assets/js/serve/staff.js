@@ -33,7 +33,6 @@ function add() {
     var staffstatus = $("#staffstatus").val();
     var url = domainUrl + "/serve/service_staff/add";
     var postData = {
-        pictureAddress:pathList,
         staffName: staffname,
         staffSex: staffsex,
         staffPost: staffpost,
@@ -69,15 +68,22 @@ function findAll(currentPage) {
     var limit = 3;
     var getData = {currentPage: currentPage, limit: limit};
     var html = "";
+    var picture='';
     getAjax(url, false, getData, function (data) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
         console.log(JSON.stringify(data))
         for (var i = 0; i < num; i++) {
+            data.aaData[i].staffPicture.pictureAddress =null;
+            if(data.aaData[i].staffPicture.pictureAddress ==null){
+                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/add_img.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
+            }else{
+                picture ='<img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].staffPicture.pictureAddress+'" />';
+            }
             html += '<div class="serve-module-s"> <i class="glyphicon glyphicon-pencil bianji" title="编辑"  data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ','+currentPage+')"></i> <i' +
             ' class="glyphicon' +
             ' glyphicon-remove shanchu" onclick="del(' + data.aaData[i].id + ')"></i> <ul>';
-            html += '<li id="staff-mess1"><img src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].staffPicture.pictureAddress+'" alt=""></li> <li' +
+            html += '<li id="staff-mess1">'+picture+'</li> <li' +
                 ' id="staff-mess2"> <ul>' +
                 ' <li>' + data.aaData[i].staffName + '</li>';
             html += ' <li>职务</li> <li>部门</li> <li>联系方式</li> <li>身份证号</li> </ul> <ul> <li>' + data.aaData[i].staffSex + '</li> <li>' + data.aaData[i].staffPost + '</li> ';
@@ -202,5 +208,17 @@ function update() {
         alert("修改成功");
         $('#myModal').modal("hide");
         location.reload();
+    })
+}
+function upload(id) {
+    $("#box").hide();
+    var url ='';
+    var postData ={
+        id:id,
+        pictureAddress:pathList,
+    };
+    postAjax(url,false,postData,function (data) {
+        alert("上传成功");
+        findAllp(1);
     })
 }

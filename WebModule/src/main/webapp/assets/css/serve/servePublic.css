@@ -328,3 +328,15 @@ div, ul {
 .back-color{
     background-color: #FF743D;
 }
+/*图片上传样式*/
+#box{
+    width:540px;
+    min-height:400px;
+    position: absolute;
+    margin: 0px auto;
+    left:0;
+    right:0;
+    transition: .3s;
+    z-index: 9999;
+}
+

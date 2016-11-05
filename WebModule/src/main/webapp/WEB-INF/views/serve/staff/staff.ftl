@@ -1,11 +1,9 @@
     <link href="${domainUrl}/assets/css/serve/staff.css" rel="stylesheet">
-    <link href="${domainUrl}/assets/css/OutCss/upload/zyUpload.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/serve/staff.js"></script>
     <script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
-    <script src="${domainUrl}/assets/js/OutJs/upload/initial.js"></script>
-    <script src="${domainUrl}/assets/js/OutJs/upload/zyFile.js"></script>
-    <script src="${domainUrl}/assets/js/OutJs/upload/zyUpload.js"></script>
+    <script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
+    <script src="${domainUrl}/assets/js/OutJs/upload/webuploader.html5only.min.js"></script>
     <script>
         findAll(1);
     </script>
@@ -18,6 +16,9 @@
                     <input type="button" value="表格显示" onclick="sideUrl('/serve/staff/staffB')">
                 </an>
             </div>
+    <div id="box">
+        <div id="test" ></div>
+    </div>
             <div class="serve-module">
 
             </div>
@@ -51,16 +52,16 @@
                             <td>技能等级</td>
                             <td><input type="text" id="staffskilllevel"></td>
                         </tr>
-                        <tr>
-                            <td>员工照片</td>
-                            <td style="text-align: left;"><input type="button" value="添加员工主图" id="xxxx" class="btn btn-info"> </td>
-                            <script>
-                                $("#xxxx").click(function () {
-                                    $("#demo").show(500);
-                                })
-                            </script>
-                            <div id="demo" class="demo" style="display: none;position: absolute;z-index: 9999;"></div>
-                        </tr>
+                        <#--<tr>-->
+                            <#--<td>员工照片</td>-->
+                            <#--<td style="text-align: left;"><input type="button" value="添加员工主图" id="xxxx" class="btn btn-info"> </td>-->
+                            <#--<script>-->
+                                <#--$("#xxxx").click(function () {-->
+                                    <#--$("#demo").show(500);-->
+                                <#--})-->
+                            <#--</script>-->
+                            <#--<div id="demo" class="demo" style="display: none;position: absolute;z-index: 9999;"></div>-->
+                        <#--</tr>-->
                         <tr>
                             <td>员工部门</td>
                             <td><input type="text" id="staffdepartment"></td>

@@ -23,6 +23,7 @@ $(function () {
     $(function(){
         $('.date_picker').date_input();
     })
+
 })
 var pageList;
 var pageNp =1;
@@ -31,22 +32,28 @@ function findAllp(currentPage) {
     var limit = 10;
     var getData = {currentPage: currentPage, limit: limit};
     var html = "";
+    var picture='';
     getAjax(url, false, getData, function (data) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
         console.log(JSON.stringify(data) + "..." + num);
         for (var i = 0; i < num; i++) {
+            data.aaData[i].mainPicture.pictureAddress =null;
+            if(data.aaData[i].mainPicture.pictureAddress ==null){
+                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/add_img.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
+            }else{
+                picture ='<img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].mainPicture.pictureAddress+'" />';
+            }
             html += ' <div class="serve-module-s"><i title="添加计费类别" data-toggle="modal"  data-target="#myModalCost" onclick="costAdd(' + data.aaData[i].id + ')" class="glyphicon' +
                 ' glyphicon-plus"' +
                 '     style="margin-right:30px;"></i>' +
                 '<i   class="glyphicon glyphicon-pencil bianji" title="编辑" data-toggle="modal"  data-target="#myModal"   onclick="make(' + data.aaData[i].id + ')"></i> ' +
                 ' <i     class="' + ' glyphicon' + ' glyphicon-remove shanchu"    onclick="del(' + data.aaData[i].id + ')" title="删除"></i>';
-            html +='<ul><li class="servePicture"><img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].mainPicture.pictureAddress+'"' +
-                ' />' +
-                ' </li></ul>';
+            html +='<ul><li class="servePicture">'+picture+'</li></ul>';
             html += '<ul id="zuo-font"><li>服务标题<span>' + data.aaData[i].serveName + '</span></li><li>服务类别<span>' + data.aaData[i].serveClassify.serveClassname + '</span></li> <li>限制条件<span>' + data.aaData[i].serveLimit + '</span></li> <li>服务人数<span>' + data.aaData[i].servePeoples + '</span></li></ul>';
             html += '<ul id="you-font1"><li>服务简介</li> </ul> <ul id="you-font2"> <li>' + data.aaData[i].serveBiref + '</li></ul></div>';
         }
+
         $(".serve-module").html(html)
         if(pageNp == 1){
             pageNp =2 ;
@@ -68,7 +75,6 @@ function findAllb(currentPage) {
     var html = "<tbody> <tr> <th>服务标题</th> <th>服务类别</th> <th>限制条件</th> <th>服务人数</th> <th>服务简介</th> <th>操作</th> </tr> </tbody>";
     getAjax(url, false, getData, function (data) {
         pageList = Math.ceil(data.iTotalRecords / limit);
-        console.log(pageList)
         var num = data.aaData.length;
         console.log(JSON.stringify(data) + "..." + num);
         for (var i = 0; i < num; i++) {
@@ -100,7 +106,7 @@ function cost() {
         for(var i =0;  i < num ; i++){
             html +='<option value="'+data.aaData[i].id+'">'+data.aaData[i].classesValuationName+'</option>';
         }
-        $(".serveCost").html(html)
+        $("#serveCost").html(html)
 
     })
 }
@@ -125,7 +131,6 @@ function costAdd(id) {
 var serveClassify ;
 function add() {
     var serveCost = $(".serveCost").val();
-    var pictureAddress = pathList;
     var price = $("#costPirce").val();
     var serveName = $("#mingcheng").val();
     var serveBiref = $("#jianjie").val();
@@ -135,7 +140,6 @@ function add() {
     var postData = {
         valuationId:serveCost,
         price:price,
-        pictureAddress:pictureAddress,
         serveName: serveName,
         serveLimit: serveLimit,
         servePeoples: servePeoples,
@@ -206,6 +210,18 @@ function update() {
     postAjax(url, false, postData, function (data) {
         alert("修改成功")
         $('#myModal').modal("hide");
+        findAllp(1);
+    })
+}
+function upload(id) {
+    $("#box").hide();
+    var url ='';
+    var postData ={
+        id:id,
+        pictureAddress:pathList,
+    };
+    postAjax(url,false,postData,function (data) {
+        alert("上传成功");
         findAllp(1);
     })
 }
