@@ -6,7 +6,8 @@ $(function () {
         $(this).addClass("back-color").siblings().removeClass("back-color");
     })
 })
-
+var currentPage = 1;
+var limit = 10;
 function sideUrl(url) {
     var url = domainUrl+url;
     console.log(url)

@@ -74,7 +74,6 @@ function findAll(currentPage) {
         var num = data.aaData.length;
         console.log(JSON.stringify(data))
         for (var i = 0; i < num; i++) {
-            data.aaData[i].staffPicture.pictureAddress =null;
             if(data.aaData[i].staffPicture.pictureAddress ==null){
                 picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/add_img.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
             }else{
