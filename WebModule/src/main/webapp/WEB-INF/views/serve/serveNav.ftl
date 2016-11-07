@@ -30,9 +30,9 @@
                     <div class="link"><i class="glyphicon glyphicon-plus-sign"></i>服务模块<i class="glyphicon glyphicon-chevron-up"></i></div>
                     <ul class="submenu">
                         <li><a onclick="sideUrl('/serve/services/servicesB')">服务</a></li>
-                        <li><a onclick="sideUrl('/serve/staff/staffB')">员工</a></li>
                         <li><a onclick="sideUrl('/serve/classify/classify')">类别</a></li>
                         <li><a onclick="sideUrl('/serve/cost/cost')">计费</a></li>
+                        <li><a onclick="sideUrl('/serve/staff/staffB')">员工</a></li>
                         <li><a onclick="sideUrl('/serve/pack/packB')">打包</a></li>
                     </ul>
                 </li>
