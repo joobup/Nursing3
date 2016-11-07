@@ -216,9 +216,9 @@ function update() {
 function upload(id) {
     $("#aaaa").hide();
     $("#box").hide();
-    var url ='';
+    var url =domainUrl+'/serve/service_pack_picture/adds';
     var postData ={
-        id:id,
+        serviceId:id,
         pictureAddress:pathList,
     };
     postAjax(url,false,postData,function (data) {

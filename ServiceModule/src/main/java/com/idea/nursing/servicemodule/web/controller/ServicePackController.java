@@ -23,10 +23,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ServicePackController extends GenericController {
     @Autowired
     private ServicePackService servicepackService;
-    @Autowired
-    private CommentPictureService commentPictureService;
-    @Autowired
-    private ServicePackPictureService servicePackPictureService;
+//    @Autowired
+//    private CommentPictureService commentPictureService;
+//    @Autowired
+//    private ServicePackPictureService servicePackPictureService;
     @Autowired
     private ServicePackItemService servicePackItemService;
 
@@ -41,14 +41,14 @@ public class ServicePackController extends GenericController {
      */
     @ResponseBody
     @RequestMapping(value = "add", method = RequestMethod.POST)
-    public ResultData add(ServicePack servicepack, String pictureAddress) {
+    public ResultData add(ServicePack servicepack) {
 
         try {
             servicepack =servicepackService.insert(servicepack);
-            if(pictureAddress!=null){
-                Long[] pictureIds = commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPAGEPCITURE.key);
-                servicePackPictureService.inserts(servicepack.getId(),pictureIds);
-            }
+//            if(pictureAddress!=null){
+//                Long[] pictureIds = commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPAGEPCITURE.key);
+//                servicePackPictureService.inserts(servicepack.getId(),pictureIds);
+//            }
 
 
             //添加服务项关系
