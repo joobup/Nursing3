@@ -21,7 +21,7 @@ div, ul {
     width: 100%;
     height: 8%;
     background-color: #fff;
-    border-bottom: 1px solid #FF743D;
+    border-bottom: 1px solid #ff743d;
     min-height: 90px;
 }
 .head-banner #logo {
@@ -50,7 +50,7 @@ div, ul {
     cursor: pointer;
 }
 #user-status b:hover {
-    color: #FF4B01;
+    color: #ff743d;
 }
 
 #user-status tui {
@@ -63,7 +63,7 @@ div, ul {
 }
 
 #user-status tui:hover {
-    color: #FF4B01;
+    color: #ff743d;
 }
 /*主题内容*/
 .main-body {
@@ -124,7 +124,7 @@ div, ul {
 }
 
 #main-show .serve-banner  input[type="button"]:hover {
-    background-color: #FF4B01;
+    background-color: #ff743d;
 }
 #main-show #date-input{
     height: 55px; display: flex;align-items: center; float: left;
@@ -154,7 +154,7 @@ div, ul {
     transition: .3s;
 }
 .serve-module-s:hover{
-    box-shadow: 0px 0px 5px 2px #FF4B01;
+    box-shadow: 0px 0px 5px 2px #ff743d;
 }
 .serve-module-s i {
     position: absolute;
@@ -162,7 +162,7 @@ div, ul {
     top: 15px;
     cursor: pointer;
     font-size: 18px;
-    color:#FF4B01;
+    color: #ff743d;
 }
 
 .serve-module-s .shanchu {
@@ -186,8 +186,8 @@ div, ul {
     border:1px  solid #E5E5E5;
     font-size: 16px;
     padding: 9px 0px 9px 0px;
-    background-color: #BFBFBF!important;
-    color: #000!important;
+    background-color: #FF743D!important;
+    color: #fff!important;
 }
 .serve-module table td{
     border:1px solid #E5E5E5;
@@ -196,7 +196,7 @@ div, ul {
     padding: 9px 0px 9px 0px;
 }
 .serve-module table tr:hover{
-    background-color: #FF4B01;
+    background-color: #ff743d;
     color: #fff;
 }
 /*添加窗口*/
@@ -273,7 +273,7 @@ div, ul {
     top: 16px;
     left: 12px;
     font-size: 18px;
-    color: #595959;
+    color: #ffffff;
     -webkit-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
@@ -326,17 +326,16 @@ div, ul {
     cursor:pointer;
 }
 .back-color{
-    background-color: #FF743D;
+    background-color: #ff743d;
 }
 /*图片上传样式*/
 #box{
-    width:540px;
-    min-height:400px;
     position: absolute;
     margin: 0px auto;
     left:0;
     right:0;
     transition: .3s;
     z-index: 9999;
+    top: 30%;
 }
 

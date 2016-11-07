@@ -20,6 +20,7 @@ function sideUrl(url) {
 }
 /*上传图片显示*/
 function uploadShow(id) {
+    $("#aaaa").show();
     $("#box").show();
     $('#test').diyUpload({
         url:domainUrl+'/uploads',
@@ -30,7 +31,12 @@ function uploadShow(id) {
             console.info( err );
         }
     });
-    $("#box").css("background-color","#a0a3a3");
+    $("#box").css("background-color","#ffffff").css("width","530px").css("min-height","30px").css("padding-bottom","20px").css("border-radius","3px");
     var html='<input type="button" value="确认添加" onclick="upload('+id+')">'
     $("#test").append(html);
+    $("#aaaa").click(function () {
+        $("#aaaa").hide();
+        $("#box").hide();
+    });
 }
+

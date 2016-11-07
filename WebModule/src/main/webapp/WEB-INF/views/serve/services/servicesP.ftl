@@ -11,6 +11,12 @@
 <div id="now-position">
     您当前所在的位置：<span>服务模块</span>
 </div>
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #DDD; opacity: .5; z-index:999; display: none;" id="aaaa">
+
+</div>
+<div id="box">
+    <div id="test" ></div>
+</div>
 <div class="serve-banner">
 <#--时间控件-->
     <div id="date-input">
@@ -26,9 +32,7 @@
         <input type="button" value="表格显示" onclick="sideUrl('/serve/services/servicesB')">
     </an>
 </div>
-<div id="box">
-    <div id="test" ></div>
-</div>
+
 <div class="serve-module">
 
 </div>

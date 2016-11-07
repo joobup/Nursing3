@@ -214,6 +214,7 @@ function update() {
     })
 }
 function upload(id) {
+    $("#aaaa").hide();
     $("#box").hide();
     var url ='';
     var postData ={

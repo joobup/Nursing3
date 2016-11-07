@@ -1,5 +1,7 @@
 .webuploader-container {
     position: relative;
+    display: flex;
+    margin: 20px 0px 20px 50px;
 }
 .webuploader-element-invisible {
     position: absolute !important;
@@ -10,16 +12,35 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
-    background: #00b7ee;
-    padding: 10px 15px;
+    background: #2b3949;
+    width:100px;
+    height:30px;
+    border-radius: 5px;
     color: #fff;
+    line-height: 30px;
     text-align: center;
-    border-radius: 3px;
     overflow: hidden;
 }
+
+
 .webuploader-pick-hover {
-    background: #00a2d4;
+    background: #FF743D;
 }
+
+.webuploader-container input{
+    background: #2b3949;
+    width:100px;
+    height:30px;
+    border-radius: 5px;
+    color:#fff;
+    border:0px;
+    margin-left:200px;
+}
+
+.webuploader-container input:hover{
+    background: #FF743D;
+}
+
 
 .webuploader-pick-disable {
     opacity: 0.6;

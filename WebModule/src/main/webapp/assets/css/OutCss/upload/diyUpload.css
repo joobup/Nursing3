@@ -5,6 +5,7 @@
     height:auto;
     overflow:hidden;
     position:relative;
+    margin:auto;
 }
 .parentFileBox>.fileBoxUl {
     position:relative;
@@ -12,10 +13,11 @@
     height:auto;
     overflow:hidden;
     padding-bottom:5px;
+
 }
 .parentFileBox>.fileBoxUl>li {
     float:left;
-    border:1px solid #09F;
+    border:1px solid #ff743d;
     border-radius:5px;
     width:170px;
     height:150px;
@@ -23,7 +25,7 @@
     margin-left:5px;
     overflow:hidden;
     position:relative;
-    background-color:#099;
+    background-color: #ff743d;
 }
 .parentFileBox>.fileBoxUl>li>.viewThumb {
     position:absolute;
@@ -32,9 +34,10 @@
     width:170px;
     height:150px;
     overflow:hidden;
+    background:#ffffff;
 }
 .parentFileBox>.fileBoxUl>li>.viewThumb>img {
-    width:100%;
+    width:175px;
     height:100%;
 }
 .parentFileBox>.fileBoxUl>li>.diyCancel,.parentFileBox>.fileBoxUl>li>.diySuccess {
@@ -88,7 +91,7 @@
     top:42%;
     height:24px;
     width:100%;
-    background-color:#09F;
+    background-color: #ff743d;
     filter:alpha(opacity=70);
     -moz-opacity:0.7;
     opacity:0.7;
@@ -104,26 +107,25 @@
 }
 .parentFileBox>.diyButton>a {
     padding:5px 10px 5px 10px;
-    background-color:#09C;
+    background-color: #2b3949;
     color:#FFF;
     font-size:12px;
     text-decoration:none;
     border-radius:3px;
 }
 .parentFileBox>.diyButton>a:hover {
-    background-color:#0CC;
-    color:#F30;
+    background-color: #ff743d;
+    color: #ffffff;
 }
 .parentFileBox>.fileBoxUl>li:hover {
-    -moz-box-shadow: 3px 3px 4px #FF0;
-    -webkit-box-shadow: 3px 3px 4px #FF0;
-    box-shadow: 3px 3px 4px #FF0;
+
 }
 .parentFileBox>.fileBoxUl>.diyUploadHover:hover .diyCancel {
     display:block;
 }
 .parentFileBox>.fileBoxUl>li:hover .diyFileName {
     display:block;
+    background-color: #ff743d;
 }
 .avi_diy_bg,.txt_diy_bg,.doc_diy_bg,.zip_diy_bg,.csv_diy_bg,.xls_diy_bg,.mp3_diy_bg,.pdf_diy_bg,.rar_diy_bg {
     background-position:center;
