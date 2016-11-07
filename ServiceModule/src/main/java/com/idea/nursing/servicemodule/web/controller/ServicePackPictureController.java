@@ -50,7 +50,7 @@ public class ServicePackPictureController extends GenericController {
      * @return
      */
     @ResponseBody
-    @RequestMapping(value="add" ,method = RequestMethod.POST)
+    @RequestMapping(value="adds" ,method = RequestMethod.POST)
     public ResultData adds(Long serviceId,String pictureAddress){
         try {
 
