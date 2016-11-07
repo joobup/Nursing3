@@ -219,6 +219,7 @@ function make(id) {
 }
 function upload(id) {
     $("#box").hide();
+    $("#aaaa").hide();
     var url =domainUrl+'/serve/service_pack_picture/adds';
     var postData ={
         servicePackId:id,

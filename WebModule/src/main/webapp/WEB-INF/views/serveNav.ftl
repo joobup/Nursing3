@@ -36,6 +36,15 @@
                         <li><a onclick="sideUrl('/serve/pack/packB')">打包</a></li>
                     </ul>
                 </li>
+                <li>
+                    <div class="link"><i class="glyphicon glyphicon-plus-sign"></i>老人模块<i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <ul class="submenu">
+                        <li><a onclick="sideUrl('/oldMan/oldMan')">老人信息登记表</a></li>
+                    </ul>
+                </li>
+
+
+
             </ul>
         </div>
 

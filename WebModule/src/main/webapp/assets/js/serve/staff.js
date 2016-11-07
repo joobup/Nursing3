@@ -212,6 +212,7 @@ function update() {
 }
 function upload(id) {
     $("#box").hide();
+    $("#aaaa").hide();
     var url =domainUrl+'/serve/service_pack_picture/adds';
     var postData ={
         serviceId:id,
