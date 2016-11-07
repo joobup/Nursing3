@@ -1,0 +1,30 @@
+<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
+<script src="${domainUrl}/assets/js/institution/olderMan/servicePeopleRegister.js"></script>
+<input type="text" id="servicePeopleId">
+<input type="text" id="birthday">
+<input type="text" id="nation">
+<input type="text" id="identityCard">
+<input type="text" id="homeAddress">
+<input type="text" id="liveCondition">
+<input type="text" id="selfCareAbility">
+<input type="text" id="personalClassify">
+<input type="text" id="politicsStatus">
+<input type="text" id="cultureLevel">
+<input type="text" id="medicalWay">
+<input type="text" id="monthIncome">
+<input type="text" id="marriageStatus">
+<input type="text" id="faith">
+<input type="text" id="call1Name">
+<input type="text" id="call1Old">
+<input type="text" id="call1">
+<input type="text" id="call2Name">
+<input type="text" id="call2Old">
+<input type="text" id="call2">
+<input type="text" id="childAll">
+<input type="text" id="childBoy">
+<input type="text" id="childGirl">
+<input type="text" id="homeOldCard">
+<input type="text" id="workName">
+<input type="text" id="checkPeoPle">
+<input type="text" id="checkDate">
+<input type="button"value="添加" onclick="add()">

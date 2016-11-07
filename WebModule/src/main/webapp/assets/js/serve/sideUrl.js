@@ -3,6 +3,7 @@
  */
 $(function () {
     $(".submenu li").click(function () {
+        $(".submenu li").parents(".submenu").children("li").removeClass("back-color");
         $(this).addClass("back-color").siblings().removeClass("back-color");
     })
 })

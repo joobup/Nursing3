@@ -3,6 +3,9 @@
  */
 /*服务对象模块*/
 //添加
+$(function () {
+    findAll(1);
+})
 function add() {
     var url = domainUrl + '/serve/service_people/add';
     var servicePeopleName = $("#servicePeopleName").val();
@@ -29,6 +32,7 @@ function add() {
         servicePeopleTypeId:servicePeopleTypeId,
         nursingLeave:nursingLeave,
     };
+    console.log(postData)
     postAjax(url,false,postData,function (data) {
         alert("添加成功");
         findAll(1);
@@ -43,7 +47,7 @@ function findAll(currentPage) {
     };
     var html='';
     getAjax(url,false,getData,function (data) {
-        
+        console.log(JSON.stringify(data))
     })
 }
 //删除
