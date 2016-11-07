@@ -25,10 +25,10 @@ public class ServicesController extends GenericController {
     @Autowired
     private ServicesService servicesService;
 
-    @Autowired
-    private CommentPictureService commentPictureService;
-    @Autowired
-    private ServicesPictureService servicesPictureService;
+//    @Autowired
+//    private CommentPictureService commentPictureService;
+//    @Autowired
+//    private ServicesPictureService servicesPictureService;
 
     @Autowired
     private ServiceClassesValuationRelationService serviceClassesValuationRelationService;
@@ -41,14 +41,13 @@ public class ServicesController extends GenericController {
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(Services services, String pictureAddress, ServiceClassesValuationRelation serviceClassesValuationRelation){
-        System.out.println(pictureAddress);
+    public ResultData add(Services services,  ServiceClassesValuationRelation serviceClassesValuationRelation){
         try {
             services = servicesService.insert(services);
-            //添加图片
-            Long[] pictureIds =  commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPICTURE.key);
-            //添加服务图片一对多
-            servicesPictureService.inserts(services.getId(),pictureIds);
+//            //添加图片
+//            Long[] pictureIds =  commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPICTURE.key);
+//            //添加服务图片一对多
+//            servicesPictureService.inserts(services.getId(),pictureIds);
             //添加计费方式
             serviceClassesValuationRelation.setServeId(services.getId());
             serviceClassesValuationRelationService.insert(serviceClassesValuationRelation);
