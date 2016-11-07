@@ -83,7 +83,7 @@ var pathList ='';
                 });
                 if ( successCallBack ) {
                     // successCallBack( response );
-                    var path = JSON.stringify(response.aaData[0].path);
+                    var path = response.aaData[0].path;
                     pathList +=''+path+','
                     console.log(pathList)
                 }

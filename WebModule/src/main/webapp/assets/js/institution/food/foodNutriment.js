@@ -19,10 +19,9 @@ function foodAdd() {
     })
 }
 //查询
-var currentPage = 1;
-var limit = 10;
-function foodFindAll() {
+function foodFindAll(currentPage) {
     var url = domainUrl+"/serve/dishes/ys_nutriment/findAll";
+    var html='';
     var getData = {
         currentPage:currentPage,
         limit:limit,

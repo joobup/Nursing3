@@ -4,7 +4,7 @@
 /*菜品类别*/
 //添加
 function foodAdd() {
-    var url = domainUrl+"/serve/dishes/ys_dishes_type/add";
+    var url = domainUrl+"/serve/dishes/add";
     var dishesTypeName = $("#dishesTypeName").val();
     var dishesTypeLeave = $("#dishesTypeLeave").val();
     var tid = $("#tid").val();
@@ -19,10 +19,9 @@ function foodAdd() {
     })
 }
 //查询
-var currentPage = 1;
-var limit = 10;
-function foodFindAll() {
-    var url = domainUrl+"/serve/dishes/ys_dishes_type/findAll";
+function foodFindAll(currentPage) {
+    var url = domainUrl+"/serve/dishes/findAll";
+    var html='';
     var getData = {
         currentPage:currentPage,
         limit:limit,
@@ -33,7 +32,7 @@ function foodFindAll() {
 }
 //修改
 function update(id) {
-    var url = domainUrl+"/serve/dishes/ys_dishes_type/update";
+    var url = domainUrl+"/serve/dishes/update";
     var dishesTypeName = $("#dishesTypeName").val();
     var dishesTypeLeave = $("#dishesTypeLeave").val();
     var tid = $("#tid").val();
@@ -49,7 +48,7 @@ function update(id) {
 }
 //删除
 function del(id) {
-    var url = domainUrl + "/serve/dishes/ys_dishes_type/del";
+    var url = domainUrl + "/serve/dishes/del";
     var postData={id:id};
     postAjax(url,false,postData,function (data) {
         alert("删除成功");

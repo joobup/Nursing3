@@ -38,7 +38,6 @@ function findAllp(currentPage) {
         var num = data.aaData.length;
         console.log(JSON.stringify(data) + "..." + num);
         for (var i = 0; i < num; i++) {
-            data.aaData[i].mainPicture.pictureAddress =null;
             if(data.aaData[i].mainPicture.pictureAddress ==null){
                 picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/add_img.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
             }else{
@@ -214,13 +213,15 @@ function update() {
     })
 }
 function upload(id) {
+    console.log(pathList)
     $("#aaaa").hide();
     $("#box").hide();
-    var url =domainUrl+'/serve/service_pack_picture/adds';
+    var url =domainUrl+'/serve/services_picture/adds';
     var postData ={
         serviceId:id,
         pictureAddress:pathList,
     };
+    console.log(postData)
     postAjax(url,false,postData,function (data) {
         alert("上传成功");
         findAllp(1);

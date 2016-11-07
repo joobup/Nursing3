@@ -74,7 +74,6 @@ function findAll(currentPage) {
         console.log(JSON.stringify(data))
         for(var i =0;i<num;i++){
             var serveList ='';
-            serveNum = data.aaData[i].servicesList.length
             for(var j =0; j< serveNum ; j++){
                 serveList+=''+data.aaData[i].servicesList[j].serveName+'、';
             }
