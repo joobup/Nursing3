@@ -330,8 +330,6 @@ div, ul {
 }
 /*图片上传样式*/
 #box{
-    width:540px;
-    min-height:400px;
     position: absolute;
     margin: 0px auto;
     left:0;

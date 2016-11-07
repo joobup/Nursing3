@@ -30,7 +30,7 @@ function uploadShow(id) {
             console.info( err );
         }
     });
-    $("#box").css("background-color","#a0a3a3");
+    $("#box").css("background-color","#a0a3a3").css("width","500px").css("min-height","400px");
     var html='<input type="button" value="确认添加" onclick="upload('+id+')">'
     $("#test").append(html);
 }

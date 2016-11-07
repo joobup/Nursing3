@@ -45,18 +45,18 @@ public class ServicePackPictureController extends GenericController {
 
     /**
      * 批量添加服务打包图片
-     * @param serviceId
+     * @param servicePackId
      * @param pictureAddress
      * @return
      */
     @ResponseBody
     @RequestMapping(value="adds" ,method = RequestMethod.POST)
-    public ResultData adds(Long serviceId,String pictureAddress){
+    public ResultData adds(Long servicePackId,String pictureAddress){
         try {
 
             //添加图片
             Long[] pictureIds =  commentPictureService.insertPictures(pictureAddress, SessionConstant.PictureType.SERVICEPAGEPCITURE.key);
-            servicepackpictureService.inserts(serviceId,pictureIds);
+            servicepackpictureService.inserts(servicePackId,pictureIds);
 
 
         }catch (Exception e){
