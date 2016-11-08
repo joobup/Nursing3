@@ -9,7 +9,6 @@
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script src="${domainUrl}/assets/js/serve/sideUrl.js"></script>
-    <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
     <meta charset="utf-8"/>
     <title></title>
 </head>
@@ -50,6 +49,7 @@
                     <ul class="submenu">
                         <li><a onclick="sideUrl('/food/foodList')">饮食列表</a></li>
                         <li><a onclick="sideUrl('/food/foodClassify')">饮食分类</a></li>
+                        <li><a onclick="sideUrl('/food/foodMaterial')">食材配料</a></li>
                     </ul>
                 </li>
             </ul>

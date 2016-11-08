@@ -16,7 +16,9 @@ function sideUrl(url) {
         type: "get",
         url: url,
         success: function (data) {
+            data+='<script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script> '
             $("#main-show").html(data)
+            console.log(data)
         }
     });
 }

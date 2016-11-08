@@ -3,8 +3,11 @@
  */
 /*食材配料表*/
 //添加
-function foodAdd() {
-    var url = domainUrl+"/serve/dishes/ys_food_meterial/add";
+$(function () {
+    findAll(1);
+})
+function add() {
+    var url = domainUrl+"/serve/food_meterial/add";
     var meterialTypeName = $("#meterialTypeName").val();
     var meterialTypeLevel = $("#meterialTypeLevel").val();
     var tid = $("#tid").val();
@@ -15,24 +18,24 @@ function foodAdd() {
     };
     postAjax(url,false,postData,function (data) {
         alert("添加成功");
-        foodFindAll();
+        findAll();
     })
 }
 //查询
-function foodFindAll(currentPage) {
-    var url = domainUrl+"/serve/dishes/ys_food_meterial/findAll";
+function findAll(currentPage) {
+    var url = domainUrl+"/serve/food_meterial/findAll";
     var html='';
     var getData = {
         currentPage:currentPage,
         limit:limit,
     };
     getAjax(url,false,getData,function (data) {
-
+        console.log(JSON.stringify(data))
     })
 }
 //修改
 function update(id) {
-    var url = domainUrl+"/serve/dishes/ys_food_meterial/update";
+    var url = domainUrl+"/serve/food_meterial/update";
     var meterialTypeName = $("#meterialTypeName").val();
     var meterialTypeLevel = $("#meterialTypeLevel").val();
     var postData = {
@@ -42,15 +45,15 @@ function update(id) {
     };
     postAjax(url,false,postData,function (data) {
         alert("修改成功");
-        foodFindAll();
+        findAll();
     })
 }
 //删除
 function del(id) {
-    var url = domainUrl + "/serve/dishes/ys_food_meterial/del";
+    var url = domainUrl + "/serve/food_meterial/del";
     var postData={id:id};
     postAjax(url,false,postData,function (data) {
         alert("删除成功");
-        foodFindAll();
+        findAll();
     })
 }
