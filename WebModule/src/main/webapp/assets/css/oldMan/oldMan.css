@@ -37,3 +37,29 @@
 .servePicture{
     float: left; width: 100px; text-align: center;padding-top: 45px; margin-left: 20px;
 }
+
+.add input{
+    width: 200px;
+    height: 25px;
+    border: 1px solid #E7E7E7;
+}
+
+/*静态页面css*/
+.zong{padding-left:1%}
+.box{background:#fff;width:31%;height:200px;margin: 0px 1% 15px 1%;border-radius: 2px;position: relative;min-width: 450px;}
+.box:hover{box-shadow: 0px 0px 5px 2px #ff743d;}
+.box ul{padding-top:20px;}
+.box .box-left{margin-right:20px;margin-left:20px;}
+.box .box-left img{width:100px;height:100px;margin-top:25px;}
+.box .box-con{margin-right:20px;}
+.box .box-con ul li span{float: right;}
+.box .box-con ul li{height:18%;}
+.box .box-right ul li{height:18%;}
+.box .box-right ul li span{float: right;}
+
+button{outline:none !important;position:absolute;right:5px;bottom: 5px;}
+.btn1-style{width:100px;height:30px;background:#FF743D;border:0px; text-shadow:none;}
+.btn1-style:hover{border:0px;background:#FF743D}
+.btn1-style:focus{background:#FF743D}
+.btn2-style{width:100px;height:30px;background:#2B3949;color:#ffffff;border:0px; text-shadow:none;}
+.btn2-style:hover{border:0px;background:#FF743D;color:#fff;}
