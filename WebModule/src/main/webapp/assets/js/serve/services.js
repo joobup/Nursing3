@@ -29,7 +29,7 @@ var pageList;
 var pageNp =1;
 function findAllp(currentPage) {
     var url = domainUrl + "/serve/services/findAll";
-    var limit = 10;
+    var limit = 9;
     var getData = {currentPage: currentPage, limit: limit};
     var html = "";
     var picture='';
