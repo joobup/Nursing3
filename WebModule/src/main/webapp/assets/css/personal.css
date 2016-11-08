@@ -11,6 +11,7 @@
 /*个人中心内容*/
 #personal-main-fr{ width: 1095px;  float: right;}
 #personal-main-fr #personal-order-list li{width: 217.8px; height: 40px; float: left; text-align: center; line-height: 40px; cursor: pointer; font-size: 18px;
+
     border-top: 1px solid #a0a3a3; border-right: 1px solid #a0a3a3; border-bottom: 1px solid #a0a3a3;
 }
 #personal-main-fr #personal-order-list li:hover{background-color: #DADADA; }
