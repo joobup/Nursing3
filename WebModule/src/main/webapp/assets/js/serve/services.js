@@ -106,7 +106,6 @@ function cost() {
             html +='<option value="'+data.aaData[i].id+'">'+data.aaData[i].classesValuationName+'</option>';
         }
         $("#serveCost").html(html)
-
     })
 }
 function costAdd(id) {
@@ -122,14 +121,14 @@ function costAdd(id) {
         };
         postAjax(url,false,postData,function (data) {
             alert("添加成功");
-            $('#myModal').modal("hide");
             findAllp(1);
+            $('#myModal').modal("hide");
         })
     })
 }
 var serveClassify ;
 function add() {
-    var serveCost = $(".serveCost").val();
+    var serveCost = $("#serveCost").val();
     var price = $("#costPirce").val();
     var serveName = $("#mingcheng").val();
     var serveBiref = $("#jianjie").val();
@@ -148,8 +147,8 @@ function add() {
     };
     postAjax(url, false, postData, function (data) {
         alert("添加成功");
-        $('#myModal').modal("hide");
         findAllp(1);
+        $('#myModal').modal("hide");
     })
 }
 function del(id) {
@@ -208,8 +207,8 @@ function update() {
     };
     postAjax(url, false, postData, function (data) {
         alert("修改成功")
-        $('#myModal').modal("hide");
         findAllp(1);
+        $('#myModal').modal("hide");
     })
 }
 function upload(id) {

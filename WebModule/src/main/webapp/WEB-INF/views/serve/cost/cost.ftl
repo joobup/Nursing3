@@ -1,5 +1,4 @@
-
-    <link href="${domainUrl}/assets/css/serve/cost.css" rel="stylesheet">
+<link href="${domainUrl}/assets/css/serve/cost.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/serve/cost.js"></script>
     <script>
         findAll();

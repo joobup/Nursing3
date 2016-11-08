@@ -14,7 +14,7 @@
     <an><input type="button" id="cao" value="打包服务" data-toggle="modal" data-target="#myModal">
         <input type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no">
         <input type="button" value="删除服务包" " id="shanchu-yes">
-        <input type="button" value="平铺显示" onclick="sideUrl('/serve/pack/packB')">
+        <input type="button" value="表格显示" onclick="sideUrl('/serve/pack/packB')">
     </an>
 </div>
 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #DDD; opacity: .5; z-index:999; display: none;" id="aaaa">

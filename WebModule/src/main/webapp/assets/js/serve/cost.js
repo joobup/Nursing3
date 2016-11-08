@@ -10,14 +10,14 @@ function add() {
     var url = domainUrl + "/serve/service_classes_valuation/add";
     var postData = {classesValuationName:cost};
     postAjax(url,false,postData,function (data) {
-        alert("添加成功")
-        $('#myModal').modal("hide");
+        alert("添加成功");
         findAll();
+        $("#myModal").modal("hide")
     })
 }
 function findAll() {
     var url = domainUrl + "/serve/service_classes_valuation/findAll"
-    var getData = {currentPage:1,limit:10};
+    var getData = {currentPage:1,limit:1000};
     getAjax(url,false,getData,function (data) {
         console.log(JSON.stringify(data))
         var num = data.aaData.length;
@@ -34,7 +34,6 @@ function del(id) {
     var postData = {id:id};
     postAjax(url,false,postData,function (data) {
         alert("删除成功");
-        $('#myModal').modal("hide");
         findAll();
     })
 }

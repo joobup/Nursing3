@@ -42,7 +42,6 @@ public class ServicePackController extends GenericController {
     @ResponseBody
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public ResultData add(ServicePack servicepack) {
-
         try {
             servicepack =servicepackService.insert(servicepack);
 //            if(pictureAddress!=null){

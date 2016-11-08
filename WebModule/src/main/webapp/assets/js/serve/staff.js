@@ -24,7 +24,6 @@ function add() {
     var staffsex = $("#staffsex").val();
     var staffpost = $("#staffpost").val();
     var staffskill = $("#staffskilllevel").val();
-    var staffpicture = pathList;
     var staffdepartment = $("#staffdepartment").val();
     var staffcard = $("#staffcard").val();
     var staffcall1 = $("#staffcall1").val();
@@ -37,7 +36,6 @@ function add() {
         staffSex: staffsex,
         staffPost: staffpost,
         staffSkillLevel: staffskill,
-        staffPicture: staffpicture,
         staffCardId: staffcard,
         staffCall1: staffcall1,
         staffCall2: staffcall2,
@@ -48,8 +46,8 @@ function add() {
     postAjax(url, false, postData, function (data) {
         console.log(JSON.stringify(data))
         alert("添加成功");
+        findAll(1)
         $('#myModal').modal("hide");
-        location.reload();
     })
 }
 function del(id) {
@@ -58,7 +56,7 @@ function del(id) {
     postAjax(url, false, postData, function (data) {
         console.log(JSON.stringify(data))
         alert("删除成功")
-        location.reload();
+        findAll(1)
     })
 }
 var pageNp = 1;
@@ -205,8 +203,8 @@ function update() {
     postAjax(url, false, postData, function (data) {
         console.log(JSON.stringify(data))
         alert("修改成功");
+        findAll(1)
         $('#myModal').modal("hide");
-        location.reload();
     })
 }
 function upload(id) {

@@ -7,9 +7,9 @@
     <link href="${domainUrl}/assets/css/OutCss/upload/diyUpload.css" rel="stylesheet" >
     <link href="${domainUrl}/assets/css/OutCss/upload/webuploader.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
-    <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script src="${domainUrl}/assets/js/serve/sideUrl.js"></script>
+    <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
     <meta charset="utf-8"/>
     <title></title>
 </head>
@@ -40,11 +40,18 @@
                     <div class="link"><i class="glyphicon glyphicon-plus-sign"></i>老人模块<i class="glyphicon glyphicon-chevron-up"></i></div>
                     <ul class="submenu">
                         <li><a onclick="sideUrl('/oldMan/oldMan')">老人信息登记表</a></li>
+                        <li><a onclick="sideUrl('/oldMan/oldManType')">服务对象类型</a></li>
+                        <li><a onclick="sideUrl('/oldMan/oldManRegister')">老人信息</a></li>
+                        <li><a onclick="sideUrl('/oldMan/oldManState')">老人状态</a></li>
                     </ul>
                 </li>
-
-
-
+                <li>
+                    <div class="link"><i class="glyphicon glyphicon-plus-sign"></i>饮食模块<i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <ul class="submenu">
+                        <li><a onclick="sideUrl('/food/foodList')">饮食列表</a></li>
+                        <li><a onclick="sideUrl('/food/foodClassify')">饮食分类</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
 

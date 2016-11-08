@@ -80,7 +80,7 @@ public abstract class GenericServiceLevelImpl<Model, PK,ModelExample> extends Ge
     public int deleteLevel(PK id) {
 
         ModelExample serviceClassesExample = getModelExamplTidEqualTo(id);
-
+        getDao().deleteByPrimaryKey(id);
         return getDao().deleteByExample(serviceClassesExample);
 
 

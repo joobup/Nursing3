@@ -3,8 +3,11 @@
  */
 /*菜品列表*/
 /*添加*/
-function foodAdd() {
-    var url = domainUrl+"/serve/dishes/ys_dishes/add";
+$(function () {
+    findAll(1);
+})
+function add() {
+    var url = domainUrl+"/serve/dishes/add";
     var dishesName = $("#dishesName").val();
     var dishesTaste = $("#dishesTaste").val();
     var dishesAllergen = $("#dishesAllergen").val();
@@ -21,32 +24,32 @@ function foodAdd() {
     };
     postAjax(url,false,postData,function (data) {
         alert("添加成功");
-        foodFindAll(1);
+        findAll(1);
     })
 }
 /*查询*/
-function foodFindAll(currentPage) {
-    var url = domainUrl+"/serve/dishes/ys_dishes/findAll";
+function findAll(currentPage) {
+    var url = domainUrl+"/serve/dishes/findAll";
     var getData={currentPage:currentPage,limit:limit,};
     var html='';
     getAjax(url,false,getData,function (data) {
-
+        console.log(JSON.stringify(data))
     })
 }
 /*删除*/
-function foodDel(id) {
-    var url = domainUrl+"/serve/dishes/ys_dishes/del";
+function del(id) {
+    var url = domainUrl+"/serve/dishes/del";
     var postData = {
         id:id,
     }
     postAjax(url,false,postData,function (data) {
         alert("删除成功");
-        foodFindAll(1);
+        findAll(1);
     })
 }
 /*修改*/
-function foodUpdate(id) {
-    var url = domainUrl+"/serve/dishes/ys_dishes/update";
+function update(id) {
+    var url = domainUrl+"/serve/dishes/update";
     var dishesName = $("#dishesName").val();
     var dishesTaste = $("#dishesTaste").val();
     var dishesAllergen = $("#dishesAllergen").val();
@@ -64,6 +67,6 @@ function foodUpdate(id) {
     };
     postAjax(url,false,postData,function (data) {
         alert("修改成功");
-        foodFindAll(1);
+        findAll(1);
     })
 }
