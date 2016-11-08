@@ -90,6 +90,7 @@ div, ul {
     background-color: #EFF3F4;
     float: left;
     overflow: auto;
+    min-height: 765px;
 }
 
 #main-show .serve-banner {
@@ -136,10 +137,10 @@ div, ul {
 
 #main-show .serve-module {
     height: auto;
-    overflow: hidden;
     padding-left: 1%;
     padding-top: 1%;
     min-width: 1250px;
+    overflow: auto;
 }
 
 .serve-module .serve-module-s {
