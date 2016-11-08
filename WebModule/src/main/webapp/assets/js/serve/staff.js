@@ -69,10 +69,11 @@ function findAll(currentPage) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
+            console.log(JSON.stringify(data.aaData[i].staffPicture.pictureAddress))
             if(data.aaData[i].staffPicture.pictureAddress ==null){
-                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/add_img.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
+                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/stafff.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
             }else{
-                picture ='<img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].staffPicture.pictureAddress+'" />';
+                picture ='<img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].staffPicture.pictureAddress+'"  onclick="uploadShow('+data.aaData[i].id+')" />';
             }
             html += '<div class="serve-module-s"> <i class="glyphicon glyphicon-pencil bianji" title="编辑"  data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ','+currentPage+')"></i> <i' +
             ' class="glyphicon' +
@@ -206,13 +207,13 @@ function upload(id) {
     console.log(pathList+"..."+id)
     $("#box").hide();
     $("#aaaa").hide();
-    var url =domainUrl+'/serve/service_staff/add';
+    var url =domainUrl+'/serve/service_staff/update';
     var postData ={
-        serviceId:id,
+        id:id,
         pictureAddress:pathList,
     };
     postAjax(url,false,postData,function (data) {
         alert("上传成功");
-        findAllp(1);
+        findAll(1);
     })
 }

@@ -43,6 +43,7 @@ public class ServiceStaffController extends GenericController {
         try {
 
             if (commentPicture.getPictureAddress() != null) {
+                commentPicture.setPictureAddress(commentPicture.getPictureAddress().split(",")[0]);
                 commentPicture.setPictureType(SessionConstant.PictureType.STAFFHEAD.key);
                 commentPictureService.insert(commentPicture);
                 servicestaff.setStaffPicture(commentPicture.getId());
@@ -89,6 +90,7 @@ public class ServiceStaffController extends GenericController {
         try {
 
             if (commentPicture.getPictureAddress() != null) {
+                commentPicture.setPictureAddress(commentPicture.getPictureAddress().split(",")[0]);
                 commentPicture.setPictureType(SessionConstant.PictureType.STAFFHEAD.key);
                 commentPictureService.insert(commentPicture);
                 servicestaff.setStaffPicture(commentPicture.getId());

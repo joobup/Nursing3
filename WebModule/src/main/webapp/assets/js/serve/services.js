@@ -38,9 +38,9 @@ function findAllp(currentPage) {
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
             if(data.aaData[i].mainPicture.pictureAddress ==null){
-                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/add_img.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
+                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/service.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
             }else{
-                picture ='<img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].mainPicture.pictureAddress+'" />';
+                picture ='<img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].mainPicture.pictureAddress+'" onclick="uploadShow('+data.aaData[i].id+')" />';
             }
             html += ' <div class="serve-module-s"><i title="添加计费类别" data-toggle="modal"  data-target="#myModalCost" onclick="costAdd(' + data.aaData[i].id + ')" class="glyphicon' +
                 ' glyphicon-plus"' +

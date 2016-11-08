@@ -76,10 +76,10 @@ function findAll(currentPage) {
             for (var j = 0; j < serveNum; j++) {
                 serveList += '' + data.aaData[i].servicesList[j].serveName + '、';
             }
-            if (data.aaData[i].serveDetailed.richTextHeadPicture == null) {
-                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="' + domainImg + '/assets/images/serve/add_img.png" onclick="uploadShow(' + data.aaData[i].id + ')"/>';
+            if (data.aaData[i].commentPicture.pictureAddress == null) {
+                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="' + domainImg + '/assets/images/serve/pack.png" onclick="uploadShow(' + data.aaData[i].id + ')"/>';
             } else {
-                picture = '<img style="width: 100px; height: 100px;" src="' + domainFile + '/assets/uploadimg/' + data.aaData[i].serveDetailed.richTextHeadPicture + '" />';
+                picture = '<img style="width: 100px; height: 100px;" src="' + domainFile + '/assets/uploadimg/' + data.aaData[i].commentPicture.pictureAddress + '"  onclick="uploadShow(' + data.aaData[i].id + ')" />';
             }
             html += ' <div class="serve-module-s"><i class="glyphicon glyphicon-pencil bianji" title="编辑" onclick="make(' + data.aaData[i].id + ')"></i><i' +
                 ' class="glyphicon glyphicon-remove shanchu" title="删除"         style="display: none" onclick="del(' + data.aaData[i].id + ')"></i><ul> <li' +
