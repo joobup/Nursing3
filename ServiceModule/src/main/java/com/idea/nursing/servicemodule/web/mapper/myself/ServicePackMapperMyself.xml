@@ -25,6 +25,12 @@
             <result column="nursify_level" property="nursifyLevel" jdbcType="TINYINT" />
             <result column="nursify_tid" property="nursifyTid" jdbcType="BIGINT" />
         </association>
+        <association property="commentPicture" javaType="com.idea.nursing.common.web.domain.pojo.CommentPicture">
+            <id column="id" property="id" jdbcType="BIGINT"/>
+            <result column="picture_address" property="pictureAddress" jdbcType="VARCHAR"/>
+            <result column="picture_type" property="pictureType" jdbcType="TINYINT"/>
+        </association>
+
     </resultMap>
 
     <sql id="Base_Column_List" >
@@ -33,7 +39,8 @@
 
          fn.id, fn.nursify_name, fn.nursify_level, fn.nursify_tid,
 
-         crt.id, crt.rich_text_title, crt.rich_text_head_picture
+         crt.id, crt.rich_text_title, crt.rich_text_head_picture,
+          p.id, p.picture_address, p.picture_type
     </sql>
     <select id="selectAllVO" resultMap="BaseResultMap" >
         select
@@ -42,6 +49,9 @@
         from ff_service_pack fsp
         LEFT JOIN comment_rich_text crt ON  fsp.serve_detailed = crt.id
         LEFT JOIN ff_nurseify fn ON fsp.serve_nurseify = fn.id
+        LEFT JOIN  comment_picture p
+        on p.id =
+        (SELECT fsps.picture_id from ff_service_pack_picture fsps where fsp.id = fsps.service_pack_id LIMIT 1)
 
 
     </select>

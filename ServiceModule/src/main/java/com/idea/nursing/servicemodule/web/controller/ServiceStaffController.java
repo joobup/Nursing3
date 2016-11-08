@@ -74,10 +74,14 @@ public class ServiceStaffController extends GenericController {
     */
     @ResponseBody
     @RequestMapping(value="update",method = RequestMethod.POST)
-    public ResultData update(ServiceStaff servicestaff){
+    public ResultData update(ServiceStaff servicestaff,CommentPicture commentPicture){
         try {
-            servicestaffService.update(servicestaff);
 
+
+            commentPicture.setPictureType(SessionConstant.PictureType.STAFFHEAD.key);
+            commentPictureService.insert(commentPicture);
+            servicestaff.setStaffPicture(commentPicture.getId());
+            servicestaffService.update(servicestaff);
         } catch (Exception e){
             return ResultData.build().upDateError();
         }

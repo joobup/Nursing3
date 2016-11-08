@@ -1,5 +1,6 @@
 package com.idea.nursing.servicemodule.web.domain.vo;
 
+import com.idea.nursing.common.web.domain.pojo.CommentPicture;
 import com.idea.nursing.common.web.domain.pojo.CommentRichText;
 import com.idea.nursing.servicemodule.web.domain.pojo.Nurseify;
 import com.idea.nursing.servicemodule.web.domain.pojo.Services;
@@ -34,6 +35,8 @@ public class ServicePackVO {
 
     private List<Services> servicesList;
 
+    private CommentPicture commentPicture;
+
     @Override
     public String toString() {
         return "ServicePackVO{" +
@@ -48,7 +51,16 @@ public class ServicePackVO {
                 ", serveServes='" + serveServes + '\'' +
                 ", serveNurseify=" + serveNurseify +
                 ", servicesList=" + servicesList +
+                ", commentPicture=" + commentPicture +
                 '}';
+    }
+
+    public CommentPicture getCommentPicture() {
+        return commentPicture;
+    }
+
+    public void setCommentPicture(CommentPicture commentPicture) {
+        this.commentPicture = commentPicture;
     }
 
     public Date getServeStartDate() {

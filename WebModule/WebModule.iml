@@ -29,6 +29,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="common" />
+    <orderEntry type="module" module-name="BedModule" />
     <orderEntry type="module" module-name="FoodModule" />
     <orderEntry type="module" module-name="Inspection" />
     <orderEntry type="module" module-name="LoginModule" />

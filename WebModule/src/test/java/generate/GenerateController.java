@@ -97,6 +97,8 @@ public class GenerateController {
 //                "StaffPost,服务人员部门",
 //                "ServiceStaff,服务人员",
 //                "ServiceClassesValuation,计价类型",
+                    "ServicesPicture,服务图片关系",
+                    "ServicePackPicture,服务打包图片关系",
 
                 //"CommentPicture,图片"
                 //"ServiceClassesValuationRelation,服务计价类型"
@@ -114,11 +116,11 @@ public class GenerateController {
 //                "Dishes,菜品",
 //                "DishesPicture,菜品图片关系",
 //                "DishesTypeDishes,菜品类别关系",
-                "DishesType,菜品类别,1",
-                "DishesMeterial,菜品配料关系",
-                "FoodMeterial,食材配料,1",
-                "Nutriment,营养物质,1",
-                "FoodMeterialNutriment,食材配料和营养物质关系",
+//                "DishesType,菜品类别,1",
+//                "DishesMeterial,菜品配料关系",
+//                "FoodMeterial,食材配料,1",
+//                "Nutriment,营养物质,1",
+//                "FoodMeterialNutriment,食材配料和营养物质关系",
 //                "WeekFood,本周食谱",
 //                "WeekFoodDishes,本周食谱菜品关系"
 //                "InspectionItem,自定义检查项目表",
@@ -162,16 +164,16 @@ public class GenerateController {
                         //"\\Personal\\src\\main\\java\\com\\idea\\nursing\\personal\\web\\controller",
                         //"\\OldPeople\\src\\main\\java\\com\\idea\\nursing\\oldpeople\\web\\controller",
                         //"\\Inspection\\src\\main\\java\\com\\idea\\nursing\\inspection\\web\\controller",
-                        "\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\controller",
+                       // "\\FoodModule\\src\\main\\java\\com\\idea\\nursing\\food\\web\\controller",
                        // "\\BedModule\\src\\main\\java\\com\\idea\\nursing\\bed\\web\\controller",
-                        //"\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\controller",
+                        "\\ServiceModule\\src\\main\\java\\com\\idea\\nursing\\servicemodule\\web\\controller",
                         //"\\src\\main\\java\\com\\idea\\nursing\\common\\web\\controller",
 //                        "com.idea.nursing.common.web.controller",
 //                        "com.idea.nursing.common.web.domain.pojo",
 //                        "com.idea.nursing.common.web.service"
-//                        "com.idea.nursing.servicemodule.web.controller",
-//                        "com.idea.nursing.servicemodule.web.domain.pojo",
-//                        "com.idea.nursing.servicemodule.web.service"
+                        "com.idea.nursing.servicemodule.web.controller",
+                        "com.idea.nursing.servicemodule.web.domain.pojo",
+                        "com.idea.nursing.servicemodule.web.service"
 //                        "com.idea.nursing.common.web.controller",
 //                        "com.idea.nursing.common.web.domain.pojo",
 //                        "com.idea.nursing.common.web.service"
@@ -179,9 +181,9 @@ public class GenerateController {
 //                        "com.idea.nursing.bed.web.controller",
 //                        "com.idea.nursing.bed.web.domain.pojo",
 //                        "com.idea.nursing.bed.web.service"
-                        "com.idea.nursing.food.web.controller",
-                        "com.idea.nursing.food.web.domain.pojo",
-                        "com.idea.nursing.food.web.service"
+//                        "com.idea.nursing.food.web.controller",
+//                        "com.idea.nursing.food.web.domain.pojo",
+//                        "com.idea.nursing.food.web.service"
 //                        "com.idea.nursing.inspection.web.controller",
 //                        "com.idea.nursing.inspection.web.domain.pojo",
 //                        "com.idea.nursing.inspection.web.service"
