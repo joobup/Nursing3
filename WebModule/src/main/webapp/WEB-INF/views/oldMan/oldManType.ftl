@@ -1,7 +1,6 @@
-<link href="${domainUrl}/assets/css/serve/classify.css" rel="stylesheet">
+<link href="${domainUrl}/assets/css/oldMan/oldManType.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/institution/olderMan/servicePeopleType.js"></script>
-
 
 <div id="now-position">
     您当前所在的位置：<span>对象类型</span>
@@ -10,18 +9,17 @@
     <an><input type="button" id="cao" value="添加类型" data-toggle="modal" data-target="#myModal">
     <#--<input-->
     <#--type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input-->
-    <#--type="button" value="删除类型" " id="shanchu-yes">-->
+    <#--type="button" value="删除状态" " id="shanchu-yes">-->
     </an>
 </div>
 <div class="serve-module">
     <div class="classify-body">
         <div class="ify-title">
-            <div class="ify-left">分类名称</div>
+            <div class="ify-left">类型名</div>
             <div class="ify-right">操作</div>
         </div>
         <div>
             <ul id="ify-show">
-
             </ul>
         </div>
     </div>
@@ -32,13 +30,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title  text-center" id="myModalLabel">
-                    添加类型
+                    添加类型名
                 </h3>
             </div>
             <div class="modal-body">
                 <table class="add">
                     <tr>
-                        <td>类型名称</td>
+                        <td>类型名</td>
                         <td><input type="text" id="className"><input type="text" id="classTid" style="display: none;"></td>
                     </tr>
                 </table>
@@ -55,7 +53,6 @@
 </div>
 
 
+<#--<input type="text" id="servicePeopleStateName">-->
+<#--<input type="button"value="添加" onclick="add()">-->
 
-<!--
-<input type="text" id="serviceTypePeopleName">
-<input type="button" value="添加" onclick="add()">-->

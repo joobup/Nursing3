@@ -1,60 +1,137 @@
+
 <link href="${domainUrl}/assets/css/oldMan/oldMan.css" rel="stylesheet">
+
 <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/institution/olderMan/servicePeople.js"></script>
+<script src="${domainUrl}/assets/js/serve/serveClassFindAll.js"></script>
+<script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
+<script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
+<script src="${domainUrl}/assets/js/OutJs/upload/webuploader.html5only.min.js"></script>
 
+<script>
+    findAllp(1);
+</script>
 
 <div id="now-position">
-    您当前所在的位置：<span>服务对象信息登记表</span>
+    您当前所在的位置：<span>老人信息</span>
+</div>
+<div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #DDD; opacity: .5; z-index:999; display: none;" id="aaaa">
+</div>
+<div id="box">
+    <div id="test" ></div>
 </div>
 <div class="serve-banner">
-    <an><input type="button" id="cao" value="添加人员" data-toggle="modal" data-target="#myModal"> <input
+
+    <an><input type="button" id="cao" value="添加服务" data-toggle="modal" data-target="#myModal" onclick="findAll()"> <input
             type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input
-            type="button" value="删除人员" " id="shanchu-yes">
+            type="button" value="删除服务" " id="shanchu-yes">
+        <input type="button" value="表格显示" onclick="sideUrl('/serve/services/servicesB')">
     </an>
 </div>
+
 <div class="serve-module">
-    <div id="cost-pack">
-    </div>
+
 </div>
-
-<!--老人信息登记表-->
-<div class="zong">
-    <ul class="box">
-        <li class="pull-left box-left"><img src="${domainUrl}/assets/images/serve/logo.png" alt=""></li>
-        <li class="pull-left box-con">
-            <ul>
-                <li>ID：<span>666666</span></li>
-                <li>姓名：<span>张三</span></li>
-                <li>年龄：<span>20岁</span></li>
-                <li>性别：<span>男性</span></li>
-            </ul>
-        </li>
-        <li class="pull-left box-right">
-            <ul>
-                <li>人员状态：<span>优</span></li>
-                <li>服务类型：<span>甲</span></li>
-                <li>护理级别：<span>A</span></li>
-                <li>联系方式：<span>15655623395</span></li>
-            </ul>
-
-        </li>
-        <div class="clearfix"></div>
-    </ul>
+<#--分页-->
+<script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
+<div class="tcdPageCode">
 </div>
-
-
-
-    <#--<input type="text" id="servicePeopleName">-->
-    <#--<input type="text" id="servicePeopleAge">-->
-    <#--<input type="text" id="servicePeopleSex">-->
-    <#--<input type="text" id="servicePeopleRelation">-->
-    <#--<input type="text" id="servicePeoplePicture">-->
-    <#--<input type="text" id="servicePeopleAttention">-->
-    <#--&lt;#&ndash;下拉&ndash;&gt;-->
-    <#--<input type="text" id="userId">-->
-    <#--<input type="text" id="servicePeopleTel">-->
-    <#--<input type="text" id="servicePeopleStateId">-->
-    <#--<input type="text" id="servicePeopleTypeId">-->
-    <#--<input type="text" id="nursingLeave">-->
-    <#--<input type="button" value="添加" onclick="add()">-->
-
+<#--添加服务模态框-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title  text-center" id="myModalLabel">
+                    添加服务
+                </h3>
+            </div>
+            <div class="modal-body">
+                <table class="add">
+                    <tr>
+                        <td>服务类别</td>
+                        <td><select id="sel1"></select></td>
+                    </tr>
+                    <tr style="display: none;" id="tr2">
+                        <td></td>
+                        <td><select id="sel2"></select></td>
+                    </tr>
+                    <tr style="display: none;" id="tr3">
+                        <td></td>
+                        <td><select id="sel3"></select></td>
+                    </tr>
+                    <tr>
+                        <td>服务标题</td>
+                        <td><input type="text" id="mingcheng" class="null"></td>
+                    </tr>
+                <#--<tr>-->
+                <#--<td>服务图片</td>-->
+                <#--<td style="text-align: left;"><input type="button" value="添加服务主图" id="xxxx" class="btn btn-info"></td>-->
+                <#--<script>-->
+                <#--$("#xxxx").click(function () {-->
+                <#--$("#demo").show(500);-->
+                <#--})-->
+                <#--</script>-->
+                <#--<div id="demo" class="demo" style="position: absolute;z-index: 9999;display: none;"></div>-->
+                <#--</tr>-->
+                    <tr>
+                        <td>计费方式</td>
+                        <td><select id="serveCost"></select></td>
+                    </tr>
+                    <tr>
+                        <td>价格</td>
+                        <td><input type="text" id="costPirce"></td>
+                    </tr>
+                    <tr>
+                        <td>限制条件</td>
+                        <td><input type="text" id="tiaojian" class="null"></td>
+                    </tr>
+                    <tr>
+                        <td>服务人数</td>
+                        <td><input type="text" id="renshu" class="null"></td>
+                    </tr>
+                    <tr>
+                        <td style="position: absolute; margin-top: 5px;">服务简介</td>
+                        <td><textarea id="jianjie" class="null"></textarea><input type="text" id="xid" style="display: none;">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="add-btn" onclick="add()">添加</button>
+                <button type="button" class="btn btn-primary" id="update-btn" onclick="update()"
+                        style="display: none;">修改
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<#--添加计费模态框-->
+<div class="modal fade" id="myModalCost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title  text-center" id="myModalLabel">
+                    添加计费模板
+                </h3>
+            </div>
+            <div class="modal-body">
+                <table class="add">
+                    <tr>
+                        <td>计费方式</td>
+                        <td><select class="serveCost" id="serveCost2"></select></td>
+                    </tr>
+                    <tr>
+                        <td>价格</td>
+                        <td><input type="text" id="costPirce2"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="add-cost"
+                ">添加</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>

@@ -39,9 +39,8 @@
                 <li>
                     <div class="link"><i class="glyphicon glyphicon-plus-sign"></i>老人模块<i class="glyphicon glyphicon-chevron-up"></i></div>
                     <ul class="submenu">
-                        <li><a onclick="sideUrl('/oldMan/oldMan')">老人信息登记表</a></li>
-                        <li><a onclick="sideUrl('/oldMan/oldManType')">服务对象类型</a></li>
-                        <li><a onclick="sideUrl('/oldMan/oldManRegister')">老人信息</a></li>
+                        <li><a onclick="sideUrl('/oldMan/oldMan')">老人信息</a></li>
+                        <li><a onclick="sideUrl('/oldMan/oldManType')">对象类型</a></li>
                         <li><a onclick="sideUrl('/oldMan/oldManState')">老人状态</a></li>
                     </ul>
                 </li>
