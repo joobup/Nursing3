@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
-* Created by 10238 on 2016/10/12.
-*/
+ * Created by 10238 on 2016/10/12.
+ */
 @Controller
 @RequestMapping("serve/service_staff")
 public class ServiceStaffController extends GenericController {
@@ -31,74 +31,90 @@ public class ServiceStaffController extends GenericController {
     private CommentPictureService commentPictureService;
 
     /**
-        * 添加服务人员
-        * @param servicestaff
-        * @return
-    */
+     * 添加服务人员
+     *
+     * @param servicestaff
+     * @return
+     */
     @ResponseBody
-    @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(ServiceStaff servicestaff,CommentPicture commentPicture){
+    @RequestMapping(value = "add", method = RequestMethod.POST)
+    public ResultData add(ServiceStaff servicestaff, CommentPicture commentPicture) {
 
         try {
-                servicestaffService.insert(servicestaff);
+
+            if (commentPicture.getPictureAddress() != null) {
                 commentPicture.setPictureType(SessionConstant.PictureType.STAFFHEAD.key);
                 commentPictureService.insert(commentPicture);
-            }catch (Exception e){
-                return ResultData.build().addErroe();
+                servicestaff.setStaffPicture(commentPicture.getId());
+                servicestaffService.insert(servicestaff);
+            } else {
+                servicestaffService.insert(servicestaff);
             }
+
+
+        } catch (Exception e) {
+            return ResultData.build().addErroe();
+        }
         return ResultData.build();
 
     }
 
     /**
-    * 删除服务人员
-    * @param id
-    * @return
-    */
+     * 删除服务人员
+     *
+     * @param id
+     * @return
+     */
     @ResponseBody
-    @RequestMapping(value="del" ,method = RequestMethod.POST)
+    @RequestMapping(value = "del", method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                servicestaffService.delete(id);
-            } catch (Exception e) {
-                return ResultData.build().delError();
-            }
+            servicestaffService.delete(id);
+        } catch (Exception e) {
+            return ResultData.build().delError();
+        }
         return ResultData.build();
 
     }
 
     /**
-    * 修改服务人员
-    * @param servicestaff
-    * @return
-    */
+     * 修改服务人员
+     *
+     * @param servicestaff
+     * @return
+     */
     @ResponseBody
-    @RequestMapping(value="update",method = RequestMethod.POST)
-    public ResultData update(ServiceStaff servicestaff,CommentPicture commentPicture){
+    @RequestMapping(value = "update", method = RequestMethod.POST)
+    public ResultData update(ServiceStaff servicestaff, CommentPicture commentPicture) {
         try {
 
+            if (commentPicture.getPictureAddress() != null) {
+                commentPicture.setPictureType(SessionConstant.PictureType.STAFFHEAD.key);
+                commentPictureService.insert(commentPicture);
+                servicestaff.setStaffPicture(commentPicture.getId());
+                servicestaffService.update(servicestaff);
+            } else {
+                servicestaffService.update(servicestaff);
+            }
 
-            commentPicture.setPictureType(SessionConstant.PictureType.STAFFHEAD.key);
-            commentPictureService.insert(commentPicture);
-            servicestaff.setStaffPicture(commentPicture.getId());
-            servicestaffService.update(servicestaff);
-        } catch (Exception e){
+        } catch (Exception e) {
             return ResultData.build().upDateError();
         }
         return ResultData.build();
     }
 
     /**
-    * 分页查询所有服务人员
-    * @param currentPage
-    * @param limit
-    * @return
-    */
+     * 分页查询所有服务人员
+     *
+     * @param currentPage
+     * @param limit
+     * @return
+     */
     @ResponseBody
-    @RequestMapping(value="findAll",method = RequestMethod.GET)
-    public ResultData findAll(Integer currentPage,Integer limit){
+    @RequestMapping(value = "findAll", method = RequestMethod.GET)
+    public ResultData findAll(Integer currentPage, Integer limit) {
         return ResultData.build().
-        parsePageBean(serviceStaffServiceMyself.findAllVO(currentPage,limit));
+                parsePageBean(serviceStaffServiceMyself.findAllVO(currentPage, limit));
     }
 
 }
