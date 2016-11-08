@@ -1,5 +1,4 @@
 <link href="${domainUrl}/assets/css/oldMan/oldManType.css" rel="stylesheet">
-<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/institution/olderMan/servicePeopleType.js"></script>
 
 <div id="now-position">
@@ -37,7 +36,7 @@
                 <table class="add">
                     <tr>
                         <td>类型名</td>
-                        <td><input type="text" id="className"><input type="text" id="classTid" style="display: none;"></td>
+                        <td><input type="text" id="serviceTypePeopleName"><input type="text" id="classTid" style="display: none;"></td>
                     </tr>
                 </table>
             </div>

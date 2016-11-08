@@ -1,6 +1,5 @@
 
 <link href="${domainUrl}/assets/css/oldMan/oldMan.css" rel="stylesheet">
-
 <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/institution/olderMan/servicePeople.js"></script>
 <script src="${domainUrl}/assets/js/serve/serveClassFindAll.js"></script>

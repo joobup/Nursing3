@@ -64,21 +64,21 @@ function findAll(currentPage) {
     var limit = 3;
     var getData = {currentPage: currentPage, limit: limit};
     var html = "";
-    var picture='';
+    var picture = '';
     getAjax(url, false, getData, function (data) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
             console.log(JSON.stringify(data.aaData[i].staffPicture.pictureAddress))
-            if(data.aaData[i].staffPicture.pictureAddress ==null){
-                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/stafff.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
-            }else{
-                picture ='<img style="width: 100px; height: 100px;" src="'+domainFile+'/assets/uploadimg/'+data.aaData[i].staffPicture.pictureAddress+'"  onclick="uploadShow('+data.aaData[i].id+')" />';
+            if (data.aaData[i].staffPicture.pictureAddress == null) {
+                picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="' + domainImg + '/assets/images/serve/stafff.png" onclick="uploadShow(' + data.aaData[i].id + ')"/>';
+            } else {
+                picture = '<img style="width: 100px; height: 100px;" src="' + domainFile + '/assets/uploadimg/' + data.aaData[i].staffPicture.pictureAddress + '"  onclick="uploadShow(' + data.aaData[i].id + ')" />';
             }
-            html += '<div class="serve-module-s"> <i class="glyphicon glyphicon-pencil bianji" title="编辑"  data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ','+currentPage+')"></i> <i' +
-            ' class="glyphicon' +
-            ' glyphicon-remove shanchu" onclick="del(' + data.aaData[i].id + ')"></i> <ul>';
-            html += '<li id="staff-mess1">'+picture+'</li> <li' +
+            html += '<div class="serve-module-s"> <i class="glyphicon glyphicon-pencil bianji" title="编辑"  data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ',' + currentPage + ')"></i> <i' +
+                ' class="glyphicon' +
+                ' glyphicon-remove shanchu" onclick="del(' + data.aaData[i].id + ')"></i> <ul>';
+            html += '<li id="staff-mess1">' + picture + '</li> <li' +
                 ' id="staff-mess2"> <ul>' +
                 ' <li>' + data.aaData[i].staffName + '</li>';
             html += ' <li>职务</li> <li>部门</li> <li>联系方式</li> <li>身份证号</li> </ul> <ul> <li>' + data.aaData[i].staffSex + '</li> <li>' + data.aaData[i].staffPost + '</li> ';
@@ -87,8 +87,8 @@ function findAll(currentPage) {
             html += ' <li>' + data.aaData[i].staffSkillLevel + '</li> </ul> </li> </ul> </div>';
         }
         $(".serve-module").html(html)
-        if(pageNp == 1){
-            pageNp =2;
+        if (pageNp == 1) {
+            pageNp = 2;
             $(".tcdPageCode").createPage({
                 pageCount: pageList,
                 current: currentPage,
@@ -110,15 +110,15 @@ function findAllb(currentPage) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
-            html+='<tr><td>' + data.aaData[i].staffName + '</td><td>' + data.aaData[i].staffSex + '</td><td>' + data.aaData[i].staffPost + '</td>' +
+            html += '<tr><td>' + data.aaData[i].staffName + '</td><td>' + data.aaData[i].staffSex + '</td><td>' + data.aaData[i].staffPost + '</td>' +
                 '<td>' + data.aaData[i].staffDepartment + '</td><td>' + data.aaData[i].staffCall1 + '</td><td>' + data.aaData[i].staffCardId + '</td>' +
                 '<td>' + data.aaData[i].staffStatus + '</td><td>' + data.aaData[i].staffRank + '</td><td>' + data.aaData[i].staffSkillLevel + '</td>' +
-                '<td><i class="glyphicon glyphicon-pencil bianji" title="编辑"  data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ','+currentPage+')"></i>' +
+                '<td><i class="glyphicon glyphicon-pencil bianji" title="编辑"  data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ',' + currentPage + ')"></i>' +
                 ' <i class="glyphicon glyphicon-remove shanchu" title="删除" onclick="del(' + data.aaData[i].id + ')" style="display:none;"></i></td></tr>';
         }
         $("#aaa").html(html)
-        if(pageNb == 1){
-            pageNb =2;
+        if (pageNb == 1) {
+            pageNb = 2;
             $(".tcdPageCode").createPage({
                 pageCount: pageList,
                 current: currentPage,
@@ -129,7 +129,7 @@ function findAllb(currentPage) {
         }
     })
 }
-function make(id,currentPage) {
+function make(id, currentPage) {
     $("#update-btn").show();
     $("#add-btn").hide();
     var url = domainUrl + "/serve/service_staff/findAll";
@@ -204,15 +204,15 @@ function update() {
     })
 }
 function upload(id) {
-    console.log(pathList+"..."+id)
+    console.log(pathList + "..." + id)
     $("#box").hide();
     $("#aaaa").hide();
-    var url =domainUrl+'/serve/service_staff/update';
-    var postData ={
-        id:id,
-        pictureAddress:pathList,
+    var url = domainUrl + '/serve/service_staff/update';
+    var postData = {
+        id: id,
+        pictureAddress: pathList,
     };
-    postAjax(url,false,postData,function (data) {
+    postAjax(url, false, postData, function (data) {
         alert("上传成功");
         findAll(1);
     })
