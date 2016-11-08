@@ -26,7 +26,6 @@ function findAll1() {
     var getData = {currentPage: currentPage, limit: limit};
     var html = '';
     getAjax(url, false, getData, function (data) {
-        console.log(JSON.stringify(data))
         if (data.aaData[1] != undefined) {
             var num2 = data.aaData[1].length;
         } else {
@@ -93,7 +92,6 @@ function update() {
     var url = domainUrl + "/serve/service_classes/update";
     var id = $("#classTid").val();
     var className = $("#className").val();
-    console.log(id + ".." + className);
     var postData = {id: id, serveClassname: className}
     postAjax(url, false, postData, function (data) {
         alert("修改成功");
@@ -104,7 +102,6 @@ function update() {
 function del(id) {
     var url = domainUrl + "/serve/service_classes/del";
     var postData = {id: id};
-    console.log(id)
     postAjax(url, false, postData, function (data) {
         alert("删除成功")
         findAll1();

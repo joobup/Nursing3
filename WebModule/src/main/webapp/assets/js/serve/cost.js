@@ -6,7 +6,6 @@ $(function () {
 })
 function add() {
     var cost = $("#jijia").val();
-    console.log(cost)
     var url = domainUrl + "/serve/service_classes_valuation/add";
     var postData = {classesValuationName:cost};
     postAjax(url,false,postData,function (data) {
@@ -19,7 +18,6 @@ function findAll() {
     var url = domainUrl + "/serve/service_classes_valuation/findAll"
     var getData = {currentPage:1,limit:1000};
     getAjax(url,false,getData,function (data) {
-        console.log(JSON.stringify(data))
         var num = data.aaData.length;
         var html="";
         for(var i =0;  i < num ; i++){

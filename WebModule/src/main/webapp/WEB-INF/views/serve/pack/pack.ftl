@@ -1,11 +1,10 @@
 <link href="${domainUrl}/assets/css/serve/pack.css" rel="stylesheet">
-<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/serve/pack.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/webuploader.html5only.min.js"></script>
 <script>
-    findAll(1);
+    findAll(1)
 </script>
 <div id="now-position">
     您当前所在的位置：<span>打包模块</span>

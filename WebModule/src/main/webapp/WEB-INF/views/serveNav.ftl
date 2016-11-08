@@ -9,6 +9,7 @@
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script src="${domainUrl}/assets/js/serve/sideUrl.js"></script>
+    <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
     <meta charset="utf-8"/>
     <title></title>
 </head>

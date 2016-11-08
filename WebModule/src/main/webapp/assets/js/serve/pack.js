@@ -32,7 +32,6 @@ function findAllServe() {
     var html = "";
     getAjax(url, false, getData, function (data) {
         var num = data.aaData.length;
-        console.log(JSON.stringify(data) + "..." + num);
         for (var i = 0; i < num; i++) {
             html += '<a value="' + data.aaData[i].id + '" class="servename">' + data.aaData[i].serveName + '</a>';
         }
@@ -71,7 +70,7 @@ function findAll(currentPage) {
     getAjax(url, false, getData, function (data) {
         num = data.aaData.length;
         pageList = Math.ceil(data.iTotalRecords / limit);
-        console.log(JSON.stringify(data))
+        console.log(JSON.stringify(data.aaData[0]))
         for (var i = 0; i < num; i++) {
             var serveList = '';
             for (var j = 0; j < serveNum; j++) {
@@ -115,7 +114,6 @@ function findAllb(currentPage) {
     getAjax(url, false, getData, function (data) {
         num = data.aaData.length;
         pageList = Math.ceil(data.iTotalRecords / limit);
-        console.log(JSON.stringify(data))
         for (var i = 0; i < num; i++) {
             var serveList = '';
             serveNum = data.aaData[i].servicesList.length
@@ -162,8 +160,6 @@ function add() {
         serveBrief: serveBrief,
         serveDetailed: ""
     };
-    console.log(postData)
-    console.log(JSON.stringify(postData))
     postAjax(url, false, postData, function (data) {
         alert("打包成功");
         findAll();
@@ -193,7 +189,6 @@ function update() {
         serveBrief: serveBrief,
         serveDetailed: ""
     };
-    console.log(JSON.stringify(postData))
     postAjax(url, false, postData, function (data) {
         alert("修改成功");
         findAll();
@@ -249,6 +244,6 @@ function upload(id) {
     };
     postAjax(url, false, postData, function (data) {
         alert("上传成功");
-        findAllp(1);
+        findAll(1);
     })
 }

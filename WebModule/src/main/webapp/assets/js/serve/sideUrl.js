@@ -11,14 +11,11 @@ var currentPage = 1;
 var limit = 10;
 function sideUrl(url) {
     var url = domainUrl+url;
-    console.log(url)
     $.ajax({
         type: "get",
         url: url,
         success: function (data) {
-            data+='<script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script> '
             $("#main-show").html(data)
-            console.log(data)
         }
     });
 }

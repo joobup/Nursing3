@@ -2,7 +2,7 @@
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/serve/pack.js"></script>
 <script>
-    findAllb(1);
+    findAllb(1)
 </script>
 <div id="now-position">
     您当前所在的位置：<span>打包模块</span>

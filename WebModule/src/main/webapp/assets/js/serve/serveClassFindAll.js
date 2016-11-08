@@ -9,7 +9,6 @@ function findAll() {
     var getData = {currentPage: currentPage, limit: limit};
     getAjax(url, false, getData, function (data) {
         var html = '<option>请选择</option>';
-        console.log(JSON.stringify(data))
         var num = data.aaData[0].length;
         for (var i = 0; i < num; i++) {
             html += '<option  value="' + data.aaData[0][i].id + '">' + data.aaData[0][i].serveClassname + '</option>';
@@ -62,7 +61,6 @@ function findAll2() {
                 var selectIndex = document.getElementById("sel2").selectedIndex;//获得是第几个被选中了
                 var selectValue = document.getElementById("sel2").options[selectIndex].value //获得被选中的项目
                 serveClassify = selectValue;
-                console.log(serveClassify)
                 $("#tr3").hide()
             }
         }
@@ -85,7 +83,6 @@ function findAll3() {
             var selectIndex = document.getElementById("sel3").selectedIndex;//获得是第几个被选中了
             var selectValue = document.getElementById("sel3").options[selectIndex].value //获得被选中的项目
             serveClassify = selectValue;
-            console.log(serveClassify)
 
         }
     })

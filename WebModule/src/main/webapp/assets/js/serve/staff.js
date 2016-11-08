@@ -44,7 +44,6 @@ function add() {
         staffDepartment: staffdepartment
     };
     postAjax(url, false, postData, function (data) {
-        console.log(JSON.stringify(data))
         alert("添加成功");
         findAll(1)
         $('#myModal').modal("hide");
@@ -54,7 +53,6 @@ function del(id) {
     var url = domainUrl + "/serve/service_staff/del"
     var postData = {id: id}
     postAjax(url, false, postData, function (data) {
-        console.log(JSON.stringify(data))
         alert("删除成功")
         findAll(1)
     })
@@ -70,7 +68,6 @@ function findAll(currentPage) {
     getAjax(url, false, getData, function (data) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
-        console.log(JSON.stringify(data))
         for (var i = 0; i < num; i++) {
             if(data.aaData[i].staffPicture.pictureAddress ==null){
                 picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/add_img.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
@@ -111,7 +108,6 @@ function findAllb(currentPage) {
     getAjax(url, false, getData, function (data) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
-        console.log(JSON.stringify(data))
         for (var i = 0; i < num; i++) {
             html+='<tr><td>' + data.aaData[i].staffName + '</td><td>' + data.aaData[i].staffSex + '</td><td>' + data.aaData[i].staffPost + '</td>' +
                 '<td>' + data.aaData[i].staffDepartment + '</td><td>' + data.aaData[i].staffCall1 + '</td><td>' + data.aaData[i].staffCardId + '</td>' +
@@ -201,16 +197,16 @@ function update() {
         staffDepartment: staffdepartment
     };
     postAjax(url, false, postData, function (data) {
-        console.log(JSON.stringify(data))
         alert("修改成功");
         findAll(1)
         $('#myModal').modal("hide");
     })
 }
 function upload(id) {
+    console.log(pathList+"..."+id)
     $("#box").hide();
     $("#aaaa").hide();
-    var url =domainUrl+'/serve/service_pack_picture/adds';
+    var url =domainUrl+'/serve/service_staff/add';
     var postData ={
         serviceId:id,
         pictureAddress:pathList,

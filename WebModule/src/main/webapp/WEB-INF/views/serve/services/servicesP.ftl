@@ -1,18 +1,16 @@
 <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
-<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/serve/services.js"></script>
 <script src="${domainUrl}/assets/js/serve/serveClassFindAll.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/webuploader.html5only.min.js"></script>
 <script>
-    findAllp(1)
+    findAllp(1);
 </script>
 <div id="now-position">
     您当前所在的位置：<span>服务模块</span>
 </div>
 <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-color: #DDD; opacity: .5; z-index:999; display: none;" id="aaaa">
-
 </div>
 <div id="box">
     <div id="test" ></div>
@@ -79,7 +77,7 @@
                     <#--</tr>-->
                     <tr>
                         <td>计费方式</td>
-                        <td><select class="serveCost"></select></td>
+                        <td><select id="serveCost"></select></td>
                     </tr>
                     <tr>
                         <td>价格</td>

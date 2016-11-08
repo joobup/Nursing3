@@ -1,11 +1,10 @@
 <link href="${domainUrl}/assets/css/serve/staff.css" rel="stylesheet">
-<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/serve/staff.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/webuploader.html5only.min.js"></script>
 <script>
-    findAll(1);
+    findAll(1)
 </script>
 <div id="now-position">
     您当前所在的位置：<span>员工模块</span>

@@ -36,7 +36,6 @@ function findAllp(currentPage) {
     getAjax(url, false, getData, function (data) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
-        console.log(JSON.stringify(data) + "..." + num);
         for (var i = 0; i < num; i++) {
             if(data.aaData[i].mainPicture.pictureAddress ==null){
                 picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="'+domainImg+'/assets/images/serve/add_img.png" onclick="uploadShow('+data.aaData[i].id+')"/>';
@@ -75,7 +74,6 @@ function findAllb(currentPage) {
     getAjax(url, false, getData, function (data) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
-        console.log(JSON.stringify(data) + "..." + num);
         for (var i = 0; i < num; i++) {
             html += '<tr><td>' + data.aaData[i].serveName + '</td><td>' + data.aaData[i].serveClassify.serveClassname + '</td><td>' + data.aaData[i].serveLimit + '</td><td>' + data.aaData[i].servePeoples + '</td>';
             html += '<td>' + data.aaData[i].serveBiref + '</td><td><i title="添加计费类别" data-toggle="modal"  data-target="#myModalCost" onclick="costAdd(' + data.aaData[i].id + ')" class="glyphicon' +
@@ -155,7 +153,6 @@ function del(id) {
     var url = domainUrl + "/serve/services/del";
     var postData = {id: id};
     postAjax(url, false, postData, function (data) {
-        console.log(JSON.stringify(data))
         alert("删除成功!")
         findAllp(1);
     })
@@ -212,7 +209,6 @@ function update() {
     })
 }
 function upload(id) {
-    console.log(pathList)
     $("#aaaa").hide();
     $("#box").hide();
     var url =domainUrl+'/serve/services_picture/adds';
@@ -220,7 +216,6 @@ function upload(id) {
         serviceId:id,
         pictureAddress:pathList,
     };
-    console.log(postData)
     postAjax(url,false,postData,function (data) {
         alert("上传成功");
         findAllp(1);

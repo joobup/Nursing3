@@ -1,14 +1,14 @@
 <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
-<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/serve/services.js"></script>
 <script src="${domainUrl}/assets/js/serve/serveClassFindAll.js"></script>
 <script>
-    findAllb(1)
+    findAllb(1);
 </script>
 <div id="now-position">
     您当前所在的位置：<span>服务模块</span>
 </div>
+
 <div class="serve-banner">
 <#--时间控件-->
     <script type="text/javascript">
