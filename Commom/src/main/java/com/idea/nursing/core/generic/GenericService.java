@@ -39,6 +39,7 @@ public interface GenericService<Model, PK,ModelExample> {
     int delete(PK id);
 
 
+
     /**
      * 通过主键, 查询对象
      *

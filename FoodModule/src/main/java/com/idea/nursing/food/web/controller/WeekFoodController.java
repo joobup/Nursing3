@@ -3,6 +3,8 @@ package com.idea.nursing.food.web.controller;
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
 import com.idea.nursing.food.web.domain.pojo.WeekFood;
+import com.idea.nursing.food.web.domain.vo.SelectVOWeekFood;
+import com.idea.nursing.food.web.domain.vo.WeekFoodShowVO;
 import com.idea.nursing.food.web.service.WeekFoodService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Date;
 
 /**
 * Created by 10238 on 2016/10/12.
@@ -22,15 +26,15 @@ public class WeekFoodController extends GenericController {
 
     /**
         * 添加本周食谱
-        * @param weekfood
+        * @param mdate
         * @return
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(WeekFood weekfood){
+    public ResultData add(Date mdate){
 
         try {
-                weekfoodService.insert(weekfood);
+                weekfoodService.insert(mdate);
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -84,6 +88,13 @@ public class WeekFoodController extends GenericController {
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
         parsePageBean(weekfoodService.findAll(currentPage,limit));
+    }
+
+    @ResponseBody
+    @RequestMapping(value="findWeek",method = RequestMethod.GET)
+    public ResultData findWeek(SelectVOWeekFood selectVOWeekFood){
+
+        return ResultData.build().parseBean(weekfoodService.findWeekVO(selectVOWeekFood));
     }
 
 }

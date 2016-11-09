@@ -1,6 +1,9 @@
 package com.idea.nursing.oldpeople.web.controller;
 
+import com.idea.nursing.common.web.domain.pojo.CommentPicture;
+import com.idea.nursing.common.web.service.CommentPictureService;
 import com.idea.nursing.core.common.ResultData;
+import com.idea.nursing.core.common.SessionConstant;
 import com.idea.nursing.core.generic.GenericController;
 import com.idea.nursing.oldpeople.web.domain.pojo.ServicePeople;
 import com.idea.nursing.oldpeople.web.service.ServicePeopleService;
@@ -19,7 +22,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ServicePeopleController extends GenericController {
     @Autowired
     private ServicePeopleService servicepeopleService;
-
+    @Autowired
+    private CommentPictureService commentPictureService;
     /**
         * 添加服务对象信息
         * @param servicepeople
@@ -63,9 +67,19 @@ public class ServicePeopleController extends GenericController {
     */
     @ResponseBody
     @RequestMapping(value="update",method = RequestMethod.POST)
-    public ResultData update(ServicePeople servicepeople){
+    public ResultData update(ServicePeople servicepeople,CommentPicture commentPicture){
         try {
-            servicepeopleService.update(servicepeople);
+
+            if (commentPicture.getPictureAddress() != null) {
+                commentPicture.setPictureAddress(commentPicture.getPictureAddress().split(",")[0]);
+                commentPicture.setPictureType(SessionConstant.PictureType.STAFFHEAD.key);
+                commentPictureService.insert(commentPicture);
+                servicepeople.setServicePeoplePicture(commentPicture.getId());
+                servicepeopleService.update(servicepeople);
+            } else {
+                servicepeopleService.update(servicepeople);
+            }
+
 
         } catch (Exception e){
             return ResultData.build().upDateError();

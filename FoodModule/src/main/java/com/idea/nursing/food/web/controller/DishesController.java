@@ -83,7 +83,7 @@ public class DishesController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(dishesService.findAll(currentPage,limit));
+        parsePageBean(dishesService.findAllVO(currentPage,limit));
     }
 
 }
