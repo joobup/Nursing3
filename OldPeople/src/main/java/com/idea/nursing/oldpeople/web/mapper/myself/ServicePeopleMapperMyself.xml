@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.oldpeople.web.dao.myself.ServicePeopleMapperMyself" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.oldpeople.web.domain.vo.ServicePeopleVO" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="service_people_name" property="servicePeopleName" jdbcType="VARCHAR" />
+    <result column="service_people_age" property="servicePeopleAge" jdbcType="TINYINT" />
+    <result column="service_people_sex" property="servicePeopleSex" jdbcType="TINYINT" />
+    <result column="service_people_relation" property="servicePeopleRelation" jdbcType="TINYINT" />
+    <result column="service_people_picture" property="servicePeoplePicture" jdbcType="BIGINT" />
+    <result column="service_people_attention" property="servicePeopleAttention" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="service_people_tel" property="servicePeopleTel" jdbcType="VARCHAR" />
+    <result column="service_people_state_id" property="servicePeopleStateId" jdbcType="BIGINT" />
+    <result column="service_people_type_id" property="servicePeopleTypeId" jdbcType="BIGINT" />
+    <result column="nursing_leave" property="nursingLeave" jdbcType="BIGINT" />
+
+    <association property="mainPicture" javaType="com.idea.nursing.common.web.domain.pojo.CommentPicture">
+      <id column="id" property="id" jdbcType="BIGINT"/>
+      <result column="picture_address" property="pictureAddress" jdbcType="VARCHAR"/>
+      <result column="picture_type" property="pictureType" jdbcType="TINYINT"/>
+    </association>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    s.id, s.service_people_name, s.service_people_age, s.service_people_sex, s.service_people_relation,
+    s.service_people_picture, s.service_people_attention, s.user_id, s.service_people_tel, s.service_people_state_id,
+    s.service_people_type_id, s.nursing_leave,
+     p.id, p.picture_address, p.picture_type
+  </sql>
+  <select id="findAllVO" resultMap="BaseResultMap" >
+    select
+
+    <include refid="Base_Column_List" />
+    from lr_service_people as s LEFT JOIN comment_picture as p on p.id = s.service_people_picture
+
+  </select>
+
+</mapper>

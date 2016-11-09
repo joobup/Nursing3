@@ -54,7 +54,6 @@ public class ServicesServiceImpl extends GenericServiceImpl<Services, Long,Servi
         }
         PageHelper.startPage(currentPage,limit);
         Page<ServiceVO> serviceVOs = (Page<ServiceVO>) serviceMapperMyself.findAllVO();
-        System.out.println(serviceVOs.getResult().get(0).getMainPicture().getPictureAddress()+"===========");
         return serviceVOs;
     }
 

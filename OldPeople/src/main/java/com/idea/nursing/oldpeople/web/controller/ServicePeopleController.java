@@ -97,7 +97,7 @@ public class ServicePeopleController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(servicepeopleService.findAll(currentPage,limit));
+        parsePageBean(servicepeopleService.findAllVO(currentPage,limit));
     }
 
 }
