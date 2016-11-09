@@ -51,12 +51,15 @@
             </ul>
         </li>
         <div class="clearfix"></div>
-        <button type="button" class="btn btn-primary btn1-style" data-toggle="modal" data-target="#myModal">
-            了解更多
+        <i class="glyphicon glyphicon-pencil bianji" style="position:absolute;right:20px;top:15px;cursor:pointer;font-size:18px;color:#ff743d;" title="编辑" data-toggle="modal" data-target="#myModal" ></i>
+        <i class="glyphicon glyphicon-remove shanchu" style="position:absolute;right:20px;top:15px;cursor:pointer;font-size:18px;color:#ff743d;display: none;" title="删除" style="display: none" ></i>
+
+        <button type="button" class="btn btn-primary btn1-style" data-toggle="modal" data-target="#myModal2">
+            添加详情
         </button>
 
-        <!--老人信息登记表 -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <!--信息表 -->
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -67,130 +70,340 @@
                         <table class="table">
                             <thead>
                             <tr>
-                                <th>服务对象id</th>
-                                <th id="servicePeopleId"></th>
+                                <td>姓名：</td>
+                                <td><input type="text" id="servicePeopleName"></td>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td>出生日期：</td>
-                                <td id="birthday"></td>
+                                <td>年龄：</td>
+                                <td><input type="text" id="servicePeopleAge"></td>
+
                             </tr>
                             <tr>
-                                <td>民族：</td>
-                                <td id="nation"></td>
+                                <td>性别：</td>
+                                <td><input type="text" id="servicePeopleSex"></td>
+
                             </tr>
                             <tr>
-                                <td>身份证号：</td>
-                                <td id="identityCard"></td>
+                                <td>关系：</td>
+                                <td><input type="text" id="servicePeopleRelation"></td>
+                            </tr>
+
+                            <tr>
+                                <td>注意事项：</td>
+                                <td><input type="text" id="servicePeopleAttention"></td>
+                            </tr>
+
+                            <tr>
+                                <td>客户ID：</td>
+                                <td><input type="text" id="userId"></td>
+                            </tr>
+
+                            <tr>
+                                <td>联系方式：</td>
+                                <td><input type="text" id="servicePeopleTel"></td>
+                            </tr>
+
+                            <tr>
+                                <td>状态：</td>
+                                <td><input type="text" id="servicePeopleStateId"></td>
                             </tr>
                             <tr>
-                                <td>家庭住址：</td>
-                                <td id="homeAddress"></td>
+                                <td>服务对象状态：</td>
+                                <td><select id="servicePeopleTypeId"></select></td>
                             </tr>
+
                             <tr>
-                                <td>居住情况：</td>
-                                <td id="liveCondition"></td>
+                                <td>护理级别：</td>
+                                <td><select id="nursingLeave"></select></td>
                             </tr>
-                            <tr>
-                                <td>自理能力：</td>
-                                <td id="selfCareAbility"></td>
-                            </tr>
-                            <tr>
-                                <td>人员类别：</td>
-                                <td id="personalClassify"></td>
-                            </tr>
-                            <tr>
-                                <td>政治面貌：</td>
-                                <td id="politicsStatus"></td>
-                            </tr>
-                            <tr>
-                                <td>文化程度：</td>
-                                <td id="cultureLevel"></td>
-                            </tr>
-                            <tr>
-                                <td>医疗方式：</td>
-                                <td id="medicalWay"></td>
-                            </tr>
-                            <tr>
-                                <td>月收入：</td>
-                                <td id="monthIncome"></td>
-                            </tr>
-                            <tr>
-                                <td>婚姻状况：</td>
-                                <td id="marriageStatus"></td>
-                            </tr>
-                            <tr>
-                                <td>宗教信仰：</td>
-                                <td id="faith"></td>
-                            </tr>
-                            <tr>
-                                <td>联系人1姓名：</td>
-                                <td id="call1Name"></td>
-                            </tr>
-                            <tr>
-                                <td>联系人1与老人的关系：</td>
-                                <td id="call1Old"></td>
-                            </tr>
-                            <tr>
-                                <td>联系人1电话：</td>
-                                <td id="call1"></td>
-                            </tr>
-                            <tr>
-                                <td>联系人2姓名：</td>
-                                <td id="call2Name"></td>
-                            </tr>
-                            <tr>
-                                <td>联系人2与老人的关系：</td>
-                                <td id="call2Old"></td>
-                            </tr>
-                            <tr>
-                                <td>联系人2电话：</td>
-                                <td id="call2"></td>
-                            </tr>
-                            <tr>
-                                <td>子女人数总</td>
-                                <td id="childAll"></td>
-                            </tr>
-                            <tr>
-                                <td>子女人数(子)</td>
-                                <td id="childBoy"></td>
-                            </tr>
-                            <tr>
-                                <td>子女人数(女)</td>
-                                <td id="childGirl"></td>
-                            </tr>
-                            <tr>
-                                <td>居家养老服务卡号</td>
-                                <td id="homeOldCard"></td>
-                            </tr>
-                            <tr>
-                                <td>业务名称（普通,支付护理费,入住养老机构)</td>
-                                <td id="workName"></td>
-                            </tr>
-                            <tr>
-                                <td>登记人</td>
-                                <td id="checkPeoPle"></td>
-                            </tr>
-                            <tr>
-                                <td>登记日期</td>
-                                <td id="checkDate"></td>
-                            </tr>
+
                             </tbody>
                         </table>
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer"  style="border:0px;" >
                         <button type="button" class="btn btn-default btn2-style" data-dismiss="modal">关闭</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!--登记详情表(input输入用) -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">老人信息登记详情</h4>
+                    </div>
+                    <div class="modal-body">
+                        <table class="add">
+                            <thead>
+                            <tr>
+                                <th>服务对象id:</th>
+                                <th><input type="text"id="servicePeopleId"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>出生日期：</td>
+                                <td><input type="text" id="birthday"></td>
+
+                            </tr>
+                            <tr>
+                                <td>民族：</td>
+                                <td><input type="text" id="nation"></td>
+
+                            </tr>
+                            <tr>
+                                <td>身份证号：</td>
+                                <td><input type="text" id="identityCard"></td>
+                            </tr>
+
+                            <tr>
+                                <td>家庭住址：</td>
+                                <td><input type="text" id="homeAddress"></td>
+                            </tr>
+
+                            <tr>
+                                <td>居住情况：</td>
+                                <td><input type="text" id="liveCondition"></td>
+                            </tr>
+
+                            <tr>
+                                <td>自理能力：</td>
+                                <td><input type="text" id="selfCareAbility"></td>
+                            </tr>
+
+                            <tr>
+                                <td>人员类别：</td>
+                                <td><input type="text" id="personalClassify"></td>
+                            </tr>
+
+                            <tr>
+                                <td>政治面貌：</td>
+                                <td><input type="text" id="politicsStatus"></td>
+                            </tr>
+
+                            <tr>
+                                <td>文化程度：</td>
+                                <td><input type="text" id="cultureLevel"></td>
+                            </tr>
+
+                            <tr>
+                                <td>医疗方式：</td>
+                                <td><input type="text" id="medicalWay"></td>
+                            </tr>
+
+                            <tr>
+                                <td>月收入：</td>
+                                <td><input type="text" id="monthIncome"></td>
+                            </tr>
+
+                            <tr>
+                                <td>婚姻状况：</td>
+                                <td><input type="text" id="marriageStatus"></td>
+                            </tr>
+
+                            <tr>
+                                <td>宗教信仰：</td>
+                                <td><input type="text" id="faith"></td>
+                            </tr>
+
+                            <tr>
+                                <td>联系人1姓名：</td>
+                                <td><input type="text" id="call1Name"></td>
+                            </tr>
+
+                            <tr>
+                                <td>联系人1与老人的关系：</td>
+                                <td><input type="text" id="call1Old"></td>
+                            </tr>
+
+                            <tr>
+                                <td>联系人1电话：</td>
+                                <td><input type="text" id="call1"></td>
+                            </tr>
+
+                            <tr>
+                                <td>联系人2姓名：</td>
+                                <td><input type="text" id="call2Name"></td>
+                            </tr>
+
+                            <tr>
+                                <td>联系人2与老人的关系：</td>
+                                <td><input type="text" id="call2Old"></td>
+                            </tr>
+
+                            <tr>
+                                <td>联系人2电话：</td>
+                                <td><input type="text" id="call2"></td>
+                            </tr>
+
+                            <tr>
+                                <td>子女人数总</td>
+                                <td><input type="text" id="childAll"></td>
+                            </tr>
+
+                            <tr>
+                                <td>子女人数(子)</td>
+                                <td><input type="text" id="childBoy"></td>
+                            </tr>
+
+                            <tr>
+                                <td>子女人数(女)</td>
+                                <td><input type="text" id="childGirl"></td>
+                            </tr>
+
+                            <tr>
+                                <td>居家养老服务卡号</td>
+                                <td><input type="text" id="homeOldCard"></td>
+                            </tr>
+
+                            <tr>
+                                <td>业务名称（普通,支付护理费,入住养老机构)</td>
+                                <td><input type="text" id="workName"></td>
+                            </tr>
+
+                            <tr>
+                                <td>登记人</td>
+                                <td><input type="text" id="checkPeoPle"></td>
+                            </tr>
+
+                            <tr>
+                                <td>登记日期</td>
+                                <td><input type="text" id="checkDate"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer" style="border:0px;">
+                        <button type="button" class="btn btn-primary btn3-style">编辑</button>
+                        <button type="button" class="btn btn-default pull-right btn2-style" data-dismiss="modal">关闭</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--登记详情表格（显示用) -->
+        <table class="add">
+            <thead>
+            <tr>
+                <th>服务对象id</th>
+                <th id="servicePeopleId"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>出生日期：</td>
+                <td id="birthday"></td>
+            </tr>
+            <tr>
+                <td>民族：</td>
+                <td id="nation"></td>
+            </tr>
+            <tr>
+                <td>身份证号：</td>
+                <td id="identityCard"></td>
+            </tr>
+            <tr>
+                <td>家庭住址：</td>
+                <td id="homeAddress"></td>
+            </tr>
+            <tr>
+                <td>居住情况：</td>
+                <td id="liveCondition"></td>
+            </tr>
+            <tr>
+                <td>自理能力：</td>
+                <td id="selfCareAbility"></td>
+            </tr>
+            <tr>
+                <td>人员类别：</td>
+                <td id="personalClassify"></td>
+            </tr>
+            <tr>
+                <td>政治面貌：</td>
+                <td id="politicsStatus"></td>
+            </tr>
+            <tr>
+                <td>文化程度：</td>
+                <td id="cultureLevel"></td>
+            </tr>
+            <tr>
+                <td>医疗方式：</td>
+                <td id="medicalWay"></td>
+            </tr>
+            <tr>
+                <td>月收入：</td>
+                <td id="monthIncome"></td>
+            </tr>
+            <tr>
+                <td>婚姻状况：</td>
+                <td id="marriageStatus"></td>
+            </tr>
+            <tr>
+                <td>宗教信仰：</td>
+                <td id="faith"></td>
+            </tr>
+            <tr>
+                <td>联系人1姓名：</td>
+                <td id="call1Name"></td>
+            </tr>
+            <tr>
+                <td>联系人1与老人的关系：</td>
+                <td id="call1Old"></td>
+            </tr>
+            <tr>
+                <td>联系人1电话：</td>
+                <td id="call1"></td>
+            </tr>
+            <tr>
+                <td>联系人2姓名：</td>
+                <td id="call2Name"></td>
+            </tr>
+            <tr>
+                <td>联系人2与老人的关系：</td>
+                <td id="call2Old"></td>
+            </tr>
+            <tr>
+                <td>联系人2电话：</td>
+                <td id="call2"></td>
+            </tr>
+            <tr>
+                <td>子女人数总</td>
+                <td id="childAll"></td>
+            </tr>
+            <tr>
+                <td>子女人数(子)</td>
+                <td id="childBoy"></td>
+            </tr>
+            <tr>
+                <td>子女人数(女)</td>
+                <td id="childGirl"></td>
+            </tr>
+            <tr>
+                <td>居家养老服务卡号</td>
+                <td id="homeOldCard"></td>
+            </tr>
+            <tr>
+                <td>业务名称（普通,支付护理费,入住养老机构)</td>
+                <td id="workName"></td>
+            </tr>
+            <tr>
+                <td>登记人</td>
+                <td id="checkPeoPle"></td>
+            </tr>
+            <tr>
+                <td>登记日期</td>
+                <td id="checkDate"></td>
+            </tr>
+            </tbody>
+        </table>
+
     </ul>
 </div>
-
-
-
-
 
 <#--分页-->
 <script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
@@ -202,7 +415,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title  text-center" id="myModalLabel">
-                    服务对象信息登记表
+                    服务对象信息表
                 </h3>
             </div>
             <div class="modal-body">
@@ -245,45 +458,17 @@
                     </tr>
                 </table>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="border:0px;">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="add-btn" onclick="add()">添加</button>
-                <button type="button" class="btn btn-primary" id="update-btn" onclick="update()"
+                <button type="button" class="btn btn-primary " id="add-btn" onclick="add()">添加</button>
+                <button type="button" class="btn btn-primary " id="update-btn" onclick="update()"
                         style="display: none;">修改
                 </button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
-<#--添加计费模态框-->
-<div class="modal fade" id="myModalCost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title  text-center" id="myModalLabel">
-                    添加计费模板
-                </h3>
-            </div>
-            <div class="modal-body">
-                <table class="add">
-                    <tr>
-                        <td>计费方式</td>
-                        <td><select class="serveCost" id="serveCost2"></select></td>
-                    </tr>
-                    <tr>
-                        <td>价格</td>
-                        <td><input type="text" id="costPirce2"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary" id="add-cost"
-                ">添加</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
+
 
 
 
