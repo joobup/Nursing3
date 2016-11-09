@@ -5,7 +5,9 @@ import com.idea.nursing.core.generic.GenericController;
 import com.idea.nursing.common.web.domain.pojo.CommentPicture;
 import com.idea.nursing.common.web.service.CommentPictureService;
 
+import org.apache.http.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,6 +42,17 @@ public class CommentPictureController extends GenericController {
 
     }
 
+    /**
+     * 通过id获取图片地址
+     * @param pictureId
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="getById" ,method = RequestMethod.GET)
+    public String getById(Long pictureId){
+
+       return commentpictureService.selectById(pictureId).getPictureAddress();
+    }
     /**
     * 删除图片
     * @param id
