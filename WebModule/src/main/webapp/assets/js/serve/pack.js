@@ -58,8 +58,6 @@ function findAllServe() {
 }
 var pageList;
 var pageNp = 1;
-var currentPage = 1;
-var limit = 10;
 function findAll(currentPage) {
     var url = domainUrl + '/serve/service_pack/findAll';
     var getData = {currentPage: currentPage, limit: 9};
@@ -99,7 +97,7 @@ function findAll(currentPage) {
                 pageCount: pageList,
                 current: currentPage,
                 backFn: function (p) {
-                    findAllb(p)
+                    findAll(p)
                 }
             });
         }
@@ -162,7 +160,7 @@ function add() {
     };
     postAjax(url, false, postData, function (data) {
         alert("打包成功");
-        findAll();
+        findAll(1);
         $('#myModal').modal("hide");
     })
 }

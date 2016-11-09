@@ -26,7 +26,6 @@ function findAll1() {
     var getData = {currentPage: currentPage, limit: limit};
     var html = '';
     getAjax(url, false, getData, function (data) {
-        console.log(JSON.stringify(data))
         if (data.aaData[1] != undefined) {
             var num2 = data.aaData[1].length;
         } else {
@@ -46,18 +45,8 @@ function findAll1() {
                 html += '<ul style="display: none;">';
                 for (var j = 0; j < num2; j++) {
                     if (data.aaData[0][i].id == data.aaData[1][j].tid) {
-                        html += '<li><a href="#" class="one"><i class="glyphicon glyphicon-plus aaa"></i>' + data.aaData[1][j].servicePeopleStateName + '</a><cc>' +
-                            '<a onclick="openModal(' + data.aaData[1][j].id + ')">添加子类</a>' +
+                        html += '<li><a href="#" class="one">' + data.aaData[1][j].servicePeopleStateName + '</a><cc>' +
                             '<a onclick="make(' + data.aaData[1][j].id + ')">修改本类</a><a onclick="del(' + data.aaData[1][j].id + ')">删除本类</a></cc>';
-                        if (num3 >= 1) {
-                            html += '<ul style="display:none;">';
-                            for (var c = 0; c < num3; c++) {
-                                if (data.aaData[1][j].id == data.aaData[2][c].tid) {
-                                    html += '<li><a>' + data.aaData[2][c].servicePeopleStateName + '</a><cc><a onclick="make(' + data.aaData[2][c].id + ')">修改本类</a><a onclick="del(' + data.aaData[2][c].id + ')">删除本类</a></cc></li>';
-                                }
-                            }
-                            html += '</ul>'
-                        }
                         html += '</li>';
                     }
                 }
@@ -73,8 +62,6 @@ function findAll1() {
             } else {
                 //控制本级图标变化
                 $(this).children("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
-                //控制子级图标变化
-                $(this).siblings("ul").find("i").removeClass("glyphicon-minus").addClass("glyphicon-plus");
                 //控制自身菜单下子菜单隐藏
                 $(this).siblings('ul').slideUp(100);
                 //控制自身菜单下子菜单隐藏

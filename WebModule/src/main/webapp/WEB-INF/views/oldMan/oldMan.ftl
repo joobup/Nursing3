@@ -1,7 +1,6 @@
 
 <link href="${domainUrl}/assets/css/oldMan/oldMan.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/institution/olderMan/servicePeople.js"></script>
-<script src="${domainUrl}/assets/js/serve/serveClassFindAll.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/webuploader.html5only.min.js"></script>
@@ -23,112 +22,13 @@
     <an><input type="button" id="cao" value="人员添加" data-toggle="modal" data-target="#myModal" onclick="findAll()"> <input
             type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input
             type="button" value="删除人员" " id="shanchu-yes">
-        <#--<input type="button" value="表格显示" onclick="sideUrl('/serve/services/servicesB')">-->
+    <#--<input type="button" value="表格显示" onclick="sideUrl('/serve/services/servicesB')">-->
     </an>
 </div>
-
 <!--添加内容静态页-->
-<#--<div class="serve-module">-->
-<#--</div>-->
 <div class="zong">
-    <ul class="box">
-        <li class="pull-left box-left"><img src="${domainUrl}/assets/images/serve/11.png" alt="" id="servicePeoplePicture"></li>
-        <li class="pull-left box-con">
-            <ul>
-                <li>ID：<span id="userId"></span></li>
-                <li>姓名：<span  id="servicePeopleName"></span></li>
-                <li>年龄：<span  id="servicePeopleAge"></span></li>
-                <li>性别：<span  id="servicePeopleSex"></span></li>
-                <li>关系：<span  id="servicePeopleRelation"></span></li>
-            </ul>
-        </li>
-        <li class="pull-left box-right">
-            <ul>
-                <li>人员状态：<span id="servicePeopleStateId"></span></li>
-                <li>服务类型：<span id="servicePeopleTypeId"></span></li>
-                <li>护理级别：<span id="nursingLeave"></span></li>
-                <li>联系方式：<span id="servicePeopleTel"></span></li>
-            </ul>
-        </li>
-        <div class="clearfix"></div>
-        <i class="glyphicon glyphicon-pencil bianji" style="position:absolute;right:20px;top:15px;cursor:pointer;font-size:18px;color:#ff743d;" title="编辑" data-toggle="modal" data-target="#myModal" ></i>
-        <i class="glyphicon glyphicon-remove shanchu" style="position:absolute;right:20px;top:15px;cursor:pointer;font-size:18px;color:#ff743d;display: none;" title="删除" style="display: none" ></i>
-
-        <button type="button" class="btn btn-primary btn1-style" data-toggle="modal" data-target="#myModal2">
-            添加详情
-        </button>
-
-        <!--信息表 -->
-        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                        <h4 class="modal-title" id="myModalLabel">老人信息登记表</h4>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <td>姓名：</td>
-                                <td><input type="text" id="servicePeopleName"></td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>年龄：</td>
-                                <td><input type="text" id="servicePeopleAge"></td>
-
-                            </tr>
-                            <tr>
-                                <td>性别：</td>
-                                <td><input type="text" id="servicePeopleSex"></td>
-
-                            </tr>
-                            <tr>
-                                <td>关系：</td>
-                                <td><input type="text" id="servicePeopleRelation"></td>
-                            </tr>
-
-                            <tr>
-                                <td>注意事项：</td>
-                                <td><input type="text" id="servicePeopleAttention"></td>
-                            </tr>
-
-                            <tr>
-                                <td>客户ID：</td>
-                                <td><input type="text" id="userId"></td>
-                            </tr>
-
-                            <tr>
-                                <td>联系方式：</td>
-                                <td><input type="text" id="servicePeopleTel"></td>
-                            </tr>
-
-                            <tr>
-                                <td>状态：</td>
-                                <td><input type="text" id="servicePeopleStateId"></td>
-                            </tr>
-                            <tr>
-                                <td>服务对象状态：</td>
-                                <td><select id="servicePeopleTypeId"></select></td>
-                            </tr>
-
-                            <tr>
-                                <td>护理级别：</td>
-                                <td><select id="nursingLeave"></select></td>
-                            </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer"  style="border:0px;" >
-                        <button type="button" class="btn btn-default btn2-style" data-dismiss="modal">关闭</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+</div>
+<!--信息表 -->
         <!--登记详情表(input输入用) -->
         <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog">
@@ -287,7 +187,7 @@
         </div>
 
         <!--登记详情表格（显示用) -->
-        <table class="add">
+        <table class="add" style="display: none;">
             <thead>
             <tr>
                 <th>服务对象id</th>
@@ -402,8 +302,6 @@
             </tbody>
         </table>
 
-    </ul>
-</div>
 
 <#--分页-->
 <script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
@@ -422,7 +320,7 @@
                 <table class="add">
                     <tr>
                         <td>姓名</td>
-                        <td><input tyle="text" id="servicePeopleName" ></td>
+                        <td><input tyle="text" id="servicePeopleName"></td>
                     </tr>
                     <tr>
                         <td>年龄</td>
@@ -440,21 +338,29 @@
                         <td>注意事项</td>
                         <td><input tyle="text" id="servicePeopleAttention" ></td>
                     </tr>
-                    <tr>
-                        <td>客户ID</td>
-                        <td><input tyle="text" id="userId"></td>
-                    </tr>
+                    <#--<tr>-->
+                        <#--<td>客户ID</td>-->
+                        <#--<td><sclect id="userId"></sclect></td>-->
+                    <#--</tr>-->
                     <tr>
                         <td>联系方式</td>
                         <td><input tyle="text" id="servicePeopleTel" ></td>
                     </tr>
                     <tr>
                         <td>服务对象状态</td>
-                        <td><select id="servicePeopleTypeId" ></select></td>
+                        <td><select id="servicePeopleTypeId" style="margin-left: 20px;" ></select></td>
+                    </tr>
+                    <tr id="tr2" style="display: none;">
+                        <td></td>
+                        <td><select id="servicePeopleTypeId2" style="margin-left: 20px;" ></select></td>
                     </tr>
                     <tr>
                         <td>护理级别</td>
-                        <td><select id="nursingLeave"></select></td>
+                        <td><select id="nursingLeave" style="margin-left: 20px;" ></select></td>
+                    </tr>
+                    <tr id="tr22" style="display: none;">
+                        <td></td>
+                        <td><select id="nursingLeave2" style="margin-left: 20px;" ></select></td>
                     </tr>
                 </table>
             </div>

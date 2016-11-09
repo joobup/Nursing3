@@ -4,7 +4,7 @@
 /*本周食谱*/
 //添加
 function foodAdd() {
-    var url = domainUrl+"/serve/dishes/ys_week_food/add";
+    var url = domainUrl+"/serve/week_food/add";
     var weekDate = $("#weekDate").val();
     var oneEarly = $("#oneEarly").val();
     var dishesList = $("#dishesList").val();
@@ -22,7 +22,7 @@ function foodAdd() {
 }
 //查询
 function foodFindAll(currentPage) {
-    var url = domainUrl+"/serve/dishes/ys_week_food/findAll";
+    var url = domainUrl+"/serve/week_food/findAll";
     var html= '';
     var getData = {
         currentPage:currentPage,
@@ -34,7 +34,7 @@ function foodFindAll(currentPage) {
 }
 //修改
 function update(id) {
-    var url = domainUrl+"/serve/dishes/ys_week_food/update";
+    var url = domainUrl+"/serve/week_food/update";
     var weekDate = $("#weekDate").val();
     var oneEarly = $("#oneEarly").val();
     var dishesList = $("#dishesList").val();
@@ -53,7 +53,7 @@ function update(id) {
 }
 //删除
 function del(id) {
-    var url = domainUrl + "/serve/dishes/ys_week_food/del";
+    var url = domainUrl + "/serve/week_food/del";
     var postData={id:id};
     postAjax(url,false,postData,function (data) {
         alert("删除成功");

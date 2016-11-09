@@ -23,6 +23,12 @@ function findAll() {
                         $("#tr2").show();
                         findAll2();
                         serveClassify = null;
+                    }else{
+                        var selectIndex = document.getElementById("sel1").selectedIndex;//获得是第几个被选中了
+                        var selectText = document.getElementById("sel1").options[selectIndex].value //获得被选中的项目
+                        serveClassify = selectText;
+                        $("#tr2").hide();
+                        $("#tr3").hide()
                     }
                 }
             } else {
@@ -55,6 +61,12 @@ function findAll2() {
                     if (id == data.aaData[2][i].tid) {
                         $("#tr3").show();
                         findAll3();
+                        serveClassify = null;
+                    }else{
+                        var selectIndex = document.getElementById("sel2").selectedIndex;//获得是第几个被选中了
+                        var selectValue = document.getElementById("sel2").options[selectIndex].value //获得被选中的项目
+                        serveClassify = selectValue;
+                        $("#tr3").hide()
                     }
                 }
             }else{

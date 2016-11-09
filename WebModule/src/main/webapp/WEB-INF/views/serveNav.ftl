@@ -1,7 +1,7 @@
 <html>
 <head>
-    <link href="${domainUrl}/assets/css/serve/servePublic.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/serve/servePublic.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/OutCss/page/page.css" rel="stylesheet" >
     <link href="${domainUrl}/assets/css/OutCss/date/jquery.data_input.pack.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/OutCss/upload/diyUpload.css" rel="stylesheet" >
@@ -50,6 +50,8 @@
                         <li><a onclick="sideUrl('/food/foodList')">饮食列表</a></li>
                         <li><a onclick="sideUrl('/food/foodClassify')">饮食分类</a></li>
                         <li><a onclick="sideUrl('/food/foodMaterial')">食材配料</a></li>
+                        <li><a onclick="sideUrl('/food/foodNutriment')">营养物质</a></li>
+                        <li><a onclick="sideUrl('/food/foodWeek')">本周食谱</a></li>
                     </ul>
                 </li>
             </ul>
@@ -57,7 +59,7 @@
 
         <#--主要内容显示-->
             <div id="main-show">
-        </div>
-        <#include "/common/foot.ftl"/>
+            </div>
+            <#include "/common/foot.ftl"/>
 </body>
 </html>

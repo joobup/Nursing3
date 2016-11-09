@@ -1,7 +1,7 @@
-<script src="${domainUrl}/assets/js/institution/food/foodMaterial.js"></script>
+<script src="${domainUrl}/assets/js/institution/food/foodNutriment.js"></script>
 <link href="${domainUrl}/assets/css/serve/classify.css" rel="stylesheet">
 <div id="now-position">
-    您当前所在的位置：<span>菜品类别</span>
+    您当前所在的位置：<span>营养物质</span>
 </div>
 <div class="serve-banner">
     <an><input type="button" id="cao" value="添加类别" data-toggle="modal" data-target="#myModal">
@@ -29,14 +29,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title  text-center" id="myModalLabel">
-                    添加类别
+                    添加营养类别
                 </h3>
             </div>
             <div class="modal-body">
                 <table class="add">
                     <tr>
                         <td>类别名称</td>
-                        <td><input type="text" id="meterialTypeName"><input type="text" id="classTid" style="display: none;"></td>
+                        <td><input type="text" id="nutrimentName"><input type="text" id="classTid" style="display: none;"></td>
                     </tr>
                 </table>
             </div>
