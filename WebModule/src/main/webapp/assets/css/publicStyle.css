@@ -1,14 +1,16 @@
 /*全局样式*/
 *{  margin: 0;  padding: 0; font-family: "微软雅黑" }
 a{  cursor: pointer;  text-decoration:none;  }
-a:link{  text-decoration:none;  }
-a:visited{  text-decoration:none;  }
-a:hover{  text-decoration:none;  }
-a:active{  text-decoration:none;  }
+a:link{ text-decoration:none;  }
+a:visited{ text-decoration:none;  }
+a:hover{ text-decoration:none;  }
+a:active{ text-decoration:none;  }
 li{  list-style: none;  }
 div{  display: block; z-index: 1 }
 h1{font-size: 60px; font-family: "方正兰亭超细黑简体"}
 .w{width: 1230px; margin: 0px auto; height: 100%; }
+
+
 /*主页按钮*/
 .re-btn-s{border: 1px solid #ffffff; width: 162px; height: 42px; margin: 0px auto;}
 .re-btn-x{border: 1px solid #ffffff; width: 150px; height: 55px;  margin: -7px 0px 0px 5px;  text-align: center; line-height: 52px; font-size: 24px; cursor: pointer;transition: .5s;}
@@ -16,10 +18,10 @@ h1{font-size: 60px; font-family: "方正兰亭超细黑简体"}
 .nav{ background-color: #333333; height: 34px;  line-height: 34px; font-family: "微软雅黑";font-size: 14px; color:#B0B0B0;width: 100%; }
     .nav-fl , .nav-fl li{  float: left;  }
     .nav-fl a{ color:#B0B0B0;  }
-    .nav-fl a:hover{ color:#fff; }
+    .nav-fl a:hover{ color: #ff743d; }
     .nav-fl .please-login{ margin-left: 20px;}
     .nav-fl .please-login a{color:#B0B0B0; margin-right: 10px;}
-    .nav-fl .please-login a:hover{color:#fff; margin-right: 10px;}
+    .nav-fl .please-login a:hover{color: #ff743d; margin-right: 10px;}
     .nav-fr{  float: right; position: relative; }
     .nav-fr li{ float: left; position: relative;  margin-left: 28px; }
     .nav-fr li:hover{color:#ffffff;cursor: pointer;}

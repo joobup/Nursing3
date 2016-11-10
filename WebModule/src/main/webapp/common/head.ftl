@@ -4,7 +4,7 @@
         <ul class="nav-fl">
             <li>天津 [<a>切换城市</a>]&nbsp;&nbsp;&nbsp;</li>
             <li>欢迎来到&nbsp;承嘉智能</li>
-            <li class="please-login">请<a href="${domainUrl}/rest/login/login">登录</a>免费<a href="${domainUrl}/rest/login/register">注册</a></li>
+            <li class="please-login"><a href="${domainUrl}/rest/login/login">请登录</a><a href="${domainUrl}/rest/login/register">免费注册</a></li>
         </ul>
         <ul class="nav-fr">
             <li class="ic-right">商城主页</li>
