@@ -84,8 +84,9 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
 
             List<WeekFoodOneEarlyVO> weekFoodOneEarlyVOList = new ArrayList<>();
             for (WeekFoodVO weekFoodVO : weekFoodVOList) {
-
-                if (sdf.format(date).equals(weekFoodVO.getFoodDate())) {
+                System.out.println("date:"+sdf.format(date));
+                System.out.println("数据哭："+sdf.format(weekFoodVO.getFoodDate()));
+                if (sdf.format(date).equals(sdf.format(weekFoodVO.getFoodDate()))) {
                     WeekFoodOneEarlyVO weekFoodOneEarlyVO = new WeekFoodOneEarlyVO();
                     weekFoodOneEarlyVO.setFoodDate(weekFoodVO.getFoodDate());
 

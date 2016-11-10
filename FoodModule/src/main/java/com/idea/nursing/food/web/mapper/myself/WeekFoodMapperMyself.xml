@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.idea.nursing.food.web.dao.myself.WeekFoodMapperMyself" >
+  <resultMap id="DishesVOList" type="com.idea.nursing.food.web.domain.vo.DishesVO"  >
+
+    <id column="d_id" property="id" jdbcType="BIGINT" />
+    <result column="d_dishes_name" property="dishesName" jdbcType="VARCHAR" />
+    <result column="d_dishes_taste" property="dishesTaste" jdbcType="VARCHAR" />
+    <result column="d_dishes_allergen" property="dishesAllergen" jdbcType="VARCHAR" />
+    <result column="d_d_dishes_suit_people" property="dishesSuitPeople" jdbcType="VARCHAR" />
+    <result column="d_dishes_weight" property="dishesWeight" jdbcType="TINYINT" />
+    <result column="d_dishes_nutritive_value" property="dishesNutritiveValue" jdbcType="LONGVARCHAR" />
+    <association property="mainPicture" javaType="com.idea.nursing.common.web.domain.pojo.CommentPicture" >
+      <id column="p_id" property="id" jdbcType="BIGINT"/>
+      <result column="p_picture_address" property="pictureAddress" jdbcType="VARCHAR"/>
+      <result column="p_picture_type" property="pictureType" jdbcType="TINYINT"/>
+    </association>
+  </resultMap>
   <resultMap id="BaseResultMap" type="com.idea.nursing.food.web.domain.vo.WeekFoodVO" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="week_date" property="weekDate" jdbcType="TINYINT" />
@@ -8,27 +23,18 @@
     <result column="dishes_list" property="dishesList" jdbcType="VARCHAR" />
     <result column="food_date" property="foodDate" jdbcType="TIMESTAMP" />
 
-    <association property="dishesVOList" javaType="com.idea.nursing.food.web.domain.vo.DishesVO">
-      <id column="id" property="id" jdbcType="BIGINT" />
-      <result column="dishes_name" property="dishesName" jdbcType="VARCHAR" />
-      <result column="dishes_taste" property="dishesTaste" jdbcType="VARCHAR" />
-      <result column="dishes_allergen" property="dishesAllergen" jdbcType="VARCHAR" />
-      <result column="dishes_suit_people" property="dishesSuitPeople" jdbcType="VARCHAR" />
-      <result column="dishes_weight" property="dishesWeight" jdbcType="TINYINT" />
-      <result column="dishes_nutritive_value" property="dishesNutritiveValue" jdbcType="LONGVARCHAR" />
-      <association property="mainPicture" javaType="com.idea.nursing.common.web.domain.pojo.CommentPicture">
-        <id column="id" property="id" jdbcType="BIGINT"/>
-        <result column="picture_address" property="pictureAddress" jdbcType="VARCHAR"/>
-        <result column="picture_type" property="pictureType" jdbcType="TINYINT"/>
-      </association>
-    </association>
+    <collection  property="dishesVOList" resultMap="DishesVOList" >
+
+    </collection >
 
 
   </resultMap>
   <sql id="Base_Column_List" >
     wf.id, wf.week_date, wf.one_early, wf.dishes_list, wf.food_date,
-    d.id, d.dishes_name, d.dishes_taste,d.dishes_allergen,d.dishes_suit_people, d.dishes_weight, d.dishes_nutritive_value,
-    p.id, p.picture_address, p.picture_type
+    d.id d_id, d.dishes_name d_dishes_name, d.dishes_taste d_dishes_taste,d.dishes_allergen d_dishes_allergen,d.dishes_suit_people d_dishes_suit_people,
+    d.dishes_weight d_dishes_weight,
+    d.dishes_nutritive_value d_dishes_nutritive_value,
+    p.id p_id, p.picture_address p_picture_address, p.picture_type p_picture_type
   </sql>
   <select id="findWeekFood" resultMap="BaseResultMap" parameterType="com.idea.nursing.food.web.domain.vo.SelectVOWeekFood">
     select
@@ -39,7 +45,7 @@
     LEFT JOIN  comment_picture p
     on p.id =
     (SELECT dp.picture_id from ys_dishes_picture dp where d.id = dp.dishes_id LIMIT 1)
-    where wf.week_date = #{selectVOWeekFood.week} and year(wf.food_date) = #{selectVOWeekFood.year}
+    where wf.week_date = #{week} and year(wf.food_date) = #{year}
 
 
   </select>

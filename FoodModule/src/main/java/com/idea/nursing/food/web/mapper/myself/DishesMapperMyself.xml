@@ -19,7 +19,7 @@
   </resultMap>
 
   <sql id="Base_Column_List" >
-     d.id, d.dishes_name, d.dishes_taste,d.ishes_allergen,d.dishes_suit_people, d.dishes_weight, d.dishes_nutritive_value,
+     d.id, d.dishes_name, d.dishes_taste,d.dishes_allergen,d.dishes_suit_people, d.dishes_weight, d.dishes_nutritive_value,
       p.id, p.picture_address, p.picture_type
   </sql>
   <select id="findAllVO" resultMap="BaseResultMap" >
