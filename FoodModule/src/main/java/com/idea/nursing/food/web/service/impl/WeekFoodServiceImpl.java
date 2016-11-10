@@ -41,11 +41,21 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
     public void insert(SelectVOWeekFood selectVOWeekFood) {
         //获取本周时间数组
         Date[] weekDateList = DateConversion.getWeekByYearWeek(selectVOWeekFood.getYear(), selectVOWeekFood.getWeek());
-
+        int week = 0;
+        int endweek = 52;
         for(Date fdate:weekDateList){
             Calendar cl = Calendar.getInstance();
             cl.setTime(fdate);
-            int week = cl.get(Calendar.WEEK_OF_YEAR);
+
+            if(Integer.parseInt(selectVOWeekFood.getYear())- cl.get(Calendar.YEAR)==1){
+                week = endweek;
+            }else if(Integer.parseInt(selectVOWeekFood.getYear())- cl.get(Calendar.YEAR)==0){
+                week = selectVOWeekFood.getWeek();
+            }else if(Integer.parseInt(selectVOWeekFood.getYear())- cl.get(Calendar.YEAR)==-1){
+                week = 1;
+            }
+
+
 
             for (int j = 1; j <= 3; j++) {
                 WeekFood weekFood = new WeekFood();
@@ -84,8 +94,7 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
 
             List<WeekFoodOneEarlyVO> weekFoodOneEarlyVOList = new ArrayList<>();
             for (WeekFoodVO weekFoodVO : weekFoodVOList) {
-                System.out.println("date:"+sdf.format(date));
-                System.out.println("数据哭："+sdf.format(weekFoodVO.getFoodDate()));
+
                 if (sdf.format(date).equals(sdf.format(weekFoodVO.getFoodDate()))) {
                     WeekFoodOneEarlyVO weekFoodOneEarlyVO = new WeekFoodOneEarlyVO();
                     weekFoodOneEarlyVO.setFoodDate(weekFoodVO.getFoodDate());
