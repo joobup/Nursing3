@@ -26,15 +26,15 @@ public class WeekFoodController extends GenericController {
 
     /**
         * 添加本周食谱
-        * @param mdate
+        * @param selectVOWeekFood
         * @return
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(Date mdate){
+    public ResultData add(SelectVOWeekFood selectVOWeekFood){
 
         try {
-                weekfoodService.insert(mdate);
+                weekfoodService.insert(selectVOWeekFood);
 
             }catch (Exception e){
                 return ResultData.build().addErroe();

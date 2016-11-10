@@ -12,9 +12,9 @@ import java.util.List;
 public interface WeekFoodService extends GenericService<WeekFood,Long,WeekFoodExample>{
     /**
      * 添加一星期食谱
-     * @param mdate
+     * @param selectVOWeekFood
      */
-    public void insert(Date mdate);
+    public void insert(SelectVOWeekFood selectVOWeekFood);
 
     /**
      * 获取本周食谱
