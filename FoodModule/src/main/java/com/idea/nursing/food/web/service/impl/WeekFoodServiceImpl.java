@@ -38,21 +38,15 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
     }
 
 
-    public void insert(Date mdate) {
-        if (mdate == null) {
-            mdate = new Date();
-        }
+    public void insert(SelectVOWeekFood selectVOWeekFood) {
+        //获取本周时间数组
+        Date[] weekDateList = DateConversion.getWeekByYearWeek(selectVOWeekFood.getYear(), selectVOWeekFood.getWeek());
 
-        Calendar cl = Calendar.getInstance();
-        cl.setTime(mdate);
-        int week = cl.get(Calendar.WEEK_OF_YEAR);
-        int b = mdate.getDay();
-        Date fdate;
+        for(Date fdate:weekDateList){
+            Calendar cl = Calendar.getInstance();
+            cl.setTime(fdate);
+            int week = cl.get(Calendar.WEEK_OF_YEAR);
 
-        Long fTime = mdate.getTime() - b * 24 * 3600000;
-        for (int a = 1; a <= 7; a++) {
-            fdate = new Date();
-            fdate.setTime(fTime + (a * 24 * 3600000));
             for (int j = 1; j <= 3; j++) {
                 WeekFood weekFood = new WeekFood();
                 weekFood.setDishesList("");
@@ -61,8 +55,8 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
                 weekFood.setWeekDate((byte) week);
                 weekfoodDao.insert(weekFood);
             }
-
         }
+
 
     }
 
@@ -70,7 +64,10 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
     public WeekFoodShowVO findWeekVO(SelectVOWeekFood selectVOWeekFood) {
 
         List<WeekFoodVO> weekFoodVOList = weekFoodMapperMyself.findWeekFood(selectVOWeekFood);
-
+        if(weekFoodVOList.size()==0){
+            insert(selectVOWeekFood);
+            weekFoodVOList = weekFoodMapperMyself.findWeekFood(selectVOWeekFood);
+        }
 
         //获取本周时间数组
         Date[] weekDateList = DateConversion.getWeekByYearWeek(selectVOWeekFood.getYear(), selectVOWeekFood.getWeek());
