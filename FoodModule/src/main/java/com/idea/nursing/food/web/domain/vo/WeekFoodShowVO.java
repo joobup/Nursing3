@@ -14,7 +14,7 @@ public class WeekFoodShowVO {
 
     private Integer week;
 
-    private List<List<WeekFoodOneEarlyVO>> weekFoodOneEarlyVOs;
+    private List<WeekFoodOneEarlyVO> weekFoodOneEarlyVOs;
 
 
     @Override
@@ -51,11 +51,11 @@ public class WeekFoodShowVO {
         this.week = week;
     }
 
-    public List<List<WeekFoodOneEarlyVO>> getWeekFoodOneEarlyVOs() {
+    public List<WeekFoodOneEarlyVO> getWeekFoodOneEarlyVOs() {
         return weekFoodOneEarlyVOs;
     }
 
-    public void setWeekFoodOneEarlyVOs(List<List<WeekFoodOneEarlyVO>> weekFoodOneEarlyVOs) {
+    public void setWeekFoodOneEarlyVOs(List<WeekFoodOneEarlyVO> weekFoodOneEarlyVOs) {
         this.weekFoodOneEarlyVOs = weekFoodOneEarlyVOs;
     }
 }

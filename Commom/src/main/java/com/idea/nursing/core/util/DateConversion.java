@@ -72,7 +72,7 @@ public class DateConversion {
         }
     }
 
-    public static Date[] getWeekByYearWeek(String year, Integer week) {
+    public static Date[] getWeekByYearWeek(Date startDate, Date endDate) {
         Date[] result = new Date[7];
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -81,19 +81,17 @@ public class DateConversion {
 
         Calendar cl = Calendar.getInstance();
 
-        cl.set(Calendar.YEAR, Integer.parseInt(year));
-        cl.set(Calendar.WEEK_OF_YEAR, week);
+        cl.setTime(startDate);
+
 
         Date mdate = cl.getTime();
 
         Date fdate;
-        int b = mdate.getDay();
 
-        Long fTime = mdate.getTime() - b * 24 * 3600000;
-        for (int a = 1; a <= 7; a++) {
+        for (int a = 0; a < 7; a++) {
             fdate = new Date();
-            fdate.setTime(fTime + (a * 24 * 3600000));
-            result[a-1]=fdate;
+            fdate.setTime(mdate.getTime() + (a * 24 * 3600000));
+            result[a]=fdate;
 
         }
         return result;

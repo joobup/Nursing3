@@ -1,35 +1,37 @@
 package com.idea.nursing.food.web.domain.vo;
 
+import java.util.Date;
+
 /**
  * Created by 10238 on 2016/11/9.
  */
 public class SelectVOWeekFood {
 
-    private Integer week;
-    private String year;
+    private Date startDate;
+    private Date endDate;
 
 
     @Override
     public String toString() {
         return "SelectVOWeekFood{" +
-                "week=" + week +
-                ", year='" + year + '\'' +
+                "startDate=" + startDate +
+                ", endDate=" + endDate +
                 '}';
     }
 
-    public Integer getWeek() {
-        return week;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setWeek(Integer week) {
-        this.week = week;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public String getYear() {
-        return year;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setYear(String year) {
-        this.year = year;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 }

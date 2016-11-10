@@ -40,20 +40,14 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
 
     public void insert(SelectVOWeekFood selectVOWeekFood) {
         //获取本周时间数组
-        Date[] weekDateList = DateConversion.getWeekByYearWeek(selectVOWeekFood.getYear(), selectVOWeekFood.getWeek());
+        Date[] weekDateList = DateConversion.getWeekByYearWeek(selectVOWeekFood.getStartDate(), selectVOWeekFood.getEndDate());
         int week = 0;
         int endweek = 52;
         for(Date fdate:weekDateList){
             Calendar cl = Calendar.getInstance();
             cl.setTime(fdate);
+            week = cl.get(Calendar.WEEK_OF_YEAR);
 
-            if(Integer.parseInt(selectVOWeekFood.getYear())- cl.get(Calendar.YEAR)==1){
-                week = endweek;
-            }else if(Integer.parseInt(selectVOWeekFood.getYear())- cl.get(Calendar.YEAR)==0){
-                week = selectVOWeekFood.getWeek();
-            }else if(Integer.parseInt(selectVOWeekFood.getYear())- cl.get(Calendar.YEAR)==-1){
-                week = 1;
-            }
 
 
 
@@ -80,49 +74,61 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
         }
 
         //获取本周时间数组
-        Date[] weekDateList = DateConversion.getWeekByYearWeek(selectVOWeekFood.getYear(), selectVOWeekFood.getWeek());
+        Date[] weekDateList = DateConversion.getWeekByYearWeek(selectVOWeekFood.getStartDate(), selectVOWeekFood.getEndDate());
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         //封装返回数据
         WeekFoodShowVO weekFoodShow = new WeekFoodShowVO();
         weekFoodShow.setWeekStartDate(weekDateList[0]);
         weekFoodShow.setWeekEndDate(weekDateList[6]);
-        weekFoodShow.setWeek(selectVOWeekFood.getWeek());
+        Calendar cl = Calendar.getInstance();
+        cl.setTime(selectVOWeekFood.getStartDate());
+        int  week = cl.get(Calendar.WEEK_OF_YEAR);
+        weekFoodShow.setWeek(week);
 
-        List<List<WeekFoodOneEarlyVO>> weekFoodOneEarlyVOListList =  new ArrayList<>();
+        List<WeekFoodOneEarlyVO> weekFoodOneEarlyVOListList =  new ArrayList<>();
         for (Date date : weekDateList) {
 
-            List<WeekFoodOneEarlyVO> weekFoodOneEarlyVOList = new ArrayList<>();
+            WeekFoodOneEarlyVO weekFoodOneEarlyVO = new WeekFoodOneEarlyVO();
+            weekFoodOneEarlyVO.setFoodDate(date);
             for (WeekFoodVO weekFoodVO : weekFoodVOList) {
 
                 if (sdf.format(date).equals(sdf.format(weekFoodVO.getFoodDate()))) {
-                    WeekFoodOneEarlyVO weekFoodOneEarlyVO = new WeekFoodOneEarlyVO();
-                    weekFoodOneEarlyVO.setFoodDate(weekFoodVO.getFoodDate());
 
 
                     if (weekFoodVO.getOneEarly() == 1) {
+
+
                         Map<String, Object> morningDishes = new HashedMap();
                         morningDishes.put("id", weekFoodVO.getId());
                         morningDishes.put("dishesList", weekFoodVO.getDishesVOList());
+                        weekFoodOneEarlyVO.setMorningDishes(morningDishes);
+
                     }
                     if (weekFoodVO.getOneEarly() == 2) {
+
+
                         Map<String, Object> noonDishes = new HashedMap();
                         noonDishes.put("id", weekFoodVO.getId());
                         noonDishes.put("dishesList", weekFoodVO.getDishesVOList());
+                        weekFoodOneEarlyVO.setNoonDishes(noonDishes);
                     }
                     if (weekFoodVO.getOneEarly() == 3) {
+
+
                         Map<String, Object> nightDishes = new HashedMap();
                         nightDishes.put("id", weekFoodVO.getId());
                         nightDishes.put("dishesList", weekFoodVO.getDishesVOList());
+                        weekFoodOneEarlyVO.setNightDishes(nightDishes);
                     }
 
-                    weekFoodOneEarlyVOList.add(weekFoodOneEarlyVO);
+
 
                 }
 
             }
 
-            weekFoodOneEarlyVOListList.add(weekFoodOneEarlyVOList);
+            weekFoodOneEarlyVOListList.add(weekFoodOneEarlyVO);
         }
         weekFoodShow.setWeekFoodOneEarlyVOs(weekFoodOneEarlyVOListList);
         return weekFoodShow;

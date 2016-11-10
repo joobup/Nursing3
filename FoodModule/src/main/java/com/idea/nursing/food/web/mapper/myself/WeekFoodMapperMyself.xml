@@ -45,7 +45,7 @@
     LEFT JOIN  comment_picture p
     on p.id =
     (SELECT dp.picture_id from ys_dishes_picture dp where d.id = dp.dishes_id LIMIT 1)
-    where wf.week_date = #{week} and year(wf.food_date) = #{year}
+        where wf.food_date &gt;= #{startDate} and wf.food_date  &lt;= #{endDate}
 
 
   </select>
