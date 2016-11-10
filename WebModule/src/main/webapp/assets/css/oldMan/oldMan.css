@@ -46,7 +46,7 @@
 
 /*静态页面css*/
 .zong{padding-left:1%}
-.box{background:#fff;width:31%;height:200px;margin: 0px 1% 15px 1%;border-radius: 2px;position: relative;min-width: 450px;}
+.box{float:left;background:#fff;width:31%;height:200px;margin: 0px 1% 15px 1%;border-radius: 2px;position: relative;min-width: 450px;}
 .box:hover{box-shadow: 0px 0px 5px 2px #ff743d;}
 .box ul{padding-top:20px;}
 .box .box-left{margin-right:20px;margin-left:20px;}

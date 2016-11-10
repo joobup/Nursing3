@@ -16,3 +16,5 @@ $(function () {
         $("#search").find("img").attr("src",domainUrl+"/images/index/search.png")
     })
 })
+
+

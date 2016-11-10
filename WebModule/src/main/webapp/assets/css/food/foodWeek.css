@@ -1,0 +1,35 @@
+.content{padding:0px 2% 2% 2%;}
+.content h2{font-size:22px;color:#333;margin-bottom:30px;margin-top:0px;}
+.content h2 span{font-size:16px;}
+.content h3{text-align:center;color:#fff !important;text-shadow:none;}
+.content h4{margin-bottom:20px;}
+.content p span{margin-right:10px;cursor:pointer;}
+.content i{color:#FF743D;margin-right:5px;}
+
+.recipesList{width:100%;display:flex;}
+.active_red{background:#FF743D;}
+.active_red:hover{background:#FF743D !important;}
+.active_red:focus{background:#FF743D !important;}
+.box{width:14%;position:relative;margin-right:10px; max-height:480px;min-width:180px;}
+.box button{width:40px;height:20px;background:#FF743D;float:right;font-size:12px;color:#fff;border:0px; box-shadow:none;outline:none;}
+.box .pa{padding-top:20px;padding-bottom:20px;}
+.box .aa{margin-top:50px; margin-bottom:25px;}
+.box .active_redp p{padding-top:15px;padding-bottom:15px;}
+.introduce{width:100%;position:absolute;left:100%;top:0px;display:none; box-shadow: 0px 0px 5px 2px #ff743d;border-radius:2px;z-index:9999;}
+.introduce h4{font-size:14px;}
+.introduce p{font-size:12px;}
+
+.review {margin-top:60px;}
+.review button{width:100px;height:30px;background:#fff;color:#333;border-radius:3px;border:1px #ddd solid;margin-left:10px;}
+.review button i{margin:0 10px;}
+.review button:hover{border:0px;box-shadow:none;background:#ff743d;color:#fff;}
+.review button:hover i{color:#fff;}
+
+
+
+/*表格*/
+.fade h4{margin-bottom:0px;}
+.add button{ text-shadow:none;}
+.add th{border:0px !important;}
+.add input{width:174px;}
+.add textarea{border:1px #ddd solid;}

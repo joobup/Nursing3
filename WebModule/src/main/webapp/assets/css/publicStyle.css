@@ -13,15 +13,16 @@ h1{font-size: 60px; font-family: "方正兰亭超细黑简体"}
 .re-btn-s{border: 1px solid #ffffff; width: 162px; height: 42px; margin: 0px auto;}
 .re-btn-x{border: 1px solid #ffffff; width: 150px; height: 55px;  margin: -7px 0px 0px 5px;  text-align: center; line-height: 52px; font-size: 24px; cursor: pointer;transition: .5s;}
 /*顶部导航*/
-.nav{  background-color: #F2F2F2; height: 34px;  line-height: 34px; font-family: "微软雅黑";font-size: 14px; color:#5F5F5F;width: 100%; }
+.nav{ background-color: #333333; height: 34px;  line-height: 34px; font-family: "微软雅黑";font-size: 14px; color:#B0B0B0;width: 100%; }
     .nav-fl , .nav-fl li{  float: left;  }
-    .nav-fl a{  color: #ac2925;  }
-    .nav-fl a:hover{  color: #985f0d;  }
+    .nav-fl a{ color:#B0B0B0;  }
+    .nav-fl a:hover{ color:#fff; }
     .nav-fl .please-login{ margin-left: 20px;}
-    .nav-fl .please-login a{ color:#FE5552; margin-right: 10px;}
+    .nav-fl .please-login a{color:#B0B0B0; margin-right: 10px;}
+    .nav-fl .please-login a:hover{color:#fff; margin-right: 10px;}
     .nav-fr{  float: right; position: relative; }
-    .nav-fr li{  float: left; position: relative;  margin-left: 28px; }
-    .nav-fr li:hover{color: #ac2925;cursor: pointer;}
+    .nav-fr li{ float: left; position: relative;  margin-left: 28px; }
+    .nav-fr li:hover{color:#ffffff;cursor: pointer;}
     .nav-fr li span{color: #000000;}
     .nav-fr .ic-right img{position:absolute; top: 9px;left: -19px;}
     #web-nav div{ background-color: #ffffff; width: 800px; height: 400px; position: absolute; z-index: -1; right: 0px; opacity: 0;}
