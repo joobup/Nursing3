@@ -29,7 +29,7 @@ public class ServicePeopleVO {
 
     private CommentPicture mainPicture;
 
-    private Byte isHaveServicePeopleRegister;
+    private Long isHaveServicePeopleRegister;
 
     @Override
     public String toString() {
@@ -59,11 +59,11 @@ public class ServicePeopleVO {
         this.mainPicture = mainPicture;
     }
 
-    public Byte getIsHaveServicePeopleRegister() {
+    public Long getIsHaveServicePeopleRegister() {
         return isHaveServicePeopleRegister;
     }
 
-    public void setIsHaveServicePeopleRegister(Byte isHaveServicePeopleRegister) {
+    public void setIsHaveServicePeopleRegister(Long isHaveServicePeopleRegister) {
         this.isHaveServicePeopleRegister = isHaveServicePeopleRegister;
     }
 

@@ -86,4 +86,16 @@ public class ServicePeopleRegisterController extends GenericController {
         parsePageBean(servicepeopleregisterService.findAll(currentPage,limit));
     }
 
+    /**
+     * 通过id获取信息
+     *
+     * @param id
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="findOne",method = RequestMethod.GET)
+    public ResultData findOne(Long id){
+        return ResultData.build().parseBean(servicepeopleregisterService.selectById(id));
+    }
+
 }

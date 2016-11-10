@@ -17,6 +17,7 @@ import com.idea.nursing.oldpeople.web.service.ServicePeopleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 
 
 @Service
@@ -48,10 +49,11 @@ public class ServicePeopleServiceImpl extends GenericServiceImpl<ServicePeople, 
              ) {
             ServicePeopleRegisterExample example = new ServicePeopleRegisterExample();
             example.createCriteria().andServicePeopleIdEqualTo(servicePeopleVO.getId());
+            List<ServicePeopleRegister> servicePeopleRegisterList= servicePeopleRegisterMapper.selectByExample(example);
             if(servicePeopleRegisterMapper.selectByExample(example).size()==0){
-                servicePeopleVO.setIsHaveServicePeopleRegister((byte)0);
+                servicePeopleVO.setIsHaveServicePeopleRegister(0l);
             }else{
-                servicePeopleVO.setIsHaveServicePeopleRegister((byte)1);
+                servicePeopleVO.setIsHaveServicePeopleRegister(servicePeopleRegisterList.get(0).getId());
             }
 
 
