@@ -58,7 +58,7 @@
         </div>
 
         <#--主要内容显示-->
-            <div id="main-show">
+            <div id="main-show" style="position:relative;">
             </div>
             <#include "/common/foot.ftl"/>
 </body>

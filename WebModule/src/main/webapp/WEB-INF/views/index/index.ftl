@@ -5,6 +5,7 @@
             <link rel="stylesheet" href="${domainUrl}/assets/css/index/index.css">
             <link rel="stylesheet" href="${domainUrl}/assets/css/publicStyle.css">
             <link rel="stylesheet" type="text/css" href="${domainUrl}/assets/css/OutCss/Carousel/orbit-1.2.3.css"/>
+
             <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="${domainUrl}/assets/js/OutJs/Carousel/Carousel.js"></script>
 <script type="text/javascript" src="${domainUrl}/assets/js/index/index.js"></script>
@@ -27,21 +28,22 @@
 <!--logo&搜索-->
 <div class="banner">
     <div class="w">
-        <div id="logo-img">LOGO</div>
+        <div id="logo-img"><img src="${domainUrl}/assets/images/index/logo1-01.png"></div>
+
         <div id="search">
-            <input type="text" placeholder="智能机器人"><button><img src="${domainUrl}/assets/images/index/search.png">搜索</button>
+            <input type="text" placeholder="智能机器人"><button><img src="${domainUrl}/assets/images/index/search.png"></button>
         </div>
+
         <div id="shopping-cart">
             <button><img src="${domainUrl}/assets/images/index/shoppcart.png">进入购物车</button>
         </div>
+        <div class="clearfix"></div>
     </div>
 </div>
 <!--分类栏-->
 <div class="classify">
     <div class="w">
         <ul>
-            <li><div>首页<br>home page</div></li>
-            <li><div>首页<br>home page</div></li>
             <li><div>首页<br>home page</div></li>
             <li><div>首页<br>home page</div></li>
             <li><div>首页<br>home page</div></li>
@@ -59,9 +61,9 @@
     <div class="container">
         <!--设置data-car可以改变停留时间，设置data-move鼠标悬停是否滚动1滚动，0不滚动-->
         <div id="featured" data-car="5000" data-move="0">
-            <img src="${domainUrl}/assets/images/index/lunbo.png" />
-            <img src="${domainUrl}/assets/images/index/lunbo.png" data-caption="#htmlCaption" />
-            <img src="${domainUrl}/assets/images/index/lunbo.png"  />
+            <img src="${domainUrl}/assets/images/index/banner.png" />
+            <img src="${domainUrl}/assets/images/index/banner.png" data-caption="#htmlCaption" />
+            <img src="${domainUrl}/assets/images/index/banner.png"  />
         </div>
         <span class="orbit-caption" id="htmlCaption"><strong>I'm A Badass Caption:</strong> I can haz <a href="#">links</a>, <em>style</em> or anything that is valid markup :)</span>
     </div>
