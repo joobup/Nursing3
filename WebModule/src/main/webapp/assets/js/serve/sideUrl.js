@@ -40,4 +40,3 @@ function uploadShow(id) {
         $("#box").hide();
     });
 }
-

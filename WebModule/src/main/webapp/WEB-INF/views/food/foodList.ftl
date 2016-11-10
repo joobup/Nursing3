@@ -41,21 +41,46 @@
                         <td>菜品名称</td>
                         <td><input type="text" id="dishesName" class="null"></td>
                     </tr>
+                    <#--<tr>-->
+                        <#--<td>菜品口味</td>-->
+                        <#--<td><input type="text" id="dishesTaste"/></td>-->
+                    <#--</tr>-->
                     <tr>
                         <td>菜品口味</td>
-                        <td><input type="text" id="dishesTaste"/></td>
+                        <td><select id="dishesTaste"></select></td>
                     </tr>
+                    <tr  id="tr2" style="display: none;">
+                        <td></td>
+                        <td><select  id="dishesTaste2"></select></td>
+                    </tr>
+                    <#--<tr>-->
+                        <#--<td>过敏原</td>-->
+                        <#--<td><input type="text" id="dishesAllergen"></td>-->
+                    <#--</tr>-->
                     <tr>
                         <td>过敏原</td>
-                        <td><input type="text" id="dishesAllergen"></td>
+                        <td><select id="dishesAllergen" ></select></td>
+                    </tr>
+                    <tr  id="tr22" style="display: none;">
+                        <td></td>
+                        <td><select id="dishesAllergen2" ></select></td>
                     </tr>
                     <tr>
                         <td>适合人群</td>
                         <td><input type="text" id="dishesSuitPeople" class="null"></td>
                     </tr>
+
+                    <#--<tr>-->
+                        <#--<td>营养价值</td>-->
+                        <#--<td><input type="text" id="dishesNutritiveValue" class="null"></td>-->
+                    <#--</tr>-->
                     <tr>
                         <td>营养价值</td>
-                        <td><input type="text" id="dishesNutritiveValue" class="null"></td>
+                        <td><select id="dishesNutritiveValue"></select></td>
+                    </tr>
+                    <tr id="tr222" style="display: none;">
+                        <td></td>
+                        <td><select  id="dishesNutritiveValue2"></select></td>
                     </tr>
                     <tr>
                         <td>重量</td>

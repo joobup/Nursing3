@@ -34,11 +34,11 @@ function findAll(currentPage) {
         } else {
             var num2 = 0;
         }
-        if (data.aaData[2] != undefined) {
-            var num3 = data.aaData[2].length;
-        }else{
-            var num3 = 0;
-        }
+        // if (data.aaData[2] != undefined) {
+        //     var num3 = data.aaData[2].length;
+        // }else{
+        //     var num3 = 0;
+        // }
         var num1 = data.aaData[0].length;
         for (var i = 0; i < num1; i++) {
             html += '<li style="border-top:1px solid #dddddd"><a href="#" class="one"><i class="glyphicon glyphicon-plus"></i>' +
@@ -48,18 +48,18 @@ function findAll(currentPage) {
                 html += '<ul style="display: none;">';
                 for (var j = 0; j < num2; j++) {
                     if (data.aaData[0][i].id == data.aaData[1][j].tid) {
-                        html += '<li><a href="#" class="one"><i class="glyphicon glyphicon-plus aaa"></i>' + data.aaData[1][j].dishesTypeName + '</a><cc>' +
-                            '<a onclick="openModal(' + data.aaData[1][j].id + ')">添加子类</a>' +
+                        html += '<li><a href="#" class="one">' + data.aaData[1][j].dishesTypeName + '</a><cc>' +
+                            // '<a onclick="openModal(' + data.aaData[1][j].id + ')">添加子类</a>' +
                             '<a onclick="make(' + data.aaData[1][j].id + ')">修改本类</a><a onclick="del(' + data.aaData[1][j].id + ')">删除本类</a></cc>';
-                        if (num3 >= 1) {
-                            html += '<ul style="display:none;">';
-                            for (var c = 0; c < num3; c++) {
-                                if (data.aaData[1][j].id == data.aaData[2][c].tid) {
-                                    html += '<li><a>' + data.aaData[2][c].dishesTypeName + '</a><cc><a onclick="make(' + data.aaData[2][c].id + ')">修改本类</a><a onclick="del(' + data.aaData[2][c].id + ')">删除本类</a></cc></li>';
-                                }
-                            }
-                            html += '</ul>'
-                        }
+                        // if (num3 >= 1) {
+                        //     html += '<ul style="display:none;">';
+                        //     for (var c = 0; c < num3; c++) {
+                        //         if (data.aaData[1][j].id == data.aaData[2][c].tid) {
+                        //             html += '<li><a>' + data.aaData[2][c].dishesTypeName + '</a><cc><a onclick="make(' + data.aaData[2][c].id + ')">修改本类</a><a onclick="del(' + data.aaData[2][c].id + ')">删除本类</a></cc></li>';
+                        //         }
+                        //     }
+                        //     html += '</ul>'
+                        // }
                         html += '</li>';
                     }
                 }
