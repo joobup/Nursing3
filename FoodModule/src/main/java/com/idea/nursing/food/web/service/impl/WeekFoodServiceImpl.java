@@ -68,6 +68,7 @@ public class WeekFoodServiceImpl extends GenericServiceImpl<WeekFood, Long, Week
     public WeekFoodShowVO findWeekVO(SelectVOWeekFood selectVOWeekFood) {
 
         List<WeekFoodVO> weekFoodVOList = weekFoodMapperMyself.findWeekFood(selectVOWeekFood);
+
         if(weekFoodVOList.size()==0){
             insert(selectVOWeekFood);
             weekFoodVOList = weekFoodMapperMyself.findWeekFood(selectVOWeekFood);
