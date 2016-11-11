@@ -1,10 +1,13 @@
 package com.idea.nursing.bed.web.controller;
 
+import com.idea.nursing.bed.web.domain.pojo.BedExample;
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
 import com.idea.nursing.bed.web.domain.pojo.Bed;
 import com.idea.nursing.bed.web.service.BedService;
 
+import com.idea.nursing.core.generic.GenericService;
+import com.idea.nursing.core.generic.GenericTestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,28 +19,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 */
 @Controller
 @RequestMapping("serve/bed")
-public class BedController extends GenericController {
+public class BedController extends GenericTestController<Bed,BedExample> {
     @Autowired
     private BedService bedService;
 
-    /**
-        * 添加床位
-        * @param bed
-        * @return
-    */
-    @ResponseBody
-    @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(Bed bed){
-
-        try {
-                    bedService.insert(bed);
-
-
-            }catch (Exception e){
-                return ResultData.build().addErroe();
-            }
-        return ResultData.build();
-
+    @Override
+    public GenericService getGenericService() {
+        return bedService;
     }
 
     /**
@@ -86,6 +74,7 @@ public class BedController extends GenericController {
         return ResultData.build().
         parsePageBean(bedService.findAll(currentPage,limit));
     }
+
 
 
 }
