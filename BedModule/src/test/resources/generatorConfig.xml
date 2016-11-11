@@ -59,7 +59,7 @@
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>-->
 
-        <table tableName="jg_cw_bed_type" domainObjectName="BedType">
+        <table tableName="jg_cw_bed" domainObjectName="Bed">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
 
