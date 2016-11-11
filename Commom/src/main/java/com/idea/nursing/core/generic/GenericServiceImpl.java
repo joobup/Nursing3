@@ -71,7 +71,14 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
      */
     public abstract GenericDao<Model, PK,ModelExample> getDao();
 
-
+    /**
+     * 获取普通查询对象
+     * @param modelExample
+     * @return
+     */
+    public ModelExample getModelExample(ModelExample modelExample){
+        return modelExample;
+    }
     /**
      * 插入对象
      *

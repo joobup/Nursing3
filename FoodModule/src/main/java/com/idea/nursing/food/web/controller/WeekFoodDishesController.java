@@ -50,6 +50,32 @@ public class WeekFoodDishesController extends GenericController {
     }
 
     /**
+     * 批量添加
+      * @param weekfooddishes
+     * @param dishesIds
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value="adds", method = RequestMethod.POST)
+    public ResultData adds(WeekFoodDishes weekfooddishes,String dishesIds){
+        try {
+            String[] dishes = dishesIds.split(",");
+            for(String str:dishes){
+                weekfooddishes.setDishesId(Long.parseLong(str));
+                weekfooddishesService.insert(weekfooddishes);
+                String dishesList = weekfooddishesService.findDishesListByWeekFood(weekfooddishes.getWeekFoodId());
+                WeekFood weekFood = new WeekFood();
+                weekFood.setId(weekfooddishes.getWeekFoodId());
+                weekFood.setDishesList(dishesList);
+                weekFoodService.update(weekFood);
+            }
+
+        } catch (Exception e) {
+            return ResultData.build().addErroe();
+        }
+        return ResultData.build();
+    }
+    /**
      * 删除本周食谱菜品关系
      *
      * @param weekfooddishes

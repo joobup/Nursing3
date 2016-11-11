@@ -13,4 +13,6 @@ public interface WeekFoodDishesService extends GenericServiceRelation<WeekFoodDi
      */
     public String findDishesListByWeekFood(Long weekFoodId);
 
+
+
 }
