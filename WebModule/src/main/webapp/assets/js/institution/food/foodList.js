@@ -8,14 +8,32 @@ $(function () {
     foodClassify();
     foodMeterial();
     foodNutriment();
+    $("#shanchu-yes").click(function () {
+        $(".bianji").hide();
+        $(".shanchu").show();
+        $("#shanchu-yes").hide();
+        $("#shanchu-no").show();
+    })
+    $("#shanchu-no").click(function () {
+        $(".bianji").show();
+        $(".shanchu").hide();
+        $("#shanchu-yes").show();
+        $("#shanchu-no").hide();
+    })
 })
+function clareModal() {
+    $("#dishesName").val("");
+    $("#dishesSuitPeople").val("");
+    $("#dishesWeight").val("");
+
+}
 function add() {
     var url = domainUrl+"/serve/dishes/add";
     var dishesName = $("#dishesName").val();
     var dishesTaste = $("#dishesTaste").val();
     var dishesAllergen = $("#dishesAllergen").val();
-    var dishesSuitPeople = $("#dishesNutritiveValue").val();
-    var dishesNutritiveValue = $("#dishesSuitPeople").val();
+    var dishesSuitPeople = $("#dishesSuitPeople").val();
+    var dishesNutritiveValue = $("#dishesNutritiveValue").val();
     var dishesWeight = $("#dishesWeight").val();
     var postData = {
         dishesName:dishesName,
@@ -65,11 +83,33 @@ function del(id) {
     }
     postAjax(url,false,postData,function (data) {
         alert("删除成功");
+        $("#shanchu-yes").show();
+        $("#shanchu-no").hide();
         findAll(1);
     })
 }
 /*修改*/
-function update(id) {
+function make(id) {
+    $("#fid").val(id);
+    $("#update-btn").show();
+    $("#add-btn").hide();
+    var url = domainUrl +'/serve/dishes/findAll';
+    var getData = {
+        currentPage:currentPage,
+        limit:limit,
+    };
+    getAjax(url,false,getData,function (data) {
+        var num = data.aaData.length;
+        for(var i = 0; i< num ; i++){
+            if(id == data.aaData[i].id){
+                $("#dishesName").val(data.aaData[i].dishesName);
+                $("#dishesSuitPeople").val(data.aaData[i].dishesSuitPeople);
+                $("#dishesWeight").val(data.aaData[i].dishesWeight);
+            }
+        }
+    })
+}
+function update() {
     var url = domainUrl+"/serve/dishes/update";
     var dishesName = $("#dishesName").val();
     var dishesTaste = $("#dishesTaste").val();

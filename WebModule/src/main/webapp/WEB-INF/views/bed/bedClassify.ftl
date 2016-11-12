@@ -1,17 +1,26 @@
-<link href="${domainUrl}/assets/css/serve/cost.css" rel="stylesheet">
-<script src="${domainUrl}/assets/js/serve/cost.js"></script>
-<script>
-    findAll(1)
-</script>
+<link href="${domainUrl}/assets/css/serve/classify.css" rel="stylesheet">
+<script src="${domainUrl}/assets/js/institution/bed/bedClassify.js"></script>
 <div id="now-position">
-    您当前所在的位置：<span>计费模块</span>
+    您当前所在的位置：<span>床位类别模块</span>
 </div>
 <div class="serve-banner">
-    <an><input type="button" id="cao" value="添加计费" data-toggle="modal" data-target="#myModal">
+    <an><input type="button" id="cao" value="添加类别" data-toggle="modal" data-target="#myModal">
+    <#--<input-->
+    <#--type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input-->
+    <#--type="button" value="删除类别" " id="shanchu-yes">-->
     </an>
 </div>
 <div class="serve-module">
-    <div id="cost-pack">
+    <div class="classify-body">
+        <div class="ify-title">
+            <div class="ify-left">分类名称</div>
+            <div class="ify-right">操作</div>
+        </div>
+        <div>
+            <ul id="ify-show">
+
+            </ul>
+        </div>
     </div>
 </div>
 <#--模态框-->
@@ -20,14 +29,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title  text-center" id="myModalLabel">
-                    添加服务
+                    添加房间类别
                 </h3>
             </div>
             <div class="modal-body">
                 <table class="add">
                     <tr>
-                        <td>计费方式</td>
-                        <td><input type="text" id="jijia"></td>
+                        <td>类别名称</td>
+                        <td><input type="text" id="bedTypeName"><input type="text" id="classTid" style="display: none;"></td>
                     </tr>
                 </table>
             </div>

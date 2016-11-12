@@ -12,7 +12,7 @@
 </div>
 <div class="serve-banner">
 <#--时间控件-->
-    <an><input type="button" id="cao" value="添加菜品" data-toggle="modal" data-target="#myModal" onclick="findAll()"> <input
+    <an><input type="button" id="cao" value="添加菜品" data-toggle="modal" data-target="#myModal" onclick="clareModal()" > <input
             type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input
             type="button" value="删除菜品" " id="shanchu-yes">
         <#--<input type="button" value="表格显示" onclick="sideUrl('/serve/services/servicesB')">-->

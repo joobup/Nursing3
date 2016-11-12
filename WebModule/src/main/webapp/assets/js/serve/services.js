@@ -124,6 +124,13 @@ function costAdd(id) {
         })
     })
 }
+function clearModal() {
+    $("#costPirce").val("");
+    $("#mingcheng").val("");
+    $("#jianjie").val("");
+    $("#tiaojian").val("");
+    $("#renshu").val("");
+}
 var serveClassify ;
 function add() {
     var serveCost = $("#serveCost").val();
@@ -154,6 +161,8 @@ function del(id) {
     var postData = {id: id};
     postAjax(url, false, postData, function (data) {
         alert("删除成功!")
+        $("#shanchu-yes").show();
+        $("#shanchu-no").hide();
         findAllp(1);
     })
 }

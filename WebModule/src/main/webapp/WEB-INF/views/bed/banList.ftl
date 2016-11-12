@@ -1,18 +1,20 @@
-<link href="${domainUrl}/assets/css/serve/cost.css" rel="stylesheet">
-<script src="${domainUrl}/assets/js/serve/cost.js"></script>
-<script>
-    findAll(1)
-</script>
+<link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
+<script src="${domainUrl}/assets/js/institution/bed/banList.js"></script>
 <div id="now-position">
-    您当前所在的位置：<span>计费模块</span>
+    您当前所在的位置：<span>楼门模块</span>
 </div>
+
 <div class="serve-banner">
-    <an><input type="button" id="cao" value="添加计费" data-toggle="modal" data-target="#myModal">
+    <an><input type="button" id="cao" value="添加楼门" data-toggle="modal" data-target="#myModal" onclick="clearModal()">
     </an>
 </div>
 <div class="serve-module">
-    <div id="cost-pack">
-    </div>
+    <table id="aaa">
+
+    </table>
+</div>
+<#--分页-->
+<div class="tcdPageCode">
 </div>
 <#--模态框-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -26,8 +28,20 @@
             <div class="modal-body">
                 <table class="add">
                     <tr>
-                        <td>计费方式</td>
-                        <td><input type="text" id="jijia"></td>
+                        <td>楼名</td>
+                        <td><input type="text" id="entranceName" class="null"></td>
+                    </tr>
+                    <tr>
+                        <td>楼门数</td>
+                        <td><input type="text" id="entranceToalNum"></td>
+                    </tr>
+                    <tr>
+                        <td>楼层</td>
+                        <td><input type="text" id="floorToalNum"></td>
+                    </tr>
+                    <tr>
+                        <td>楼门号</td>
+                        <td><input type="text" id="entranceNum" class="null"><input type="text"id="lid" style="display: none;"></td>
                     </tr>
                 </table>
             </div>

@@ -8,7 +8,7 @@
     您当前所在的位置：<span>打包模块</span>
 </div>
 <div class="serve-banner">
-    <an><input type="button" id="cao" value="打包服务" data-toggle="modal" data-target="#myModal">
+    <an><input type="button" id="cao" value="打包服务" data-toggle="modal" data-target="#myModal" onclick="clearModal()">
         <input type="button" value="平铺显示" onclick="sideUrl('/serve/pack/pack')">
     </an>
 </div>
@@ -66,7 +66,11 @@
                     </tr>
                     <tr>
                         <td>护理级别</td>
-                        <td><input type="text" id="nurseify"></td>
+                        <td><select  id="nurseify"></select></td>
+                    </tr>
+                    <tr id="tr2" style="display: none;">
+                        <td></td>
+                        <td><select  id="nurseify2"></select></td>
                     </tr>
 
                     <tr>

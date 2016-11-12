@@ -24,6 +24,14 @@ $(function () {
         $(".bianji").show();
     })
 })
+function clearModal() {
+    $("#servicePeopleName").val("");
+    $("#servicePeopleAge").val("");
+    $("#servicePeopleSex").val("");
+    $("#servicePeopleRelation").val("");
+    $("#servicePeopleAttention").val("");
+    $("#servicePeopleTel").val("");
+}
 function add() {
     var url = domainUrl + '/serve/service_people/add';
     var servicePeopleName = $("#servicePeopleName").val();
@@ -56,6 +64,7 @@ function add() {
 }
 //查询
 function findAll(currentPage) {
+    clearModal();
     var url = domainUrl + '/serve/service_people/findAll';
     var getData = {
         currentPage: currentPage,
@@ -99,7 +108,9 @@ function del(id) {
         id: id,
     }
     postAjax(url, false, postData, function (data) {
-        alert("删除成功")
+        alert("删除成功");
+        $("#shanchu-yes").show();
+        $("#shanchu-no").hide();
         findAll(1);
     })
 }

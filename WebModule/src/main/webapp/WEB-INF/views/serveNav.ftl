@@ -9,6 +9,7 @@
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script src="${domainUrl}/assets/js/serve/sideUrl.js"></script>
+    <script src="${domainUrl}/assets/js/OutJs/date/Week.js"></script>
     <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
     <meta charset="utf-8"/>
     <title></title>
@@ -33,6 +34,7 @@
                         <li><a onclick="sideUrl('/serve/classify/classify')">类别</a></li>
                         <li><a onclick="sideUrl('/serve/cost/cost')">计费</a></li>
                         <li><a onclick="sideUrl('/serve/staff/staffB')">员工</a></li>
+                        <li><a onclick="sideUrl('/serve/nurseify/nurseify')">护理</a></li>
                         <li><a onclick="sideUrl('/serve/pack/packB')">打包</a></li>
                     </ul>
                 </li>
@@ -52,6 +54,17 @@
                         <li><a onclick="sideUrl('/food/foodMaterial')">食材配料</a></li>
                         <li><a onclick="sideUrl('/food/foodNutriment')">营养物质</a></li>
                         <li><a onclick="sideUrl('/food/foodWeek')">本周食谱</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link"><i class="glyphicon glyphicon-plus-sign"></i>床位管理<i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <ul class="submenu">
+                        <li><a onclick="sideUrl('/bed/banList')">楼门列表</a></li>
+                        <li><a onclick="sideUrl('/bed/roomList')">房间列表</a></li>
+                        <li><a onclick="sideUrl('/bed/roomClassify')">房间类型</a></li>
+                        <li><a onclick="sideUrl('/bed/bedList')">床位列表</a></li>
+                        <li><a onclick="sideUrl('/bed/bedClassify')">床位类型</a></li>
+                        <li><a onclick="sideUrl('/bed/bedCost')">床位价格</a></li>
                     </ul>
                 </li>
             </ul>

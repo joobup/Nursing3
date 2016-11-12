@@ -21,6 +21,7 @@ function sideUrl(url) {
 }
 /*上传图片显示*/
 function uploadShow(id) {
+    $(".parentFileBox").remove();
     $("#aaaa").show();
     $("#box").show();
     $('#test').diyUpload({

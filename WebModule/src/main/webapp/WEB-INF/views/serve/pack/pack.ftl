@@ -10,7 +10,7 @@
     您当前所在的位置：<span>打包模块</span>
 </div>
 <div class="serve-banner">
-    <an><input type="button" id="cao" value="打包服务" data-toggle="modal" data-target="#myModal">
+    <an><input type="button" id="cao" value="打包服务" data-toggle="modal" data-target="#myModal" onclick="clearModal()">
         <input type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no">
         <input type="button" value="删除服务包" " id="shanchu-yes">
         <input type="button" value="表格显示" onclick="sideUrl('/serve/pack/packB')">
@@ -74,9 +74,12 @@
                     </tr>
                     <tr>
                         <td>护理级别</td>
-                        <td><input type="text" id="nurseify"></td>
+                        <td><select  id="nurseify"></select></td>
                     </tr>
-
+                    <tr id="tr2" style="display: none;">
+                        <td></td>
+                        <td><select  id="nurseify2"></select></td>
+                    </tr>
                     <tr>
                         <td style="position: absolute; margin-top: 5px;">服务简介</td>
                         <td><textarea id="brief"></textarea><input type="text" id="xid" style="display: none;">

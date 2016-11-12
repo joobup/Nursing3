@@ -23,43 +23,28 @@
     </div>
 </div>
 <div class="content">
-    <script>
-        $(function () {
-           $("#pull-right").click(function () {
-                $(".recipesList").addClass("bounceInRight").removeClass("bounceInLeft");
-               setTimeout(function(){
-                   $(".recipesList").removeClass("bounceInRight")
-               },2000);
-           })
-            $("#pull-left").click(function () {
-                $(".recipesList").addClass("bounceInLeft").removeClass("bounceInRight");
-                setTimeout(function(){
-                    $(".recipesList").removeClass("bounceInLeft");},2000);
-            })
-        })
-    </script>
-    <h2>本周食谱:<span>(2016年11月7日</span>-<span>2016年11月13日)</span></h2>
+    <div id="weekTitle"></div>
     <!--本周食谱一周-->
     <div class="recipesList animated">
-        <div class="box">
-            <div class="list-group">
-                <div class="list-group-item active_red">
-                    <h3 class="list-group-item-heading">星期一</h3>
-                </div>
-                <div class="list-group-item pa">
-                    <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-heart-empty"></i>早餐<span><button >编辑</button></span></h4>
-                    <p class="list-group-item-text aa"><span class="food">油条</span><span class="food">豆浆</span></p>
-                </div>
-                <div class="list-group-item pa">
-                    <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-cutlery"></i>午餐<span><button>编辑</button></span></h4>
-                    <p class="list-group-item-text aa"><span class="food">米饭</span><span class="food">粥</span><span class="food">鱼香肉丝</span></p>
-                </div>
-                <div class="list-group-item pa">
-                    <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-compressed"></i>晚餐<span><button>编辑</button></span></h4>
-                    <p class="list-group-item-text aa"><span class="food">油菜</span><span class="food">馒头</span><span class="food">糖醋鱼</span></p>
-                </div>
-            </div>
-        </div>
+        <#--<div class="box">-->
+            <#--<div class="list-group">-->
+                <#--<div class="list-group-item active_red">-->
+                    <#--<h3 class="list-group-item-heading">星期一</h3>-->
+                <#--</div>-->
+                <#--<div class="list-group-item pa">-->
+                    <#--<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-heart-empty"></i>早餐<span><button >编辑</button></span></h4>-->
+                    <#--<p class="list-group-item-text aa"><span class="food">油条</span><span class="food">豆浆</span></p>-->
+                <#--</div>-->
+                <#--<div class="list-group-item pa">-->
+                    <#--<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-cutlery"></i>午餐<span><button>编辑</button></span></h4>-->
+                    <#--<p class="list-group-item-text aa"><span class="food">米饭</span><span class="food">粥</span><span class="food">鱼香肉丝</span></p>-->
+                <#--</div>-->
+                <#--<div class="list-group-item pa">-->
+                    <#--<h4 class="list-group-item-heading"><i class="glyphicon glyphicon-compressed"></i>晚餐<span><button>编辑</button></span></h4>-->
+                    <#--<p class="list-group-item-text aa"><span class="food">油菜</span><span class="food">馒头</span><span class="food">糖醋鱼</span></p>-->
+                <#--</div>-->
+            <#--</div>-->
+        <#--</div>-->
     </div>
 
 
@@ -75,9 +60,7 @@
         </div>
         <div class="list-group-item">
             <h4 class="list-group-item-heading">适合人群:</h4>
-            <p class="list-group-item-text" id="dishesSuitPeople">1、高温、重体力劳动、经常出汗的人需要注意补充钠。
-                　　
-                2、皮肤黏膜及指甲等颜色苍白，体力活动后感觉气促、骨质疏松、心悸症状的人群。</p>
+            <p class="list-group-item-text" id="dishesSuitPeople">1、高温、重体力劳动、经常出汗的人需要注意补充钠2、皮肤黏膜及指甲等颜色苍白，体力活动后感觉气促、骨质疏松、心悸症状的人群。</p>
         </div>
         <div class="list-group-item">
             <h4 class="list-group-item-heading">营养价值:</h4>
@@ -91,52 +74,25 @@
     </div>
     <!--底部预览上一周食谱跟下一周食谱-->
     <div class="review">
-        <button class="pull-right" id="pull-right">下一周<i class="glyphicon glyphicon-arrow-right"></i></button>
-        <button class="pull-right" id="pull-left"><i class="glyphicon glyphicon-arrow-left"></i>上一周</button>
+        <button class="pull-right" id="nextDate">下一周<i class="glyphicon glyphicon-arrow-right"></i></button>
+        <button class="pull-right" id="lastDate"><i class="glyphicon glyphicon-arrow-left"></i>上一周</button>
         <div class="clearfix"></div>
     </div>
 </div>
 
 <!--菜品选择-->
-<div class="choose">
+<div class="choose" style="display: none;">
     <div class="modal-content">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
             <h4 class="modal-title" id="myModalLabel">菜品选择</h4>
         </div>
-        <div class="modal-body">
-            <a  class="">油条</a>
-            <a  class="bb" >干煸大头菜心</a>
-            <div class="clearfix"></div>
+        <div class="modal-body foodListShow">
+            <#--<a class="">油条</a>-->
+            <#--<a class="bb" >干煸大头菜心</a>-->
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn1" data-dismiss="modal">关闭</button>
-            <button type="button" class="btn btn1">确认选择</button>
+            <button type="button" class="btn btn1" id="closeFoodAdd">关闭</button>
+            <button type="button" class="btn btn1" value="111" id="foodOk" onclick="foodListAddUrl()">确认选择</button>
         </div>
     </div>
 </div>
-
-
-
-
-<script>
-    $(document).ready(function(){
-        $("#closeFoodDiv").click(function () {
-            $("#introduce").slideUp("slow");
-            $(".food").css("color","#000000")
-        })
-        $(".food").click(function(){
-            $(this).css("color","#FF743D");
-            var width = $("#main-side").width();
-            var Win = document.documentElement.offsetWidth;
-            var num = event.x - width;
-            if(num+340 > Win - width){
-                $("#introduce").css("margin-left",""+num-340+"").slideDown("slow");
-            }else{
-                $("#introduce").css("margin-left",""+num+"px").slideDown("slow");
-            }
-
-        });
-    });
-
-</script>

@@ -8,7 +8,7 @@
     您当前所在的位置：<span>员工模块</span>
 </div>
 <div class="serve-banner">
-    <an><input type="button" value="添加员工" id="cao" data-toggle="modal" data-target="#myModal">
+    <an><input type="button" value="添加员工" id="cao" data-toggle="modal" data-target="#myModal" onclick="clearModal()">
         <input type="button" value="平铺显示" onclick="sideUrl('/serve/staff/staff')">
     </an>
 </div>

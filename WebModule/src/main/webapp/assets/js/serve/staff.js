@@ -19,6 +19,18 @@ $(function () {
         $("#shanchu-no").hide();
     })
 })
+function clearModal() {
+    $("#staffname").val("");
+    $("#staffsex").val("");
+    $("#staffpost").val("");
+    $("#staffskilllevel").val("");
+    $("#staffdepartment").val("");
+    $("#staffcard").val("");
+    $("#staffcall1").val("");
+    $("#staffcall2").val("");
+    $("#staffrank").val("");
+    $("#staffstatus").val("");
+}
 function add() {
     var staffname = $("#staffname").val();
     var staffsex = $("#staffsex").val();
@@ -53,7 +65,9 @@ function del(id) {
     var url = domainUrl + "/serve/service_staff/del"
     var postData = {id: id}
     postAjax(url, false, postData, function (data) {
-        alert("删除成功")
+        alert("删除成功");
+        $("#shanchu-yes").show();
+        $("#shanchu-no").hide();
         findAll(1)
     })
 }
@@ -61,7 +75,7 @@ var pageNp = 1;
 var pageList;
 function findAll(currentPage) {
     var url = domainUrl + "/serve/service_staff/findAll";
-    var limit = 3;
+    var limit = 12;
     var getData = {currentPage: currentPage, limit: limit};
     var html = "";
     var picture = '';
@@ -102,7 +116,7 @@ function findAll(currentPage) {
 var pageNb = 1;
 function findAllb(currentPage) {
     var url = domainUrl + "/serve/service_staff/findAll";
-    var limit = 3;
+    var limit = 12;
     var getData = {currentPage: currentPage, limit: limit};
     var html = " <tbody> <tr> <th>姓名</th> <th>性别</th> <th>职务</th> <th>部门</th> <th>联系方式</th>" +
         " <th>身份证号</th> <th>人员状态</th> <th>管理权限</th> <th>技能等级</th><th>操作</th> </tr></tbody>";
