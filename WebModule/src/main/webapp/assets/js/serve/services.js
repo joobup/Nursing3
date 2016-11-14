@@ -48,8 +48,8 @@ function findAllp(currentPage) {
                 '<i   class="glyphicon glyphicon-pencil bianji" title="编辑" data-toggle="modal"  data-target="#myModal"   onclick="make(' + data.aaData[i].id + ')"></i> ' +
                 ' <i     class=" glyphicon glyphicon-remove shanchu"    onclick="del(' + data.aaData[i].id + ')" title="删除"></i>';
             html +='<ul><li class="servePicture">'+picture+'</li></ul>';
-            html += '<ul id="zuo-font"><li>服务标题<span>' + data.aaData[i].serveName + '</span></li><li>服务类别<span>' + data.aaData[i].serveClassify.serveClassname + '</span></li> <li>限制条件<span>' + data.aaData[i].serveLimit + '</span></li> <li>服务人数<span>' + data.aaData[i].servePeoples + '</span></li></ul>';
-            html += '<ul id="you-font1"><li>服务简介</li> </ul> <ul id="you-font2"> <li>' + data.aaData[i].serveBiref + '</li></ul></div>';
+            html += '<ul id="zuo-font"><li>服务标题<span>' + data.aaData[i].serveName.substring(0,4) + '...</span></li><li>服务类别<span>' + data.aaData[i].serveClassify.serveClassname + '</span></li> <li>限制条件<span>' + data.aaData[i].serveLimit + '</span></li> <li>服务人数<span>' + data.aaData[i].servePeoples + '</span></li></ul>';
+            html += '<ul id="you-font1"><li>服务简介</li> </ul> <ul id="you-font2"> <li>' + data.aaData[i].serveBiref.substring(0,40) + '....</li></ul></div>';
         }
 
         $(".serve-module").html(html)
@@ -75,8 +75,9 @@ function findAllb(currentPage) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
-            html += '<tr><td>' + data.aaData[i].serveName + '</td><td>' + data.aaData[i].serveClassify.serveClassname + '</td><td>' + data.aaData[i].serveLimit + '</td><td>' + data.aaData[i].servePeoples + '</td>';
-            html += '<td>' + data.aaData[i].serveBiref + '</td><td><i title="添加计费类别" data-toggle="modal"  data-target="#myModalCost" onclick="costAdd(' + data.aaData[i].id + ')" class="glyphicon' +
+            html += '<tr><td>' + data.aaData[i].serveName.substring(0,12) + '...</td><td>' + data.aaData[i].serveClassify.serveClassname + '</td><td>' + data.aaData[i].serveLimit + '</td><td>' + data.aaData[i].servePeoples + '</td>';
+            html += '<td>' + data.aaData[i].serveBiref.substring(0,36) + '...</td><td><i title="添加计费类别" data-toggle="modal"  data-target="#myModalCost"' +
+                ' onclick="costAdd(' + data.aaData[i].id + ')" class="glyphicon' +
                 ' glyphicon-plus"' +
                 '   ></i><i class="glyphicon glyphicon-pencil bianji" title="编辑" data-toggle="modal"  data-target="#myModal" onclick="make(' + data.aaData[i].id + ')"></i><i' +
                 ' class="glyphicon glyphicon-remove shanchu" title="删除" style="display: none" onclick="del(' + data.aaData[i].id + ')"></i></td></tr>';

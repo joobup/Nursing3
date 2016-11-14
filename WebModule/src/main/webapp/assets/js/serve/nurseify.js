@@ -18,7 +18,6 @@ function add() {
 function openModal(tid) {
     $('#myModal').modal("show");
     $("#classTid").val(tid)
-    alert($("#classTid").val())
 }
 function findAll1() {
     var url = domainUrl + "/serve/nurseify/findTreeAll";

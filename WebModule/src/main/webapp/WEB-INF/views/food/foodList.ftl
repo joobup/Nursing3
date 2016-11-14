@@ -1,5 +1,6 @@
 <script src="${domainUrl}/assets/js/institution/food/foodList.js"></script>
 <link href="${domainUrl}/assets/css/serve/serve.css" rel="stylesheet">
+<link href="${domainUrl}/assets/css/serve/pack.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/webuploader.html5only.min.js"></script>
 <div id="now-position">
@@ -23,9 +24,9 @@
 
 </div>
 <#--分页-->
-<script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
-<div class="tcdPageCode">
+<div class="tcdPageCode" style="z-index: 9999">
 </div>
+<script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
 <#--添加服务模态框-->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">

@@ -44,10 +44,17 @@ function findAll(currentPage) {
         console.log(JSON.stringify(data));
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
+            if(data.aaData[i].bedTypeId == 1){
+                data.aaData[i].bedTypeId = "普通"
+            }else if(data.aaData[i].bedTypeId == 2){
+                data.aaData[i].bedTypeId = "中等"
+            }else if(data.aaData[i].bedTypeId == 3){
+                data.aaData[i].bedTypeId = "豪华"
+            }
             html += ' <div class="serve-module-s"><i   class="glyphicon glyphicon-pencil bianji" title="编辑" data-toggle="modal"  data-target="#myModal"  onclick="make(' + data.aaData[i].id + ')"></i> ' +
                 ' <i  class=" glyphicon glyphicon-remove shanchu"    onclick="del(' + data.aaData[i].id + ')" title="删除"></i>';
             html +='<ul><li class="servePicture"><img style="width: 100px; height: 100px;" src="'+domainImg+'/assets/images/serve/bed.png"/></li></ul>';
-            html += '<ul id="zuo-font"><li>房间号<span>' + data.aaData[i].roomId + '</span></li><li>房间类型<span>' + data.aaData[i].bedTypeId + '</span></li></ul></div>';
+            html += '<ul id="zuo-font"><li>房间号<span>' + data.aaData[i].roomId + '</span></li><li>床位类型<span>' + data.aaData[i].bedTypeId + '</span></li></ul></div>';
         }
         $(".serve-module").html(html)
     })

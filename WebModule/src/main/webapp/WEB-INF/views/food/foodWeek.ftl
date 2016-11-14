@@ -3,7 +3,6 @@
 <link href="${domainUrl}/assets/css/OutCss/animate/animate.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/institution/food/foodWeek.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
-<script src="${domainUrl}/assets/js/serve/pack.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>
 
 <div id="now-position">

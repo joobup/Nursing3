@@ -14,6 +14,9 @@ function add() {
         $("#myModal").modal("hide")
     })
 }
+function clearModal() {
+    $("#jijia").val("");
+}
 function findAll() {
     var url = domainUrl + "/serve/service_classes_valuation/findAll"
     var getData = {currentPage:1,limit:1000};

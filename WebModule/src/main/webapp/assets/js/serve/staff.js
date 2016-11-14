@@ -43,6 +43,11 @@ function add() {
     var staffrank = $("#staffrank").val();
     var staffstatus = $("#staffstatus").val();
     var url = domainUrl + "/serve/service_staff/add";
+    staffsex = 1;
+    staffpost = 1;
+    staffstatus = 1;
+    staffrank = 1;
+    staffdepartment = 1;
     var postData = {
         staffName: staffname,
         staffSex: staffsex,
@@ -84,6 +89,37 @@ function findAll(currentPage) {
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
             console.log(JSON.stringify(data.aaData[i].staffPicture.pictureAddress))
+            //部门过滤
+            if(data.aaData[i].staffDepartment == 1){
+                data.aaData[i].staffDepartment = "护理部"
+            }else{
+                data.aaData[i].staffDepartment = "后勤部"
+            }
+            //职位过滤
+            if(data.aaData[i].staffPost == 1){
+                data.aaData[i].staffPost = "护理职员"
+            }else if(data.aaData[i].staffPost==2){
+
+                data.aaData[i].staffPost = "护理主管";
+            }else if(data.aaData[i].staffPost==3){
+                data.aaData[i].staffPost = "后勤职员"
+            }else if(data.aaData[i].staffPost == 4){
+                data.aaData[i].staffPost = "后勤主管"
+            }
+            //状态过滤
+            if(data.aaData[i].staffStatus==1){
+                data.aaData[i].staffStatus = "空闲";
+            }else if (data.aaData[i].staffStatus == 2){
+                data.aaData[i].staffStatus = "繁忙";
+            }
+            //级别过滤
+            if(data.aaData[i].staffRank==1){
+                data.aaData[i].staffRank = "职员";
+            }else if(data.aaData[i].staffRank == 2){
+                data.aaData[i].staffRank = "主管";
+            }
+
+
             if (data.aaData[i].staffPicture.pictureAddress == null) {
                 picture = '<img style="width: 100px; height: 100px;cursor: pointer;" src="' + domainImg + '/assets/images/serve/stafff.png" onclick="uploadShow(' + data.aaData[i].id + ')"/>';
             } else {
@@ -95,7 +131,7 @@ function findAll(currentPage) {
             html += '<li id="staff-mess1">' + picture + '</li> <li' +
                 ' id="staff-mess2"> <ul>' +
                 ' <li>' + data.aaData[i].staffName + '</li>';
-            html += ' <li>职务</li> <li>部门</li> <li>联系方式</li> <li>身份证号</li> </ul> <ul> <li>' + data.aaData[i].staffSex + '</li> <li>' + data.aaData[i].staffPost + '</li> ';
+            html += ' <li>职务</li> <li>部门</li> <li>联系方式</li> <li>身份证号</li> </ul> <ul> <li>男</li> <li>' + data.aaData[i].staffPost + '</li> ';
             html += '<li>' + data.aaData[i].staffDepartment + '</li> <li>' + data.aaData[i].staffCall1 + '</li> <li>' + data.aaData[i].staffCardId + '</li> </ul> </li>';
             html += '<li id="staff-mess3"> <ul> <li>人员状态</li> <li>管理权限</li> <li>技能等级</li> </ul> <ul> <li>' + data.aaData[i].staffStatus + '</li> <li>' + data.aaData[i].staffRank + '</li>';
             html += ' <li>' + data.aaData[i].staffSkillLevel + '</li> </ul> </li> </ul> </div>';
@@ -124,6 +160,34 @@ function findAllb(currentPage) {
         pageList = Math.ceil(data.iTotalRecords / limit);
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
+            if(data.aaData[i].staffDepartment == 1){
+                data.aaData[i].staffDepartment = "护理部"
+            }else{
+                data.aaData[i].staffDepartment = "后勤部"
+            }
+            //职位过滤
+            if(data.aaData[i].staffPost == 1){
+                data.aaData[i].staffPost = "护理职员"
+            }else if(data.aaData[i].staffPost==2){
+
+                data.aaData[i].staffPost = "护理主管";
+            }else if(data.aaData[i].staffPost==3){
+                data.aaData[i].staffPost = "后勤职员"
+            }else if(data.aaData[i].staffPost == 4){
+                data.aaData[i].staffPost = "后勤主管"
+            }
+            //状态过滤
+            if(data.aaData[i].staffStatus==1){
+                data.aaData[i].staffStatus = "空闲";
+            }else if (data.aaData[i].staffStatus == 2){
+                data.aaData[i].staffStatus = "繁忙";
+            }
+            //级别过滤
+            if(data.aaData[i].staffRank==1){
+                data.aaData[i].staffRank = "职员";
+            }else if(data.aaData[i].staffRank == 2){
+                data.aaData[i].staffRank = "主管";
+            }
             html += '<tr><td>' + data.aaData[i].staffName + '</td><td>' + data.aaData[i].staffSex + '</td><td>' + data.aaData[i].staffPost + '</td>' +
                 '<td>' + data.aaData[i].staffDepartment + '</td><td>' + data.aaData[i].staffCall1 + '</td><td>' + data.aaData[i].staffCardId + '</td>' +
                 '<td>' + data.aaData[i].staffStatus + '</td><td>' + data.aaData[i].staffRank + '</td><td>' + data.aaData[i].staffSkillLevel + '</td>' +

@@ -51,11 +51,13 @@ function add() {
     })
 }
 /*查询*/
+var pageNp = 1;
 function findAll(currentPage) {
     var url = domainUrl+"/serve/dishes/findAll";
-    var getData={currentPage:currentPage,limit:limit,};
+    var getData={currentPage:currentPage,limit:9,};
     var html='';
     getAjax(url,false,getData,function (data) {
+        pageList = Math.ceil(data.iTotalRecords / 9);
         console.log(JSON.stringify(data))
         var num = data.aaData.length;
         var picture;
@@ -73,6 +75,16 @@ function findAll(currentPage) {
             html += '<ul id="you-font1"><li>适合人群</li><li>重量</li> </ul> <ul id="you-font2"> <li>' + data.aaData[i].dishesSuitPeople + '</li><li>'+data.aaData[i].dishesWeight+'</li></ul></div>';
         }
         $(".serve-module").html(html)
+        if (pageNp == 1) {
+            pageNp = 2;
+            $(".tcdPageCode").createPage({
+                pageCount: pageList,
+                current: currentPage,
+                backFn: function (p) {
+                    findAll(p)
+                }
+            });
+        }
     })
 }
 /*删除*/

@@ -47,6 +47,7 @@ function findWeak(startDate, endDate) {
         endDate: endDate,
     };
     getAjax(url, false, getData, function (data) {
+        console.log(JSON.stringify(data))
         //标题日期
         htmlTitle += '<h2>本周食谱:<span>(' + data.weekFoodOneEarlyVOs[0].foodDate.substring(0, 11) + '' +
             '</span>-<span>' + data.weekFoodOneEarlyVOs[6].foodDate.substring(0, 11) + ')</span></h2>';
@@ -127,6 +128,7 @@ function foodListAdd() {
         $(".choose").slideDown(500);
         var id = $(this).attr("value");
         $("#foodOk").attr("value",id);
+        foodList='';
     })
     $("#closeFoodAdd").click(function () {
         $(".choose").slideUp(500);
@@ -157,12 +159,12 @@ function foodListAddUrl() {
     var postData = {
         weekFoodId:id,
         dishesIds:foodList,
-
     };
     console.log(postData)
     postAjax(url,false,postData,function (data) {
         alert("添加成功");
         $(".choose").slideUp(500);
+        findWeak(thisWeakStartDate("this"), thisWeakEndDate("this"));
     })
 }
 //修改

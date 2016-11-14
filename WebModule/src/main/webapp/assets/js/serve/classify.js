@@ -15,14 +15,18 @@ function add() {
         $("#myModal").modal("hide")
     })
 }
+function clearModal() {
+    $("#className").val("");
+}
 function openModal(tid) {
     $('#myModal').modal("show");
     $("#classTid").val(tid)
+    clearModal();
 }
 function findAll1() {
     var url = domainUrl + "/serve/service_classes/findTreeAll";
     var currentPage = 1;
-    var limit = 5;
+    var limit = 20;
     var getData = {currentPage: currentPage, limit: limit};
     var html = '';
     getAjax(url, false, getData, function (data) {
@@ -104,6 +108,6 @@ function del(id) {
     var postData = {id: id};
     postAjax(url, false, postData, function (data) {
         alert("删除成功")
-        findAll1();
+        findAll1(1);
     })
 }

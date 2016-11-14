@@ -7,7 +7,7 @@
     您当前所在的位置：<span>计费模块</span>
 </div>
 <div class="serve-banner">
-    <an><input type="button" id="cao" value="添加计费" data-toggle="modal" data-target="#myModal">
+    <an><input type="button" id="cao" value="添加计费" data-toggle="modal" data-target="#myModal" onclick="clearModal()">
     </an>
 </div>
 <div class="serve-module">

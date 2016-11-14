@@ -1,8 +1,5 @@
 <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="${domainUrl}/assets/css/oldMan/report.css" rel="stylesheet">
-
-<script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
-<script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
 <script src="${domainUrl}/assets/js/institution/olderMan/report.js"></script>
 
 

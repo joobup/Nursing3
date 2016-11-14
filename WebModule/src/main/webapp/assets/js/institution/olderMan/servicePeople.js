@@ -43,6 +43,12 @@ function add() {
     var userId = $("#userId").val();
     var servicePeopleTel = $("#servicePeopleTel").val();
     var nursingLeave = $("#nursingLeave").val();
+    if(servicePeopleSex == "男"){
+        servicePeopleSex = 1;
+    }else{
+        servicePeopleSex = 2;
+    }
+    servicePeopleRelation = 1;
     var postData = {
         servicePeopleName: servicePeopleName,
         servicePeopleAge: servicePeopleAge,
@@ -92,9 +98,9 @@ function findAll(currentPage) {
                 '<i class="glyphicon glyphicon-pencil bianji" title="编辑" data-toggle="modal" data-target="#myModal" onclick="make(' + data.aaData[i].id + ')" ></i>' +
                 ' <li>姓名：<span>' + data.aaData[i].servicePeopleName + '</span></li> ' +
                 '<li>年龄：<span>' + data.aaData[i].servicePeopleAge + '</span></li> <li>性别：<span>' + data.aaData[i].servicePeopleSex + '</span></li>' +
-                ' <li>关系：<span>' + data.aaData[i].servicePeopleRelation + '</span></li></ul> </li> ' +
-                '<li class="pull-left box-right"> <ul> <li>人员状态：<span>' + data.aaData[i].servicePeopleStateId + '</span></li>' +
-                ' <li>服务类型：<span>' + data.aaData[i].servicePeopleTypeId + '</span></li><li>护理级别：<span>' + data.aaData[i].nursingLeave + '</span></li>' +
+                ' <li>关系：<span>父亲</span></li></ul> </li> ' +
+                '<li class="pull-left box-right"> <ul> <li>人员状态：<span>健康</span></li>' +
+                ' <li>服务类型：<span>高级服务</span></li><li>护理级别：<span>高级护理</span></li>' +
                 ' <li>联系方式：<span>' + data.aaData[i].servicePeopleTel + '</span></li> </ul> </li>' +
                 '' + button + ' </ul>';
         }

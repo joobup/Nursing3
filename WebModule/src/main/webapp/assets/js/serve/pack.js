@@ -159,7 +159,7 @@ function add() {
         ServeStartdate: ServeStartDate,
         ServeEnddate: ServeEnddate,
         serveServes: serveNamePull,
-        serveNurseify: nursifyClass,
+        serveNurseify: 1,
         serveBrief: serveBrief,
         serveDetailed: ""
     };
