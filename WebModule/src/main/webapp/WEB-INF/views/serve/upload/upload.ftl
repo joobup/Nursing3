@@ -22,10 +22,17 @@
                     <h4 class="modal-title" id="myModalLabel">服务上传</h4>
                 </div>
                 <div class="modal-body">
-                   <a  class="btn-style2">第一个</a>
-                   <a  class="btn-style2 theme">第二个个个</a>
-                <div class="clear"></div>
+                    <div class="one">
+                        <div class="tu"></div>
+                        <h4>健康 快捷 干净</h4>
+                    </div>
+                    <div class="one theme">
+                        <div class="tu"></div>
+                        <h4>健康 快捷 干净</h4>
+                    </div>
+                    <div class="clear"></div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     <button type="button" class="btn btn-primary">修改</button>

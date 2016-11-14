@@ -10,36 +10,39 @@
             <div class="pull-left tu">
             <img src="${domainUrl}/assets/images/report/ren.png" />
             </div>
-            <h2 class="pull-right">老人信息<p>老人信息查询</p></h2>
+            <h2 class="font-right">
+                <p>老人信息</p>
+                <p>老人信息查询</p>
+            </h2>
             <div class="clearfix"></div>
         </div></a>
         <a href="##"><div class="two">
             <div class="pull-left tu">
                 <img src="${domainUrl}/assets/images/report/gouwuche.png" />
             </div>
-            <h2 class="pull-right">状态信息<p>老人状态信息查询</p></h2>
+            <h2 class="font-right"><p>状态信息</p><p>老人状态信息查询</p></h2>
             <div class="clearfix"></div>
         </div></a>
         <div class="three">
             <div class="pull-left tu">
                 <img src="${domainUrl}/assets/images/report/qun.png" />
             </div>
-            <h2 class="pull-right">类型信息<p>老人类型信息查询</p></h2>
+            <h2 class="font-right"><p>类型信息</p><p>老人类型信息查询</p></h2>
             <div class="clearfix"></div>
         </div>
         <div class="four">
             <div class="pull-left tu">
                 <img src="${domainUrl}/assets/images/report/liaotian.png" />
             </div>
-            <h2 class="pull-right">登录信息<p>老人登录信息查询</p></h2>
+            <h2 class="font-right"><p>登录信息</p><p>老人登录信息查询</p></h2>
             <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
     </div>
     <div class="bottom">
         <!--曲线表-->
-        <div class='wrapper pull-right'>
-            <h3>人员年龄性别比例</h3>
+        <div class='wrapper pull-right'  style="margin-top: 50px;">
+            <h3  style="margin-bottom: 60px;">人员年龄性别比例</h3>
             <canvas height='300' id='canvas' width='800'></canvas>
         </div>
         <!--柱状表-->

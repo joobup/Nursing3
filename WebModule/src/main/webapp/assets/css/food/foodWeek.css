@@ -49,3 +49,6 @@
 .choose .btn1{width:80px;height:30px;background:#ff743d;color:#fff;float: right;margin-right:10px;outline: none;box-shadow: none; padding: 0px;}
 .choose .modal-body{height:480px;overflow: auto;}
 
+.pa:hover{
+    box-shadow: 0px 0px 5px 2px #ff743d; transition: .5s; z-index: 9999;
+}

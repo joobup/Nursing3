@@ -17,13 +17,13 @@
 </div>
 <div class="serve-banner">
 <#--时间控件-->
-    <div id="date-input">
-        <date>时间范围</date>
-        <input type="text" class="date_picker" value="2015-01-01" style="text-align: center">
-        <date>—</date>
-        <input type="text" class="date_picker" value="2016-01-01" style="text-align: center">
-        <date><input type="button" id="cao" value="搜索"></date>
-    </div>
+    <#--<div id="date-input">-->
+        <#--<date>时间范围</date>-->
+        <#--<input type="text" class="date_picker" value="2015-01-01" style="text-align: center">-->
+        <#--<date>—</date>-->
+        <#--<input type="text" class="date_picker" value="2016-01-01" style="text-align: center">-->
+        <#--<date><input type="button" id="cao" value="搜索"></date>-->
+    <#--</div>-->
     <an><input type="button" id="cao" value="添加服务" data-toggle="modal" data-target="#myModal" onclick="findAll()"> <input
             type="button" value="取消删除" style="display: none;background-color: red" id="shanchu-no"><input
             type="button" value="删除服务" " id="shanchu-yes">

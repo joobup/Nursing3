@@ -1,10 +1,16 @@
 
 .clear{clear: both;}
 .box{width:200px;height:200px;margin:10% auto;}
-.box .btn-style1{width:200px;background:#2B3949;border:0px;border-radius: 5%;}
+.box .btn-style1{width:200px;background:#2B3949;border:0px;border-radius: 5%; transition: all .5s;}
 .box .btn-style1:hover{background: #ff743d;}
 .box .btn-style1:focus{border:0px;outline: none;box-shadow: none;}
 
-.btn-style2{ display: block; padding:4px 20px;background-color: #ffffff;border-radius: 20px; color: #333;text-align: center;line-height: 35px;text-decoration: none;cursor: pointer;  transition: .5s;  float: left;  margin: 10px 0px 0px 20px;border:1px #ff743d solid;}
-.theme{background: #ff743d !important;color:#fff !important;}
-.btn-style2:hover{background: #ff743d;color:#fff;}
+
+
+
+.one{ float: left;width:100px;border:2px #dddddd solid;margin-right:10px;margin-top:10px;border-radius: 5px;transition: all .5s;}
+.theme{box-shadow:0px 0px 10px #FF743D;border-radius:5px ;}
+.one:hover{box-shadow:0px 0px 10px #FF743D;border-radius:5px ;}
+.one .tu{width:96px;height:100px;background:#ddd;border-radius: 3px 3px 0px 0px;padding:5px;}
+.one h4{width:100px;color:#333;font-size:12px;text-align: center;}
+
