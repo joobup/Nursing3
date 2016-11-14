@@ -31,7 +31,7 @@
 			startClockOnMouseOut: dataMove, 	// 鼠标离开是否滚动
 			startClockOnMouseOutAfter: 0, 		// 鼠标离开多久开始滚
 			directionalNav: true, 				// 是否显示左右按钮
-			captions: true, 					// 是否显示字幕
+			captions: false, 					// 是否显示字幕
 			captionAnimation: 'fade', 		// fade, slideOpen, none  字幕出现的方式
 			captionAnimationSpeed: 600, 		// 切换速度
 			bullets: true,						// 是否显示圆点标识

@@ -1,5 +1,5 @@
 <!--导航菜单-->
-<div class="nav">
+<div class="nav nav-back">
     <div class="w">
         <ul class="nav-fl">
             <li>天津 [<a>切换城市</a>]&nbsp;&nbsp;&nbsp;</li>

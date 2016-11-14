@@ -72,6 +72,7 @@
 
         <#--主要内容显示-->
             <div id="main-show" style="position:relative;">
+            <#include "/WEB-INF/views/oldMan/report.ftl"/>
             </div>
             <#include "/common/foot.ftl"/>
 </body>

@@ -20,7 +20,6 @@
         $('#featured').orbit();
     });
     var domainUrl = '${domainUrl}'+"/assets";
-
 </script>
 
 <body>
@@ -28,31 +27,31 @@
 <!--logo&搜索-->
 <div class="banner">
     <div class="w">
-        <div id="logo-img"><img src="${domainUrl}/assets/images/index/logo1-01.png"></div>
-
+        <div id="logo-img"><img src="${domainUrl}/assets/images/index/logo.png"></div>
         <div id="search">
-            <input type="text" placeholder="智能机器人"><button><img src="${domainUrl}/assets/images/index/search.png"></button>
+            <input type="text" placeholder="智能机器人"><button>搜索</button>
         </div>
-
         <div id="shopping-cart">
             <button><img src="${domainUrl}/assets/images/index/shoppcart.png">进入购物车</button>
         </div>
-        <div class="clearfix"></div>
+        <div class="clear"></div>
     </div>
 </div>
 <!--分类栏-->
 <div class="classify">
     <div class="w">
         <ul>
-            <li><div>首页<br>home page</div></li>
-            <li><div>首页<br>home page</div></li>
-            <li><div>首页<br>home page</div></li>
-            <li><div>首页<br>home page</div></li>
-            <li><div>首页<br>home page</div></li>
-            <li><div>首页<br>home page</div></li>
-            <li><div>首页<br>home page</div></li>
-            <li><div>首页<br>home page</div></li>
-
+            <li><a href="">首&nbsp;&nbsp;&nbsp;&nbsp;页<br>HOME</a></li>
+            <li><a href="">家庭清洁<br>Cleaning</a></li>
+            <li><a href="">母婴护理<br>Child care</a></li>
+            <li><a href="">家居养护<br>Home care</a></li>
+            <li><a href="">丽&nbsp;&nbsp;&nbsp;&nbsp;人<br>Beauty</a></li>
+            <li><a href="">速&nbsp;&nbsp;&nbsp;&nbsp;运<br>Shipment</a></li>
+            <li><a href="">维修装新<br>Install</a></li>
+            <li><a href="">按摩推拿<br>Massage</a></li>
+            <li><a href="">家电清洗<br>Appliance</a></li>
+            <li><a href="">企业服务<br>Enterprise</a></li>
+            <div class="clear"></div>
         </ul>
     </div>
 </div>
@@ -61,11 +60,10 @@
     <div class="container">
         <!--设置data-car可以改变停留时间，设置data-move鼠标悬停是否滚动1滚动，0不滚动-->
         <div id="featured" data-car="5000" data-move="0">
-            <img src="${domainUrl}/assets/images/index/banner.png" />
-            <img src="${domainUrl}/assets/images/index/banner.png" data-caption="#htmlCaption" />
-            <img src="${domainUrl}/assets/images/index/banner.png"  />
+            <img src="${domainUrl}/assets/images/index/banner1.png" />
+            <img src="${domainUrl}/assets/images/index/banner2.png" data-caption="#htmlCaption" />
+            <img src="${domainUrl}/assets/images/index/banner1.png"  />
         </div>
-        <span class="orbit-caption" id="htmlCaption"><strong>I'm A Badass Caption:</strong> I can haz <a href="#">links</a>, <em>style</em> or anything that is valid markup :)</span>
     </div>
 </div>
 <div class="w" style="height: 70px;"></div>
@@ -107,21 +105,323 @@
                 </div>
             </div>
             <div id="recommend-img-x">
-                <div class="recommend-img-xl">
-
+                <div class="recommend-img-xl pull-left">
+                    <a href="##">
+                    <h4>壮骨粉</h4>
+                    <img src="${domainUrl}/assets/images/index/ware/5.jpg" height="315px" >
+                    </a>
                 </div>
-                <div class="recommend-img-xr">
+                <div class="recommend-img-xr pull-right">
+                   <div class="aa"> <img src="${domainUrl}/assets/images/index/20161111150453.png" ><a href="##">速来抢购</a></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+<!--大图1-->
+<div class="tu1">
+    <img src="${domainUrl}/assets/images/index/11.png"  >
+    <div class="txt">
+    <h3>家庭护理</h3>
+     <h4>陪护：看病取药、散步、购物照顾：提醒按医嘱吃药协助脱穿衣服等</h4>
+    </div>
+</div>
 
+<!--店铺新品区-->
+<div class="fashion">
+    <div class="txt">
+        <h2>INTERNATIONAL BRAND</h2>
+        <h3>店铺<span>新品区</span></h3>
+        <h4>HOT FASHION</h4>
+    </div>
+    <div class="pic">
+        <div class="box">
+            <div class="pull-left line-l"></div>
+            <div class="pull-left con">
+                <div class="line-t"></div>
+                <div class="tu">
+                    <img src="${domainUrl}/assets/images/index/22.png"  >
+                </div>
+                <div class="introduce">
+                    <h2>蛋白粉</h2>
+                    <h3>￥150</h3>
+                    <h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
+                        <a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
+                    <div class="clear"></div>
+                    </h4>
+                    <button>立即购买</button>
+                </div>
+                <div class="line-b"></div>
+            </div>
+            <div class="pull-right line-r"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="box">
+            <div class="pull-left line-l"></div>
+            <div class="pull-left con">
+                <div class="line-t"></div>
+                <div class="introduce">
+                    <h2>蛋白粉</h2>
+                    <h3>￥150</h3>
+                    <h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
+                        <a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
+                        <div class="clear"></div>
+                    </h4>
+                    <button>立即购买</button>
+                </div>
+                <div class="tu">
+                    <img src="${domainUrl}/assets/images/index/22.png"  >
+                </div>
+                <div class="line-b"></div>
+            </div>
+            <div class="pull-right line-r"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="box">
+            <div class="pull-left line-l"></div>
+            <div class="pull-left con">
+                <div class="line-t"></div>
+                <div class="tu">
+                    <img src="${domainUrl}/assets/images/index/22.png"  >
+                </div>
+                <div class="introduce">
+                    <h2>蛋白粉</h2>
+                    <h3>￥150</h3>
+                    <h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
+                        <a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
+                        <div class="clear"></div>
+                    </h4>
+                    <button>立即购买</button>
+                </div>
+                <div class="line-b"></div>
+            </div>
+            <div class="pull-right line-r"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="box">
+            <div class="pull-left line-l"></div>
+            <div class="pull-left con">
+                <div class="line-t"></div>
+                <div class="introduce">
+                    <h2>蛋白粉</h2>
+                    <h3>￥150</h3>
+                    <h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
+                        <a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
+                        <div class="clear"></div>
+                    </h4>
+                    <button>立即购买</button>
+                </div>
+                <div class="tu">
+                    <img src="${domainUrl}/assets/images/index/22.png"  >
+                </div>
+                <div class="line-b"></div>
+            </div>
+            <div class="pull-right line-r"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+<!--产品热卖区-->
+<div class="selling">
+
+    <div class="txt">
+        <h2>INTERNATIONAL BRAND</h2>
+        <h3>产品<span>热卖区</span></h3>
+        <h4>新品上市独家发售</h4>
+        <h5>2015 collection fashion new spring collection</h5>
+
+    </div>
+    <div class="pic">
+        <div class="pull-left tu_l">
+            <img src="${domainUrl}/assets/images/index/pro.png"  >
+            <div class="tu_l_gray">
+                <div class="tu_l_blue">
+                    <h2>About Fashion 2016</h2>
+                    <h3>Fashion is not something that inFashion is not something that inFashion is not something that inFashion is not something that in</h3>
                 </div>
             </div>
         </div>
+        <div class="pull-right tu_r">
+            <div class="one">
+                <img src="${domainUrl}/assets/images/index/pro.png"  >
+                <div class="tu_r_gray">
+                    <h2></h2>
+                    <h3></h3>
+                </div>
+            </div>
+            <div class="one">
+                <img src="${domainUrl}/assets/images/index/pro.png"  >
+                <div class="tu_r_gray">
+                    <h2></h2>
+                    <h3></h3>
+                </div>
+            </div>
+            <div class="one">
+                <img src="${domainUrl}/assets/images/index/pro.png"  >
+                <div class="tu_r_gray">
+                    <h2></h2>
+                    <h3></h3>
+                </div>
+            </div>
+            <div class="one">
+                <img src="${domainUrl}/assets/images/index/pro.png"  >
+                <div class="tu_r_gray">
+                    <h2></h2>
+                    <h3></h3>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
     </div>
 </div>
-<!--商品大图-->
-<div id="ware-big-img">
 
+<!--大图2-->
+<div class="tu1" >
+    <img src="${domainUrl}/assets/images/index/11.png"  >
+    <div class="txt">
+        <h3>日常保洁</h3>
+        <h4>日常家庭清洁和整理 不包括：外窗清洁、橱柜内部及家电深度清洁。</h4>
+    </div>
 </div>
+<!--睡好觉-->
+<div class="sleep">
+        <div class="txt">
+            <div class="pull-left line-l"></div>
+            <h2 class="pull-left">睡好觉</h2>
+            <h3 class="pull-left">COLLECTION IS Pants-Denim</h3>
+            <div class="pull-left line-r"></div>
+            <div class="clear"></div>
+        </div>
+        <div class="pic">
+            <div class="one">
+                <div class="tu mouseover3">
+                  <img src="${domainUrl}/assets/images/index/sleep1.png" >
+                </div>
+                <div class="join">
+                   <a href="##"  class="pull-left mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
+                   <a href="##"  class="pull-right mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
+                <div class="clear"></div>
+                </div>
+                <div class="money">
+                    <h3>orthomol</h3>
+                    <h4><span><s>200元</s></span>180元</h4>
+                </div>
+                <div class="blo">SALE</div>
+                <!--遮罩层-->
+                <div class="popup">
+                    <a href="##">查看详情</a>
+                </div>
+            </div>
+            <div class="one">
+                <div class="tu mouseover3"   >
+                    <img src="${domainUrl}/assets/images/index/sleep1.png" >
+                </div>
+                <div class="join">
+                    <a href="##"  class="pull-left mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
+                    <a href="##"  class="pull-right mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="money">
+                    <h3>orthomol</h3>
+                    <h4><span><s>200元</s></span>180元</h4>
+                </div>
+                <div class="blo">SALE</div>
+                <!--遮罩层-->
+                <div class="popup">
+                    <a href="##">查看详情</a>
+                </div>
+            </div>
+            <div class="one">
+                <div class="tu mouseover3"   >
+                    <img src="${domainUrl}/assets/images/index/sleep1.png" >
+                </div>
+                <div class="join">
+                    <a href="##"  class="pull-left mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
+                    <a href="##"  class="pull-right mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="money">
+                    <h3>orthomol</h3>
+                    <h4><span><s>200元</s></span>180元</h4>
+                </div>
+                <div class="blo">SALE</div>
+                <!--遮罩层-->
+                <div class="popup">
+                    <a href="##">查看详情</a>
+                </div>
+            </div>
+            <div class="one">
+                <div class="tu mouseover3"   >
+                    <img src="${domainUrl}/assets/images/index/sleep1.png" >
+                </div>
+                <div class="join">
+                    <a href="##"  class="pull-left mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
+                    <a href="##"  class="pull-right mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="money">
+                    <h3>orthomol</h3>
+                    <h4><span><s>200元</s></span>180元</h4>
+                </div>
+                <div class="blo">SALE</div>
+                <!--遮罩层-->
+                <div class="popup">
+                    <a href="##">查看详情</a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+</div>
+<!--空-->
+<div class="kong"></div>
+
+
+
+
 <!--底部导航-->
+
+<div class="footer">
+    <div class="con">
+        <div class="pull-left about">
+            <h2>ABOUT US</h2>
+            <h3>Fashion is not something that inFashion is not something that inFashion is not something that inFashion is
+                not something that inFashion is not something that inFashion is not something that inFashion is not something
+                that inFashion is not something that inFashion is not something that inthat in</h3>
+        </div>
+        <div class="pull-left how">
+            <h2>HOW TO FIND US</h2>
+            <h4>ADD:<span>25,lorem lis Street,Orange</span></h4>
+            <h4>TEL:<span>80 123 3456</span></h4>
+            <h4>Email:<span>emaasdasf@z.com</span></h4>
+        </div>
+        <div class="pull-left link">
+            <h2>LINK</h2>
+            <a href="##">addias</a>
+            <a href="##">BOSS</a>
+            <a href="##">David</a>
+            <a href="##">shoes</a>
+            <a href="##">dress</a>
+            <a href="##">dress</a>
+            <a href="##">dress</a>
+            <div  class="clear"></div>
+        </div>
+        <div class="pull-left leave">
+            <h2>LEAVE A MESSAGE</h2>
+            <div class="soso">
+            <input type="text"  placeholder="message"><button>report</button>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
 <div id="foot">承嘉商城 @2016</div>
 </body>
 </html>

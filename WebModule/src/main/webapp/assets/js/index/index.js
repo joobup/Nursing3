@@ -9,12 +9,42 @@ $(function () {
     $("#shopping-cart button").mouseout(function () {
         $("#shopping-cart").find("img").attr("src",domainUrl+"/images/index/shoppcart.png")
     })
-    $("#search button").mouseover(function () {
-        $("#search").find("img").attr("src","")
+})
+
+
+//收藏加入购物车的图标变换
+$(function () {
+    $(".mouseover1").mouseover(function () {
+
+        $(this).find("img").attr("src",domainUrl+"/images/index/shoppcart1.png");
     })
-    $("#search button").mouseout(function () {
-        $("#search").find("img").attr("src",domainUrl+"/images/index/search.png")
+
+    $(".mouseover1").mouseout(function () {
+        $(this).find("img").attr("src",domainUrl+"/images/index/shoppcart2.png");
     })
 })
 
+$(function () {
+    $(".mouseover2").mouseover(function () {
+        $(this).find("img").attr("src",domainUrl+"/images/index/collect.png");
+    })
+    $(".mouseover2").mouseout(function () {
+        $(this).find("img").attr("src",domainUrl+"/images/index/collect1.png");
+    })
+})
+
+//睡好觉 遮罩
+$(function () {
+
+    $(".tu").mouseover(function () {
+        $(this).siblings(".popup").show();
+        $(this).find(".blo").hide()
+        $(this).find(".join").hide()
+    })
+    $(".popup").mouseout(function () {
+        $(this).hide();
+        $(this).find(".blo").show()
+        $(this).find(".join").show()
+    })
+})
 

@@ -115,12 +115,10 @@
                                 <td>关系：</td>
                                 <td><input type="text" id="call1Old"></td>
                             </tr>
-
                             <tr>
                                 <td>电话：</td>
                                 <td><input type="text" id="call1"></td>
                             </tr>
-
                             <tr>
                                 <td>姓名：</td>
                                 <td><input type="text" id="call2Name"></td>

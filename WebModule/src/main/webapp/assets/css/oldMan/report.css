@@ -1,0 +1,97 @@
+
+
+.zong{width:100%;min-width: 1680px;}
+.zong h1{font-size:24px;color:#333;margin-left:2%;margin-top:3%;}
+
+.zong h2{font-size:24px;color:#fff;}
+.zong .top{margin-left:1%;margin-right:1%;padding-top:2%;}
+.zong .top h2{margin:5% 5%}
+.zong .top h2 p{font-size:20px;}
+
+.zong .top .tu {padding:10% 5%;}
+.zong .top .tu img{width:80px;height:80px;}
+.zong .top .one{float:left;width:20%;height:180px;background:#FB5652;margin:0 2.5%;}
+.zong .top .two{float:left;width:20%;height:180px;background: #ff743d;margin:0 2.5%;}
+.zong .top .three{float:left;width:20%;height:180px;background:#63A3E0;margin:0 2.5%;}
+.zong .top .four{float:left;width:20%;height:180px;background:#1CC09E;margin:0 2.5%;}
+
+.zong .bottom{margin-right:2%;padding-top:2%;margin-left:1%;}
+.zong .bottom .wrapper{width:50%;}
+.zong .bottom .wrapper h3{margin-top:10px;margin-bottom:20px;}
+
+
+
+
+/*柱状表*/
+.histogram{width:50%;}
+.chart { margin-left: 2px; margin-bottom: 10px;}
+.label { font-size: 10px; font-family: "Times New Roman";}
+.chart-title {margin-left:0px; margin-bottom:5px;margin-top:10px; font-size:14px;font-weight: bold;  }
+.chart rect {stroke-width:0;stroke: white;}
+
+.bar.creator { fill: #03b1e6; }
+.bar.recipient { fill: #1cc09e; }
+.bar.mentioned { fill: #ff743d; }
+
+.bar.creator.unknown { fill: #7E7E7E; }
+.bar.recipient.unknown  { fill: #A5A5A5; }
+.bar.mentioned.unknown { fill: #D6D6D6; }
+
+.bar:hover { fill: #ff743d; }
+.bar.creator.unknown:hover { fill: #8E8E8E; }
+.bar.recipient.unknown:hover { fill: #B5B5B5; }
+.bar.mentioned.unknown:hover { fill: #E6E6E6; }
+.buttons {display: inline-block; margin-left: 20px; margin-bottom: 10px;
+}
+
+button {margin: 2px 0; padding: 5px;background-color: #03b1e6;border:none;color:#fff !important;
+    -webkit-box-shadow: 2px 2px 1px #ccc;
+    -moz-box-shadow: 2px 2px 1px #ccc;
+    -o-box-shadow: 2px 2px 1px #ccc;
+    box-shadow: 2px 2px 1px #ccc;
+    font: normal 100% "coustard", serif;
+    border-right: white 1px solid;
+}
+
+.buttons button:first-child {
+    -webkit-border-radius: 7px 0 0 7px;
+    -moz-border-radius: 7px 0 0 7px;
+    -o-border-radius: 7px 0 0 7px;
+    border-radius: 7px 0 0 7px;
+}
+
+.buttons button:last-child {
+    -webkit-border-radius: 0 7px 7px 0;
+    -moz-border-radius: 0 7px 7px 0;
+    -o-border-radius: 0 7px 7px 0;
+    border-radius: 0 7px 7px 0;
+    border-right: none;
+}
+
+button.highlight {
+    background-color: #ff743d;
+
+    -webkit-box-shadow: inset 2px 2px 1px #777;
+    -moz-box-shadow: inset 2px 2px 1px #777;
+    -o-box-shadow: inset 2px 2px 1px #777;
+    box-shadow: inset 2px 2px 1px #777;
+    padding: 6px 4px 4px 6px;
+}
+button:hover {
+    background-color: #03b1e6;
+}
+button.highlight:hover {
+    background-color: #ff743d;
+}
+
+button#hide_unknown {
+    display: inline-block;
+    margin-left: 20px;
+}
+button#show_unknown {
+    display: inline-block;
+    margin-right: 20px;
+}
+.axis path, .axis line {fill: none; stroke: black; shape-rendering: crispEdges;  }
+.axis text { font-family: sans-serif;font-size: 11px;  }
+.guideline {stroke: #444;stroke-width: 0.1;  }

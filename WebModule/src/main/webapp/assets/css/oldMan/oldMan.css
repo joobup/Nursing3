@@ -61,10 +61,11 @@
 }
 
 button{outline:none !important;position:absolute;right:5px;bottom: 5px;}
-.btn1-style{width:100px;height:30px;background:#FF743D;border:0px; text-shadow:none;}
+
+.btn1-style{width:100px;height:30px;background:#FF743D;border:0px; text-shadow:none;padding:0px;}
 .btn1-style:hover{border:0px;background:#FF743D}
 .btn1-style:focus{background:#FF743D}
-.btn2-style,.btn3-style{width:100px;height:30px;background:#2B3949;color:#ffffff;border:0px; text-shadow:none;}
+.btn2-style,.btn3-style{width:100px;height:30px;background:#2B3949;color:#ffffff;border:0px; text-shadow:none;padding:0px;}
 .btn2-style:hover,.btn3-style:hover{border:0px;background:#FF743D;color:#fff;}
 .btn3-style{margin-right:120px;}
 
