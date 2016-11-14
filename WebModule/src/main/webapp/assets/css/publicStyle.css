@@ -29,6 +29,9 @@ h1{font-size: 60px; font-family: "方正兰亭超细黑简体"}
     .nav-fr{  float: right; position: relative; }
     .nav-fr li{ float: left; position: relative;  margin-left: 28px; }
     .nav-fr li:hover{color:#ff743d;cursor: pointer;}
+    .nav-fr li a{color: #b0b0b0;}
+    .nav-fr li a:visited{color:#333333;}
+    .nav-fr li a:hover{color:#ff743d;cursor: pointer;}
     .nav-fr li span{color: #000000;}
     .nav-fr .ic-right img{position:absolute; top: 9px;left: -19px;}
     #web-nav div{ background-color: #ffffff; width: 800px; height: 400px; position: absolute; z-index: -1; right: 0px; opacity: 0;}
@@ -36,19 +39,23 @@ h1{font-size: 60px; font-family: "方正兰亭超细黑简体"}
 
 
 /*底部导航*/
+.footer h2{padding:0px;margin: 0px;}
+.footer h3{padding:0px;margin: 0px;}
 .footer{width:100%;height:318px;background:#636363;}
 .footer .con{width:64%;margin-left:auto;margin-right:auto;min-width:1230px;}
-.footer .about{width:20%;padding:40px 15px;padding-left:0px;}
+.footer .about{width:20%;padding:40px 30px;padding-left:0px;}
 .footer  h2{color:#BABABA;width:100%;display: block; border-bottom:2px #bababa solid;font-size: 14px;margin-bottom:18px;padding-bottom:5px;}
-.footer  h3{color:#BABABA;text-align:justify;font-size: 12px;}
-.footer  h4{color:#BABABA;margin-top:8px;font-size: 12px;}
-.footer .how{width:20%;padding:40px 15px;}
-.footer .link{width:20%;padding:40px 15px;}
+.footer  h3{color:#BABABA;text-align:justify;font-size: 12px;padding:0px;}
+.footer  h4{color:#BABABA;margin:0px;margin-top:8px;font-size: 12px;padding:0px;line-height:12px;}
+.footer .how{width:20%;padding:40px 25px;}
+.footer .link{width:20%;padding:40px 25px;}
 .footer .link a{background:#7D7D7D;color:#fff;display: block;float: left;padding:10px;margin:5px;}
-.footer .leave{width:20%;padding:40px 15px;padding-right:0px;}
-.footer .leave .soso{width:258px;height:28px;border:1px #808080 solid;}
-.footer .leave .soso input{width:168px;height:100%;background:#636363;border:0px;padding-left:10px;color:#fff;}
+.footer .leave{width:20%;padding:40px 25px;padding-right:0px;}
+.footer .leave .soso{width:260px;height:35px;border:1px #808080 solid; position: relative;}
+.footer .leave .soso input{width:160px;height:100%;background:#636363;border:0px;padding-left:10px;color:#fff;}
 .footer .leave .soso input:focus{outline: none;box-shadow: none;}
-.footer .leave .soso button{background:#03B1E6;text-align: center;line-height:28px;font-size:12px;color:#fff;border:0px;width:87px;height:100%;}
+.footer .leave .soso button{background:#03B1E6;text-align: center;line-height:35px;font-size:12px;color:#fff;border:0px;width:90px;height:100%; position: absolute; right: 0px;}
+.footer .leave .soso button:hover{ cursor: pointer;}
 .footer .leave .soso button:focus{outline: none;box-shadow: none;}
 #foot{width: 100%; height: 50px; background-color: #464646; text-align: center; line-height: 50px; color:#ffffff;}
+

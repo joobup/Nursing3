@@ -36,6 +36,7 @@
                         <li><a onclick="sideUrl('/serve/staff/staffB')">员工</a></li>
                         <li><a onclick="sideUrl('/serve/nurseify/nurseify')">护理</a></li>
                         <li><a onclick="sideUrl('/serve/pack/packB')">打包</a></li>
+                        <li><a onclick="sideUrl('/serve/upload/upload')">上传</a></li>
                     </ul>
                 </li>
                 <li>

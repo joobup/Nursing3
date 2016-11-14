@@ -7,11 +7,9 @@
 .nav-fl .please-login a{color:#B0B0B0 !important; }
 .nav-fl .please-login a:hover{color: #ff743d !important; }
 .nav-fr li{color: #B0B0B0 !important;}
-.nav-fr li:hover{color:#ff743d !important;}
+.nav-fr li a{color:#b0b0b0 !important; }
+.nav-fr li a:hover{color:#ff743d !important;}
 .nav-fr li span{color: #B0B0B0 !important;}
-
-
-
 
 
 /*con*/

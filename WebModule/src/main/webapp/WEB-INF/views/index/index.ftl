@@ -41,16 +41,16 @@
 <div class="classify">
     <div class="w">
         <ul>
-            <li><a href="">首&nbsp;&nbsp;&nbsp;&nbsp;页<br>HOME</a></li>
-            <li><a href="">家庭清洁<br>Cleaning</a></li>
-            <li><a href="">母婴护理<br>Child care</a></li>
-            <li><a href="">家居养护<br>Home care</a></li>
-            <li><a href="">丽&nbsp;&nbsp;&nbsp;&nbsp;人<br>Beauty</a></li>
-            <li><a href="">速&nbsp;&nbsp;&nbsp;&nbsp;运<br>Shipment</a></li>
-            <li><a href="">维修装新<br>Install</a></li>
-            <li><a href="">按摩推拿<br>Massage</a></li>
-            <li><a href="">家电清洗<br>Appliance</a></li>
-            <li><a href="">企业服务<br>Enterprise</a></li>
+            <li><a href="${domainUrl}/rest/index/index">首&nbsp;&nbsp;&nbsp;&nbsp;页<br>HOME</a></li>
+            <li><a href="${domainUrl}/rest/index/product">家庭清洁<br>Cleaning</a></li>
+            <li><a href="${domainUrl}/rest/index/product">母婴护理<br>Child care</a></li>
+            <li><a href="${domainUrl}/rest/index/product">家居养护<br>Home care</a></li>
+            <li><a href="${domainUrl}/rest/index/product">丽&nbsp;&nbsp;&nbsp;&nbsp;人<br>Beauty</a></li>
+            <li><a href="${domainUrl}/rest/index/product">速&nbsp;&nbsp;&nbsp;&nbsp;运<br>Shipment</a></li>
+            <li><a href="${domainUrl}/rest/index/product">维修装新<br>Install</a></li>
+            <li><a href="${domainUrl}/rest/index/product">按摩推拿<br>Massage</a></li>
+            <li><a href="${domainUrl}/rest/index/product">家电清洗<br>Appliance</a></li>
+            <li><a href="${domainUrl}/rest/index/product">企业服务<br>Enterprise</a></li>
             <div class="clear"></div>
         </ul>
     </div>
@@ -387,41 +387,7 @@
 
 <!--底部导航-->
 
-<div class="footer">
-    <div class="con">
-        <div class="pull-left about">
-            <h2>ABOUT US</h2>
-            <h3>Fashion is not something that inFashion is not something that inFashion is not something that inFashion is
-                not something that inFashion is not something that inFashion is not something that inFashion is not something
-                that inFashion is not something that inFashion is not something that inthat in</h3>
-        </div>
-        <div class="pull-left how">
-            <h2>HOW TO FIND US</h2>
-            <h4>ADD:<span>25,lorem lis Street,Orange</span></h4>
-            <h4>TEL:<span>80 123 3456</span></h4>
-            <h4>Email:<span>emaasdasf@z.com</span></h4>
-        </div>
-        <div class="pull-left link">
-            <h2>LINK</h2>
-            <a href="##">addias</a>
-            <a href="##">BOSS</a>
-            <a href="##">David</a>
-            <a href="##">shoes</a>
-            <a href="##">dress</a>
-            <a href="##">dress</a>
-            <a href="##">dress</a>
-            <div  class="clear"></div>
-        </div>
-        <div class="pull-left leave">
-            <h2>LEAVE A MESSAGE</h2>
-            <div class="soso">
-            <input type="text"  placeholder="message"><button>report</button>
-            </div>
-        </div>
-        <div class="clear"></div>
-    </div>
-</div>
 
-<div id="foot">承嘉商城 @2016</div>
+<#include "/WEB-INF/views/index/footer.ftl"/>
 </body>
 </html>
