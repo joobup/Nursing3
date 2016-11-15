@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.myself.ServicePackMapperMyself" >
+    <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackState" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="service_pack_id" property="servicePackId" jdbcType="BIGINT" />
+        <result column="service_pack_state" property="servicePackState" jdbcType="TINYINT" />
+        <result column="service_pack_on_line_date" property="servicePackOnLineDate" jdbcType="TIMESTAMP" />
+        <result column="service_count" property="serviceCount" jdbcType="BIGINT" />
+        <association property="servicePack" resultMap="BaseResultMapServicePack">
+
+        </association>
+
+    </resultMap>
+
+    <resultMap id="BaseResultMapServicePack" type="com.idea.nursing.servicemodule.web.domain.vo.ServicePackVO" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="serve_brief" property="serveBrief" jdbcType="VARCHAR" />
+        <result column="serve_name" property="serveName" jdbcType="VARCHAR" />
+        <result column="serve_care" property="serveCare" jdbcType="VARCHAR" />
+        <result column="serve_startdate" property="serveStartDate" jdbcType="TIMESTAMP" />
+        <result column="serve_rebate" property="servrRebate" jdbcType="TINYINT" />
+        <result column="serve_enddate" property="serveEnddate" jdbcType="TIMESTAMP" />
+        <result column="serve_serves" property="serveServes" jdbcType="VARCHAR" />
+        <association property="serveDetailed" javaType="com.idea.nursing.common.web.domain.pojo.CommentRichText">
+            <id column="id" property="id" jdbcType="BIGINT" />
+            <result column="rich_text_title" property="richTextTitle" jdbcType="VARCHAR" />
+            <result column="rich_text_head_picture" property="richTextHeadPicture" jdbcType="VARCHAR" />
+            <result column="rich_text_body" property="richTextBody" jdbcType="LONGVARCHAR" />
+        </association>
+
+
+        <association property="serveNurseify" javaType="com.idea.nursing.servicemodule.web.domain.pojo.Nurseify">
+
+            <id column="id" property="id" jdbcType="BIGINT" />
+            <result column="nursify_name" property="nursifyName" jdbcType="VARCHAR" />
+            <result column="nursify_level" property="nursifyLevel" jdbcType="TINYINT" />
+            <result column="nursify_tid" property="nursifyTid" jdbcType="BIGINT" />
+        </association>
+        <association property="commentPicture" javaType="com.idea.nursing.common.web.domain.pojo.CommentPicture">
+            <id column="id" property="id" jdbcType="BIGINT"/>
+            <result column="picture_address" property="pictureAddress" jdbcType="VARCHAR"/>
+            <result column="picture_type" property="pictureType" jdbcType="TINYINT"/>
+        </association>
+
+    </resultMap>
+
+    <sql id="Base_Column_List" >
+        fsps.id, fsps.service_pack_id, fsps.service_pack_state, fsps.service_pack_on_line_date, fsps.service_count
+         fsp.id,  fsp.serve_brief,  fsp.serve_name,  fsp.serve_care,   fsp.serve_rebate,  fsp.serve_enddate,
+         fsp.serve_serves, fsp.serve_startdate,
+
+         fn.id, fn.nursify_name, fn.nursify_level, fn.nursify_tid,
+
+         crt.id, crt.rich_text_title, crt.rich_text_head_picture,
+          p.id, p.picture_address, p.picture_type
+    </sql>
+
+    <sql id="Example_Where_Clause" >
+        <where >
+            <foreach collection="oredCriteria" item="criteria" separator="or" >
+                <if test="criteria.valid" >
+                    <trim prefix="(" suffix=")" prefixOverrides="and" >
+                        <foreach collection="criteria.criteria" item="criterion" >
+                            <choose >
+                                <when test="criterion.noValue" >
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue" >
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue" >
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue" >
+                                    and ${criterion.condition}
+                                    <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <select id="selectAllVO" resultMap="BaseResultMap" parameterType="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackStateExample">
+        select
+
+        <include refid="Base_Column_List" />
+        from ff_service_pack_state fsps
+        LEFT JOIN ff_service_pack fsp ON fsps.service_pack_id = fsp.id
+        LEFT JOIN comment_rich_text crt ON  fsp.serve_detailed = crt.id
+        LEFT JOIN ff_nurseify fn ON fsp.serve_nurseify = fn.id
+        LEFT JOIN  comment_picture p
+        on p.id =
+        (SELECT fsps.picture_id from ff_service_pack_picture fsps where fsp.id = fsps.service_pack_id LIMIT 1)
+
+        <if test="_parameter != null" >
+            <include refid="Example_Where_Clause" />
+        </if>
+
+        <if test="orderByClause != null" >
+            order by ${orderByClause}
+        </if>
+    </select>
+
+</mapper>

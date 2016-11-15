@@ -20,7 +20,7 @@ public abstract class GenericTestController<Model,ModelExample> extends GenericC
      * @return
      */
     @ResponseBody
-    @RequestMapping(value="add" ,method = RequestMethod.POST)
+    @RequestMapping(value="add" ,method = RequestMethod.GET)
     public ResultData add(Model model){
 
         try {
@@ -32,5 +32,23 @@ public abstract class GenericTestController<Model,ModelExample> extends GenericC
         }
         return ResultData.build();
 
+    }
+
+    /**
+     * 查询单个
+     * @param id
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "findOne",method = RequestMethod.GET)
+    public ResultData findOne(Long id){
+
+        return ResultData.build().put("aData",getGenericService().selectById(id));
+    }
+
+    public ResultData findByExample(Model model){
+
+
+        return null;
     }
 }

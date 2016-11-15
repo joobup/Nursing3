@@ -73,5 +73,4 @@ public interface GenericService<Model, PK,ModelExample> {
     Page<Model> findAll(Integer currentPage, Integer limit);
 
 
-
 }

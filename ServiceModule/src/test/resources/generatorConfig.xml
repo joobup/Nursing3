@@ -76,7 +76,7 @@
         <table tableName="ff_nurseify" domainObjectName="Nurseify">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>-->
-        <table tableName="ff_nurseify" domainObjectName="Nurseify">
+        <table tableName="ff_service_pack_state" domainObjectName="ServicePackState">
             <generatedKey column="id" sqlStatement="JDBC" identity="true" />
         </table>
 

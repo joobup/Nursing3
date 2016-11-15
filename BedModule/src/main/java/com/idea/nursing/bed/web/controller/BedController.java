@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
-* Created by 10238 on 2016/10/12.
-*/
-@Controller
-@RequestMapping("serve/bed")
-public class BedController extends GenericTestController<Bed,BedExample> {
+    * Created by 10238 on 2016/10/12.
+    */
+    @Controller
+    @RequestMapping("serve/bed")
+    public class BedController extends GenericTestController<Bed,BedExample> {
     @Autowired
     private BedService bedService;
 

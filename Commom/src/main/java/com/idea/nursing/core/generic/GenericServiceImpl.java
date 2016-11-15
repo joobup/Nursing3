@@ -3,6 +3,8 @@ package com.idea.nursing.core.generic;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -71,14 +73,7 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
      */
     public abstract GenericDao<Model, PK,ModelExample> getDao();
 
-    /**
-     * 获取普通查询对象
-     * @param modelExample
-     * @return
-     */
-    public ModelExample getModelExample(ModelExample modelExample){
-        return modelExample;
-    }
+
     /**
      * 插入对象
      *
@@ -154,6 +149,7 @@ public abstract class GenericServiceImpl<Model, PK,ModelExample> implements Gene
         return list;
 
     }
+
 
 
 
