@@ -39,7 +39,27 @@ public class ServicePackStateController extends GenericController {
         return ResultData.build();
 
     }
+    @ResponseBody
+    @RequestMapping(value="adds" ,method = RequestMethod.POST)
+    public ResultData add(ServicePackState servicepackstate,String servicePackIds){
 
+        try {
+            for(String servicePackId:servicePackIds.split(",")){
+                if(!servicePackId.equals("") || servicePackId!=null){
+                    servicepackstate.setServicePackId(Long.parseLong(servicePackId));
+                    servicepackstateService.insert(servicepackstate);
+                }
+
+            }
+
+
+
+        }catch (Exception e){
+            return ResultData.build().addErroe();
+        }
+        return ResultData.build();
+
+    }
     /**
     * 删除打包服务状态
     * @param id
