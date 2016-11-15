@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.idea.nursing.servicemodule.web.dao.myself.ServicePackMapperMyself" >
-    <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.pojo.ServicePackState" >
+<mapper namespace="com.idea.nursing.servicemodule.web.dao.myself.ServicePackStateMapperMyself" >
+    <resultMap id="BaseResultMap" type="com.idea.nursing.servicemodule.web.domain.vo.ServicePackStateVO" >
         <id column="id" property="id" jdbcType="BIGINT" />
         <result column="service_pack_id" property="servicePackId" jdbcType="BIGINT" />
         <result column="service_pack_state" property="servicePackState" jdbcType="TINYINT" />
