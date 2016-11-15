@@ -22,18 +22,18 @@
                     <h4 class="modal-title" id="myModalLabel">服务上传</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="one">
-                        <div class="tu">
-                            <img src="${domainUrl}/assets/images/serve/service.png" alt="">
-                        </div>
-                        <h4>健康 快捷 干净</h4>
-                    </div>
-                    <div class="one theme ">
-                        <div class="tu">
-                            <img src="${domainUrl}/assets/images/serve/service.png" alt="">
-                        </div>
-                        <h4>健康 快捷 干净</h4>
-                    </div>
+                    <#--<div class="one">-->
+                        <#--<div class="tu">-->
+                            <#--<img src="${domainUrl}/assets/images/serve/service.png" alt="">-->
+                        <#--</div>-->
+                        <#--<h4>健康 快捷 干净</h4>-->
+                    <#--</div>-->
+                    <#--<div class="one theme ">-->
+                        <#--<div class="tu">-->
+                            <#--<img src="${domainUrl}/assets/images/serve/service.png" alt="">-->
+                        <#--</div>-->
+                        <#--<h4>健康 快捷 干净</h4>-->
+                    <#--</div>-->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>

@@ -59,6 +59,7 @@ public class WeekFoodDishesController extends GenericController {
     @RequestMapping(value="adds", method = RequestMethod.POST)
     public ResultData adds(WeekFoodDishes weekfooddishes,String dishesIds){
         try {
+            weekfooddishesService.deleteRelation(weekfooddishes);
             String[] dishes = dishesIds.split(",");
             for(String str:dishes){
                 weekfooddishes.setDishesId(Long.parseLong(str));

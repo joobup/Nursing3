@@ -29,8 +29,14 @@ public class WeekFoodDishesServiceImpl extends GenericServiceRelationImpl<WeekFo
     @Override
     public WeekFoodDishesExample getDelModelExample(WeekFoodDishes weekFoodDishes) {
         WeekFoodDishesExample weekFoodDishesExample = new WeekFoodDishesExample();
-        weekFoodDishesExample.createCriteria().andWeekFoodIdEqualTo(weekFoodDishes.getWeekFoodId()).
-                andDishesIdEqualTo(weekFoodDishes.getDishesId());
+        if(weekFoodDishes.getDishesId()==null){
+            weekFoodDishesExample.createCriteria().andWeekFoodIdEqualTo(weekFoodDishes.getWeekFoodId());
+        }else{
+            weekFoodDishesExample.createCriteria().andWeekFoodIdEqualTo(weekFoodDishes.getWeekFoodId()).
+                    andDishesIdEqualTo(weekFoodDishes.getDishesId());
+        }
+
+
         return weekFoodDishesExample;
     }
     @Override

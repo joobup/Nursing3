@@ -29,19 +29,20 @@
                 <table class="add">
                     <tr>
                         <td>楼名</td>
-                        <td><input type="text" id="entranceName" class="null"></td>
+                        <td><input type="text" id="entranceName" class="null" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="3"></td>
                     </tr>
                     <tr>
                         <td>楼门数</td>
-                        <td><input type="text" id="entranceToalNum"></td>
+                        <td><input type="text" id="entranceToalNum" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="6"></td>
                     </tr>
                     <tr>
                         <td>楼层</td>
-                        <td><input type="text" id="floorToalNum"></td>
+                        <td><input type="text" id="floorToalNum" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="3"></td>
                     </tr>
                     <tr>
                         <td>楼门号</td>
-                        <td><input type="text" id="entranceNum" class="null"><input type="text"id="lid" style="display: none;"></td>
+                        <td><input type="text" id="entranceNum" class="null" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="6"><input type="text"id="lid"
+                                                                                                                                             style="display: none;"></td>
                     </tr>
                 </table>
             </div>

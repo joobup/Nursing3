@@ -56,7 +56,7 @@
                     </tr>
                     <tr>
                         <td>费用折扣</td>
-                        <td><input type="text" id="rebate"></td>
+                        <td><input type="text" id="rebate" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="4"></td>
                     </tr>
                 <#--时间控件-->
                     <script type="text/javascript">

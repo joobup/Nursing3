@@ -89,7 +89,7 @@
                     </tr>
                     <tr>
                         <td>服务人数</td>
-                        <td><input type="text" id="renshu" class="null" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="8"></td>
+                        <td><input type="text" id="renshu" class="null" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="3"></td>
                     </tr>
                     <tr>
                         <td style="position: absolute; margin-top: 5px;">服务简介</td>
