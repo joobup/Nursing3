@@ -6,6 +6,7 @@
     <link href="${domainUrl}/assets/css/OutCss/date/jquery.data_input.pack.css" rel="stylesheet">
     <link href="${domainUrl}/assets/css/OutCss/upload/diyUpload.css" rel="stylesheet" >
     <link href="${domainUrl}/assets/css/OutCss/upload/webuploader.css" rel="stylesheet">
+    <link href="${domainUrl}/assets/css/OutCss/animate/animate.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script src="${domainUrl}/assets/js/serve/sideUrl.js"></script>
@@ -20,7 +21,12 @@
     var domainFile = '${domainUrl}';
 </script>
 <body>
-<div class="main">
+<div class="main" >
+    <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;z-index: -1;">
+        <div id="large-header" class="large-header" style="background-image: url('${domainUrl}/assets/images/serve/shujuback2.jpg')">
+            <canvas id="demo-canvas"></canvas>
+        </div>
+    </div>
 <#include "/common/serveHead.ftl"/>
     <div class="main-body">
         <#--侧边栏-->

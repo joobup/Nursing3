@@ -1,23 +1,21 @@
 
 
 .zong{width:100%;min-width: 1680px;}
-.zong h1{font-size:24px;color:#333;margin-left:2%;margin-top:3%;}
+.zong h1{font-size:24px;color:#fff;margin-left:2%;margin-top:3%;}
 
 .zong h2{font-size:24px;color:#fff;}
 .zong .top{margin-left:1%;margin-right:1%;padding-top:2%;}
 .zong .top h2 p{font-size:20px;}
-
 .zong .top .tu {padding:10% 5%;}
 .zong .top .tu img{width:80px;height:80px;}
-.zong .top .one{float:left;width:20%;height:180px;background:#FB5652;margin:0 2.5%; transition: all .6s; cursor: pointer;}
-.zong .top .one:hover{ transform: scale(1.1);   }
-.zong .top .two{float:left;width:20%;height:180px;background: #ff743d;margin:0 2.5%; transition: all .6s; cursor: pointer;}
-.zong .top .two:hover{ transform: scale(1.1);   }
-.zong .top .three{float:left;width:20%;height:180px;background:#63A3E0;margin:0 2.5%; transition: all .6s; cursor: pointer;}
-.zong .top .three:hover{ transform: scale(1.1);   }
-.zong .top .four{float:left;width:20%;height:180px;background:#1CC09E;margin:0 2.5%; transition: all .6s; cursor: pointer;}
-.zong .top .four:hover{ transform: scale(1.1);   }
-
+.zong .top .one{float:left;width:20%;height:180px;margin:0 2.5%; transition: all .6s; cursor: pointer;background: rgba(251, 86, 82, 0.7);}
+.zong .top .one:hover{  background: rgba(251, 86, 82, 1) }
+.zong .top .two{float:left;width:20%;height:180px;background: rgba(255, 116, 61, 0.7);margin:0 2.5%; transition: all .6s; cursor: pointer;}
+.zong .top .two:hover{ background: rgba(255, 116, 61, 1);   }
+.zong .top .three{float:left;width:20%;height:180px;background: rgba(99, 163, 224, 0.7);margin:0 2.5%; transition: all .6s; cursor: pointer;}
+.zong .top .three:hover{ background: rgba(99, 163, 224, 1);  }
+.zong .top .four{float:left;width:20%;height:180px;background: rgba(28, 192, 158, 0.7);margin:0 2.5%; transition: all .6s; cursor: pointer;}
+.zong .top .four:hover{ background: rgba(28, 192, 158, 1);  }
 .zong .bottom{margin-right:2%;padding-top:2%;margin-left:1%;}
 .zong .bottom .wrapper{width:50%;}
 .zong .bottom .wrapper h3{margin-top:10px;margin-bottom:20px;}
@@ -27,9 +25,9 @@
 
 /*柱状表*/
 .histogram{width:50%;}
-.chart { margin-left: 2px; margin-bottom: 10px;}
+.chart { margin-left: 2px; margin-bottom: 10px;fill:#fff;}
 .label { font-size: 10px; font-family: "Times New Roman";}
-.chart-title {margin-left:0px; margin-bottom:5px;margin-top:10px; font-size:14px;font-weight: bold;  }
+.chart-title {margin-left:0px; margin-bottom:5px;margin-top:10px; font-size:14px;font-weight: bold; }
 .chart rect {stroke-width:0;stroke: white;}
 
 .bar.creator { fill: #03b1e6; }
@@ -91,7 +89,7 @@ button#show_unknown {
     margin-right: 20px;
 }
 .axis path, .axis line {fill: none; stroke: black; shape-rendering: crispEdges;  }
-.axis text { font-family: sans-serif;font-size: 11px;  }
+.axis text { font-family: sans-serif;font-size: 11px; color: #fff; }
 .guideline {stroke: #444;stroke-width: 0.1;  }
 
 .font-right p{
@@ -102,7 +100,4 @@ button#show_unknown {
 }
 .wrapper canvas{
     transition: all .6s;
-}
-.wrapper canvas:hover{
-    transform: scale(1.1);
 }

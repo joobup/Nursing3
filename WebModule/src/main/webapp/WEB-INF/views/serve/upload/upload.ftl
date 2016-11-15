@@ -23,18 +23,21 @@
                 </div>
                 <div class="modal-body">
                     <div class="one">
-                        <div class="tu"></div>
+                        <div class="tu">
+                            <img src="${domainUrl}/assets/images/serve/service.png" alt="">
+                        </div>
                         <h4>健康 快捷 干净</h4>
                     </div>
-                    <div class="one theme">
-                        <div class="tu"></div>
+                    <div class="one theme ">
+                        <div class="tu">
+                            <img src="${domainUrl}/assets/images/serve/service.png" alt="">
+                        </div>
                         <h4>健康 快捷 干净</h4>
                     </div>
-                    <div class="clear"></div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button type="button" class="btn btn-primary">修改</button>
+                    <button type="button" class="btn btn-primary" onclick="add()">上传</button>
                 </div>
             </div>
         </div>
