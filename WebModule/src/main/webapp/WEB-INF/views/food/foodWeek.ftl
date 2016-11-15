@@ -1,6 +1,5 @@
 <link href="${domainUrl}/assets/css/serve/classify.css" rel="stylesheet">
 <link href="${domainUrl}/assets/css/food/foodWeek.css" rel="stylesheet">
-<link href="${domainUrl}/assets/css/OutCss/animate/animate.css" rel="stylesheet">
 <script src="${domainUrl}/assets/js/institution/food/foodWeek.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/date/jquery.date_input.pack.js"></script>
 <script src="${domainUrl}/assets/js/OutJs/upload/diyUpload.js"></script>

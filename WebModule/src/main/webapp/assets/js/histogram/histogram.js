@@ -96,6 +96,7 @@ var svgChart = d3.select( '#chart' )
         .attr("class", "chart single" )
         .attr("width", svg_width )
         .attr("height", svg_height )
+
     ;
 
 var bars_are = "seperate"; // could be : "stacked" , "split"
@@ -215,7 +216,7 @@ for( var i=0; i<charts.length; i++ ) {
             .classed( chart, 1 )
             .attr("x",chart_x + 5 )
             .attr("y",chart_y - 5 )
-            .text(chart_titles[i])
+            .attr("color","red")
         ;
 
         //
