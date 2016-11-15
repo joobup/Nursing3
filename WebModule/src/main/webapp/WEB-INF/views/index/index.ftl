@@ -382,12 +382,17 @@
 <!--空-->
 <div class="kong"></div>
 
-
-
-
 <!--底部导航-->
-
-
 <#include "/WEB-INF/views/index/footer.ftl"/>
+
+<div id="top">Top</div>
+
+<!--top-->
+<script>
+    $("#top").click(function(){
+        $("html,body").animate({scrollTop:"0px"},500)
+    });
+</script>
+
 </body>
 </html>

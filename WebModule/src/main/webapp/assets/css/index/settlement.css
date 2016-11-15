@@ -1,0 +1,54 @@
+
+/*head*/
+.nav-back{background:#333 !important;}
+.nav-fl li{color: #B0B0B0 !important;}
+.nav-fl a{ color:#B0B0B0 !important;  }
+.nav-fl a:hover{ color: #ff743d !important ;}
+.nav-fl .please-login a{color:#B0B0B0 !important; }
+.nav-fl .please-login a:hover{color: #ff743d !important; }
+.nav-fr li{color: #B0B0B0 !important;}
+.nav-fr li a{color:#b0b0b0 !important; }
+.nav-fr li a:hover{color:#ff743d !important;}
+.nav-fr li span{color: #B0B0B0 !important;}
+
+
+/*中间部分*/
+
+.section_container{width:64%;margin:0px auto;min-width:1230px;margin-bottom:40px;}
+.full_page{}
+.full_page h1{ font-size:24px; color:#312e2b; text-transform:uppercase; padding:22px 0px;}
+.action_buttonbar{ background:#f9f8f6; border:solid 1px #D7D7D7; padding:13px; clear:both;}
+.action_buttonbar button{ color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background: #2b3949; border:0px; line-height:100%; cursor:pointer;}
+.action_buttonbar button:hover{background: #ff743d;}
+.action_buttonbar button:focus{outline: none;box-shadow: none;}
+.action_buttonbar button.continue{ float:left; padding:10px 40px;}
+.action_buttonbar button.checkout{ float:right; padding:10px 40px;background: #ff743d;  }
+.action_buttonbar button.checkout:hover{background: #2b3949;  }
+
+#shopping-cart-table{ width:100%; border-collapse:collapse;}
+#shopping-cart-table tr{ border-bottom:solid 1px #e0e0e0;}
+#shopping-cart-table tr .pa{padding:10px 20px;}
+#shopping-cart-table th{ color:#312e2b; font-weight:bold; font-size:14px; padding:15px 0px;}
+#shopping-cart-table tr td{padding:12px 0px; vertical-align:top;}
+#shopping-cart-table tr td a.pr_name { display:block; font-weight:bold; font-size:14px; color:#544f4b; text-decoration:none; text-transform:uppercase; padding-bottom:8px;}
+#shopping-cart-table tr td span.price{ color:#544f4b; font-weight:bold; font-size:13px;}
+#shopping-cart-table tr td input.qty_box{ width:50px; border:solid 1px #D7D7D7; background:#fff; text-align:center; font-weight:bold; padding:3px;}
+.totals{ float:right; display:inline-block; width:100%; padding:17px 0px; margin-right:20px;}
+#totals-table{ width:24%; float:right; font-size:14px; color:#544f4b;}
+#totals-table td{padding: 8px 0px;}
+#totals-table td strong{ font-weight:bold;}
+#totals-table .total{ font-size:16px; font-weight:bold;}
+
+input, select, textarea, button{ font-size:12px;}
+.message{ padding:20px; font-size:14px; line-height:100%; margin-bottom:15px;}
+.message.success{ color:#91a158; background:#f9fff1; border:solid 1px #dcedbf;}
+.brown_btn{ color:#fff; font-size:14px; font-weight:bold; padding:8px 14px; background:#544F4B; border:0px; line-height:100%; cursor:pointer; vertical-align:middle;}
+img{ max-width:100%;}
+
+
+
+/*底部导航*/
+.footer .about{width:24% !important;}
+.footer .how{width:24% !important;}
+.footer .link{width:24% !important;}
+.footer .leave{width:24% !important;}

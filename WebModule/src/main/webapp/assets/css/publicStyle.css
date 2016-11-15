@@ -29,7 +29,7 @@ h1{font-size: 60px; font-family: "方正兰亭超细黑简体"}
     .nav-fr{  float: right; position: relative; }
     .nav-fr li{ float: left; position: relative;  margin-left: 28px; }
     .nav-fr li:hover{color:#ff743d;cursor: pointer;}
-    .nav-fr li a{color: #b0b0b0;}
+    .nav-fr li a{color: #333333;}
     .nav-fr li a:visited{color:#333333;}
     .nav-fr li a:hover{color:#ff743d;cursor: pointer;}
     .nav-fr li span{color: #000000;}
