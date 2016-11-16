@@ -38,10 +38,16 @@ function findAll() {
     })
 }
 function add() {
-    var url = domainUrl+ '';
+    var url = domainUrl+ '/serve/service_pack_state/adds';
+    console.log(url)
+    var date = formatDate(new Date());
     var postData = {
-        
+        servicePackIds:serveNamePull,
+        servicePackState:1,
+        servicePackOnLineDate:'2016-05-09',
+        serviceCount:1,
     }
+    console.log(postData)
     postAjax(url,false,postData,function (data) {
         alert("上传成功")
     })

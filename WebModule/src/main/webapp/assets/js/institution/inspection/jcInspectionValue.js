@@ -3,6 +3,12 @@
  */
 /*检查模块*/
 //添加
+$(function () {
+    //标签样式
+    $(".typeStyle").click(function () {
+        $(this).addClass("backColor").siblings(".typeStyle").removeClass("backColor")
+    })
+})
 function add() {
     var url = domainUrl+'/serve/inspection/add';
     var inspectionItemId

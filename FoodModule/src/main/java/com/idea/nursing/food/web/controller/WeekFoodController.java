@@ -93,7 +93,8 @@ public class WeekFoodController extends GenericController {
     @ResponseBody
     @RequestMapping(value="findWeek",method = RequestMethod.GET)
     public ResultData findWeek(SelectVOWeekFood selectVOWeekFood){
-
+        WeekFoodShowVO weekFoodShowVO = weekfoodService.findWeekVO(selectVOWeekFood);
+        System.out.println(weekFoodShowVO);
         return ResultData.build().parseBean(weekfoodService.findWeekVO(selectVOWeekFood));
     }
 

@@ -4,7 +4,7 @@
 .cost-box{
     width: 120px;
     height: 40px;
-    background-color: #FF743D;
+    background-color: #374862;
     border-radius: 5px;
     line-height: 40px;
     text-align: center;
@@ -15,10 +15,6 @@
     color:#fff;
     cursor: pointer;
 }
-
-
-
-
 .cost-box:hover{
     box-shadow:0px 0px 2px  #FF4B01;
 }
@@ -28,4 +24,29 @@
 .cost-box #cost-del {
     position: absolute; right: 0px; top: 0px; color: red;cursor: pointer; opacity: 0; transition: .5s;
 }
-
+.typeStyle{
+    height: 80%;
+    float: left;
+    margin-top: 5px;
+    background-color: #7E7E7E;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+.typeStyle:hover{
+    background-color: #00b7ee!important;
+}
+#radioValue{
+    margin-left: 20px;
+    border-top-left-radius: 5px;
+}
+#checkValue{
+    border-top-right-radius: 5px;
+}
+.backColor{
+    background-color: #00b7ee!important;
+}

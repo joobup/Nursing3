@@ -339,7 +339,7 @@
                     </tr>
                     <tr>
                         <td>年龄</td>
-                        <td><input tyle="text" id="servicePeopleAge" ></td>
+                        <td><input tyle="text" id="servicePeopleAge" onkeyup="value=value.replace(/[^\d]/g,'')" maxlength="3"></td>
                     </tr>
                     <tr>
                         <td>性别</td>
