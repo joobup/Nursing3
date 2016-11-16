@@ -11,6 +11,7 @@
     <script src="${domainUrl}/assets/js/common.js"></script>
     <script src="${domainUrl}/assets/js/serve/sideUrl.js"></script>
     <script src="${domainUrl}/assets/js/OutJs/date/Week.js"></script>
+    <script src="${domainUrl}/assets/js/OutJs/pingyin/pinyin.js"></script>
     <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
     <meta charset="utf-8"/>
     <title></title>
@@ -72,6 +73,14 @@
                         <li><a onclick="sideUrl('/bed/bedList')">床位列表</a></li>
                         <li><a onclick="sideUrl('/bed/bedClassify')">床位类型</a></li>
                         <li><a onclick="sideUrl('/bed/bedCost')">床位价格</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="link"><i class="glyphicon glyphicon-plus-sign"></i>检查项目表<i class="glyphicon glyphicon-chevron-up"></i></div>
+                    <ul class="submenu">
+                        <li><a onclick="sideUrl('/inspection/inspectionItem')">检查项目</a></li>
+                        <li><a onclick="sideUrl('/inspection/inspectionValue')">选择项目</a></li>
+                        <li><a onclick="sideUrl('/inspection/inspection')">检查项目列表</a></li>
                     </ul>
                 </li>
             </ul>
