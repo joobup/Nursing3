@@ -40,6 +40,34 @@ public class InspectionItemSelectValueController extends GenericController {
     }
 
     /**
+     * 批量添加选项
+     * @param inspectionitemselectvalue
+     * @param selectNames
+     * @param selectValues
+     * @param selectNameKeys
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "adds",method = RequestMethod.POST)
+    public ResultData adds(InspectionItemSelectValue inspectionitemselectvalue,String selectNames,String selectValues,String selectNameKeys){
+        try {
+            int count = 0;
+            for(String selectName:selectNames.split(",")){
+                inspectionitemselectvalue.setSelectName(selectName);
+                inspectionitemselectvalue.setSelectValue(Integer.parseInt(selectValues.split(",")[count]));
+                inspectionitemselectvalue.setSelectNameKey(selectNameKeys.split(",")[count]);
+                inspectionitemselectvalueService.insert(inspectionitemselectvalue);
+                count++;
+            }
+
+
+        }catch (Exception e){
+            return ResultData.build().addErroe();
+        }
+        return ResultData.build();
+    }
+
+    /**
     * 删除检查项目选项值表
     * @param id
     * @return
