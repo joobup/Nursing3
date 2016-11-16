@@ -9,10 +9,16 @@
         overflow: hidden;
     }
 </style>
-<div class="side-button" id="right-canvas" style="left: auto; right: 0%;">
+
+
+
+<div class="side-button" id="right-canvas" style="left: auto; right: 0%; ">
+    <img src="${domainUrl}/assets/images/serve/right1.png" />
 </div>
 <div class="side-button" id="left-canvas" style="left: 0%; right: auto; display: none;">
+    <img src="${domainUrl}/assets/images/serve/left1.png"  />
 </div>
+
 <#--<div id="start" class="animated">-->
 <#--</div>-->
 <script>

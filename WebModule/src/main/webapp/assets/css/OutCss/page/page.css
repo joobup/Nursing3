@@ -1,5 +1,5 @@
 .tcdPageCode{padding: 15px 2%;text-align: right;color: #ccc; min-width: 1250px; height: 200px;}
 .tcdPageCode a{ display: inline-block;color: #000;display: inline-block;height: 25px; font-size: 12px;background-color: #fff;	line-height: 25px;	padding: 0 10px;border: 1px solid #ddd;	margin: 0 2px;border-radius: 4px;vertical-align: middle;}
 .tcdPageCode a:hover{text-decoration: none;background-color: #FF743D; color: #fff;}
-.tcdPageCode span.current{cursor: pointer; display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #FF743D;border-radius: 4px;vertical-align: middle;}
+.tcdPageCode span.current{cursor: pointer; display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;color: #fff;background-color: #374862;border-radius: 4px;vertical-align: middle;}
 .tcdPageCode span.disabled{ cursor: pointer;	display: inline-block;height: 25px;line-height: 25px;padding: 0 10px;margin: 0 2px;	color: #bfbfbf;background: #f2f2f2;border: 1px solid #bfbfbf;border-radius: 4px;vertical-align: middle;}
