@@ -46,7 +46,7 @@
     </resultMap>
 
     <sql id="Base_Column_List" >
-        fsps.id, fsps.service_pack_id, fsps.service_pack_state, fsps.service_pack_on_line_date, fsps.service_count
+        fsps.id, fsps.service_pack_id, fsps.service_pack_state, fsps.service_pack_on_line_date, fsps.service_count,
          fsp.id,  fsp.serve_brief,  fsp.serve_name,  fsp.serve_care,   fsp.serve_rebate,  fsp.serve_enddate,
          fsp.serve_serves, fsp.serve_startdate,
 
