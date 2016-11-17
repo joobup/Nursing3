@@ -25,7 +25,7 @@
 <div class="main" >
     <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;z-index: -1;">
         <div id="large-header" class="large-header" style="background-image: url('${domainUrl}/assets/images/serve/shujuback2.jpg')">
-            <canvas id="demo-canvas"></canvas>
+            <canvas id="demo-canvas" ></canvas>
         </div>
     </div>
 <#include "/common/serveHead.ftl"/>
@@ -79,8 +79,8 @@
                     <div class="link"><i class="glyphicon glyphicon-plus-sign"></i>检查项目表<i class="glyphicon glyphicon-chevron-up"></i></div>
                     <ul class="submenu">
                         <li><a onclick="sideUrl('/inspection/inspectionItem')">检查项目</a></li>
-                        <li><a onclick="sideUrl('/inspection/inspectionValue')">选择项目</a></li>
                         <li><a onclick="sideUrl('/inspection/inspection')">检查项目列表</a></li>
+                        <li><a onclick="sideUrl('/inspection/inspectionInput')">检查项目表</a></li>
                     </ul>
                 </li>
             </ul>

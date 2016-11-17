@@ -87,8 +87,9 @@
                 <table class="add">
                     <tr id="startOption">
                         <td>健康状况名</td>
-                        <td><input type="text" name="selectName" id="inspectionItemName"></td>
-                        <td><input type="button"  value="增加选项" id="addOption"></td>
+                        <td><input type="text" name="name" id="inspectionItemName"></td>
+                        <td><input type="button" class="btn"  value="增加选项" id="addOption"></td>
+                        <td style="display: none;"><input type="text" id="typeId"></td>
                     </tr>
                 </table>
                 </form>

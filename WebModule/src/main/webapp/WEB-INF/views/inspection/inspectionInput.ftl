@@ -1,5 +1,5 @@
 <link href="${domainUrl}/assets/css/serve/pack.css" rel="stylesheet">
-<script src="${domainUrl}/assets/js/institution/inspection/jcInspection.js"></script>
+<script src="${domainUrl}/assets/js/institution/inspection/jcInspectionInput.js"></script>
 <div id="now-position">
     您当前所在的位置：<span>检查模块</span>
 </div>
@@ -8,9 +8,7 @@
     </an>
 </div>
 <div class="serve-module">
-    <table id="aaa">
 
-    </table>
 </div>
 <#--分页-->
 <script src="${domainUrl}/assets/js/OutJs/page/page.js"></script>
@@ -27,11 +25,11 @@
             </div>
             <div class="modal-body">
                 <table class="add">
-                        <tr>
-                            <td>检查表名称</td>
-                            <td><input type="text" id="inspectionName"></td>
-                            <td style="display: none;"><input type="text" id="pullid"></td>
-                        </tr>
+                    <tr>
+                        <td>检查表名称</td>
+                        <td><input type="text" id="inspectionName"></td>
+                        <td style="display: none;"><input type="text" id="pullid"></td>
+                    </tr>
                     <tr>
                         <td>健康状况项目</td>
                         <td><input type="button" value="请选择项目"  class="btn" onclick="itemList()"></td>

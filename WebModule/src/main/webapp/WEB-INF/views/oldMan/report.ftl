@@ -9,9 +9,6 @@
         overflow: hidden;
     }
 </style>
-
-
-
 <div class="side-button" id="right-canvas" style="left: auto; right: 0%; ">
     <img src="${domainUrl}/assets/images/serve/right1.png" />
 </div>
@@ -19,21 +16,23 @@
     <img src="${domainUrl}/assets/images/serve/left1.png"  />
 </div>
 
-<#--<div id="start" class="animated">-->
-<#--</div>-->
+<div id="start" class="animated">
+</div>
 <script>
     $(function () {
         $("#right-canvas").click(function () {
-            $("#start").removeClass("fadeInLeft").addClass("fadeOutLeft").css("display","none");
-            $("#shujuback").css(" opacity","1").removeClass("fadeOutLeft").addClass("fadeInRight");
+            $("#start").removeClass("fadeInLeft").addClass("fadeOutLeft").hide(900);
+            $("#shujuback").css(" opacity","1").removeClass("fadeOutRight").addClass("fadeInRight");
             $("#right-canvas").hide();
             $("#left-canvas").show();
+            $("#demo-canvas").hide();
         })
         $("#left-canvas").click(function () {
             $("#start").css("display","block").removeClass("fadeOutLeft").addClass("fadeInLeft");
-            $("#shujuback").css(" opacity","0").removeClass("fadeInRight").addClass("fadeOutLeft");
+            $("#shujuback").css(" opacity","0").removeClass("fadeInRight").addClass("fadeOutRight");
             $("#right-canvas").show();
             $("#left-canvas").hide();
+            $("#demo-canvas").show();
         })
     })
 </script>

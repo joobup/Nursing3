@@ -2,7 +2,7 @@
 $(function () {
     findAll(1);
     //判断值类型
-    var optionHtml = ' <tr id="startOption"> <td></td> <td><input type="text" name="" id="inspectionItemName"></td> <td></td> </tr>';
+    var optionHtml = ' <tr id="startOption"> <td></td> <td><input type="text" name="name" id="inspectionItemName"></td> <td></td> </tr>';
     $("#addOption").click(function () {
         $("#startOption").after(optionHtml)
     })
@@ -26,7 +26,6 @@ function add() {
         inspectionItemNameKey:pinyinKey,
         inspectionItemDescribe:inspectionItemDescribe
     };
-    console.log(postData)
     postAjax(url,false,postData,function (data) {
         alert("添加成功");
         findAll(1);
@@ -106,8 +105,22 @@ function update(id) {
 //添加值类型框
 function addInput(id) {
     $("#myModal2").modal("show");
+    $("#typeId").val(id)
 }
 function addValue() {
-    alert($("#form").serialize())
-
+    var typeString = $("#form").serialize();
+    var selectName = typeString.replace(/name=/g,"");
+    selectName = selectName.replace(/&/g,",")
+    var id = $("#typeId").val();
+    var selectNameKey = codefans_net_CC2PY(selectName);
+    var url = domainUrl +'/serve/inspection_item_select_value/add';
+    var postData = {
+        inspectionItemId:id,
+        selectName:selectName,
+        selectValue:1,
+        selectNameKey:selectNameKey,
+    }
+    postAjax(url,false,postData,function (data) {
+        alert("添加成功")
+    })
 }

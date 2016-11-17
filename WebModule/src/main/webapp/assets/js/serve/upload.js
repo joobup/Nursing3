@@ -50,5 +50,6 @@ function add() {
     console.log(postData)
     postAjax(url,false,postData,function (data) {
         alert("上传成功")
+        $("#myModal").modal("hide")
     })
 }
