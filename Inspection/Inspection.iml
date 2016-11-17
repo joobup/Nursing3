@@ -12,6 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="common" />
+    <orderEntry type="module" module-name="OldPeople" />
     <orderEntry type="library" name="Maven: org.mongodb:mongo-java-driver:3.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.github.jsqlparser:jsqlparser:0.9.1" level="project" />

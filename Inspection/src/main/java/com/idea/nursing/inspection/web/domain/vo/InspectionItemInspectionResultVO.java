@@ -1,6 +1,7 @@
 package com.idea.nursing.inspection.web.domain.vo;
 
 import com.idea.nursing.oldpeople.web.domain.pojo.ServicePeople;
+import com.idea.nursing.oldpeople.web.domain.vo.ServicePeopleVO;
 
 public class InspectionItemInspectionResultVO {
     private Long id;
@@ -16,7 +17,9 @@ public class InspectionItemInspectionResultVO {
     private Long servicePeopleId;
 
     private InspectionItemVO inspectionItemVO;
-    private ServicePeople servicePeople;
+
+    private ServicePeopleVO servicePeople;
+
 
     @Override
     public String toString() {
@@ -88,11 +91,11 @@ public class InspectionItemInspectionResultVO {
         this.inspectionItemVO = inspectionItemVO;
     }
 
-    public ServicePeople getServicePeople() {
+    public ServicePeopleVO getServicePeople() {
         return servicePeople;
     }
 
-    public void setServicePeople(ServicePeople servicePeople) {
+    public void setServicePeople(ServicePeopleVO servicePeople) {
         this.servicePeople = servicePeople;
     }
 }
