@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.inspection.web.dao.InspectionItemInspectionResultMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspectionResult" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="inspection_id" property="inspectionId" jdbcType="BIGINT" />
+    <result column="inspection_item_id" property="inspectionItemId" jdbcType="BIGINT" />
+    <result column="inspection_item_value" property="inspectionItemValue" jdbcType="VARCHAR" />
+    <result column="inspection_item_select_value_id" property="inspectionItemSelectValueId" jdbcType="BIGINT" />
+    <result column="service_people_id" property="servicePeopleId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, inspection_id, inspection_item_id, inspection_item_value, inspection_item_select_value_id, 
+    service_people_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspectionResultExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from jc_inspection_item_inspection_result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from jc_inspection_item_inspection_result
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from jc_inspection_item_inspection_result
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspectionResultExample" >
+    delete from jc_inspection_item_inspection_result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspectionResult" useGeneratedKeys="true" keyProperty="id" >
+    insert into jc_inspection_item_inspection_result (inspection_id, inspection_item_id, inspection_item_value, 
+      inspection_item_select_value_id, service_people_id
+      )
+    values (#{inspectionId,jdbcType=BIGINT}, #{inspectionItemId,jdbcType=BIGINT}, #{inspectionItemValue,jdbcType=VARCHAR}, 
+      #{inspectionItemSelectValueId,jdbcType=BIGINT}, #{servicePeopleId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspectionResult" useGeneratedKeys="true" keyProperty="id" >
+    insert into jc_inspection_item_inspection_result
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="inspectionId != null" >
+        inspection_id,
+      </if>
+      <if test="inspectionItemId != null" >
+        inspection_item_id,
+      </if>
+      <if test="inspectionItemValue != null" >
+        inspection_item_value,
+      </if>
+      <if test="inspectionItemSelectValueId != null" >
+        inspection_item_select_value_id,
+      </if>
+      <if test="servicePeopleId != null" >
+        service_people_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="inspectionId != null" >
+        #{inspectionId,jdbcType=BIGINT},
+      </if>
+      <if test="inspectionItemId != null" >
+        #{inspectionItemId,jdbcType=BIGINT},
+      </if>
+      <if test="inspectionItemValue != null" >
+        #{inspectionItemValue,jdbcType=VARCHAR},
+      </if>
+      <if test="inspectionItemSelectValueId != null" >
+        #{inspectionItemSelectValueId,jdbcType=BIGINT},
+      </if>
+      <if test="servicePeopleId != null" >
+        #{servicePeopleId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspectionResultExample" resultType="java.lang.Integer" >
+    select count(*) from jc_inspection_item_inspection_result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update jc_inspection_item_inspection_result
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.inspectionId != null" >
+        inspection_id = #{record.inspectionId,jdbcType=BIGINT},
+      </if>
+      <if test="record.inspectionItemId != null" >
+        inspection_item_id = #{record.inspectionItemId,jdbcType=BIGINT},
+      </if>
+      <if test="record.inspectionItemValue != null" >
+        inspection_item_value = #{record.inspectionItemValue,jdbcType=VARCHAR},
+      </if>
+      <if test="record.inspectionItemSelectValueId != null" >
+        inspection_item_select_value_id = #{record.inspectionItemSelectValueId,jdbcType=BIGINT},
+      </if>
+      <if test="record.servicePeopleId != null" >
+        service_people_id = #{record.servicePeopleId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update jc_inspection_item_inspection_result
+    set id = #{record.id,jdbcType=BIGINT},
+      inspection_id = #{record.inspectionId,jdbcType=BIGINT},
+      inspection_item_id = #{record.inspectionItemId,jdbcType=BIGINT},
+      inspection_item_value = #{record.inspectionItemValue,jdbcType=VARCHAR},
+      inspection_item_select_value_id = #{record.inspectionItemSelectValueId,jdbcType=BIGINT},
+      service_people_id = #{record.servicePeopleId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspectionResult" >
+    update jc_inspection_item_inspection_result
+    <set >
+      <if test="inspectionId != null" >
+        inspection_id = #{inspectionId,jdbcType=BIGINT},
+      </if>
+      <if test="inspectionItemId != null" >
+        inspection_item_id = #{inspectionItemId,jdbcType=BIGINT},
+      </if>
+      <if test="inspectionItemValue != null" >
+        inspection_item_value = #{inspectionItemValue,jdbcType=VARCHAR},
+      </if>
+      <if test="inspectionItemSelectValueId != null" >
+        inspection_item_select_value_id = #{inspectionItemSelectValueId,jdbcType=BIGINT},
+      </if>
+      <if test="servicePeopleId != null" >
+        service_people_id = #{servicePeopleId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspectionResult" >
+    update jc_inspection_item_inspection_result
+    set inspection_id = #{inspectionId,jdbcType=BIGINT},
+      inspection_item_id = #{inspectionItemId,jdbcType=BIGINT},
+      inspection_item_value = #{inspectionItemValue,jdbcType=VARCHAR},
+      inspection_item_select_value_id = #{inspectionItemSelectValueId,jdbcType=BIGINT},
+      service_people_id = #{servicePeopleId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
