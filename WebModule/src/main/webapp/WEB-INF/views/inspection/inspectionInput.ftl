@@ -4,7 +4,7 @@
     您当前所在的位置：<span>检查模块</span>
 </div>
 <div class="serve-banner">
-    <an><input type="button" id="cao" value="添加检查表" data-toggle="modal" data-target="#myModal" onclick="clearModal()">
+    <an><input type="button" id="cao" value="添加检查表" data-toggle="modal" data-target="#myModal">
     </an>
 </div>
 <div class="serve-module">
@@ -27,12 +27,7 @@
                 <table class="add">
                     <tr>
                         <td>检查表名称</td>
-                        <td><input type="text" id="inspectionName"></td>
-                        <td style="display: none;"><input type="text" id="pullid"></td>
-                    </tr>
-                    <tr>
-                        <td>健康状况项目</td>
-                        <td><input type="button" value="请选择项目"  class="btn" onclick="itemList()"></td>
+                        <td><select id="inspectionId" onclick="addName()"></select></td>
                     </tr>
                 </table>
                 <div style="width:100%; height: 300px; display: none; overflow: auto;" id="servePro"></div>
