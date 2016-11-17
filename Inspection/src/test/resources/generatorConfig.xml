@@ -43,7 +43,7 @@
         <!--对应数据库表名 -->
 
 
-        <table tableName="jc_inspection_item" domainObjectName="InspectionItem">
+      <!--  <table tableName="jc_inspection_item" domainObjectName="InspectionItem">
             <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
         </table>
 
@@ -57,10 +57,16 @@
 
         <table tableName="jc_inspection_item_inspection" domainObjectName="InspectionItemInspection">
             <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>-->
+
+
+        <table tableName="jc_inspection_item_inspection" domainObjectName="InspectionItemInspection">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
         </table>
 
-
-
+        <table tableName="jc_inspection_item_inspection_result" domainObjectName="InspectionItemInspectionResult">
+            <generatedKey column="id" sqlStatement="JDBC" identity="true"/>
+        </table>
 
     </context>
 </generatorConfiguration>

@@ -1,9 +1,9 @@
-package com.idea.nursing.inspection.web.controller;
+package ${packageName};
 
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
-import com.idea.nursing.inspection.web.domain.pojo.InspectionItem;
-import com.idea.nursing.inspection.web.service.InspectionItemService;
+import ${modelpackageName}.${className};
+import ${ImplpackageName};
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,22 +15,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 * Created by 10238 on 2016/10/12.
 */
 @Controller
-@RequestMapping("serve/inspection_item")
-public class InspectionItemController extends GenericController {
+@RequestMapping("serve/${urlName?lower_case}")
+public class ${className}Controller extends GenericController {
     @Autowired
-    private InspectionItemService inspectionitemService;
+    private ${className}Service ${className?lower_case}Service;
 
     /**
-        * 添加自定义检查项目表
-        * @param inspectionitem
+        * 添加${chinaName}
+        * @param ${className?lower_case}
         * @return
     */
     @ResponseBody
     @RequestMapping(value="add" ,method = RequestMethod.POST)
-    public ResultData add(InspectionItem inspectionitem){
+    public ResultData add(${className} ${className?lower_case}){
 
         try {
-                inspectionitemService.insert(inspectionitem);
+                <#if level>
+                    ${className?lower_case}Service.insertLevel(${className?lower_case});
+                    <#else >
+                    ${className?lower_case}Service.insert(${className?lower_case});
+                </#if>
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -40,7 +45,7 @@ public class InspectionItemController extends GenericController {
     }
 
     /**
-    * 删除自定义检查项目表
+    * 删除${chinaName}
     * @param id
     * @return
     */
@@ -48,7 +53,11 @@ public class InspectionItemController extends GenericController {
     @RequestMapping(value="del" ,method = RequestMethod.POST)
     public ResultData del(Long id) {
         try {
-                inspectionitemService.delete(id);
+                <#if level>
+                    ${className?lower_case}Service.deleteLevel(id);
+                    <#else>
+                    ${className?lower_case}Service.delete(id);
+                </#if>
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -57,15 +66,15 @@ public class InspectionItemController extends GenericController {
     }
 
     /**
-    * 修改自定义检查项目表
-    * @param inspectionitem
+    * 修改${chinaName}
+    * @param ${className?lower_case}
     * @return
     */
     @ResponseBody
     @RequestMapping(value="update",method = RequestMethod.POST)
-    public ResultData update(InspectionItem inspectionitem){
+    public ResultData update(${className} ${className?lower_case}){
         try {
-            inspectionitemService.update(inspectionitem);
+            ${className?lower_case}Service.update(${className?lower_case});
 
         } catch (Exception e){
             return ResultData.build().upDateError();
@@ -74,7 +83,7 @@ public class InspectionItemController extends GenericController {
     }
 
     /**
-    * 分页查询所有自定义检查项目表
+    * 分页查询所有${chinaName}
     * @param currentPage
     * @param limit
     * @return
@@ -83,7 +92,20 @@ public class InspectionItemController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(inspectionitemService.findAllVO(currentPage,limit));
+        parsePageBean(${className?lower_case}Service.findAll(currentPage,limit));
     }
+
+    <#if level>
+
+    /**
+    * 按级别查询服务类别
+    * @return
+    */
+    @ResponseBody
+    @RequestMapping(value = "findTreeAll",method = RequestMethod.GET)
+    public ResultData findTreeAll(){
+        return ResultData.build().put("aaData",${className?lower_case}Service.findTree());
+    }
+    </#if>
 
 }

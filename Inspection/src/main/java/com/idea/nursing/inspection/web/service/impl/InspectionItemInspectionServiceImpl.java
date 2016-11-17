@@ -10,6 +10,7 @@ import com.idea.nursing.inspection.web.service.InspectionItemInspectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import static sun.java2d.cmm.ColorTransform.In;
 
 
 @Service
@@ -21,4 +22,10 @@ public class InspectionItemInspectionServiceImpl extends GenericServiceImpl<Insp
         return inspectioniteminspectionDao;
     }
 
+    @Override
+    public void delByInspectionId(Long inspectionId) {
+        InspectionItemInspectionExample example = new InspectionItemInspectionExample();
+        example.createCriteria().andInspectionIdEqualTo(inspectionId);
+        inspectioniteminspectionDao.deleteByExample(example);
+    }
 }

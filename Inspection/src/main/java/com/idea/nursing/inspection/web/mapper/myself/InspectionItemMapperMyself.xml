@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.inspection.web.dao.myself.InspectionItemMapperMyself" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.inspection.web.domain.vo.InspectionItemVO" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="inspection_item_name" property="inspectionItemName" jdbcType="VARCHAR" />
+    <result column="normal_value_upper_limit" property="normalValueUpperLimit" jdbcType="INTEGER" />
+    <result column="normal_value_upper_floor" property="normalValueUpperFloor" jdbcType="INTEGER" />
+    <result column="inspection_item_value_type" property="inspectionItemValueType" jdbcType="TINYINT" />
+    <result column="unit" property="unit" jdbcType="VARCHAR" />
+    <result column="inspection_item_name_key" property="inspectionItemNameKey" jdbcType="VARCHAR" />
+    <result column="inspection_item_describe" property="inspectionItemDescribe" jdbcType="VARCHAR" />
+      <collection property="inspectionItemSelectValueList" javaType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemSelectValue">
+
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="inspection_item_id" property="inspectionItemId" jdbcType="BIGINT" />
+        <result column="select_name" property="selectName" jdbcType="VARCHAR" />
+        <result column="select_value" property="selectValue" jdbcType="INTEGER" />
+        <result column="select_name_key" property="selectNameKey" jdbcType="VARCHAR" />
+      </collection>
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+
+    ji.id, ji.inspection_name, ji.inspection_item_list,
+    jii.id, jii.inspection_item_name, jii.normal_value_upper_limit,jii.normal_value_upper_floor, jii.inspection_item_value_type,
+    jii.unit, jii.inspection_item_name_key, jii.inspection_item_describe,
+     jiisv.id,  jiisv.inspection_item_id,  jiisv.select_name,  jiisv.select_value,  jiisv.select_name_key
+  </sql>
+  <select id="selectAllVO" resultMap="BaseResultMap">
+      SELECT
+      <include refid="Base_Column_List"></include>
+      FROM jc_inspection_item jii
+      LEFT JOIN jc_inspection_item_select_value jiisv ON jii.id = jiisv.inspection_item_id
+  </select>
+</mapper>

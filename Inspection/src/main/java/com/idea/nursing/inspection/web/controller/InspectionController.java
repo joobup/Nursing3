@@ -3,6 +3,8 @@ package com.idea.nursing.inspection.web.controller;
 import com.idea.nursing.core.common.ResultData;
 import com.idea.nursing.core.generic.GenericController;
 import com.idea.nursing.inspection.web.domain.pojo.Inspection;
+import com.idea.nursing.inspection.web.domain.pojo.InspectionItemInspection;
+import com.idea.nursing.inspection.web.service.InspectionItemInspectionService;
 import com.idea.nursing.inspection.web.service.InspectionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class InspectionController extends GenericController {
     @Autowired
     private InspectionService inspectionService;
+    @Autowired
+    private InspectionItemInspectionService inspectionItemInspectionService;
 
     /**
         * 添加检查表
@@ -31,6 +35,13 @@ public class InspectionController extends GenericController {
 
         try {
                 inspectionService.insert(inspection);
+            for (String inspectionItem:inspection.getInspectionItemList().split(",")){
+                InspectionItemInspection inspectionItemInspection = new InspectionItemInspection();
+                inspectionItemInspection.setInspectionId(inspection.getId());
+                inspectionItemInspection.setInspectionItemId(Long.parseLong(inspectionItem));
+                inspectionItemInspectionService.insert(inspectionItemInspection);
+            }
+
 
             }catch (Exception e){
                 return ResultData.build().addErroe();
@@ -49,6 +60,7 @@ public class InspectionController extends GenericController {
     public ResultData del(Long id) {
         try {
                 inspectionService.delete(id);
+                inspectionItemInspectionService.delByInspectionId(id);
             } catch (Exception e) {
                 return ResultData.build().delError();
             }
@@ -66,7 +78,14 @@ public class InspectionController extends GenericController {
     public ResultData update(Inspection inspection){
         try {
             inspectionService.update(inspection);
+            inspectionItemInspectionService.delByInspectionId(inspection.getId());
+            for (String inspectionItem:inspection.getInspectionItemList().split(",")){
 
+                InspectionItemInspection inspectionItemInspection = new InspectionItemInspection();
+                inspectionItemInspection.setInspectionId(inspection.getId());
+                inspectionItemInspection.setInspectionItemId(Long.parseLong(inspectionItem));
+                inspectionItemInspectionService.insert(inspectionItemInspection);
+            }
         } catch (Exception e){
             return ResultData.build().upDateError();
         }
@@ -83,7 +102,7 @@ public class InspectionController extends GenericController {
     @RequestMapping(value="findAll",method = RequestMethod.GET)
     public ResultData findAll(Integer currentPage,Integer limit){
         return ResultData.build().
-        parsePageBean(inspectionService.findAll(currentPage,limit));
+        parsePageBean(inspectionService.findAllVO(currentPage,limit));
     }
 
 }
