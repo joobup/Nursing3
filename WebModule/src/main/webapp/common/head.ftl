@@ -9,7 +9,7 @@
         <ul class="nav-fr">
             <li class="ic-right"><a href="${domainUrl}/rest/index/index">商城主页</a></li>
             <li class="ic-right"><a href="${domainUrl}/rest/index/settlement"><img src="${domainUrl}/assets/images/index/personal.png">个人中心</a></li>
-            <li class="ic-right"><a href="##"><img src="${domainUrl}/assets/images/index/collect.png">我的收藏</a>&nbsp;&nbsp;<span>|</span></li>&nbsp;</li>
+            <li class="ic-right "><a href="##"><img src="${domainUrl}/assets/images/index/collect.png">我的收藏</a>&nbsp;&nbsp;<span>|</span></li>&nbsp;</li>
             <li class="ic-right" id="web-nav"><img src="${domainUrl}/assets/images/index/xiangxia.png" style="top: 14px;">网站导航 <div></div></li>
             <li class="ic-right"><a><img src="${domainUrl}/assets/images/index/propose.png" style="left: -13px;">反馈建议</a></li>
         </ul>
