@@ -28,6 +28,7 @@ function findAll(currentPage) {
     };
     var html = "<tbody> <tr> <th>检查表名称</th> <th>检查表项目</th>  <th>操作</th> </tr> </tbody>";
     getAjax(url,false,getData,function (data) {
+        console.log(JSON.stringify(data))
         var num = data.aaData.length;
         for (var i = 0; i <num ; i++){
             html += '<tr><td>' + data.aaData[i].inspectionName + '</td><td>' + data.aaData[i].inspectionItemList + '</td>';

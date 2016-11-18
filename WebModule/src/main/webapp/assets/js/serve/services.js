@@ -1,6 +1,8 @@
 /**
  * Created by horo on 2016/10/14.
  */
+
+
 $(function () {
     cost();
     $("#cao").click(function () {
@@ -134,6 +136,7 @@ function clearModal() {
 }
 var serveClassify ;
 function add() {
+
     var serveCost = $("#serveCost").val();
     var price = $("#costPirce").val();
     var serveName = $("#mingcheng").val();

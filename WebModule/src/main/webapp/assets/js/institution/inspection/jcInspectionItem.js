@@ -47,11 +47,17 @@ function findAll(currentPage) {
         console.log(JSON.stringify(data))
         var num = data.aaData.length;
         for (var i = 0; i < num; i++) {
+            var addInput;
+            if(data.aaData[i].inspectionItemValueType == 1){
+                 addInput = ''
+            }else
+            {
+                 addInput = '<i data-toggle="modal" data-target="#myModalCost"  onclick="addInput(' + data.aaData[i].id + ')" class="glyphicon glyphicon-plus"></i>'
+            }
             html += '<tr><td>' + data.aaData[i].inspectionItemName.substring(0,12) + '</td><td>' + data.aaData[i].normalValueUpperLimit + '</td><td>' + data.aaData[i].normalValueUpperFloor + '</td>' +
                 '<td>' + data.aaData[i].inspectionItemValueType + '</td>';
-            html += '<td>' + data.aaData[i].inspectionItemDescribe.substring(0,36) + '...</td><td>'+data.aaData[i].unit+'</td><td><i data-toggle="modal"' +
-                '  data-target="#myModalCost"' + ' onclick="addInput(' + data.aaData[i].id + ')" class="glyphicon' + ' glyphicon-plus"' +
-                '   ></i><i class="glyphicon glyphicon-remove shanchu" title="删除" onclick="del(' + data.aaData[i].id + ')"></i></td></tr>';
+            html += '<td>' + data.aaData[i].inspectionItemDescribe.substring(0,36) + '...</td><td>'+data.aaData[i].unit+'</td><td>' +
+                ''+addInput+'<i class="glyphicon glyphicon-remove shanchu" title="删除" onclick="del(' + data.aaData[i].id + ')"></i></td></tr>';
         }
         $("#aaa").html(html)
         if(pageNb == 1){
