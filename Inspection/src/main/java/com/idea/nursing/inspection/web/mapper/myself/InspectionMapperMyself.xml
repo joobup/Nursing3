@@ -7,7 +7,13 @@
     <result column="inspection_item_list" property="inspectionItemList" jdbcType="VARCHAR" />
     <collection property="inspectionItemVOList" resultMap="BaseResultMapIVO"></collection>
   </resultMap>
-
+  <resultMap id="BaseResultMapSV" type="com.idea.nursing.inspection.web.domain.pojo.InspectionItemSelectValue" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="inspection_item_id" property="inspectionItemId" jdbcType="BIGINT" />
+    <result column="select_name" property="selectName" jdbcType="VARCHAR" />
+    <result column="select_value" property="selectValue" jdbcType="INTEGER" />
+    <result column="select_name_key" property="selectNameKey" jdbcType="VARCHAR" />
+  </resultMap>
   <resultMap id="BaseResultMapIVO" type="com.idea.nursing.inspection.web.domain.vo.InspectionItemVO">
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="inspection_item_name" property="inspectionItemName" jdbcType="VARCHAR" />
@@ -17,19 +23,15 @@
     <result column="unit" property="unit" jdbcType="VARCHAR" />
     <result column="inspection_item_name_key" property="inspectionItemNameKey" jdbcType="VARCHAR" />
     <result column="inspection_item_describe" property="inspectionItemDescribe" jdbcType="VARCHAR" />
-    <collection property="inspectionItemSelectValueList" javaType="com.idea.nursing.inspection.web.domain.pojo.InspectionItemSelectValue">
+    <collection property="inspectionItemSelectValueList" resultMap="BaseResultMapSV">
 
-      <id column="id" property="id" jdbcType="BIGINT" />
-      <result column="inspection_item_id" property="inspectionItemId" jdbcType="BIGINT" />
-      <result column="select_name" property="selectName" jdbcType="VARCHAR" />
-      <result column="select_value" property="selectValue" jdbcType="INTEGER" />
-      <result column="select_name_key" property="selectNameKey" jdbcType="VARCHAR" />
+
     </collection>
 
   </resultMap>
   <sql id="Base_Column_List" >
 
-
+    ji.id, ji.inspection_name, ji.inspection_item_list,
     jii.id, jii.inspection_item_name, jii.normal_value_upper_limit,jii.normal_value_upper_floor, jii.inspection_item_value_type,
     jii.unit, jii.inspection_item_name_key, jii.inspection_item_describe,
     jiisv.id,  jiisv.inspection_item_id,  jiisv.select_name,  jiisv.select_value,  jiisv.select_name_key

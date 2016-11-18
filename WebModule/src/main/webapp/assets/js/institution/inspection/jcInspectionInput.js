@@ -19,6 +19,7 @@ function add() {
         $("#myModal").modal("hide")
     })
 }
+//
 function findAll() {
     var url = domainUrl + '/serve/inspection_item_inspection/findAll';
     var getData = {
