@@ -3,6 +3,7 @@
  */
 $(function () {
     findAll();
+    findAll1();
 })
 var serveNamePull='';
 function findAll() {
@@ -13,8 +14,6 @@ function findAll() {
     var html='';
     var img;
     getAjax(url,false,getData,function (data) {
-
-        console.log(JSON.stringify(data))
         var num = data.aaData.length;
         for(var i = 0; i< num ; i++){
             if(data.aaData[i].serveDetailed.richTextHeadPicture == null){
@@ -53,3 +52,14 @@ function add() {
         $("#myModal").modal("hide")
     })
 }
+//查询
+function findAll1() {
+    var url = domainUrl + '/serve/service_pack_state/findAll';
+    var getData = {
+        currentPage: 1, limit: 1000,state:1,
+    }
+    getAjax(url,false,getData,function (data) {
+        console.log(JSON.stringify(data))
+    })
+}
+
