@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.stock.web.dao.StockLogMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.stock.web.domain.pojo.StockLog" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="stock_id" property="stockId" jdbcType="BIGINT" />
+    <result column="stock_in_out" property="stockInOut" jdbcType="TINYINT" />
+    <result column="log_date" property="logDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, stock_id, stock_in_out, log_date
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.stock.web.domain.pojo.StockLogExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from kc_stock_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from kc_stock_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from kc_stock_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.stock.web.domain.pojo.StockLogExample" >
+    delete from kc_stock_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.stock.web.domain.pojo.StockLog" useGeneratedKeys="true" keyProperty="id" >
+    insert into kc_stock_log (stock_id, stock_in_out, log_date
+      )
+    values (#{stockId,jdbcType=BIGINT}, #{stockInOut,jdbcType=TINYINT}, #{logDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.stock.web.domain.pojo.StockLog" useGeneratedKeys="true" keyProperty="id" >
+    insert into kc_stock_log
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stockId != null" >
+        stock_id,
+      </if>
+      <if test="stockInOut != null" >
+        stock_in_out,
+      </if>
+      <if test="logDate != null" >
+        log_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stockId != null" >
+        #{stockId,jdbcType=BIGINT},
+      </if>
+      <if test="stockInOut != null" >
+        #{stockInOut,jdbcType=TINYINT},
+      </if>
+      <if test="logDate != null" >
+        #{logDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.stock.web.domain.pojo.StockLogExample" resultType="java.lang.Integer" >
+    select count(*) from kc_stock_log
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update kc_stock_log
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.stockId != null" >
+        stock_id = #{record.stockId,jdbcType=BIGINT},
+      </if>
+      <if test="record.stockInOut != null" >
+        stock_in_out = #{record.stockInOut,jdbcType=TINYINT},
+      </if>
+      <if test="record.logDate != null" >
+        log_date = #{record.logDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update kc_stock_log
+    set id = #{record.id,jdbcType=BIGINT},
+      stock_id = #{record.stockId,jdbcType=BIGINT},
+      stock_in_out = #{record.stockInOut,jdbcType=TINYINT},
+      log_date = #{record.logDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.stock.web.domain.pojo.StockLog" >
+    update kc_stock_log
+    <set >
+      <if test="stockId != null" >
+        stock_id = #{stockId,jdbcType=BIGINT},
+      </if>
+      <if test="stockInOut != null" >
+        stock_in_out = #{stockInOut,jdbcType=TINYINT},
+      </if>
+      <if test="logDate != null" >
+        log_date = #{logDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.stock.web.domain.pojo.StockLog" >
+    update kc_stock_log
+    set stock_id = #{stockId,jdbcType=BIGINT},
+      stock_in_out = #{stockInOut,jdbcType=TINYINT},
+      log_date = #{logDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

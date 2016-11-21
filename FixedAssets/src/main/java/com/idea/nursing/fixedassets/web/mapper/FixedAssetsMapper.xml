@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.fixedassets.web.dao.FixedAssetsMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.fixedassets.web.domain.pojo.FixedAssets" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="fixed_assets_name" property="fixedAssetsName" jdbcType="VARCHAR" />
+    <result column="fixed_assets_type_id" property="fixedAssetsTypeId" jdbcType="BIGINT" />
+    <result column="fixed_assets_state" property="fixedAssetsState" jdbcType="TINYINT" />
+    <result column="fixed_assets_date" property="fixedAssetsDate" jdbcType="TIMESTAMP" />
+    <result column="tid" property="tid" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, fixed_assets_name, fixed_assets_type_id, fixed_assets_state, fixed_assets_date, 
+    tid
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.fixedassets.web.domain.pojo.FixedAssetsExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from gdzc_fixed_assets
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from gdzc_fixed_assets
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from gdzc_fixed_assets
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.fixedassets.web.domain.pojo.FixedAssetsExample" >
+    delete from gdzc_fixed_assets
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.fixedassets.web.domain.pojo.FixedAssets" useGeneratedKeys="true" keyProperty="id" >
+    insert into gdzc_fixed_assets (fixed_assets_name, fixed_assets_type_id, 
+      fixed_assets_state, fixed_assets_date, tid
+      )
+    values (#{fixedAssetsName,jdbcType=VARCHAR}, #{fixedAssetsTypeId,jdbcType=BIGINT}, 
+      #{fixedAssetsState,jdbcType=TINYINT}, #{fixedAssetsDate,jdbcType=TIMESTAMP}, #{tid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.fixedassets.web.domain.pojo.FixedAssets" useGeneratedKeys="true" keyProperty="id" >
+    insert into gdzc_fixed_assets
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="fixedAssetsName != null" >
+        fixed_assets_name,
+      </if>
+      <if test="fixedAssetsTypeId != null" >
+        fixed_assets_type_id,
+      </if>
+      <if test="fixedAssetsState != null" >
+        fixed_assets_state,
+      </if>
+      <if test="fixedAssetsDate != null" >
+        fixed_assets_date,
+      </if>
+      <if test="tid != null" >
+        tid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="fixedAssetsName != null" >
+        #{fixedAssetsName,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedAssetsTypeId != null" >
+        #{fixedAssetsTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="fixedAssetsState != null" >
+        #{fixedAssetsState,jdbcType=TINYINT},
+      </if>
+      <if test="fixedAssetsDate != null" >
+        #{fixedAssetsDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tid != null" >
+        #{tid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.fixedassets.web.domain.pojo.FixedAssetsExample" resultType="java.lang.Integer" >
+    select count(*) from gdzc_fixed_assets
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update gdzc_fixed_assets
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.fixedAssetsName != null" >
+        fixed_assets_name = #{record.fixedAssetsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fixedAssetsTypeId != null" >
+        fixed_assets_type_id = #{record.fixedAssetsTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="record.fixedAssetsState != null" >
+        fixed_assets_state = #{record.fixedAssetsState,jdbcType=TINYINT},
+      </if>
+      <if test="record.fixedAssetsDate != null" >
+        fixed_assets_date = #{record.fixedAssetsDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.tid != null" >
+        tid = #{record.tid,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update gdzc_fixed_assets
+    set id = #{record.id,jdbcType=BIGINT},
+      fixed_assets_name = #{record.fixedAssetsName,jdbcType=VARCHAR},
+      fixed_assets_type_id = #{record.fixedAssetsTypeId,jdbcType=BIGINT},
+      fixed_assets_state = #{record.fixedAssetsState,jdbcType=TINYINT},
+      fixed_assets_date = #{record.fixedAssetsDate,jdbcType=TIMESTAMP},
+      tid = #{record.tid,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.fixedassets.web.domain.pojo.FixedAssets" >
+    update gdzc_fixed_assets
+    <set >
+      <if test="fixedAssetsName != null" >
+        fixed_assets_name = #{fixedAssetsName,jdbcType=VARCHAR},
+      </if>
+      <if test="fixedAssetsTypeId != null" >
+        fixed_assets_type_id = #{fixedAssetsTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="fixedAssetsState != null" >
+        fixed_assets_state = #{fixedAssetsState,jdbcType=TINYINT},
+      </if>
+      <if test="fixedAssetsDate != null" >
+        fixed_assets_date = #{fixedAssetsDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="tid != null" >
+        tid = #{tid,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.fixedassets.web.domain.pojo.FixedAssets" >
+    update gdzc_fixed_assets
+    set fixed_assets_name = #{fixedAssetsName,jdbcType=VARCHAR},
+      fixed_assets_type_id = #{fixedAssetsTypeId,jdbcType=BIGINT},
+      fixed_assets_state = #{fixedAssetsState,jdbcType=TINYINT},
+      fixed_assets_date = #{fixedAssetsDate,jdbcType=TIMESTAMP},
+      tid = #{tid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

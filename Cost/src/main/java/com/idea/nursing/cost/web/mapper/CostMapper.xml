@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.idea.nursing.cost.web.dao.CostMapper" >
+  <resultMap id="BaseResultMap" type="com.idea.nursing.cost.web.domain.pojo.Cost" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="cost_num" property="costNum" jdbcType="BIGINT" />
+    <result column="cost_type" property="costType" jdbcType="TINYINT" />
+    <result column="cost_in_out" property="costInOut" jdbcType="TINYINT" />
+    <result column="cost_date" property="costDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, cost_num, cost_type, cost_in_out, cost_date
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.idea.nursing.cost.web.domain.pojo.CostExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from sf_cost
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from sf_cost
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from sf_cost
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.idea.nursing.cost.web.domain.pojo.CostExample" >
+    delete from sf_cost
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.idea.nursing.cost.web.domain.pojo.Cost" useGeneratedKeys="true" keyProperty="id" >
+    insert into sf_cost (cost_num, cost_type, cost_in_out, 
+      cost_date)
+    values (#{costNum,jdbcType=BIGINT}, #{costType,jdbcType=TINYINT}, #{costInOut,jdbcType=TINYINT}, 
+      #{costDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.idea.nursing.cost.web.domain.pojo.Cost" useGeneratedKeys="true" keyProperty="id" >
+    insert into sf_cost
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="costNum != null" >
+        cost_num,
+      </if>
+      <if test="costType != null" >
+        cost_type,
+      </if>
+      <if test="costInOut != null" >
+        cost_in_out,
+      </if>
+      <if test="costDate != null" >
+        cost_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="costNum != null" >
+        #{costNum,jdbcType=BIGINT},
+      </if>
+      <if test="costType != null" >
+        #{costType,jdbcType=TINYINT},
+      </if>
+      <if test="costInOut != null" >
+        #{costInOut,jdbcType=TINYINT},
+      </if>
+      <if test="costDate != null" >
+        #{costDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.idea.nursing.cost.web.domain.pojo.CostExample" resultType="java.lang.Integer" >
+    select count(*) from sf_cost
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update sf_cost
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.costNum != null" >
+        cost_num = #{record.costNum,jdbcType=BIGINT},
+      </if>
+      <if test="record.costType != null" >
+        cost_type = #{record.costType,jdbcType=TINYINT},
+      </if>
+      <if test="record.costInOut != null" >
+        cost_in_out = #{record.costInOut,jdbcType=TINYINT},
+      </if>
+      <if test="record.costDate != null" >
+        cost_date = #{record.costDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update sf_cost
+    set id = #{record.id,jdbcType=BIGINT},
+      cost_num = #{record.costNum,jdbcType=BIGINT},
+      cost_type = #{record.costType,jdbcType=TINYINT},
+      cost_in_out = #{record.costInOut,jdbcType=TINYINT},
+      cost_date = #{record.costDate,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.idea.nursing.cost.web.domain.pojo.Cost" >
+    update sf_cost
+    <set >
+      <if test="costNum != null" >
+        cost_num = #{costNum,jdbcType=BIGINT},
+      </if>
+      <if test="costType != null" >
+        cost_type = #{costType,jdbcType=TINYINT},
+      </if>
+      <if test="costInOut != null" >
+        cost_in_out = #{costInOut,jdbcType=TINYINT},
+      </if>
+      <if test="costDate != null" >
+        cost_date = #{costDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.idea.nursing.cost.web.domain.pojo.Cost" >
+    update sf_cost
+    set cost_num = #{costNum,jdbcType=BIGINT},
+      cost_type = #{costType,jdbcType=TINYINT},
+      cost_in_out = #{costInOut,jdbcType=TINYINT},
+      cost_date = #{costDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
