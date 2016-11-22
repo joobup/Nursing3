@@ -28,7 +28,7 @@ div, ul {
     height: 70%;
     font-size: 50px;
     display: flex;
-    margin-left:40px;
+    margin-left:10px;
     align-items: center;
     float: left;
 }
@@ -88,7 +88,6 @@ div, ul {
 .main-body #main-show {
     height: 100%;
     width: 88%;
-    background-color: #292C35;
     float: left;
     overflow: auto;
     min-height: 765px;
@@ -98,14 +97,14 @@ div, ul {
     width: 96%;
     height: 55px;
     margin: 20px 2%;
-    background-color: #23232B;
+    background-color: #EDE8EC;
     min-width: 1228px;
 }
 #main-show #now-position{
-    width: 96%; margin: 35px 0px -20px 2%; height: 30px; font-size: 15px;color:#717276
+    width: 96%; margin: 35px 0px -20px 2%; height: 30px; font-size: 15px;color:#C3C1C4;
 }
 #main-show #now-position span{
-    color: #616161;
+    color: #C3C1C4;
 }
 #main-show .serve-banner an {
     height: 55px;
