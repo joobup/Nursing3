@@ -19,7 +19,6 @@
 .modal-body #staff-pic {
     width: 130px;
     height: 130px;
-    border: 1px solid #DADADA;
     display: flex;
     align-items: center;
     justify-content: center;

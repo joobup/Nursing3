@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="${domainUrl}/assets/css/index/product.css">
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="${domainUrl}/assets/js/index/product.js"></script>
+    <script src="${domainUrl}/assets/js/common.js"></script>
     <title>产品详情</title>
 </head>
 <style>
@@ -20,10 +22,8 @@
         var winW = document.documentElement.clientWidth;
         $('#featured').find("img").width(winW);
     })
-    $(window).load(function() {
-        $('#featured').orbit();
-    });
     var domainUrl = '${domainUrl}'+"/assets";
+    var domainUrl1 = '${domainUrl}'+"/rest";
 </script>
 
 <#include "/common/head.ftl"/>
@@ -33,15 +33,15 @@
              <img src="${domainUrl}/assets/images/index/fuwu/1.jpg"  class="img-responsive" >
         </div>
         <div class="col-lg-6 col-md-6  col-sm-12  tu_r">
-            <h2>日常保洁·专业标准化上门服请</h2>
-            <h3>物品归位整理、无覆盖物地面清洁内窗清洁、更换垃圾袋床底、柜底除尘、家具家电表面清洁门表面及把手、墙面、踢脚线除尘</h3>
+            <h2 id="serveName"></h2>
+            <h3 id="serveBrief"></h3>
             <div class="bg">
                 <div class="row">
                     <h3 class="col-lg-2 col-md-2 col-sm-2 col-xs-3 ">价格：</h3><span class=" col-lg-9 col-md-9 col-sm-9 col-xs-8 big">20元/小时</span>
                     <div class="clearfix"></div>
                 </div>
                 <div class="row">
-                    <h3 class="col-lg-2 col-md-2 col-sm-2 col-xs-3 ">服务特色：</h3><span  class="col-lg-9 col-md-9 col-sm-9 col-xs-8" >专业工具，高效洁净</span>
+                    <h3 class="col-lg-2 col-md-2 col-sm-2 col-xs-3 ">服务特色：</h3><span  class="col-lg-9 col-md-9 col-sm-9 col-xs-8" id="serveBrief2">专业工具，高效洁净</span>
                     <div class="clearfix"></div>
                 </div>
             </div>
@@ -74,9 +74,13 @@
                         </span>
                     <div class="clearfix"></div>
                     <div class="col-lg-2"></div>
+                    <!--加入购物车-->
                     <div class="col-lg-10 ncb">
-                        <div class="col-lg-4 col-md-4 col-sm-4 cart">加入购物车</div>
-                        <div class="col-lg-3 col-md-3 col-sm-3 buy">立即购买</div>
+                        <div id="lanren">
+                            <img src="${domainUrl}/assets/images/index/fuwu/1.jpg"  style="position: absolute;top:10px;left:45px;z-index:-1 width:30px;height:30px;border-radius: 50%;">
+                            <a href="javascript:;" class="col-lg-4 col-md-4 col-sm-4 btn-buy cart">加入购物车</a>
+                            <div class="col-lg-3 col-md-3 col-sm-3 buy">立即购买</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -142,5 +146,43 @@
 </div>
 
 <#include "/WEB-INF/views/index/footer.ftl"/>
+
+<!--top-->
+<div class="glyphicon glyphicon-eject" id="top"> </div>
+
+<!--购物车位置-->
+<div class="head-shopcart"><a href="##">进入购物车</a></div>
+
+<script>
+    $('.btn-buy').bind('click',function(){
+        var img = $(this).parent().find('img');
+        var flyElm = img.clone().css('opacity', 0.75);
+        $('body').append(flyElm);
+        flyElm.css({
+            'z-index': 20,
+            'display': 'block',
+            'position': 'absolute',
+            'top': img.offset().top +'px',
+            'left': img.offset().left +'px',
+            'width': img.width() +'px',
+            'height': img.height() +'px'
+        });
+        flyElm.animate({
+            top: $('.head-shopcart').offset().top,
+            left: $('.head-shopcart').offset().left,
+            width: 20,
+            height: 20
+        }, 'slow', function() {
+            flyElm.remove();
+        });
+    });
+
+    <!--top-->
+    $("#top").click(function(){
+        $("html,body").animate({scrollTop:"0px"},500)
+    });
+
+</script>
+
 </body>
 </html>

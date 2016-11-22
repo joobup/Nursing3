@@ -9,6 +9,7 @@
             <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="${domainUrl}/assets/js/OutJs/Carousel/Carousel.js"></script>
 <script type="text/javascript" src="${domainUrl}/assets/js/index/index.js"></script>
+                <script type="text/javascript" src="${domainUrl}/assets/js/common.js"></script>
 <title>智慧养老商城</title>
 </head>
 <script type="text/javascript">
@@ -20,6 +21,8 @@
         $('#featured').orbit();
     });
     var domainUrl = '${domainUrl}'+"/assets";
+    var domainUrl1 = '${domainUrl}' + "/rest";
+    var domainImg = '${domainUrl}';
 </script>
 
 <body>
@@ -137,91 +140,28 @@
         <h3>店铺<span>新品区</span></h3>
         <h4>HOT FASHION</h4>
     </div>
-    <div class="pic">
-        <div class="box">
-            <div class="pull-left line-l"></div>
-            <div class="pull-left con">
-                <div class="line-t"></div>
-                <div class="tu">
-                    <img src="${domainUrl}/assets/images/index/22.png"  >
-                </div>
-                <div class="introduce">
-                    <h2>蛋白粉</h2>
-                    <h3>￥150</h3>
-                    <h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
-                        <a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
-                    <div class="clear"></div>
-                    </h4>
-                    <button>立即购买</button>
-                </div>
-                <div class="line-b"></div>
-            </div>
-            <div class="pull-right line-r"></div>
-            <div class="clear"></div>
-        </div>
-        <div class="box">
-            <div class="pull-left line-l"></div>
-            <div class="pull-left con">
-                <div class="line-t"></div>
-                <div class="introduce">
-                    <h2>蛋白粉</h2>
-                    <h3>￥150</h3>
-                    <h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
-                        <a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
-                        <div class="clear"></div>
-                    </h4>
-                    <button>立即购买</button>
-                </div>
-                <div class="tu">
-                    <img src="${domainUrl}/assets/images/index/22.png"  >
-                </div>
-                <div class="line-b"></div>
-            </div>
-            <div class="pull-right line-r"></div>
-            <div class="clear"></div>
-        </div>
-        <div class="box">
-            <div class="pull-left line-l"></div>
-            <div class="pull-left con">
-                <div class="line-t"></div>
-                <div class="tu">
-                    <img src="${domainUrl}/assets/images/index/22.png"  >
-                </div>
-                <div class="introduce">
-                    <h2>蛋白粉</h2>
-                    <h3>￥150</h3>
-                    <h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
-                        <a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
-                        <div class="clear"></div>
-                    </h4>
-                    <button>立即购买</button>
-                </div>
-                <div class="line-b"></div>
-            </div>
-            <div class="pull-right line-r"></div>
-            <div class="clear"></div>
-        </div>
-        <div class="box">
-            <div class="pull-left line-l"></div>
-            <div class="pull-left con">
-                <div class="line-t"></div>
-                <div class="introduce">
-                    <h2>蛋白粉</h2>
-                    <h3>￥150</h3>
-                    <h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>
-                        <a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>
-                        <div class="clear"></div>
-                    </h4>
-                    <button>立即购买</button>
-                </div>
-                <div class="tu">
-                    <img src="${domainUrl}/assets/images/index/22.png"  >
-                </div>
-                <div class="line-b"></div>
-            </div>
-            <div class="pull-right line-r"></div>
-            <div class="clear"></div>
-        </div>
+    <div class="pic" id="pic1">
+        <#--<div class="box">-->
+            <#--<div class="pull-left line-l"></div>-->
+            <#--<div class="pull-left con">-->
+                <#--<div class="line-t"></div>-->
+                <#--<div class="tu">-->
+                    <#--<img src="${domainUrl}/assets/images/index/22.png"  >-->
+                <#--</div>-->
+                <#--<div class="introduce">-->
+                    <#--<h2>蛋白粉</h2>-->
+                    <#--<h3>￥150</h3>-->
+                    <#--<h4><a href="##" class="mouseover1"><img src="${domainUrl}/assets/images/index/shoppcart2.png" >加入购物车</a>-->
+                        <#--<a href="##"  class="mouseover2"><img src="${domainUrl}/assets/images/index/collect1.png">收藏</a>-->
+                    <#--<div class="clear"></div>-->
+                    <#--</h4>-->
+                    <#--<button>立即购买</button>-->
+                <#--</div>-->
+                <#--<div class="line-b"></div>-->
+            <#--</div>-->
+            <#--<div class="pull-right line-r"></div>-->
+            <#--<div class="clear"></div>-->
+        <#--</div>-->
         <div class="clear"></div>
     </div>
 </div>

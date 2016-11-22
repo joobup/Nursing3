@@ -1,5 +1,5 @@
 .content{padding:0px 2% 2% 2%;}
-.content h2{font-size:22px;color:#333;margin-bottom:30px;margin-top:0px;}
+.content h2{font-size:22px;color:#717276;margin-bottom:30px;margin-top:0px;}
 .content h2 span{font-size:16px;}
 .content h3{text-align:center;color:#fff !important;text-shadow:none;}
 .content h4{margin-bottom:20px;}
@@ -9,7 +9,7 @@
 .recipesList{width:100%;display:flex;}
 
 
-.active_red{background:#374862;}
+.active_red{background:#374862;border:0px;}
 .active_red:focus{background:#374862 !important;}
 
 .box{width:14%;position:relative;margin-right:10px; max-height:480px;min-width:180px;}
