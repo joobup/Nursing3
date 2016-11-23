@@ -1,7 +1,10 @@
 <link href="${domainUrl}/assets/css/bootstrap/css/bootstrap.css" rel="stylesheet">
 <link href="${domainUrl}/assets/css/oldMan/report.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="${domainUrl}/assets/css/OutCss/canvas/component.css" />
-<script src="${domainUrl}/assets/js/institution/olderMan/report.js"></script>
+
+<!--柱狀圖-->
+<script src="${domainUrl}/assets/js/OutJs/zhuzhuang/highcharts.js"></script>
+
 <style>
     .main-body #main-show{
         background: none;
@@ -28,6 +31,8 @@
             $("#right-canvas").hide();
             $("#left-canvas").show();
             $("#demo-canvas").hide();
+            $(".head-banner").hide(800)
+            $("#main-side").hide(800)
         })
         $("#left-canvas").click(function () {
             $("#start").css("display","block").removeClass("fadeOutLeft").addClass("fadeInLeft");
@@ -35,63 +40,95 @@
             $("#right-canvas").show();
             $("#left-canvas").hide();
             $("#demo-canvas").show();
+            $(".head-banner").show(800)
+            $("#main-side").show(800)
         })
     })
 </script>
 <div class="zong animated" id="shujuback">
     <h1>老人模块信息报表</h1>
     <div class="top">
-        <div class="one">
-            <div class="pull-left tu">
-            <img src="${domainUrl}/assets/images/report/ren.png" />
+
+        <div class="module moduleaa">
+            <div class="mo_t red1" ></div>
+            <h2>入住管理</h2>
+            <div class="aa red2 blur"></div>
+            <div class="mo_b">
+                <div class="pull-left icon"> <img src="${domainUrl}/assets/images/report/qun.png"  /></div>
+                <div class="pull-right txt">
+                    <h3>床位入住率</h3>
+                    <!--进度条-->
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                            <span class="sr-only">60% Complete</span>
+                        </div>
+                    </div>
+                    <h4>60%</h4>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <h2 class="font-right">
-                <p>老人信息</p>
-                <p>老人信息查询</p>
-            </h2>
-            <div class="clearfix"></div>
         </div>
-        <div class="two">
-            <div class="pull-left tu">
-                <img src="${domainUrl}/assets/images/report/gouwuche.png" />
+
+        <div class="module moduleaa">
+            <div class="mo_t yellow1"></div>
+            <h2>服务收益</h2>
+            <div class="aa yellow2 blur"></div>
+            <div class="mo_b">
+                <div class="pull-left icon"> <img src="${domainUrl}/assets/images/report/shouyi.png"  /></div>
+                <div class="pull-right txt">
+                    <h3>年度服务收益</h3>
+                    <!--柱状图-->
+                    <div id="container" style="min-width:20%; min-height:100px; margin: 0 auto;"></div>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <h2 class="font-right"><p>状态信息</p><p>老人状态查询</p></h2>
-            <div class="clearfix"></div>
         </div>
-        <div class="three">
-            <div class="pull-left tu">
-                <img src="${domainUrl}/assets/images/report/qun.png" />
+
+        <div class="module moduleaa">
+            <div class="mo_t cheng1"></div>
+            <h2>库存容量</h2>
+            <div class="aa cheng2 blur"></div>
+            <div class="mo_b">
+                <div class="pull-left icon"> <img src="${domainUrl}/assets/images/report/kucun.png" /></div>
+                <div class="pull-right txt">
+                    <h3>仓库存量显示</h3>
+                    <!--进度条-->
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;">
+                            <span class="sr-only">80% Complete</span>
+                        </div>
+                    </div>
+                    <h4>80%</h4>
+                </div>
+                <div class="clearfix"></div>
             </div>
-            <h2 class="font-right"><p>类型信息</p><p>老人类型查询</p></h2>
-            <div class="clearfix"></div>
         </div>
-        <div class="four">
-            <div class="pull-left tu">
-                <img src="${domainUrl}/assets/images/report/liaotian.png" />
+
+        <div class="module bb">
+            <div class="mo_t blue1"></div>
+            <h2>人员年龄性别比例</h2>
+            <div class="cc blue2 blur"></div>
+            <div class="mo_b mo_b1">
+                <div class='wrapper pull-left  animated bounceInUp ' id="quxianbiao">
+                    <canvas height='350' id='canvas' width='800'></canvas>
+                </div>
             </div>
-            <h2 class="font-right"><p>登录信息</p><p>老人登录查询</p></h2>
-            <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
     </div>
-    <div class="bottom">
-        <!--曲线表-->
-        <div class='wrapper pull-right  animated bounceInUp ' id="quxianbiao">
-            <h3  style="margin-bottom: 60px;color: #fff;">人员年龄性别比例</h3>
-            <canvas height='350' id='canvas' width='800'></canvas>
-        </div>
-        <!--柱状表-->
-        <div class="pull-left histogram  animated bounceInUp" style="margin-top: 30px;">
-            <div id="chart_buttons"></div>
-            <div id="chart" style="width:95%;"></div>
-        </div>
-        <div class="clearfix"></div>
-    </div>
+
 </div>
 <!--曲线表-->
 <script src="${domainUrl}/assets/js/linear/Chart.min.js"></script>
 <script src="${domainUrl}/assets/js/linear/prefixfree.min.js"></script>
 <script src="${domainUrl}/assets/js/linear/linear.js"></script>
+
+<!--柱状表-->
+<#--<div class="pull-left histogram  animated bounceInUp" style="margin-top: 30px;">-->
+    <#--<div id="chart_buttons"></div>-->
+    <#--<div id="chart" style="width:95%;"></div>-->
+<#--</div>-->
+
 <!--柱状表-->
 <script src="${domainUrl}/assets/js/histogram/d3.min.js"></script>
 <script src="${domainUrl}/assets/js/histogram/histogram.js"></script>
@@ -130,7 +167,7 @@
                         dataRange: {
                             min : 0,
                             max : 100,
-                            calculable : true,
+                            calculable : false,
                             color: ['#ff3333', 'orange', 'yellow','lime','aqua'],
                             textStyle:{
                                 color:'#fff'
@@ -140,7 +177,7 @@
                             {
                                 name: '全国',
                                 type: 'map',
-                                roam: true,
+                                roam: false,
                                 hoverable: false,
                                 mapType: 'china',
                                 itemStyle:{
@@ -391,6 +428,59 @@
                     });
                 });
     }
+
+    /*柱狀圖*/
+    $(function () {
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: ''
+            },
+            series: [{
+                name: 'Population',
+                data: [
+                    ['1月', 23.7],
+                    ['2月', 16.1],
+                    ['3月', 14.2],
+                    ['4月', 18.0],
+                    ['5月', 20.5],
+                    ['6月', 12.1],
+                ],
+                dataLabels: {
+                    enabled: false,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    format: '{point.y:.1f}', // one decimal
+                    y: 10, // 10 pixels down from the top
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }]
+        });
+    });
 
 
 

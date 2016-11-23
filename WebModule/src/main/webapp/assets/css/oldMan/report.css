@@ -51,15 +51,17 @@
     filter: blur(5px);
     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=10, MakeShadow=false); /* IE6~IE9 */
 }
-.module{width:31%; float:left;min-width:300px;margin:0 1%;}
+
+.module{width:31%; float:left;min-width:300px;margin:0 1%;height:250px;transition: .5s;}
+.moduleaa:hover{cursor: pointer; transform: scale(1.1);  }
 .module .red1{background:rgba(251, 86, 82,0.4);}
 .module .red2{background:rgba(251, 86, 82,0.2);}
 .module .blue1{background:rgba(91, 192, 222,0.4);}
 .module .blue2{background:rgba(91, 192, 222,0.2);}
 .module .yellow1{background:rgba(240, 173, 78,0.4);}
 .module .yellow2{background:rgba(240, 173, 78,0.2);}
-.module .zi1{background: rgba(255, 101, 55, 0.4);}
-.module .zi2{background: rgba(255, 101, 55, 0.2);}
+.module .cheng1{background: rgba(255, 101, 55, 0.4);}
+.module .cheng2{background: rgba(255, 101, 55, 0.2);}
 .module .mo_t{border-radius:10px 10px 0px 0px;height:50px;}
 .module  h2{color:#fff;font-size:20px;padding:15px;margin:0px;position:relative;margin-top:-50px;}
 .module .aa{border-radius:0 0 5px 5px;height:200px;margin-top:-10px;}

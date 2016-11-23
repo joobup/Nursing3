@@ -15,7 +15,7 @@ function sideUrl(url) {
         type: "get",
         url: url,
         success: function (data) {
-            $("#main-show").html(data).css("background","-webkit-gradient(linear,0 50%,150% 50%,from(#ace),to(#f96))")
+            $("#main-show").html(data).css("background","-webkit-gradient(linear,0 50%,150% 50%,from(#060A28),to(#000))")
         }
     });
 }

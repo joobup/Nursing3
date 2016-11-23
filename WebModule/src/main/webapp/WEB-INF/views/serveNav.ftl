@@ -9,7 +9,7 @@
     <link href="${domainUrl}/assets/css/OutCss/animate/animate.css" rel="stylesheet">
     <script src="${domainUrl}/assets/js/jQuery-1.9.1/jquery.min.js"></script>
     <script src="${domainUrl}/assets/js/common.js"></script>
-    <script src="${domainUrl}/assets/js/serve/sideUrl.js"></script>
+    <script src="${domainUrl}/assets/js/sideUrl.js"></script>
     <script src="${domainUrl}/assets/js/OutJs/date/Week.js"></script>
     <script src="${domainUrl}/assets/js/OutJs/pingyin/pinyin.js"></script>
     <script src="${domainUrl}/assets/js/bootstrap/bootstrap.min.js"></script>
