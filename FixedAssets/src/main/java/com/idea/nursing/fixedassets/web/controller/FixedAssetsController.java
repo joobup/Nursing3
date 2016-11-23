@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("serve/fixed_assets")
 public class FixedAssetsController extends GenericController {
     @Autowired
+
     private FixedAssetsService fixedassetsService;
 
     /**
