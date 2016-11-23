@@ -42,7 +42,7 @@ function findAll1() {
         }
         var num1 = data.aaData[0].length;
         for (var i = 0; i < num1; i++) {
-            html += '<li style="border-top:1px solid #dddddd"><a href="#" class="one"><i class="glyphicon glyphicon-plus"></i>' +
+            html += '<li style="border-top:1px solid #C3C1C4"><a href="#" class="one"><i class="glyphicon glyphicon-plus"></i>' +
                 '' + data.aaData[0][i].serveClassname + '</a><cc><a' + ' onclick="openModal(' + data.aaData[0][i].id + ')">添加子类</a>' +
                 '<a onclick="make(' + data.aaData[0][i].id + ')">修改本类</a><a onclick="del(' + data.aaData[0][i].id + ')">删除本类</a></cc>';
             if (num2 >= 1) {

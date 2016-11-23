@@ -9,10 +9,11 @@
     }
 </style>
 <div class="side-button" id="right-canvas" style="left: auto; right: 0%; ">
-    <img src="${domainUrl}/assets/images/serve/right1.png" />
+    <img src="${domainUrl}/assets/images/report/right1.png" />
 </div>
-<div class="side-button" id="left-canvas" style="left: 0%; right: auto; display: none;">
-    <img src="${domainUrl}/assets/images/serve/left1.png"  />
+<div class="side-button le" id="left-canvas" style="left: 0%; right: auto; display: none;">
+    <img src="${domainUrl}/assets/images/report/left1.png"  />
+
 </div>
 
 <div id="start" class="animated">
@@ -51,7 +52,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="two">
-            <div class="pull-left tu">9
+            <div class="pull-left tu">
                 <img src="${domainUrl}/assets/images/report/gouwuche.png" />
             </div>
             <h2 class="font-right"><p>状态信息</p><p>老人状态查询</p></h2>
@@ -390,4 +391,7 @@
                     });
                 });
     }
+
+
+
 </script>
