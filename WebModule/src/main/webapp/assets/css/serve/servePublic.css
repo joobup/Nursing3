@@ -34,7 +34,7 @@ div, ul {
 }
 .head-banner #logo img {
     margin-top:29px;
-    height:90px;
+   width:200px;
 }
 
 .head-banner #user-status {
@@ -43,11 +43,11 @@ div, ul {
     align-items: center;
     float: right;
     margin-right: 30px;
-    color:#717276;
+    color:#C3C1C4;
 }
 #user-status b {
     transition: .3s;
-    color: #717276;
+    color: #C3C1C4;
     cursor: pointer;
 }
 #user-status b:hover {
@@ -59,7 +59,7 @@ div, ul {
     border: 0px;
     transition: .5s;
     cursor: pointer;
-    color: #717276;
+    color: #C3C1C4;
     transition: .5s;
 }
 
@@ -87,7 +87,7 @@ div, ul {
 /*右侧内容*/
 .main-body #main-show {
     height: 100%;
-    width: 88%;
+    width: 100%;
     float: left;
     overflow: auto;
     min-height: 765px;
@@ -284,8 +284,8 @@ div, ul {
     right: 12px;
     left: auto;
     font-size: 16px;
-
 }
+
 
 .accordion li.open .link {
     color: #fff;
@@ -295,12 +295,14 @@ div, ul {
     color: #f25237;
     opacity: 1;
 }
+
 .accordion li.open i.glyphicon-chevron-up {
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     -o-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+
 .submenu {
     display: none;
     background: #374862;
@@ -320,7 +322,6 @@ div, ul {
     -webkit-transition: all 0.25s ease;
     -o-transition: all 0.25s ease;
     transition: all 0.25s ease;
-
 }
 
 .submenu a:hover {
@@ -332,6 +333,7 @@ div, ul {
 .back-color{
     background-color: #222c3c;
 }
+
 /*图片上传样式*/
 #box{
     position: absolute;
@@ -342,5 +344,3 @@ div, ul {
     z-index: 9999;
     top: 30%;
 }
-
-
