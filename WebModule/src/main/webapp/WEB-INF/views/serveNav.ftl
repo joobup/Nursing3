@@ -23,6 +23,7 @@
 </script>
 <body>
 <div class="main" >
+
     <div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;z-index: -1;">
         <div id="large-header" class="large-header" style="background-image: url('${domainUrl}/assets/images/serve/shujuback2.jpg')">
             <canvas id="demo-canvas" ></canvas>
